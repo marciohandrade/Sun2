@@ -1,0 +1,83 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RTTAgent", "RTTAgent\RTTAgent.vcproj", "{7FD77461-4405-4153-AB57-580375269BC3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DC078BBB-CEFB-4020-845E-E8178777E6FD} = {DC078BBB-CEFB-4020-845E-E8178777E6FD}
+		{A8790DE7-7FE5-45EC-B6DB-2B19318360AB} = {A8790DE7-7FE5-45EC-B6DB-2B19318360AB}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RTTServer", "RTTServer\RTTServer.vcproj", "{298D5667-3E28-43AF-B819-9965AFD098C6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DC078BBB-CEFB-4020-845E-E8178777E6FD} = {DC078BBB-CEFB-4020-845E-E8178777E6FD}
+		{A8790DE7-7FE5-45EC-B6DB-2B19318360AB} = {A8790DE7-7FE5-45EC-B6DB-2B19318360AB}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RTTService", "RTTService\RTTService.vcproj", "{9C8543D0-366B-42F9-A0F5-C2007CEEB210}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DC078BBB-CEFB-4020-845E-E8178777E6FD} = {DC078BBB-CEFB-4020-845E-E8178777E6FD}
+		{A8790DE7-7FE5-45EC-B6DB-2B19318360AB} = {A8790DE7-7FE5-45EC-B6DB-2B19318360AB}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "eXtreme", "Library\Network\eXtreme\eXtreme.vcproj", "{DC078BBB-CEFB-4020-845E-E8178777E6FD}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CrashHandler", "Library\Report\CrashHandler\CrashHandler.vcproj", "{A8790DE7-7FE5-45EC-B6DB-2B19318360AB}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		CrtDebug = CrtDebug
+		Debug = Debug
+		Release = Release
+		ReleaseDll = ReleaseDll
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{7FD77461-4405-4153-AB57-580375269BC3}.CrtDebug.ActiveCfg = Debug|Win32
+		{7FD77461-4405-4153-AB57-580375269BC3}.CrtDebug.Build.0 = Debug|Win32
+		{7FD77461-4405-4153-AB57-580375269BC3}.Debug.ActiveCfg = Debug|Win32
+		{7FD77461-4405-4153-AB57-580375269BC3}.Debug.Build.0 = Debug|Win32
+		{7FD77461-4405-4153-AB57-580375269BC3}.Release.ActiveCfg = Release|Win32
+		{7FD77461-4405-4153-AB57-580375269BC3}.Release.Build.0 = Release|Win32
+		{7FD77461-4405-4153-AB57-580375269BC3}.ReleaseDll.ActiveCfg = Release|Win32
+		{7FD77461-4405-4153-AB57-580375269BC3}.ReleaseDll.Build.0 = Release|Win32
+		{298D5667-3E28-43AF-B819-9965AFD098C6}.CrtDebug.ActiveCfg = Debug|Win32
+		{298D5667-3E28-43AF-B819-9965AFD098C6}.CrtDebug.Build.0 = Debug|Win32
+		{298D5667-3E28-43AF-B819-9965AFD098C6}.Debug.ActiveCfg = Debug|Win32
+		{298D5667-3E28-43AF-B819-9965AFD098C6}.Debug.Build.0 = Debug|Win32
+		{298D5667-3E28-43AF-B819-9965AFD098C6}.Release.ActiveCfg = Release|Win32
+		{298D5667-3E28-43AF-B819-9965AFD098C6}.Release.Build.0 = Release|Win32
+		{298D5667-3E28-43AF-B819-9965AFD098C6}.ReleaseDll.ActiveCfg = Release|Win32
+		{298D5667-3E28-43AF-B819-9965AFD098C6}.ReleaseDll.Build.0 = Release|Win32
+		{9C8543D0-366B-42F9-A0F5-C2007CEEB210}.CrtDebug.ActiveCfg = Debug|Win32
+		{9C8543D0-366B-42F9-A0F5-C2007CEEB210}.CrtDebug.Build.0 = Debug|Win32
+		{9C8543D0-366B-42F9-A0F5-C2007CEEB210}.Debug.ActiveCfg = Debug|Win32
+		{9C8543D0-366B-42F9-A0F5-C2007CEEB210}.Debug.Build.0 = Debug|Win32
+		{9C8543D0-366B-42F9-A0F5-C2007CEEB210}.Release.ActiveCfg = Release|Win32
+		{9C8543D0-366B-42F9-A0F5-C2007CEEB210}.Release.Build.0 = Release|Win32
+		{9C8543D0-366B-42F9-A0F5-C2007CEEB210}.ReleaseDll.ActiveCfg = Release|Win32
+		{9C8543D0-366B-42F9-A0F5-C2007CEEB210}.ReleaseDll.Build.0 = Release|Win32
+		{DC078BBB-CEFB-4020-845E-E8178777E6FD}.CrtDebug.ActiveCfg = CrtDebug|Win32
+		{DC078BBB-CEFB-4020-845E-E8178777E6FD}.CrtDebug.Build.0 = CrtDebug|Win32
+		{DC078BBB-CEFB-4020-845E-E8178777E6FD}.Debug.ActiveCfg = Debug|Win32
+		{DC078BBB-CEFB-4020-845E-E8178777E6FD}.Debug.Build.0 = Debug|Win32
+		{DC078BBB-CEFB-4020-845E-E8178777E6FD}.Release.ActiveCfg = Release|Win32
+		{DC078BBB-CEFB-4020-845E-E8178777E6FD}.Release.Build.0 = Release|Win32
+		{DC078BBB-CEFB-4020-845E-E8178777E6FD}.ReleaseDll.ActiveCfg = Release|Win32
+		{DC078BBB-CEFB-4020-845E-E8178777E6FD}.ReleaseDll.Build.0 = Release|Win32
+		{A8790DE7-7FE5-45EC-B6DB-2B19318360AB}.CrtDebug.ActiveCfg = Debug|Win32
+		{A8790DE7-7FE5-45EC-B6DB-2B19318360AB}.CrtDebug.Build.0 = Debug|Win32
+		{A8790DE7-7FE5-45EC-B6DB-2B19318360AB}.Debug.ActiveCfg = Debug|Win32
+		{A8790DE7-7FE5-45EC-B6DB-2B19318360AB}.Debug.Build.0 = Debug|Win32
+		{A8790DE7-7FE5-45EC-B6DB-2B19318360AB}.Release.ActiveCfg = Release|Win32
+		{A8790DE7-7FE5-45EC-B6DB-2B19318360AB}.Release.Build.0 = Release|Win32
+		{A8790DE7-7FE5-45EC-B6DB-2B19318360AB}.ReleaseDll.ActiveCfg = ReleaseDll|Win32
+		{A8790DE7-7FE5-45EC-B6DB-2B19318360AB}.ReleaseDll.Build.0 = ReleaseDll|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

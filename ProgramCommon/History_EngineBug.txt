@@ -1,0 +1,854 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//	3D엔진이나 모듈에서 뻑이 났을 경우 콜스택과 메모리 정보를 기록하는 부분
+//  차후에 공동공간의 버그 리포트할때 일괄적으로 보고하기 위함
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Final Stress-Test & Open-Beta Version 2006.04.25(화) ~ 2006.04.29(토) & 2006.05.02(화) ~
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+* 20070413(금) 조재식 : EngineVersion 2007/3/15 버전
+ 	3DTerrain_s.dll!CPathFinderGenerator::Tile_CrossCheck(WzVector * pwvFrom=0x0012fb68, WzVector * pwvTo=0x3e924e52, WzVector * pwvEdge1=0x6faa5c78, WzVector * pwvEdge2=0x6079d170, float * pfDist=0x0012fbc0, WzVector * pwvCross=0x00000000)  줄 1132 + 0x4e	C++
+ 	3DTerrain_s.dll!CPathFinderGenerator::Tile_HitTest(int iTile=108, WzVector wvFrom={...}, WzVector wvTo={...}, int * piResult=0xffffff88, float * pfDist=0x00000001)  줄 1172 + 0x44	C++
+ 	3DTerrain_s.dll!CPathFinderGenerator::MoveByDirection(int iCurrentTile=555, WzVector wvCurrentPos={...}, WzVector wvDistance={...}, int * piResultTile=0x0012fc18, WzVector * pwvResultPos=0x0012fc34, unsigned short wAttribute=4, WzVector * pwvSlide=0x0012fc40)  줄 1051	C++
+ 	3DTerrain_s.dll!CWorldPathFinder::PathExp_Thrust(CPathExplorer * ppe=0x0b7461d8, WzVector * pwvMoveDistance=0x0012fcec, unsigned short wAttribute=4)  줄 1037	C++
+ 	GameServer.exe!Field::FindPathThrust(Character * pChar=0x0ecb22a8, WzVector * pwvMoveDistance=0x0012fcec, int bForcedMove=1)  줄 553 + 0x19	C++
+ 	GameServer.exe!Player::ExecuteThrust(int bForcedMove=1, WzVector * pwvMoveDistance=0x0012fcec, WzVector & wvPosAfterThrust={...}, float fMoveDistance=3.5000000, int bDownAfterThrust=0)  줄 564 + 0xe	C++
+ 	GameServer.exe!Ability::Execute_KnockBack(Character * pTarget=0x0ecb22a8, unsigned char * pMsg=0x005b250d, unsigned short & wMsgSize=0, int bRelease=0)  줄 25 + 0x1c	C++
+ 	GameServer.exe!Ability::Execute(Character * pTarget=0x0ecb22a8, unsigned char * pMsg=0x005b250d, unsigned short & wMsgSize=0, int bPassive=0)  줄 58	C++
+ 	GameServer.exe!Skill::ExecuteAbilities(Character * pTarget=0x0ecb22a8, RESULTMSG & sResultMsg={...})  줄 356 + 0x1d	C++
+ 	GameServer.exe!DelayedSkill::EndExecute()  줄 110 + 0x1c	C++
+ 	GameServer.exe!SkillManager::Update()  줄 90 + 0xc	C++
+ 	GameServer.exe!Character::Update(unsigned long dwDeltaTick=66)  줄 137	C++
+ 	GameServer.exe!NPC::Update(unsigned long dwDeltaTick=66)  줄 193	C++
+ 	GameServer.exe!GameField::Update(unsigned long dwDeltaTick=66)  줄 486 + 0xc	C++
+ 	GameServer.exe!GameZone::Update(unsigned long dwDeltaTick=66)  줄 96	C++
+ 	GameServer.exe!GameZoneManager::Update(unsigned long dwDeltaTick=66)  줄 194 + 0x9	C++
+ 	GameServer.exe!GameServerEx::Update(unsigned long dwDeltaTick=66)  줄 434	C++
+ 	GameServer.exe!ServerFrame::_Update()  줄 296 + 0x14	C++
+ 	GameServer.exe!ServerFrame::DoProcess()  줄 154	C++
+ 	GameServer.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x001424d7, int nCmdShow=10)  줄 78	C++
+ 	GameServer.exe!WinMainCRTStartup()  줄 251 + 0x1d	C
+ 	GameServer.exe!WinMainCRTStartup()  줄 150 + 0xc	C
+
+
+* 20070129(월) 김민욱 : EngineVersion 2007/1/4 버전
+ 	3DTerrain_s.dll!CPathFinderGenerator::CheckAttribute(int iTile=1106045791, unsigned short wAttribute=0)  줄 661 + 0x4	C++
+ 	3DTerrain_s.dll!CPathFinderGenerator::Tile_TestBlocked(int * piNearTiles=0x00000024, int * piCrossResult=0x0012fbc0, unsigned short wAttribute=0, int iException=-1, int * piResult=0x0012fb8c, float * pfDist=0x0012fbb4)  줄 904 + 0x19	C++
+ 	3DTerrain_s.dll!CPathFinderGenerator::MoveByDirection(int iCurrentTile=1888, WzVector wvCurrentPos={...}, WzVector wvDistance={...}, int * piResultTile=0x0012fc0c, WzVector * pwvResultPos=0x0012fc28, unsigned short wAttribute=0, WzVector * pwvSlide=0x0012fc34)  줄 1036 + 0x21	C++
+ 	3DTerrain_s.dll!CWorldPathFinder::PathExp_Thrust(CPathExplorer * ppe=0x0b208cb0, WzVector * pwvMoveDistance=0x0012fce0, unsigned short wAttribute=4)  줄 1060	C++
+>	GameServer.exe!Field::FindPathThrust(Character * pChar=0x0e925274, WzVector * pwvMoveDistance=0x0012fce0, int bForcedMove=1)  줄 558 + 0x19	C++
+ 	GameServer.exe!Player::ExecuteThrust(int bForcedMove=1, WzVector * pwvMoveDistance=0x0012fce0, WzVector & wvPosAfterThrust={...}, float fMoveDistance=3.5000000, int bDownAfterThrust=0)  줄 556 + 0xe	C++
+ 	GameServer.exe!Ability::Execute_KnockBack(Character * pTarget=0x0e925274, unsigned char * pMsg=0x005b7c65, unsigned short & wMsgSize=0, int bRelease=0)  줄 25 + 0x1c	C++
+ 	GameServer.exe!Ability::Execute(Character * pTarget=0x0e925274, unsigned char * pMsg=0x005b7c65, unsigned short & wMsgSize=0, int bPassive=0)  줄 58	C++
+ 	GameServer.exe!Skill::ExecuteAbilities(Character * pTarget=0x0e925274, RESULTMSG & sResultMsg={...})  줄 356 + 0x1d	C++
+ 	GameServer.exe!DelayedSkill::EndExecute()  줄 108 + 0x1c	C++
+ 	GameServer.exe!SkillManager::Update()  줄 91 + 0xc	C++
+ 	GameServer.exe!Character::Update(unsigned long dwDeltaTick=15)  줄 137	C++
+ 	GameServer.exe!NPC::Update(unsigned long dwDeltaTick=15)  줄 196	C++
+ 	GameServer.exe!GameField::Update(unsigned long dwDeltaTick=15)  줄 487 + 0xc	C++
+ 	GameServer.exe!GameZone::Update(unsigned long dwDeltaTick=15)  줄 96	C++
+ 	GameServer.exe!GameCHuntingRoom::Update(unsigned long dwDeltaTick=15)  줄 124	C++
+ 	GameServer.exe!GameZoneManager::Update(unsigned long dwDeltaTick=15)  줄 195 + 0x9	C++
+ 	GameServer.exe!GameServerEx::Update(unsigned long dwDeltaTick=15)  줄 441	C++
+ 	GameServer.exe!ServerFrame::_Update()  줄 296 + 0x14	C++
+ 	GameServer.exe!ServerFrame::DoProcess()  줄 154	C++
+ 	GameServer.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x00142501, int nCmdShow=10)  줄 78	C++
+ 	GameServer.exe!WinMainCRTStartup()  줄 251 + 0x1d	C
+ 	GameServer.exe!WinMainCRTStartup()  줄 150 + 0xc	C
+
+ 	3DTerrain_s.dll!CPathFinderGenerator::Tile_CrossCheck(WzVector * pwvFrom=0x0012fb5c, WzVector * pwvTo=0x0012fb68, WzVector * pwvEdge1=0x580247f8, WzVector * pwvEdge2=0x58ce48c4, float * pfDist=0x0012fbb4)  줄 1120 + 0x4d	C++
+ 	3DTerrain_s.dll!CPathFinderGenerator::Tile_HitTest(int iTile=108, WzVector wvFrom={...}, WzVector wvTo={...}, int * piResult=0xffffff88, float * pfDist=0x0012fbb4)  줄 1154 + 0x43	C++
+ 	3DTerrain_s.dll!CPathFinderGenerator::MoveByDirection(int iCurrentTile=1561, WzVector wvCurrentPos={...}, WzVector wvDistance={...}, int * piResultTile=0x0012fc0c, WzVector * pwvResultPos=0x0012fc28, unsigned short wAttribute=4, WzVector * pwvSlide=0x0012fc34)  줄 1036	C++
+ 	3DTerrain_s.dll!CWorldPathFinder::PathExp_Thrust(CPathExplorer * ppe=0x0b208cb0, WzVector * pwvMoveDistance=0x0012fce0, unsigned short wAttribute=4)  줄 1060	C++
+>	GameServer.exe!Field::FindPathThrust(Character * pChar=0x0e5df638, WzVector * pwvMoveDistance=0x0012fce0, int bForcedMove=1)  줄 558 + 0x19	C++
+ 	GameServer.exe!Player::ExecuteThrust(int bForcedMove=1, WzVector * pwvMoveDistance=0x0012fce0, WzVector & wvPosAfterThrust={...}, float fMoveDistance=3.5000000, int bDownAfterThrust=0)  줄 556 + 0xe	C++
+ 	GameServer.exe!Ability::Execute_KnockBack(Character * pTarget=0x0e5df638, unsigned char * pMsg=0x005b6c5d, unsigned short & wMsgSize=0, int bRelease=0)  줄 25 + 0x1c	C++
+ 	GameServer.exe!Ability::Execute(Character * pTarget=0x0e5df638, unsigned char * pMsg=0x005b6c5d, unsigned short & wMsgSize=0, int bPassive=0)  줄 58	C++
+ 	GameServer.exe!Skill::ExecuteAbilities(Character * pTarget=0x0e5df638, RESULTMSG & sResultMsg={...})  줄 356 + 0x1d	C++
+ 	GameServer.exe!DelayedSkill::EndExecute()  줄 108 + 0x1c	C++
+ 	GameServer.exe!SkillManager::Update()  줄 91 + 0xc	C++
+ 	GameServer.exe!Character::Update(unsigned long dwDeltaTick=31)  줄 137	C++
+ 	GameServer.exe!NPC::Update(unsigned long dwDeltaTick=31)  줄 196	C++
+ 	GameServer.exe!GameField::Update(unsigned long dwDeltaTick=31)  줄 487 + 0xc	C++
+ 	GameServer.exe!GameZone::Update(unsigned long dwDeltaTick=31)  줄 96	C++
+ 	GameServer.exe!GameCHuntingRoom::Update(unsigned long dwDeltaTick=31)  줄 124	C++
+ 	GameServer.exe!GameZoneManager::Update(unsigned long dwDeltaTick=31)  줄 195 + 0x9	C++
+ 	GameServer.exe!GameServerEx::Update(unsigned long dwDeltaTick=31)  줄 441	C++
+ 	GameServer.exe!ServerFrame::_Update()  줄 296 + 0x14	C++
+ 	GameServer.exe!ServerFrame::DoProcess()  줄 154	C++
+ 	GameServer.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x00142519, int nCmdShow=10)  줄 78	C++
+ 	GameServer.exe!WinMainCRTStartup()  줄 251 + 0x1d	C
+ 	GameServer.exe!WinMainCRTStartup()  줄 150 + 0xc	C
+
+
+* 20061106(월) 김민욱 : EngineVersion 2006/10/25 버전
+ 	3DTerrain_s.dll!CPathFinderGenerator::CheckAttribute(int iTile=26171, unsigned short wAttribute=4)  줄 659 + 0x4	C++
+ 	3DTerrain_s.dll!CPathFinderGenerator::MoveByDirection(int iCurrentTile=26171, WzVector wvCurrentPos={...}, WzVector wvDistance={...}, int * piResultTile=0x0012fc38, WzVector * pwvResultPos=0x0012fc54, unsigned short wAttribute=4, WzVector * pwvSlide=0x0012fc60)  줄 1020 + 0x53	C++
+ 	3DTerrain_s.dll!CWorldPathFinder::PathExp_Thrust(CPathExplorer * ppe=0x06587c70, WzVector * pwvMoveDistance=0x0012fd00, unsigned short wAttribute=4)  줄 994	C++
+>	GameServer.exe!Field::FindPathThrust(Character * pChar=0x06ce81ec, WzVector * pwvMoveDistance=0x0012fd00, int bForcedMove=1)  줄 545 + 0x19	C++
+ 	GameServer.exe!Player::ExecuteThrust(int bForcedMove=1, WzVector * pwvMoveDistance=0x0012fd00, WzVector & wvPosAfterThrust={...}, float fMoveDistance=3.5000000, int bDownAfterThrust=0)  줄 542 + 0xe	C++
+ 	GameServer.exe!Ability::Execute_KnockBack(Character * pTarget=0x06ce81ec, unsigned char * pMsg=0x005882df, unsigned short & wMsgSize=0, int bRelease=0)  줄 25 + 0x1c	C++
+ 	GameServer.exe!Ability::Execute(Character * pTarget=0x06ce81ec, unsigned char * pMsg=0x005882df, unsigned short & wMsgSize=0, int bPassive=0)  줄 58	C++
+ 	GameServer.exe!Skill::ExecuteAbilities(Character * pTarget=0x06ce81ec, RESULTMSG & sResultMsg={...})  줄 352 + 0x1d	C++
+ 	GameServer.exe!DelayedSkill::EndExecute()  줄 95 + 0x1c	C++
+ 	GameServer.exe!SkillManager::Update()  줄 90 + 0xc	C++
+ 	GameServer.exe!Character::Update(unsigned long dwDeltaTick=15)  줄 137	C++
+ 	GameServer.exe!NPC::Update(unsigned long dwDeltaTick=15)  줄 182	C++
+ 	GameServer.exe!GameField::Update(unsigned long dwDeltaTick=15)  줄 484 + 0xc	C++
+ 	GameServer.exe!GameZone::Update(unsigned long dwDeltaTick=15)  줄 94	C++
+ 	GameServer.exe!GameZoneManager::Update(unsigned long dwDeltaTick=15)  줄 194 + 0x9	C++
+ 	GameServer.exe!GameServerEx::Update(unsigned long dwDeltaTick=15)  줄 417	C++
+ 	GameServer.exe!ServerFrame::_Update()  줄 292 + 0x14	C++
+ 	GameServer.exe!ServerFrame::DoProcess()  줄 150	C++
+ 	GameServer.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x00142539, int nCmdShow=10)  줄 78	C++
+ 	GameServer.exe!WinMainCRTStartup()  줄 251 + 0x1d	C
+ 	GameServer.exe!WinMainCRTStartup()  줄 150 + 0xc	C
+
+* 20060429(토) 이유열 : EngineVersion 20060412
+ 	3DTerrain_s.dll!CAStarPathFinder::GenerateFastestPath(int iNodeStart=4637, int iNodeEnd=114, int * piResult=0x1f42e31c, int iMaxResult=64, int * piNumResult=0x1f42e318)  줄 362 + 0x10	C++
+>	3DTerrain_s.dll!CAStarPathFinder::FindPath(int iNodeStart=4637, int iNodeEnd=114, WzVector * pwvStartPos=0x0012fce0, WzVector * pwvEndPos=0x0012fcd4, int * piResult=0x1f42e31c, int iMaxResult=64, int * piNumResult=0x1f42e318, unsigned short wAttribute=4, int iSeekNode=500)  줄 122 + 0x21	C++
+ 	3DTerrain_s.dll!CWorldPathFinder::PathExp_FindPath(CPathExplorer * ppe=0x02f2d5c8, WzVector wvDest={...}, int iDestTile=524477212, unsigned short wAttribute=4, int iSeekNode=500)  줄 431	C++
+ 	GameServer.exe!Field::FindPath(Character * pChar=0x14e7f9dc, WzVector * pwvDest=0xbec75150)  줄 474	C++
+ 	GameServer.exe!NPC::MoveAndBroadcast(WzVector * pwvDestPos=0x14f7af82, eCHAR_MOVE_STATE moveState=CMS_WALK)  줄 671 + 0xb	C++
+ 	GameServer.exe!State::OnMsgLetsGo(AI_MSG * pMsg=0x4109c28f)  줄 327 + 0xe	C++
+ 	GameServer.exe!IdleState::OnMsgLetsGo(AI_MSG * pMsg=0x14f7af78)  줄 109	C++
+ 	GameServer.exe!State::OnAIMsg(AI_MSG * pMsg=0x14f7af78)  줄 73 + 0x8	C++
+ 	GameServer.exe!NPC::AIMsgProgress()  줄 423	C++
+ 	GameServer.exe!Monster::Update(unsigned long dwDeltaTick=47)  줄 70	C++
+ 	GameServer.exe!ObjectManager::Update(unsigned long dwDeltaTick=0)  줄 63 + 0x6	C++
+ 	GameServer.exe!GameField::Update(unsigned long dwDeltaTick=47)  줄 61	C++
+ 	GameServer.exe!Map::Update(unsigned long dwDeltaTick=47)  줄 65 + 0x6	C++
+ 	GameServer.exe!GameZoneManager::Update(unsigned long dwDeltaTick=47)  줄 168	C++
+ 	GameServer.exe!GameServer::Update(unsigned long dwDeltaTick=47)  줄 517	C++
+ 	GameServer.exe!BattleServer::Update(unsigned long dwDeltaTick=47)  줄 143 + 0xc	C++
+ 	GameServer.exe!BattleServer::Run()  줄 125 + 0x11	C++
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// PreOpen Version 2006.01.24(화) ~ 2006.02.01(수)
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+* 20060412(수) 이준석 : EngineVersion 20060404
+>	3DTerrain_sd.dll!CAStarPathFinder::GenerateFastestPath(int iNodeStart=12, int iNodeEnd=292, int * piResult=0x1bc893fc, int iMaxResult=64, int * piNumResult=0x1bc893f8)  줄 362 + 0xc	C++
+ 	3DTerrain_sd.dll!CAStarPathFinder::FindPath(int iNodeStart=12, int iNodeEnd=292, WzVector * pwvStartPos=0x0012fb74, WzVector * pwvEndPos=0x0012fb60, int * piResult=0x1bc893fc, int iMaxResult=64, int * piNumResult=0x1bc893f8, unsigned short wAttribute=4, int iSeekNode=200)  줄 122 + 0x1c	C++
+ 	3DTerrain_sd.dll!CPathFinderAStar::FindPath_FullTile(int iTileStart=12, int iTileEnd=292, WzVector * wvStartPos=0x0012fb74, WzVector * wvEndPos=0x0012fb60, int * piResult=0x1bc893fc, int iMaxResult=64, int * piNumResult=0x1bc893f8, unsigned short wAttribute=4, int iSeekNode=200)  줄 109	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::FindPath(int iTileStart=12, int iTileEnd=292, WzVector * wvStartPos=0x0012fb74, WzVector * wvEndPos=0x0012fb60, int * piResult=0x1bc893fc, int iMaxResult=64, int * piNumResult=0x1bc893f8, unsigned short wAttribute=4, int iSeekNode=200)  줄 122 + 0x2d	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_FindPath(CPathExplorer * ppe=0x1bc893b8, WzVector wvDest={...}, int iDestTile=292, unsigned short wAttribute=4, int iSeekNode=200)  줄 429 + 0x49	C++
+ 	GameServer_d.exe!Field::FindPath(Character * pChar=0x236110e4, WzVector * pwvDest=0x23630d74)  줄 419 + 0x4e	C++
+ 	GameServer_d.exe!NPC::MoveAndBroadcast(WzVector * pwvDestPos=0x23630d74, eCHAR_MOVE_STATE moveState=CMS_WALK)  줄 680 + 0x10	C++
+ 	GameServer_d.exe!PatrolState::DoPatrol()  줄 85 + 0x14	C++
+ 	GameServer_d.exe!PatrolState::OnUpdate(unsigned long dwDeltaTick=16)  줄 62	C++
+ 	GameServer_d.exe!NPCStateManager::Update(unsigned long dwDeltaTick=16)  줄 46 + 0x17	C++
+ 	GameServer_d.exe!Monster::Update(unsigned long dwDeltaTick=16)  줄 76	C++
+ 	GameServer_d.exe!ObjectManager::Update(unsigned long dwDeltaTick=16)  줄 63 + 0x11	C++
+ 	GameServer_d.exe!GameField::Update(unsigned long dwDeltaTick=16)  줄 61	C++
+ 	GameServer_d.exe!Map::Update(unsigned long dwDeltaTick=16)  줄 65 + 0x11	C++
+ 	GameServer_d.exe!GameZone::Update(unsigned long dwDeltaTick=16)  줄 55	C++
+ 	GameServer_d.exe!GameZoneManager::Update(unsigned long dwDeltaTick=16)  줄 167 + 0x11	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=16)  줄 502	C++
+ 	GameServer_d.exe!FieldServer::Update(unsigned long dwDeltaTick=16)  줄 146	C++
+ 	GameServer_d.exe!FieldServer::Run()  줄 126 + 0x17	C++
+
+
+* 20060405(수) 이준석 : EngineVersion 20060322
+>	3DTerrain_sd.dll!CWzBNode<int,float>::GetLeft()  줄 802 + 0x9	C++
+ 	3DTerrain_sd.dll!CWzBTree<int,float>::RemoveFrom(CWzBNode<int,float> * pNode=0x10d06238)  줄 1185 + 0x8	C++
+ 	3DTerrain_sd.dll!CWzBTree<int,float>::RemoveFrom(CWzBNode<int,float> * pNode=0x10d053a8)  줄 1195	C++
+ 	3DTerrain_sd.dll!CWzBTree<int,float>::RemoveFrom(CWzBNode<int,float> * pNode=0x10d04978)  줄 1195	C++
+ 	3DTerrain_sd.dll!CWzBTree<int,float>::RemoveFrom(CWzBNode<int,float> * pNode=0x10d061f8)  줄 1195	C++
+ 	3DTerrain_sd.dll!CWzBTree<int,float>::RemoveFrom(CWzBNode<int,float> * pNode=0x10d04a78)  줄 1195	C++
+ 	3DTerrain_sd.dll!CWzBTree<int,float>::RemoveFrom(CWzBNode<int,float> * pNode=0x10d061b8)  줄 1195	C++
+ 	3DTerrain_sd.dll!CWzBTree<int,float>::RemoveFrom(CWzBNode<int,float> * pNode=0x10d05328)  줄 1195	C++
+ 	3DTerrain_sd.dll!CWzBTree<int,float>::RemoveFrom(CWzBNode<int,float> * pNode=0x10d04f68)  줄 1195	C++
+ 	3DTerrain_sd.dll!CWzBTree<int,float>::RemoveFrom(CWzBNode<int,float> * pNode=0x10d06178)  줄 1195	C++
+ 중략..
+ 	3DTerrain_sd.dll!CWzBTree<int,float>::RemoveFrom(CWzBNode<int,float> * pNode=0x10cef978)  줄 1195	C++
+ 	3DTerrain_sd.dll!CWzBTree<int,float>::RemoveFrom(CWzBNode<int,float> * pNode=0x10cee2d8)  줄 1195	C++
+ 	3DTerrain_sd.dll!CWzBTree<int,float>::RemoveFrom(CWzBNode<int,float> * pNode=0x10cee798)  줄 1195	C++
+ 	3DTerrain_sd.dll!CWzBTree<int,float>::RemoveFrom(CWzBNode<int,float> * pNode=0x10cee258)  줄 1195	C++
+ 	3DTerrain_sd.dll!CWzBTree<int,float>::RemoveFrom(CWzBNode<int,float> * pNode=0x10cef938)  줄 1195	C++
+ 	3DTerrain_sd.dll!CWzBTree<int,float>::RemoveFrom(CWzBNode<int,float> * pNode=0x10ceeb68)  줄 1195	C++
+ 	3DTerrain_sd.dll!CWzBTree<int,float>::RemoveFrom(CWzBNode<int,float> * pNode=0x10cede58)  줄 1195	C++
+ 	3DTerrain_sd.dll!CWzBTree<int,float>::RemoveFrom(CWzBNode<int,float> * pNode=0x10cef8f8)  줄 1195	C++
+ 	3DTerrain_sd.dll!CWzBTree<int,float>::RemoveFrom(CWzBNode<int,float> * pNode=0x10ced9a8)  줄 1195	C++
+ 	3DTerrain_sd.dll!CWzBTree<int,float>::RemoveFrom(CWzBNode<int,float> * pNode=0x10cef878)  줄 1195	C++
+
+
+* 20060131(수) 이유열 : EngineVersion 20060123
+>	3DTerrain_s.dll!CPathFinderGenerator::GetRandomPosInTile(int iTile=1071595062)  줄 572 + 0x19	C++
+ 	3DTerrain_s.dll!CWorldPathFinder::GetRandomPosInTile(int iTile=1117484875)  줄 76 + 0x13	C++
+ 	3DTerrain_s.dll!CWorldPathFinder::PathExp_Progress(CPathExplorer * ppe=, float fMove=, WzPathFindEvent * pEvent=)  줄 408	C++
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 이전 버전들
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+* 20050923(금) 이유열 : EngineVersion 20050921
+ 	3DTerrain_sd.dll!As2D_GetLine(WzVector * pw2lOut=0x0012ed60, WzVector * pwv1=0x0012eda4, WzVector * pwv2=0xa8f768a8)  줄 424 + 0x6	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::GetTargetPosToReachNextTile(CPathExplorer * ppe=0x0dfa6138)  줄 778 + 0x1a	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::HeadToNextTile(CPathExplorer * ppe=0x0dfa6138)  줄 718	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_HeadToNextTile(CPathExplorer * ppe=0x0dfa6138)  줄 513 + 0x1a	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_FindPath(CPathExplorer * ppe=0x0dfa6138, WzVector wvDest={...}, int iDestTile=1029, unsigned short wAttribute=4, int iSeekNode=200)  줄 329	C++
+>	GameServer_d.exe!Field::FindPath(Character * pChar=0x07793210, WzVector * pwvDest=0x0012f304)  줄 725 + 0x42	C++
+ 	GameServer_d.exe!NPC::MoveAndBroadcast(WzVector * pwvDestPos=0x0012f304, eCHAR_MOVE_STATE moveState=CMS_WALK)  줄 1055 + 0x10	C++
+ 	GameServer_d.exe!State::OnMsgLetsGo(AI_MSG * pMsg=0x14d67fed)  줄 306 + 0x1e	C++
+ 	GameServer_d.exe!WanderState::OnMsgLetsGo(AI_MSG * pMsg=0x14d67fed)  줄 365	C++
+ 	GameServer_d.exe!State::OnAIMsg(AI_MSG * pMsg=0x14d67fed)  줄 66 + 0x11	C++
+ 	GameServer_d.exe!NPC::OnAIMsg(AI_MSG * pMsg=0x14d67fed)  줄 415 + 0x1d	C++
+ 	GameServer_d.exe!NPC::AIMsgProgress()  줄 495	C++
+ 	GameServer_d.exe!NPC::Update(unsigned long dwDeltaTick=15)  줄 186	C++
+ 	GameServer_d.exe!Sector::Update(unsigned long dwDeltaTick=15)  줄 552 + 0x11	C++
+ 	GameServer_d.exe!Field::Update(unsigned long dwDeltaTick=15)  줄 916	C++
+ 	GameServer_d.exe!Map::Update(unsigned long dwDeltaTick=15)  줄 72	C++
+ 	GameServer_d.exe!GameZone::Update(unsigned long dwDeltaTick=15)  줄 49	C++
+ 	GameServer_d.exe!GameZoneManager::Update(unsigned long dwDeltaTick=15)  줄 99 + 0x11	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=15)  줄 400	C++
+ 	GameServer_d.exe!BattleServer::Update(unsigned long dwDeltaTick=15)  줄 80	C++
+ 	GameServer_d.exe!BattleServer::Run()  줄 66 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x001428eb, int nCmdShow=1)  줄 150 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameServer_d.exe!SunEntryPoint()  줄 96	C++
+
+* 20050923(금) 이유열 : EngineVersion 20050921
+ 	3DTerrain_sd.dll!As2D_GetLine(WzVector * pw2lOut=0x0012ece4, WzVector * pwv1=0x0012ed28, WzVector * pwv2=0xa7b5df80)  줄 424 + 0x6	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::GetTargetPosToReachNextTile(CPathExplorer * ppe=0x0dfc6ca8)  줄 778 + 0x1a	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::HeadToNextTile(CPathExplorer * ppe=0x0dfc6ca8)  줄 718	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_HeadToNextTile(CPathExplorer * ppe=0x0dfc6ca8)  줄 513 + 0x1a	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_FindPath(CPathExplorer * ppe=0x0dfc6ca8, WzVector wvDest={...}, int iDestTile=1003, unsigned short wAttribute=4, int iSeekNode=200)  줄 329	C++
+>	GameServer_d.exe!Field::FindPath(Character * pChar=0x079090f4, WzVector * pwvDest=0x0012f280)  줄 725 + 0x42	C++
+ 	GameServer_d.exe!NPC::MoveAndBroadcast(WzVector * pwvDestPos=0x0012f280, eCHAR_MOVE_STATE moveState=CMS_RUN)  줄 1055 + 0x10	C++
+ 	GameServer_d.exe!ReturnState::OnEnter(long param1=1, long param2=0, long param3=0)  줄 31 + 0x13	C++
+ 	GameServer_d.exe!NPC::ChangeState(unsigned long dwStateID=13, long param1=1, long param2=0, long param3=0)  줄 306 + 0x27	C++
+ 	GameServer_d.exe!TrackState::DoTrack()  줄 176 + 0x1e	C++
+ 	GameServer_d.exe!TrackState::OnUpdate(unsigned long dwDeltaTick=16)  줄 116	C++
+ 	GameServer_d.exe!NPC::Update(unsigned long dwDeltaTick=16)  줄 240 + 0x1d	C++
+ 	GameServer_d.exe!Sector::Update(unsigned long dwDeltaTick=16)  줄 552 + 0x11	C++
+ 	GameServer_d.exe!Field::Update(unsigned long dwDeltaTick=16)  줄 916	C++
+ 	GameServer_d.exe!Map::Update(unsigned long dwDeltaTick=16)  줄 72	C++
+ 	GameServer_d.exe!GameZone::Update(unsigned long dwDeltaTick=16)  줄 49	C++
+ 	GameServer_d.exe!GameZoneManager::Update(unsigned long dwDeltaTick=16)  줄 99 + 0x11	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=16)  줄 400	C++
+ 	GameServer_d.exe!BattleServer::Update(unsigned long dwDeltaTick=16)  줄 80	C++
+ 	GameServer_d.exe!BattleServer::Run()  줄 66 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x001428eb, int nCmdShow=1)  줄 150 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameServer_d.exe!SunEntryPoint()  줄 96	C++
+
+* 20050920(월) 이유열 : EngineVersion 20050917 임시수정(20050916 버전에서 assert "IsOnTile 또는 CorrectHeighByTile 실패"만 주석처리한 버전) => 계속 발생 중
+ 	3DTerrain_sd.dll!As2D_GetLine(WzVector * pw2lOut=0x0013ed40, WzVector * pwv1=0x0013ed84, WzVector * pwv2=0xa79a3fa0)  줄 424 + 0x6	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::GetTargetPosToReachNextTile(CPathExplorer * ppe=0x0dff4700)  줄 778 + 0x1a	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::HeadToNextTile(CPathExplorer * ppe=0x0dff4700)  줄 718	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_HeadToNextTile(CPathExplorer * ppe=0x0dff4700)  줄 506 + 0x1a	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_FindPath(CPathExplorer * ppe=0x0dff4700, WzVector wvDest={...}, int iDestTile=168, unsigned short wAttribute=4, int iSeekNode=200)  줄 329	C++
+>	GameServer_d.exe!Field::FindPath(Character * pChar=0x06bf1928, WzVector * pwvDest=0x0013f2e4)  줄 717 + 0x42	C++
+ 	GameServer_d.exe!NPC::MoveAndBroadcast(WzVector * pwvDestPos=0x0013f2e4, eCHAR_MOVE_STATE moveState=CMS_WALK)  줄 1030 + 0x10	C++
+ 	GameServer_d.exe!State::OnMsgLetsGo(AI_MSG * pMsg=0x15bcd251)  줄 306 + 0x1e	C++
+ 	GameServer_d.exe!TrackState::OnMsgLetsGo(AI_MSG * pMsg=0x15bcd251)  줄 193	C++
+ 	GameServer_d.exe!State::OnAIMsg(AI_MSG * pMsg=0x15bcd251)  줄 66 + 0x11	C++
+ 	GameServer_d.exe!NPC::OnAIMsg(AI_MSG * pMsg=0x15bcd251)  줄 404 + 0x1d	C++
+ 	GameServer_d.exe!NPC::AIMsgProgress()  줄 484	C++
+ 	GameServer_d.exe!NPC::Update(unsigned long dwDeltaTick=15)  줄 175	C++
+ 	GameServer_d.exe!Sector::Update(unsigned long dwDeltaTick=15)  줄 498 + 0x11	C++
+ 	GameServer_d.exe!Field::Update(unsigned long dwDeltaTick=15)  줄 905	C++
+ 	GameServer_d.exe!Map::Update(unsigned long dwDeltaTick=15)  줄 81	C++
+ 	GameServer_d.exe!Zone::Update(unsigned long dwDeltaTick=15)  줄 45	C++
+ 	GameServer_d.exe!Room::Update(unsigned long dwDeltaTick=15)  줄 83 + 0xc	C++
+ 	GameServer_d.exe!Hunting::Update(unsigned long dwDeltaTick=15)  줄 112 + 0xc	C++
+ 	GameServer_d.exe!ZoneManager::Update(unsigned long dwDeltaTick=15)  줄 101 + 0x11	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=15)  줄 397	C++
+ 	GameServer_d.exe!BattleServer::Update(unsigned long dwDeltaTick=15)  줄 81	C++
+ 	GameServer_d.exe!BattleServer::Run()  줄 67 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x001528ce, int nCmdShow=1)  줄 150 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameServer_d.exe!SunEntryPoint()  줄 96	C++
+
+* 20050917(토) 이유열 : EngineVersion 20050917 임시수정(20050916 버전에서 assert "IsOnTile 또는 CorrectHeighByTile 실패"만 주석처리한 버전) => 계속 발생 중
+>	3DTerrain_sd.dll!_assert(const char * expr=0x013ce358, const char * filename=0x013ce318, unsigned int lineno=920)  줄 295	C
+ 	3DTerrain_sd.dll!CPathFinderGenerator::MoveByDirection(int iCurrentTile=1427, WzVector wvCurrentPos={...}, WzVector wvDistance={...}, int * piResultTile=0x0012f350, WzVector * pwvResultPos=0x0012f33c, unsigned short wAttribute=6, WzVector * pwvSlide=0x00000000)  줄 920 + 0x22	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_Progress(CPathExplorer * ppe=0x0dfe8a60, float fMove=0.18750000, WzPathFindEvent * pEvent=0x00000000)  줄 400 + 0x73	C++
+ 	GameServer_d.exe!Character::PathProgress(float fMove=0.18750000)  줄 191 + 0x22	C++
+ 	GameServer_d.exe!NPC::Update(unsigned long dwDeltaTick=125)  줄 202	C++
+ 	GameServer_d.exe!Sector::Update(unsigned long dwDeltaTick=125)  줄 497 + 0x11	C++
+ 	GameServer_d.exe!Field::Update(unsigned long dwDeltaTick=125)  줄 905	C++
+ 	GameServer_d.exe!Map::Update(unsigned long dwDeltaTick=125)  줄 81	C++
+ 	GameServer_d.exe!Zone::Update(unsigned long dwDeltaTick=125)  줄 45	C++
+ 	GameServer_d.exe!Room::Update(unsigned long dwDeltaTick=125)  줄 83 + 0xc	C++
+ 	GameServer_d.exe!Hunting::Update(unsigned long dwDeltaTick=125)  줄 112 + 0xc	C++
+ 	GameServer_d.exe!ZoneManager::Update(unsigned long dwDeltaTick=125)  줄 101 + 0x11	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=125)  줄 393	C++
+ 	GameServer_d.exe!BattleServer::Update(unsigned long dwDeltaTick=125)  줄 81	C++
+ 	GameServer_d.exe!BattleServer::Run()  줄 67 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x001428e9, int nCmdShow=1)  줄 150 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameServer_d.exe!SunEntryPoint()  줄 96	C++
+
+* 20050917(토) 이유열 : EngineVersion 20050917 임시수정(20050916 버전에서 assert "IsOnTile 또는 CorrectHeighByTile 실패"만 주석처리한 버전)
+>	3DTerrain_sd.dll!_assert(const char * expr=0x013ce358, const char * filename=0x013ce318, unsigned int lineno=920)  줄 295	C
+ 	3DTerrain_sd.dll!CPathFinderGenerator::MoveByDirection(int iCurrentTile=133, WzVector wvCurrentPos={...}, WzVector wvDistance={...}, int * piResultTile=0x0012f350, WzVector * pwvResultPos=0x0012f33c, unsigned short wAttribute=6, WzVector * pwvSlide=0x00000000)  줄 920 + 0x22	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_Progress(CPathExplorer * ppe=0x0dfd2598, float fMove=0.010650000, WzPathFindEvent * pEvent=0x00000000)  줄 400 + 0x73	C++
+ 	GameServer_d.exe!Character::PathProgress(float fMove=0.010650000)  줄 191 + 0x22	C++
+ 	GameServer_d.exe!NPC::Update(unsigned long dwDeltaTick=15)  줄 202	C++
+ 	GameServer_d.exe!Sector::Update(unsigned long dwDeltaTick=15)  줄 497 + 0x11	C++
+ 	GameServer_d.exe!Field::Update(unsigned long dwDeltaTick=15)  줄 905	C++
+ 	GameServer_d.exe!Map::Update(unsigned long dwDeltaTick=15)  줄 81	C++
+ 	GameServer_d.exe!Zone::Update(unsigned long dwDeltaTick=15)  줄 45	C++
+ 	GameServer_d.exe!Room::Update(unsigned long dwDeltaTick=15)  줄 83 + 0xc	C++
+ 	GameServer_d.exe!Hunting::Update(unsigned long dwDeltaTick=15)  줄 112 + 0xc	C++
+ 	GameServer_d.exe!ZoneManager::Update(unsigned long dwDeltaTick=15)  줄 101 + 0x11	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=15)  줄 393	C++
+ 	GameServer_d.exe!BattleServer::Update(unsigned long dwDeltaTick=15)  줄 81	C++
+ 	GameServer_d.exe!BattleServer::Run()  줄 67 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x001428e9, int nCmdShow=1)  줄 150 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameServer_d.exe!SunEntryPoint()  줄 96	C++
+ 	
+* 20050917(토) 이준석 : EngineVersion 20050915수정2차
+>	3DTerrain_sd.dll!_assert(const char * expr=0x0127e488, const char * filename=0x0127e358, unsigned int lineno=897)  줄 295	C
+ 	3DTerrain_sd.dll!CPathFinderGenerator::MoveByDirection(int iCurrentTile=374, WzVector wvCurrentPos={...}, WzVector wvDistance={...}, int * piResultTile=0x0012f1e8, WzVector * pwvResultPos=0x0012f1d4, unsigned short wAttribute=4, WzVector * pwvSlide=0x0012f1c0)  줄 897 + 0x22	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_Thrust(CPathExplorer * ppe=0x0e630390, WzVector * pwvMoveDistance=0x0012f334, unsigned short wAttribute=4)  줄 783 + 0x7a	C++
+ 	GameServer_d.exe!Field::FindPathThrust(Character * pChar=0x0e315a94, WzVector * pwvMoveDistance=0x0012f334, int bForcedMove=0)  줄 765 + 0x2a	C++
+ 	GameServer_d.exe!WanderState::DoWander()  줄 166 + 0x15	C++
+ 	GameServer_d.exe!WanderState::OnUpdate(unsigned long dwDeltaTick=16)  줄 114 + 0x33	C++
+ 	GameServer_d.exe!NPC::Update(unsigned long dwDeltaTick=16)  줄 227 + 0x1d	C++
+ 	GameServer_d.exe!Sector::Update(unsigned long dwDeltaTick=16)  줄 497 + 0x11	C++
+ 	GameServer_d.exe!Field::Update(unsigned long dwDeltaTick=16)  줄 905	C++
+ 	GameServer_d.exe!Map::Update(unsigned long dwDeltaTick=16)  줄 81	C++
+ 	GameServer_d.exe!Zone::Update(unsigned long dwDeltaTick=16)  줄 45	C++
+ 	GameServer_d.exe!ZoneManager::Update(unsigned long dwDeltaTick=16)  줄 101 + 0x11	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=16)  줄 393	C++
+ 	GameServer_d.exe!FieldServer::Update(unsigned long dwDeltaTick=16)  줄 102	C++
+ 	GameServer_d.exe!FieldServer::Run()  줄 86 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x001428ea, int nCmdShow=1)  줄 150 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameServer_d.exe!SunEntryPoint()  줄 96	C++
+ 	00cea09f()	
+
+* 20050916(금) 이유열 : EngineVersion 20050915수정2차
+    3DTerrain_sd.dll!_assert(const char * expr=0x013dc184, const char * filename=0x013dc0f0, unsigned int lineno=855)  줄 295	C
+ 	3DTerrain_sd.dll!CPathFinderConvex::GetEdgeVertexToReachTile(int iTileFrom=334, int iTileTo=389, int * piEdgeVertex=0x0013ed48)  줄 855 + 0x22	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::GetTargetPosToReachNextTile(CPathExplorer * ppe=0x0dda1478)  줄 772 + 0x14	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::HeadToNextTile(CPathExplorer * ppe=0x0dda1478)  줄 718	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_HeadToNextTile(CPathExplorer * ppe=0x0dda1478)  줄 506 + 0x1a	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_FindPath(CPathExplorer * ppe=0x0dda1478, WzVector wvDest={...}, int iDestTile=3954, unsigned short wAttribute=4, int iSeekNode=200)  줄 329	C++
+>	GameServer_d.exe!Field::FindPath(Character * pChar=0x061e4364, WzVector * pwvDest=0x0013f318)  줄 694 + 0x42	C++
+ 	GameServer_d.exe!NPC::MoveAndBroadcast(WzVector * pwvDestPos=0x0013f318, eCHAR_MOVE_STATE moveState=CMS_WALK)  줄 989 + 0x10	C++
+ 	GameServer_d.exe!State::OnMsgLetsGo(AI_MSG * pMsg=0x16e956b4)  줄 307 + 0x17	C++
+ 	GameServer_d.exe!WanderState::OnMsgLetsGo(AI_MSG * pMsg=0x16e956b4)  줄 346	C++
+ 	GameServer_d.exe!State::OnAIMsg(AI_MSG * pMsg=0x16e956b4)  줄 66 + 0x11	C++
+ 	GameServer_d.exe!NPC::OnAIMsg(AI_MSG * pMsg=0x16e956b4)  줄 363 + 0x1d	C++
+ 	GameServer_d.exe!NPC::AIMsgProgress()  줄 427	C++
+ 	GameServer_d.exe!NPC::Update(unsigned long dwDeltaTick=15)  줄 162	C++
+ 	GameServer_d.exe!Sector::Update(unsigned long dwDeltaTick=15)  줄 440 + 0x11	C++
+ 	GameServer_d.exe!Field::Update(unsigned long dwDeltaTick=15)  줄 872	C++
+ 	GameServer_d.exe!Map::Update(unsigned long dwDeltaTick=15)  줄 81	C++
+ 	GameServer_d.exe!Zone::Update(unsigned long dwDeltaTick=15)  줄 45	C++
+ 	GameServer_d.exe!Room::Update(unsigned long dwDeltaTick=15)  줄 83 + 0xc	C++
+ 	GameServer_d.exe!Hunting::Update(unsigned long dwDeltaTick=15)  줄 112 + 0xc	C++
+ 	GameServer_d.exe!ZoneManager::Update(unsigned long dwDeltaTick=15)  줄 101 + 0x11	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=15)  줄 384	C++
+ 	GameServer_d.exe!BattleServer::Update(unsigned long dwDeltaTick=15)  줄 80	C++
+ 	GameServer_d.exe!BattleServer::Run()  줄 66 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x001528ce, int nCmdShow=1)  줄 150 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameServer_d.exe!SunEntryPoint()  줄 96	C++
+
+* 20050915(목) 이유열 : EngineVersion 20050915수정2차
+>	3DTerrain_sd.dll!_assert(const char * expr=0x013ce488, const char * filename=0x013ce358, unsigned int lineno=897)  줄 295	C
+ 	3DTerrain_sd.dll!CPathFinderGenerator::MoveByDirection(int iCurrentTile=822, WzVector wvCurrentPos={...}, WzVector wvDistance={...}, int * piResultTile=0x0013f1c8, WzVector * pwvResultPos=0x0013f1b4, unsigned short wAttribute=4, WzVector * pwvSlide=0x0013f1a0)  줄 897 + 0x22	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_Thrust(CPathExplorer * ppe=0x0dfe57d8, WzVector * pwvMoveDistance=0x0013f314, unsigned short wAttribute=4)  줄 783 + 0x7a	C++
+ 	GameServer_d.exe!Field::FindPathThrust(Character * pChar=0x06bedd9c, WzVector * pwvMoveDistance=0x0013f314, int bForcedMove=0)  줄 791 + 0x2a	C++
+ 	GameServer_d.exe!WanderState::DoWander()  줄 166 + 0x15	C++
+ 	GameServer_d.exe!WanderState::OnUpdate(unsigned long dwDeltaTick=16)  줄 114 + 0x33	C++
+ 	GameServer_d.exe!NPC::Update(unsigned long dwDeltaTick=16)  줄 227 + 0x1d	C++
+ 	GameServer_d.exe!Sector::Update(unsigned long dwDeltaTick=16)  줄 448 + 0x11	C++
+ 	GameServer_d.exe!Field::Update(unsigned long dwDeltaTick=16)  줄 931	C++
+ 	GameServer_d.exe!Map::Update(unsigned long dwDeltaTick=16)  줄 81	C++
+ 	GameServer_d.exe!Zone::Update(unsigned long dwDeltaTick=16)  줄 45	C++
+ 	GameServer_d.exe!Room::Update(unsigned long dwDeltaTick=16)  줄 83 + 0xc	C++
+ 	GameServer_d.exe!Hunting::Update(unsigned long dwDeltaTick=16)  줄 112 + 0xc	C++
+ 	GameServer_d.exe!ZoneManager::Update(unsigned long dwDeltaTick=16)  줄 101 + 0x11	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=16)  줄 393	C++
+ 	GameServer_d.exe!BattleServer::Update(unsigned long dwDeltaTick=16)  줄 81	C++
+ 	GameServer_d.exe!BattleServer::Run()  줄 67 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x001528ce, int nCmdShow=1)  줄 150 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameServer_d.exe!SunEntryPoint()  줄 96	C++
+
+* 20050915(목) 이유열 : EngineVersion 20050905
+ 	3DTerrain_sd.dll!_assert(const char * expr=0x0127d1ac, const char * filename=0x0127d118, unsigned int lineno=855)  줄 295	C
+>	3DTerrain_sd.dll!CPathFinderConvex::GetEdgeVertexToReachTile(int iTileFrom=1541, int iTileTo=3849, int * piEdgeVertex=0x0012ed40)  줄 855 + 0x22	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::GetTargetPosToReachNextTile(CPathExplorer * ppe=0x0e5ede58)  줄 772 + 0x14	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::HeadToNextTile(CPathExplorer * ppe=0x0e5ede58)  줄 718	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_HeadToNextTile(CPathExplorer * ppe=0x0e5ede58)  줄 506 + 0x1a	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_FindPath(CPathExplorer * ppe=0x0e5ede58, WzVector wvDest={...}, int iDestTile=506, unsigned short wAttribute=4, int iSeekNode=200)  줄 329	C++
+
+* 20050912(월) 이유열 : EngineVersion 20050905
+ 	3DTerrain_sd.dll!CPathFinderGenerator::MoveByDirection(int iCurrentTile=-1, WzVector wvCurrentPos={...}, WzVector wvDistance={...}, int * piResultTile=0x0012f234, WzVector * pwvResultPos=0x0012f220, unsigned short wAttribute=4)  줄 753 + 0x2e	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_Thrust(CPathExplorer * ppe=0x0110d3f0, WzVector * pwvMoveDistance=0x0012f2f8, unsigned short wAttribute=4)  줄 783 + 0x76	C++
+>	GameServer_d.exe!Field::FindPathThrust(Character * pChar=0x03771ef8, WzVector * pwvMoveDistance=0x0012f2f8, int bForcedMove=0)  줄 737 + 0x2a	C++
+ 	GameServer_d.exe!Handler_CG_SKILL::OnCG_SKILL_ACTION_SYN(ServerSession * pServerSession=0x227d6d34, MSG_BASE * pMsg=0x22b4a891, unsigned short wSize=52)  줄 54	C++
+ 	GameServer_d.exe!PacketHandler::ParsePacket_AG(ServerSession * pServer=0x227d6d34, MSG_BASE * pMsg=0x22b4a891, unsigned short wSize=52)  줄 418 + 0x15	C++
+ 	GameServer_d.exe!AgentServerSession::OnRecv(unsigned char * pMsg=0x22b4a891, unsigned short wSize=52)  줄 63	C++
+
+* 20050908(월) 이유열 : EngineVersion 20050905
+>	3DTerrain_sd.dll!_assert(const char * expr=0x013bd184, const char * filename=0x013bd0f0, unsigned int lineno=855)  줄 295	C
+ 	3DTerrain_sd.dll!CPathFinderConvex::GetEdgeVertexToReachTile(int iTileFrom=505, int iTileTo=3849, int * piEdgeVertex=0x0012ed48)  줄 855 + 0x22	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::GetTargetPosToReachNextTile(CPathExplorer * ppe=0x0dd7cb38)  줄 772 + 0x14	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::HeadToNextTile(CPathExplorer * ppe=0x0dd7cb38)  줄 718	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_HeadToNextTile(CPathExplorer * ppe=0x0dd7cb38)  줄 506 + 0x1a	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_FindPath(CPathExplorer * ppe=0x0dd7cb38, WzVector wvDest={...}, int iDestTile=506, unsigned short wAttribute=4, int iSeekNode=200)  줄 329	C++
+ 	GameServer_d.exe!Field::FindPath(Character * pChar=0x0688bb1c, WzVector * pwvDest=0x0012f318)  줄 694 + 0x42	C++
+ 	GameServer_d.exe!NPC::MoveAndBroadcast(WzVector * pwvDestPos=0x0012f318, eCHAR_MOVE_STATE moveState=CMS_WALK)  줄 998 + 0x10	C++
+ 	GameServer_d.exe!State::OnMsgLetsGo(AI_MSG * pMsg=0x16c9b2e4)  줄 307 + 0x17	C++
+ 	GameServer_d.exe!IdleState::OnMsgLetsGo(AI_MSG * pMsg=0x16c9b2e4)  줄 109	C++
+ 	GameServer_d.exe!State::OnAIMsg(AI_MSG * pMsg=0x16c9b2e4)  줄 66 + 0x11	C++
+ 	GameServer_d.exe!NPC::OnAIMsg(AI_MSG * pMsg=0x16c9b2e4)  줄 364 + 0x1d	C++
+ 	GameServer_d.exe!NPC::AIMsgProgress()  줄 428	C++
+ 	GameServer_d.exe!NPC::Update(unsigned long dwDeltaTick=15)  줄 163	C++
+ 	GameServer_d.exe!Sector::Update(unsigned long dwDeltaTick=15)  줄 440 + 0x11	C++
+ 	GameServer_d.exe!Field::Update(unsigned long dwDeltaTick=15)  줄 877	C++
+ 	GameServer_d.exe!Map::Update(unsigned long dwDeltaTick=15)  줄 81	C++
+ 	GameServer_d.exe!Zone::Update(unsigned long dwDeltaTick=15)  줄 45	C++
+ 	GameServer_d.exe!Room::Update(unsigned long dwDeltaTick=15)  줄 83 + 0xc	C++
+ 	GameServer_d.exe!Hunting::Update(unsigned long dwDeltaTick=15)  줄 112 + 0xc	C++
+ 	GameServer_d.exe!ZoneManager::Update(unsigned long dwDeltaTick=15)  줄 101 + 0x11	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=15)  줄 385	C++
+ 	GameServer_d.exe!BattleServer::Update(unsigned long dwDeltaTick=15)  줄 81	C++
+ 	GameServer_d.exe!BattleServer::Run()  줄 67 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x001428c8, int nCmdShow=1)  줄 150 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameServer_d.exe!SunEntryPoint()  줄 96	C++
+
+* 20050905(월) 이유열 : EngineVersion 20050905
+ 	kernel32.dll!7c815dea() 	
+ 	kernel32.dll!7c815dea() 	
+ 	3DRendererD3D_d.dll!__CTA2?AVbad_alloc@std@@()  + 0xb	C++
+ 	3DRendererD3D_d.dll!_nh_malloc_dbg(unsigned int nSize=3765269347, int nhFlag=1, int nBlockUse=3, const char * szFileName=0x0012e64c, int nLine=1192220876)  줄 267 + 0x7	C
+ 	3DRendererD3D_d.dll!_nh_malloc_dbg(unsigned int nSize=3765269347, int nhFlag=1, int nBlockUse=3, const char * szFileName=0x0012e64c, int nLine=1192220876)  줄 260 + 0x27	C
+ 	3DRendererD3D_d.dll!_CxxThrowException(void * pExceptionObject=0x0012e668, const _s__ThrowInfo * pThrowInfo=0x0197c4ec)  + 0x39	C++
+ 	3DRendererD3D_d.dll!std::_Nomemory()  줄 10	C++
+ 	3DRendererD3D_d.dll!operator new(unsigned int size=1192220876)  줄 15	C++
+ 	3DRendererD3D_d.dll!D3DXCore::CFont::CreateBitmap()  + 0x22	C++
+ 	3DRendererD3D_d.dll!D3DXCore::CFont::Initialize()  + 0x471	C++
+ 	3DRendererD3D_d.dll!_D3DXCreateFontIndirectA@12()  + 0x4c	C++
+ 	3DRendererD3D_d.dll!CManagerTextD3D::CreateFontA(int iIndex=7, tagLOGFONTA * plf=0x0012e9b4)  줄 169 + 0x21	C++
+ 	3DRendererD3D_d.dll!CManagerText::LoadExtendedFontInfo(char * lpszFileName=0x0012f150)  줄 513 + 0x21	C++
+>	GameClient_Debug.exe!InterfaceManager::Init(HWND__ * hWnd=0x0007061e, HINSTANCE__ * hInstance=0x00400000, CDrawBase * pDrawBase=0x016b2328, void * (ENUM_USE_TYPE, void *)* fnCreateDialogManagerFunc=0x03236e60)  줄 225 + 0x26	C++
+ 	GameClient_Debug.exe!Application::Create(char * lpszDllPath=0x008072ee, HINSTANCE__ * hInstance=0x00400000, const char * lpszAppName=0x0012f88c, long (HWND__ *, unsigned int, unsigned int, long)* WndProc=0x00556556, const char * lpszIconName=0x00000082, int nCmdShow=1)  줄 541	C++
+ 	GameClient_Debug.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPreInstance=0x00000000, char * lpCmdLine=0x001420d2, int nCmdShow=1)  줄 124 + 0x30	C++
+ 	GameClient_Debug.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameClient_Debug.exe!SunEntryPoint()  줄 72	C++
+ 	kernel32.dll!7c8123cd() 	
+
+* 20050905(월) 이유열 : EngineVersion 20050901(수정팩)
+>	3DTerrain_sd.dll!_assert(const char * expr=0x013dc184, const char * filename=0x013dc0f0, unsigned int lineno=855)  줄 295	C
+ 	3DTerrain_sd.dll!CPathFinderConvex::GetEdgeVertexToReachTile(int iTileFrom=334, int iTileTo=389, int * piEdgeVertex=0x0013ed48)  줄 855 + 0x22	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::GetTargetPosToReachNextTile(CPathExplorer * ppe=0x0dda1478)  줄 772 + 0x14	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::HeadToNextTile(CPathExplorer * ppe=0x0dda1478)  줄 718	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_HeadToNextTile(CPathExplorer * ppe=0x0dda1478)  줄 506 + 0x1a	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_FindPath(CPathExplorer * ppe=0x0dda1478, WzVector wvDest={...}, int iDestTile=3954, unsigned short wAttribute=4, int iSeekNode=200)  줄 329	C++
+ 	GameServer_d.exe!Field::FindPath(Character * pChar=0x061e4364, WzVector * pwvDest=0x0013f318)  줄 694 + 0x42	C++
+ 	GameServer_d.exe!NPC::MoveAndBroadcast(WzVector * pwvDestPos=0x0013f318, eCHAR_MOVE_STATE moveState=CMS_WALK)  줄 989 + 0x10	C++
+ 	GameServer_d.exe!State::OnMsgLetsGo(AI_MSG * pMsg=0x16e956b4)  줄 307 + 0x17	C++
+ 	GameServer_d.exe!WanderState::OnMsgLetsGo(AI_MSG * pMsg=0x16e956b4)  줄 346	C++
+ 	GameServer_d.exe!State::OnAIMsg(AI_MSG * pMsg=0x16e956b4)  줄 66 + 0x11	C++
+ 	GameServer_d.exe!NPC::OnAIMsg(AI_MSG * pMsg=0x16e956b4)  줄 363 + 0x1d	C++
+ 	GameServer_d.exe!NPC::AIMsgProgress()  줄 427	C++
+ 	GameServer_d.exe!NPC::Update(unsigned long dwDeltaTick=15)  줄 162	C++
+ 	GameServer_d.exe!Sector::Update(unsigned long dwDeltaTick=15)  줄 440 + 0x11	C++
+ 	GameServer_d.exe!Field::Update(unsigned long dwDeltaTick=15)  줄 872	C++
+ 	GameServer_d.exe!Map::Update(unsigned long dwDeltaTick=15)  줄 81	C++
+ 	GameServer_d.exe!Zone::Update(unsigned long dwDeltaTick=15)  줄 45	C++
+ 	GameServer_d.exe!Room::Update(unsigned long dwDeltaTick=15)  줄 83 + 0xc	C++
+ 	GameServer_d.exe!Hunting::Update(unsigned long dwDeltaTick=15)  줄 112 + 0xc	C++
+ 	GameServer_d.exe!ZoneManager::Update(unsigned long dwDeltaTick=15)  줄 101 + 0x11	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=15)  줄 384	C++
+ 	GameServer_d.exe!BattleServer::Update(unsigned long dwDeltaTick=15)  줄 80	C++
+ 	GameServer_d.exe!BattleServer::Run()  줄 66 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x001528ce, int nCmdShow=1)  줄 150 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameServer_d.exe!SunEntryPoint()  줄 96	C++
+
+
+* 20050905(월) 이유열 : EngineVersion 20050901(수정팩)
+ 	3DTerrain_sd.dll!As2D_GetLine(WzVector * pw2lOut=0x0012ed28, WzVector * pwv1=0x0012ed6c, WzVector * pwv2=0xb6d2a1e0)  줄 414 + 0x6	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::GetTargetPosToReachNextTile(CPathExplorer * ppe=0x0dd9ee30)  줄 778 + 0x1a	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::HeadToNextTile(CPathExplorer * ppe=0x0dd9ee30)  줄 718	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_HeadToNextTile(CPathExplorer * ppe=0x0dd9ee30)  줄 506 + 0x1a	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_FindPath(CPathExplorer * ppe=0x0dd9ee30, WzVector wvDest={...}, int iDestTile=3873, unsigned short wAttribute=4, int iSeekNode=200)  줄 329	C++
+>	GameServer_d.exe!Field::FindPath(Character * pChar=0x0696acf8, WzVector * pwvDest=0x0012f318)  줄 694 + 0x42	C++
+ 	GameServer_d.exe!NPC::MoveAndBroadcast(WzVector * pwvDestPos=0x0012f318, eCHAR_MOVE_STATE moveState=CMS_WALK)  줄 989 + 0x10	C++
+ 	GameServer_d.exe!State::OnMsgLetsGo(AI_MSG * pMsg=0x1720a48c)  줄 307 + 0x17	C++
+ 	GameServer_d.exe!WanderState::OnMsgLetsGo(AI_MSG * pMsg=0x1720a48c)  줄 346	C++
+ 	GameServer_d.exe!State::OnAIMsg(AI_MSG * pMsg=0x1720a48c)  줄 66 + 0x11	C++
+ 	GameServer_d.exe!NPC::OnAIMsg(AI_MSG * pMsg=0x1720a48c)  줄 363 + 0x1d	C++
+ 	GameServer_d.exe!NPC::AIMsgProgress()  줄 427	C++
+ 	GameServer_d.exe!NPC::Update(unsigned long dwDeltaTick=16)  줄 162	C++
+ 	GameServer_d.exe!Sector::Update(unsigned long dwDeltaTick=16)  줄 440 + 0x11	C++
+ 	GameServer_d.exe!Field::Update(unsigned long dwDeltaTick=16)  줄 872	C++
+ 	GameServer_d.exe!Map::Update(unsigned long dwDeltaTick=16)  줄 81	C++
+ 	GameServer_d.exe!Zone::Update(unsigned long dwDeltaTick=16)  줄 45	C++
+ 	GameServer_d.exe!Room::Update(unsigned long dwDeltaTick=16)  줄 83 + 0xc	C++
+ 	GameServer_d.exe!Mission::Update(unsigned long dwDeltaTick=16)  줄 111 + 0xc	C++
+ 	GameServer_d.exe!ZoneManager::Update(unsigned long dwDeltaTick=16)  줄 101 + 0x11	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=16)  줄 384	C++
+ 	GameServer_d.exe!BattleServer::Update(unsigned long dwDeltaTick=16)  줄 80	C++
+ 	GameServer_d.exe!BattleServer::Run()  줄 66 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x001428c8, int nCmdShow=1)  줄 150 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameServer_d.exe!SunEntryPoint()  줄 96	C++
+
+* 20050901(목) 이유열 : EngineVersion 20050901(수정팩)
+ 	3DTerrain_sd.dll!As2D_GetLine(WzVector * pw2lOut=0x0013ed28, WzVector * pwv1=0x0013ed6c, WzVector * pwv2=0xb7028aa0)  줄 414 + 0x6	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::GetTargetPosToReachNextTile(CPathExplorer * ppe=0x0dd97ff0)  줄 778 + 0x1a	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::HeadToNextTile(CPathExplorer * ppe=0x0dd97ff0)  줄 718	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_HeadToNextTile(CPathExplorer * ppe=0x0dd97ff0)  줄 506 + 0x1a	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_FindPath(CPathExplorer * ppe=0x0dd97ff0, WzVector wvDest={...}, int iDestTile=1791, unsigned short wAttribute=4, int iSeekNode=200)  줄 329	C++
+>	GameServer_d.exe!Field::FindPath(Character * pChar=0x0617dd00, WzVector * pwvDest=0x0013f318)  줄 694 + 0x42	C++
+ 	GameServer_d.exe!NPC::MoveAndBroadcast(WzVector * pwvDestPos=0x0013f318, eCHAR_MOVE_STATE moveState=CMS_WALK)  줄 989 + 0x10	C++
+ 	GameServer_d.exe!State::OnMsgLetsGo(AI_MSG * pMsg=0x16c5db7c)  줄 307 + 0x17	C++
+ 	GameServer_d.exe!WanderState::OnMsgLetsGo(AI_MSG * pMsg=0x16c5db7c)  줄 346	C++
+ 	GameServer_d.exe!State::OnAIMsg(AI_MSG * pMsg=0x16c5db7c)  줄 66 + 0x11	C++
+ 	GameServer_d.exe!NPC::OnAIMsg(AI_MSG * pMsg=0x16c5db7c)  줄 363 + 0x1d	C++
+ 	GameServer_d.exe!NPC::AIMsgProgress()  줄 427	C++
+ 	GameServer_d.exe!NPC::Update(unsigned long dwDeltaTick=15)  줄 162	C++
+ 	GameServer_d.exe!Sector::Update(unsigned long dwDeltaTick=15)  줄 440 + 0x11	C++
+ 	GameServer_d.exe!Field::Update(unsigned long dwDeltaTick=15)  줄 872	C++
+ 	GameServer_d.exe!Map::Update(unsigned long dwDeltaTick=15)  줄 81	C++
+ 	GameServer_d.exe!Zone::Update(unsigned long dwDeltaTick=15)  줄 45	C++
+ 	GameServer_d.exe!Room::Update(unsigned long dwDeltaTick=15)  줄 83 + 0xc	C++
+ 	GameServer_d.exe!Hunting::Update(unsigned long dwDeltaTick=15)  줄 112 + 0xc	C++
+ 	GameServer_d.exe!ZoneManager::Update(unsigned long dwDeltaTick=15)  줄 101 + 0x11	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=15)  줄 384	C++
+ 	GameServer_d.exe!BattleServer::Update(unsigned long dwDeltaTick=15)  줄 80	C++
+ 	GameServer_d.exe!BattleServer::Run()  줄 66 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x001528ce, int nCmdShow=1)  줄 150 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameServer_d.exe!SunEntryPoint()  줄 96	C++
+
+* 20050825(목) 이유열 : EngineVersion 20050819
+ SimpleModulus_d.lib(SimpleModulus.obj) : warning LNK4099: 'vc70.pdb' PDB를 'C:\Project\SUN\SUN3DEngine\Library\SimpleModulus_d.lib' 또는 'c:\Project\Sun\Server\_bin\vc70.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+
+* 20050825(목) 이유열 : EngineVersion 20050819
+ 	3DTerrain_sd.dll!_assert(const char * expr=0x03d4cce4, const char * filename=0x03d4cd20, unsigned int lineno=266)  줄 295	C
+ 	3DTerrain_sd.dll!Intersect_Ray_Triangle(WzRay * pwr=0x0013eb08, WzVector * pwvTriangle1=0x2fd776f4, WzVector * pwvTriangle2=0x2fd77700, WzVector * pwvTriangle3=0x2fd7770c, float * pfT=0x0013e814, int bCulling=1)  줄 266 + 0x4b	C++
+ 	3DTerrain_sd.dll!Intersect_Ray_TriangleListIndexed(WzRay * pwr=0x0013eb08, WzVector * pwvTriangleList=0x2fd773a0, int * piIndexMap=0x30cb7000, int iNumTriangle=39, float * pfT=0x0013eafc, int bCulling=1, int iDataSize=12)  줄 314 + 0x1d	C++
+ 	3DTerrain_sd.dll!CPathFinderGenerator::PickPathTile(WzRay * pwr=0x0013eb08, float * pfT=0x0013eafc, int bCulling=1)  줄 434 + 0x2a	C++
+>	3DTerrain_sd.dll!CPathFinderAStar::GetTileToStand(WzVector wvPos={...}, float * pfT=0x00000000, float fJumpLimit=2.5000000, float fAdjustLimit=100.00000, unsigned short * pwAttribute=0x00000000)  줄 136 + 0x17	C++
+ 	GameServer_d.exe!FieldInfo::IsMovableCoordinates(WzVector * pwzVec=0x0013ecb4)  줄 168 + 0x41	C++
+ 	GameServer_d.exe!Field::IsMovableCoordinates(WzVector * pwzVec=0x0013ecb4)  줄 615	C++
+ 	GameServer_d.exe!Field::EnterField(Object * pObject=0x066a8dd4, WzVector * pwzVec=0x0013ecb4)  줄 436 + 0xc	C++
+ 	GameServer_d.exe!RegenManager::CreateNPC(unsigned long dwCode=3071, unsigned long dwNumberOfNPCs=1, WzVector * pwvPos=0x0013ecb4, RegenLocation * pHomeLocation=0x1e9bd930, unsigned long dwGroupID=10085)  줄 127	C++
+ 	GameServer_d.exe!RegenManager::ExecuteRegen(int bSpawnAll=1)  줄 225	C++
+ 	GameServer_d.exe!RegenManager::Init(unsigned long dwMapCode=1002, unsigned long dwFieldIndex=5, unsigned short wMonType=1)  줄 90	C++
+ 	GameServer_d.exe!Field::InitRegenManager(unsigned short MonsterType=1)  줄 275	C++
+ 	GameServer_d.exe!Hunting::Init(unsigned long Key=1, unsigned long MapCode=1002, unsigned long LeaderPlayerKey=1, HUNTING_DESC & desc={...})  줄 35	C++
+ 	GameServer_d.exe!ZoneManager::CreateRoom<Hunting,HUNTING_DESC>()  줄 55 + 0x18	C++
+ 	GameServer_d.exe!Handler_AG_ZONE::OnAG_ZONE_CREATEHUNTINGREQ_SYN(ServerSession * pServerSession=0x1eb4571c, MSG_BASE * pMsg=0x1eac9012, unsigned short wSize=75)  줄 415 + 0x31	C++
+ 	GameServer_d.exe!PacketHandler::ParsePacket_AG(ServerSession * pServer=0x1eb4571c, MSG_BASE * pMsg=0x1eac9012, unsigned short wSize=75)  줄 398 + 0x15	C++
+ 	GameServer_d.exe!AgentServerSession::OnRecv(unsigned char * pMsg=0x1eac9012, unsigned short wSize=75)  줄 63	C++
+ 	GameServer_d.exe!Session::ProcessRecvdPacket(unsigned __int32 dwMaxPacketSize = 4096) 줄 171	C++
+ 	GameServer_d.exe!IoHandler::ProcessActiveSessionList() 줄 447 + 0xb 바이트	C++
+ 	GameServer_d.exe!IoHandler::Update() 줄 564	C++
+ 	GameServer_d.exe!IOCPServer::Update() 줄 124	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=16)  줄 377	C++
+ 	GameServer_d.exe!BattleServer::Update(unsigned long dwDeltaTick=16)  줄 74	C++
+ 	GameServer_d.exe!BattleServer::Run()  줄 60 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x001528ce, int nCmdShow=5)  줄 148 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameServer_d.exe!SunEntryPoint()  줄 95	C++
+
+
+* 20050823(화) 이유열 : EngineVersion 20050819
+ 	3DTerrain_sd.dll!_assert(const char * expr=0x0376cce4, const char * filename=0x0376cd20, unsigned int lineno=266)  줄 295	C
+ 	3DTerrain_sd.dll!Intersect_Ray_Triangle(WzRay * pwr=0x0012f26c, WzVector * pwvTriangle1=0x2f50e7e4, WzVector * pwvTriangle2=0x2f50e7f0, WzVector * pwvTriangle3=0x2f50e7fc, float * pfT=0x0012ef78, int bCulling=1)  줄 266 + 0x4b	C++
+ 	3DTerrain_sd.dll!Intersect_Ray_TriangleListIndexed(WzRay * pwr=0x0012f26c, WzVector * pwvTriangleList=0x2f50e490, int * piIndexMap=0x3040ad48, int iNumTriangle=69, float * pfT=0x0012f260, int bCulling=1, int iDataSize=12)  줄 314 + 0x1d	C++
+ 	3DTerrain_sd.dll!CPathFinderGenerator::PickPathTile(WzRay * pwr=0x0012f26c, float * pfT=0x0012f260, int bCulling=1)  줄 434 + 0x2a	C++
+ 	3DTerrain_sd.dll!CPathFinderAStar::GetTileToStand(WzVector wvPos={...}, float * pfT=0x00000000, float fJumpLimit=2.5000000, float fAdjustLimit=100.00000, unsigned short * pwAttribute=0x00000000)  줄 136 + 0x17	C++
+>	GameServer_d.exe!Field::FindPath(Character * pChar=0x065cc554, WzVector * pwvDest=0x0012f32c)  줄 637 + 0x39	C++
+ 	GameServer_d.exe!NPC::MoveAndBroadcast(WzVector * pwvDestPos=0x0012f32c, eCHAR_MOVE_STATE moveState=CMS_WALK)  줄 976 + 0x10	C++
+ 	GameServer_d.exe!State::OnMsgLetsGo(AI_MSG * pMsg=0x177bb4ac)  줄 305 + 0x17	C++
+ 	GameServer_d.exe!WanderState::OnMsgLetsGo(AI_MSG * pMsg=0x177bb4ac)  줄 336	C++
+ 	GameServer_d.exe!State::OnAIMsg(AI_MSG * pMsg=0x177bb4ac)  줄 66 + 0x11	C++
+ 	GameServer_d.exe!NPC::OnAIMsg(AI_MSG * pMsg=0x177bb4ac)  줄 357 + 0x1d	C++
+ 	GameServer_d.exe!NPC::AIMsgProgress()  줄 421	C++
+ 	GameServer_d.exe!NPC::Update(unsigned long dwDeltaTick=16)  줄 156	C++
+ 	GameServer_d.exe!Sector::Update(unsigned long dwDeltaTick=16)  줄 522 + 0x11	C++
+ 	GameServer_d.exe!Field::Update(unsigned long dwDeltaTick=16)  줄 848	C++
+ 	GameServer_d.exe!Map::Update(unsigned long dwDeltaTick=16)  줄 81	C++
+ 	GameServer_d.exe!Zone::Update(unsigned long dwDeltaTick=16)  줄 41	C++
+ 	GameServer_d.exe!Room::Update(unsigned long dwDeltaTick=16)  줄 83 + 0xc	C++
+ 	GameServer_d.exe!Hunting::Update(unsigned long dwDeltaTick=16)  줄 112 + 0xc	C++
+ 	GameServer_d.exe!ZoneManager::Update(unsigned long dwDeltaTick=16)  줄 101 + 0x11	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=16)  줄 382	C++
+ 	GameServer_d.exe!BattleServer::Update(unsigned long dwDeltaTick=16)  줄 74	C++
+ 	GameServer_d.exe!BattleServer::Run()  줄 60 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x001428c8, int nCmdShow=1)  줄 148 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameServer_d.exe!SunEntryPoint()  줄 95	C++
+
+
+
+* 20050823(화) 이유열 : EngineVersion 20050819
+ 	3DTerrain_sd.dll!_assert(const char * expr=0x0148b174, const char * filename=0x0148b0e0, unsigned int lineno=810)  줄 295	C
+ 	3DTerrain_sd.dll!CPathFinderConvex::GetEdgeVertexToReachTile(int iTileFrom=1201, int iTileTo=3003, int * piEdgeVertex=0x0012ed90)  줄 810 + 0x22	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::GetTargetPosToReachNextTile(CPathExplorer * ppe=0x0db91600)  줄 727 + 0x14	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::HeadToNextTile(CPathExplorer * ppe=0x0db91600)  줄 673	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_HeadToNextTile(CPathExplorer * ppe=0x0db91600)  줄 506 + 0x1a	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_FindPath(CPathExplorer * ppe=0x0db91600, WzVector wvDest={...}, int iDestTile=3000, unsigned short wAttribute=4, int iSeekNode=200)  줄 329	C++
+>	GameServer_d.exe!Field::FindPath(Character * pChar=0x05fd064c, WzVector * pwvDest=0x17790c18)  줄 667 + 0x37	C++
+ 	GameServer_d.exe!NPC::MoveAndBroadcast(WzVector * pwvDestPos=0x17790c18, eCHAR_MOVE_STATE moveState=CMS_WALK)  줄 976 + 0x10	C++
+ 	GameServer_d.exe!State::OnMsgLetsGo(AI_MSG * pMsg=0x17790c14)  줄 310	C++
+ 	GameServer_d.exe!WanderState::OnMsgLetsGo(AI_MSG * pMsg=0x17790c14)  줄 336	C++
+ 	GameServer_d.exe!State::OnAIMsg(AI_MSG * pMsg=0x17790c14)  줄 66 + 0x11	C++
+ 	GameServer_d.exe!NPC::OnAIMsg(AI_MSG * pMsg=0x17790c14)  줄 357 + 0x1d	C++
+ 	GameServer_d.exe!NPC::AIMsgProgress()  줄 421	C++
+ 	GameServer_d.exe!NPC::Update(unsigned long dwDeltaTick=15)  줄 156	C++
+ 	GameServer_d.exe!Sector::Update(unsigned long dwDeltaTick=15)  줄 522 + 0x11	C++
+ 	GameServer_d.exe!Field::Update(unsigned long dwDeltaTick=15)  줄 844	C++
+ 	GameServer_d.exe!Map::Update(unsigned long dwDeltaTick=15)  줄 81	C++
+ 	GameServer_d.exe!Zone::Update(unsigned long dwDeltaTick=15)  줄 41	C++
+ 	GameServer_d.exe!Room::Update(unsigned long dwDeltaTick=15)  줄 83 + 0xc	C++
+ 	GameServer_d.exe!Hunting::Update(unsigned long dwDeltaTick=15)  줄 112 + 0xc	C++
+ 	GameServer_d.exe!ZoneManager::Update(unsigned long dwDeltaTick=15)  줄 101 + 0x11	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=15)  줄 382	C++
+ 	GameServer_d.exe!BattleServer::Update(unsigned long dwDeltaTick=15)  줄 74	C++
+ 	GameServer_d.exe!BattleServer::Run()  줄 60 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x00142566, int nCmdShow=1)  줄 148 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameServer_d.exe!SunEntryPoint()  줄 95	C++
+
+
+* 20050823(화) 이유열 : EngineVersion 20050819
+ 	3DTerrain_sd.dll!As2D_GetLine(WzVector * pw2lOut=0x0013ed70, WzVector * pwv1=0x0013edb4, WzVector * pwv2=0xb4d129f8)  줄 414 + 0x6	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::GetTargetPosToReachNextTile(CPathExplorer * ppe=0x0da3fab0)  줄 733 + 0x1a	C++
+ 	3DTerrain_sd.dll!CPathFinderConvex::HeadToNextTile(CPathExplorer * ppe=0x0da3fab0)  줄 673	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_HeadToNextTile(CPathExplorer * ppe=0x0da3fab0)  줄 506 + 0x1a	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_FindPath(CPathExplorer * ppe=0x0da3fab0, WzVector wvDest={...}, int iDestTile=930, unsigned short wAttribute=4, int iSeekNode=200)  줄 329	C++
+>	GameServer_d.exe!Field::FindPath(Character * pChar=0x05dd9ec4, WzVector * pwvDest=0x0013f32c)  줄 667 + 0x37	C++
+ 	GameServer_d.exe!NPC::MoveAndBroadcast(WzVector * pwvDestPos=0x0013f32c, eCHAR_MOVE_STATE moveState=CMS_WALK)  줄 976 + 0x10	C++
+ 	GameServer_d.exe!State::OnMsgLetsGo(AI_MSG * pMsg=0x1695620c)  줄 305 + 0x17	C++
+ 	GameServer_d.exe!WanderState::OnMsgLetsGo(AI_MSG * pMsg=0x1695620c)  줄 336	C++
+ 	GameServer_d.exe!State::OnAIMsg(AI_MSG * pMsg=0x1695620c)  줄 66 + 0x11	C++
+ 	GameServer_d.exe!NPC::OnAIMsg(AI_MSG * pMsg=0x1695620c)  줄 357 + 0x1d	C++
+ 	GameServer_d.exe!NPC::AIMsgProgress()  줄 421	C++
+ 	GameServer_d.exe!NPC::Update(unsigned long dwDeltaTick=16)  줄 156	C++
+ 	GameServer_d.exe!Sector::Update(unsigned long dwDeltaTick=16)  줄 522 + 0x11	C++
+ 	GameServer_d.exe!Field::Update(unsigned long dwDeltaTick=16)  줄 844	C++
+ 	GameServer_d.exe!Map::Update(unsigned long dwDeltaTick=16)  줄 81	C++
+ 	GameServer_d.exe!Zone::Update(unsigned long dwDeltaTick=16)  줄 41	C++
+ 	GameServer_d.exe!Room::Update(unsigned long dwDeltaTick=16)  줄 83 + 0xc	C++
+ 	GameServer_d.exe!Hunting::Update(unsigned long dwDeltaTick=16)  줄 112 + 0xc	C++
+ 	GameServer_d.exe!ZoneManager::Update(unsigned long dwDeltaTick=16)  줄 101 + 0x11	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=16)  줄 381	C++
+ 	GameServer_d.exe!BattleServer::Update(unsigned long dwDeltaTick=16)  줄 74	C++
+ 	GameServer_d.exe!BattleServer::Run()  줄 60 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x001528ce, int nCmdShow=1)  줄 148 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameServer_d.exe!SunEntryPoint()  줄 95	C++
+
+
+* 20050624(금) 이유열 : EngineVersion 20050624
+ 	3DTerrain_sd.dll!_assert(const char * expr=0x100ac3e4, const char * filename=0x100ac430, unsigned int lineno=266)  줄 295	C
+ 	3DTerrain_sd.dll!Intersect_Ray_Triangle(WzRay * pwr=0x0013f274, WzVector * pwvTriangle1=0x1b5c07ac, WzVector * pwvTriangle2=0x1b5c07b8, WzVector * pwvTriangle3=0x1b5c07c4, float * pfT=0x0013ef80, int bCulling=1)  줄 266 + 0x4b	C++
+ 	3DTerrain_sd.dll!Intersect_Ray_TriangleListIndexed(WzRay * pwr=0x0013f274, WzVector * pwvTriangleList=0x1b5c0458, int * piIndexMap=0x1c90e460, int iNumTriangle=39, float * pfT=0x0013f268, int bCulling=1, int iDataSize=12)  줄 314 + 0x1d	C++
+ 	3DTerrain_sd.dll!CPathFinderGenerator::PickPathTile(WzRay * pwr=0x0013f274, float * pfT=0x0013f268, int bCulling=1)  줄 434 + 0x2a	C++
+ 	3DTerrain_sd.dll!CPathFinderAStar::GetTileToStand(WzVector wvPos={...}, float * pfT=0x00000000, float fJumpLimit=2.5000000, float fAdjustLimit=100.00000, unsigned short * pwAttribute=0x00000000)  줄 136 + 0x17	C++
+ 	GameServer_d.exe!Field::FindPath(Character * pChar=0x05d36324, WzVector * pwvDest=0x0013f334)  줄 648 + 0x39	C++
+>	GameServer_d.exe!NPC::MoveAndBroadcast(WzVector * pwvDestPos=0x0013f334, eCHAR_MOVE_STATE moveState=CMS_WALK)  줄 976 + 0x10	C++
+ 	GameServer_d.exe!State::OnMsgLetsGo(AI_MSG * pMsg=0x168e1fcc)  줄 306 + 0x17	C++
+ 	GameServer_d.exe!WanderState::OnMsgLetsGo(AI_MSG * pMsg=0x168e1fcc)  줄 336	C++
+ 	GameServer_d.exe!State::OnAIMsg(AI_MSG * pMsg=0x168e1fcc)  줄 66 + 0x11	C++
+ 	GameServer_d.exe!NPC::OnAIMsg(AI_MSG * pMsg=0x168e1fcc)  줄 357 + 0x1d	C++
+ 	GameServer_d.exe!NPC::AIMsgProgress()  줄 421	C++
+ 	GameServer_d.exe!NPC::Update(unsigned long dwDeltaTick=16)  줄 156	C++
+ 	GameServer_d.exe!Sector::Update(unsigned long dwDeltaTick=16)  줄 521 + 0x11	C++
+ 	GameServer_d.exe!Field::Update(unsigned long dwDeltaTick=16)  줄 855	C++
+ 	GameServer_d.exe!Map::Update(unsigned long dwDeltaTick=16)  줄 81	C++
+ 	GameServer_d.exe!Zone::Update(unsigned long dwDeltaTick=16)  줄 41	C++
+ 	GameServer_d.exe!Room::Update(unsigned long dwDeltaTick=16)  줄 83 + 0xc	C++
+ 	GameServer_d.exe!Hunting::Update(unsigned long dwDeltaTick=16)  줄 112 + 0xc	C++
+ 	GameServer_d.exe!ZoneManager::Update(unsigned long dwDeltaTick=16)  줄 101 + 0x11	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=16)  줄 377	C++
+ 	GameServer_d.exe!BattleServer::Update(unsigned long dwDeltaTick=16)  줄 74	C++
+ 	GameServer_d.exe!BattleServer::Run()  줄 60 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x001528ce, int nCmdShow=1)  줄 148 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameServer_d.exe!SunEntryPoint()  줄 95	C++
+
+
+
+* 20050624(금) 이유열 : EngineVersion 20050624
+-> 몬스터 생성때마다 -1발생!!
+>	3DTerrain_sd.dll!CPathFinderGenerator::MoveByDirection(int iCurrentTile=-1, WzVector wvCurrentPos={...}, WzVector wvDistance={...}, int * piResultTile=0x0013ec48, WzVector * pwvResultPos=0x0013ec34, unsigned short wAttribute=4)  줄 650 + 0x2e	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_Thrust(CPathExplorer * ppe=0x030830c8, WzVector * pwvMoveDistance=0x0013edd0, unsigned short wAttribute=4)  줄 776 + 0x76	C++
+ 	GameServer_d.exe!Field::FindPathThrust(Character * pChar=0x0344cc14, WzVector * pwvMoveDistance=0x0013edd0)  줄 700 + 0x3a	C++
+ 	GameServer_d.exe!Handler_CG_SYNC::OnCG_SYNC_KBMOVE_SYN(ServerSession * pServerSession=0x0c85ef84, MSG_BASE * pMsg=0x0c8d2095, unsigned short wSize=33)  줄 209	C++
+ 	GameServer_d.exe!PacketHandler::ParsePacket_AG(ServerSession * pServer=0x0c85ef84, MSG_BASE * pMsg=0x0c8d2095, unsigned short wSize=33)  줄 354 + 0x15	C++
+ 	GameServer_d.exe!AgentServerSession::OnRecv(unsigned char * pMsg=0x0c8d2095, unsigned short wSize=33)  줄 59	C++
+ 	GameServer_d.exe!Session::ProcessRecvdPacket(unsigned __int32 dwMaxPacketSize = 4096) 줄 171	C++
+ 	GameServer_d.exe!IoHandler::ProcessActiveSessionList() 줄 446 + 0xb 바이트	C++
+ 	GameServer_d.exe!IoHandler::Update() 줄 562	C++
+ 	GameServer_d.exe!IOCPServer::Update() 줄 124	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=101109)  줄 292	C++
+ 	GameServer_d.exe!FieldServer::Update(unsigned long dwDeltaTick=101109)  줄 93	C++
+ 	GameServer_d.exe!FieldServer::Run()  줄 77 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x001528ce, int nCmdShow=5)  줄 145 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameServer_d.exe!SunEntryPoint()  줄 95	C++
+
+
+
+
+* 20050624(금) 이유열 : EngineVersion 20050624
+- 게임서버 종료시 뻑
+>	3DTerrain_sd.dll!CWorldBase::Destroy(CDrawBase * pDraw=0x00000000)  줄 155 + 0x7	C++
+ 	3DTerrain_sd.dll!CWorldTerrain::Destroy(CDrawBase * pDraw=0x00000000)  줄 92	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::Destroy(CDrawBase * pDraw=0x00000000)  줄 58	C++
+ 	3DTerrain_sd.dll!CWorldExtraInfo::Destroy(CDrawBase * pDraw=0x00000000)  줄 33	C++
+ 	3DTerrain_sd.dll!CWorldLast::Destroy(CDrawBase * pDraw=0x00000000)  줄 34	C++
+ 	GameServer_d.exe!FieldInfo::Destroy()  줄 181 + 0x15	C++
+ 	GameServer_d.exe!FieldInfo::~FieldInfo()  줄 55	C++
+ 	GameServer_d.exe!FieldInfo::`scalar deleting destructor'()  + 0x16	C++
+ 	GameServer_d.exe!MapInfoLoader::UnloadInfo()  줄 32 + 0x22	C++
+ 	GameServer_d.exe!MapAllocator::Release()  줄 38	C++
+ 	GameServer_d.exe!GameServer::Release()  줄 95	C++
+ 	GameServer_d.exe!FieldServer::Release()  줄 42	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x001528ce, int nCmdShow=5)  줄 160 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameServer_d.exe!SunEntryPoint()  줄 95	C++
+ 	00c1a09f()	
+
+
+* 20050426(화) 백상현 : EngineVersion 20050420
+ - 스튜디오내 테스트 도중 길찾기에서 뻑
+  	3DTerrain_sd.dll!As2D_GetLine(WzVector * pw2lOut=0x0012e590, WzVector * pwv1=0x1c5168dc, WzVector * pwv2=0xf5631a40)  줄 406 + 0x6	C++
+ 	3DTerrain_sd.dll!As2D_TestCrossTwoSegment(WzVector * pwv1=0x0012e6dc, WzVector * pwv2=0x0012e6e8, WzVector * pwv3=0x1c5168dc, WzVector * pwv4=0xf5631a40)  줄 867 + 0x11	C++
+ 	3DTerrain_sd.dll!CPathFinderGenerator::Tile_HitTest(int iTile=-1, WzVector wvFrom={...}, WzVector wvTo={...}, int * piResult=0x0012e890)  줄 703 + 0x3a	C++
+ 	3DTerrain_sd.dll!CPathFinderGenerator::MoveByDirection(int iCurrentTile=-1, WzVector wvCurrentPos={...}, WzVector wvDistance={...}, int * piResultTile=0x0012ea44, WzVector * pwvResultPos=0x0012ea30)  줄 603	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_Thrust(CPathExplorer * ppe=0x0100d230, WzVector * pwvMoveDistance=0x0012ecf4)  줄 718 + 0x6e	C++
+>	GameServer_d.exe!Field::FindPathThrust(Character * pChar=0x011a39dc, WzVector * pwvMoveDistance=0x0012ecf4)  줄 452 + 0x35	C++
+ 	GameServer_d.exe!Handler_CG_SYNC::OnCG_SYNC_KBMOVE_SYN(ServerSession * pServerSession=0x09adc6e8, MSG_BASE * pMsg=0x07f591fa, unsigned short wSize=31)  줄 193	C++
+ 	GameServer_d.exe!PacketHandler::ParsePacket_AG(ServerSession * pServer=0x09adc6e8, MSG_BASE * pMsg=0x07f591fa, unsigned short wSize=31)  줄 270 + 0x15	C++
+ 	GameServer_d.exe!AgentServerSession::OnRecv(unsigned char * pMsg=0x07f591fa, unsigned short wSize=31)  줄 59	C++
+ 	mscorwks.dll!7925c098() 	
+
+
+* 20050422(금) 이유열 : EngineVersion 20050420
+ - 몬스터를 리젠 후 넓게 퍼진 상황에서 플레이어가 들어가서 몬스터들이 플레이어를 찾아서 달려오는 상황!!
+ 	3DTerrain_d.dll!memcpy(unsigned char * dst=0x0012e734, unsigned char * src=0x517fc2d4, unsigned long count=12)  줄 297	Asm
+ 	3DTerrain_d.dll!CPathTile::GetVertices(int * piVertex=0x0012e734)  줄 47 + 0x12	C++
+ 	3DTerrain_d.dll!CPathFinderGenerator::Tile_HitTest(int iTile=228977800, WzVector wvFrom={...}, WzVector wvTo={...}, int * piResult=0x0012e91c)  줄 701	C++
+ 	3DTerrain_d.dll!CPathFinderGenerator::MoveByDirection(int iCurrentTile=-1, WzVector wvCurrentPos={...}, WzVector wvDistance={...}, int * piResultTile=0x0012ead0, WzVector * pwvResultPos=0x0012eabc)  줄 603	C++
+ 	3DTerrain_d.dll!CWorldPathFinder::PathExp_Thrust(CPathExplorer * ppe=0x0da64af8, WzVector * pwvMoveDistance=0x0012ebe8)  줄 718 + 0x6e	C++
+>	GameClient_Debug.exe!Character::Move(WzVector vCurPos={...}, WzVector vDestPos={...}, unsigned char byState='', int bThrust=1)  줄 875 + 0x20	C++
+ 	GameClient_Debug.exe!Character::StartNextMove()  줄 1158 + 0x5d	C++
+ 	GameClient_Debug.exe!StateMove::OnStart(Object * pOwner=0x02b1d7a8, unsigned long CurTime=1063558)  줄 31	C++
+ 	GameClient_Debug.exe!Object::CommitChangeState(unsigned long CurTime=1063558)  줄 116 + 0x15	C++
+ 	GameClient_Debug.exe!Object::StateProcess(unsigned long CurTime=1063558, unsigned long dwTick=36)  줄 72 + 0xc	C++
+ 	GameClient_Debug.exe!Character::Process(unsigned long dwTick=33)  줄 161 + 0x18	C++
+ 	GameClient_Debug.exe!BattleScene::ProcessUnits(unsigned long dwTick=33)  줄 1074 + 0x28	C++
+ 	GameClient_Debug.exe!BattleScene::Process(unsigned long dwTick=33)  줄 306 + 0x11	C++
+ 	GameClient_Debug.exe!VillageScene::Process(unsigned long dwTick=33)  줄 113	C++
+ 	GameClient_Debug.exe!GameFramework::Update(unsigned long dwTick=33)  줄 110 + 0x17	C++
+ 	GameClient_Debug.exe!Application::HeartBeat()  줄 461 + 0x12	C++
+ 	GameClient_Debug.exe!CAppDraw::Run()  줄 230 + 0xd	
+ 	GameClient_Debug.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPreInstance=0x00000000, char * lpCmdLine=0x001420d2, int nCmdShow=1)  줄 124 + 0x12	C++
+ 	GameClient_Debug.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	GameClient_Debug.exe!SunEntryPoint()  줄 67	C++
+ 	kernel32.dll!7c8123cd() 	
+
+
+* 20050406(수) 이준석 : EngineVersion 20040401
+  - GetCheckSum()을 호출할때 맵에 문제가 있으면 뻑이남. 맵에 문제가 있더라도 뻑이 나지 않게 요청!
+>	GameServer_d.exe!CWorldBase::GetCheckSum()  줄 98 + 0x26	C++
+ 	GameServer_d.exe!Character::CheckMapVersion(unsigned long dwCheckSum=3435973836)  줄 105 + 0xb	C++
+ 	GameServer_d.exe!Handler_CG_SYNC::OnCG_SYNC_PLAYER_ENTER_SYN(ServerSession * pServerSession=0x03695768, MSG_BASE * pMsg=0x036483b3, unsigned short wSize=10)  줄 31 + 0xf	C++
+ 	GameServer_d.exe!PacketHandler::ParsePacket_AG(ServerSession * pServer=0x03695768, MSG_BASE * pMsg=0x036483b3, unsigned short wSize=10)  줄 226 + 0x15	C++
+ 	GameServer_d.exe!AgentServerSession::OnRecv(unsigned char * pMsg=0x036483b3, unsigned short wSize=10)  줄 59	C++
+ 	GameServer_d.exe!Session::ProcessRecvdPacket(unsigned __int32 dwMaxPacketSize = 4096) 줄 211	C++
+ 	GameServer_d.exe!IoHandler::ProcessActiveSessionList() 줄 428 + 0xc 바이트	C++
+ 	GameServer_d.exe!IoHandler::Update() 줄 566	C++
+ 	GameServer_d.exe!IOCPServer::Update() 줄 125	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=16)  줄 227	C++
+ 	GameServer_d.exe!FieldServer::Update(unsigned long dwDeltaTick=16)  줄 98	C++
+ 	GameServer_d.exe!FieldServer::Run()  줄 80 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x00141f06, int nCmdShow=5)  줄 56 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+
+* 20050402(토) 이유열 : EngineVersion 20040401
+  - 몬스터가 길찾기 메쉬를 벗어난 경우에 발생하는 버그
+
+ 	3DTerrain_sd.dll!As2D_GetLine(WzVector * pw2lOut=0x0012e290, WzVector * pwv1=0x1ee03124, WzVector * pwv2=0xf7f1e288)  줄 381 + 0x6	C++
+ 	3DTerrain_sd.dll!As2D_TestCrossTwoSegment(WzVector * pwv1=0x0012e3dc, WzVector * pwv2=0x0012e3e8, WzVector * pwv3=0x1ee03124, WzVector * pwv4=0xf7f1e288)  줄 810 + 0x11	C++
+ 	3DTerrain_sd.dll!CPathFinderGenerator::Tile_HitTest(int iTile=-1, WzVector wvFrom={...}, WzVector wvTo={...}, int * piResult=0x0012e550)  줄 681 + 0x3a	C++
+ 	3DTerrain_sd.dll!CPathFinderGenerator::MoveByDirection(int iCurrentTile=-1, WzVector wvCurrentPos={...}, WzVector wvDistance={...}, int * piResultTile=0x0012e704, WzVector * pwvResultPos=0x0012e6f0)  줄 603	C++
+ 	3DTerrain_sd.dll!CWorldPathFinder::PathExp_Thrust(CPathExplorer * ppe=0x012254d8, WzVector * pwvMoveDistance=0x0012e93c)  줄 707 + 0x6e	C++
+>	GameServer_d.exe!Field::FindPathThrust(Character * pChar=0x010f146c, WzVector * pwvDest=0x0012e93c)  줄 410 + 0x35	C++
+ 	GameServer_d.exe!WanderState::SelectDestination()  줄 82	C++
+ 	GameServer_d.exe!WanderState::OnUpdate()  줄 48	C++
+ 	GameServer_d.exe!FSM::Update()  줄 153 + 0x15	C++
+ 	GameServer_d.exe!NPC::Update(unsigned long dwDeltaTick=15)  줄 67	C++
+ 	GameServer_d.exe!Sector::Update(unsigned long dwDeltaTick=15)  줄 394 + 0x28	C++
+ 	GameServer_d.exe!Field::Update(unsigned long dwDeltaTick=15)  줄 497	C++
+ 	GameServer_d.exe!Map::Update(unsigned long dwDeltaTick=15)  줄 47	C++
+ 	GameServer_d.exe!Zone::Update(unsigned long dwDeltaTick=15)  줄 158	C++
+ 	GameServer_d.exe!RoomManager::Update(unsigned long dwDeltaTick=15)  줄 76 + 0xc	C++
+ 	GameServer_d.exe!GameServer::Update(unsigned long dwDeltaTick=15)  줄 231	C++
+ 	GameServer_d.exe!FieldServer::Update(unsigned long dwDeltaTick=15)  줄 98	C++
+ 	GameServer_d.exe!FieldServer::Run()  줄 80 + 0x17	C++
+ 	GameServer_d.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPrevInstance=0x00000000, char * lpCmdLine=0x00142566, int nCmdShow=5)  줄 56 + 0x12	C++
+ 	GameServer_d.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	00cba09f()	
+
+
+
+* 20050127(목) 임대진 
+ - 수시로 랜더러 초기화 하다가 뻑 남
+
+	3DRendererD3D_d.dll!CDrawRendererD3d::RenderTexture(void * hTexture=0x000f000d, float fxDst=259.00000, float fyDst=512.00000, float fDstWidth=505.00000, float fDstHeight=109.00000, float fxSrc=0.50000000, float fySrc=0.50000000, float fSrcWidth=0.00000000, float fSrcHeight=0.00000000, unsigned long * pwcColor=0x00000000)  줄 623 + 0x3	C++
+ 	GameClient_Debug.exe!LoadScene::Render(unsigned long dwTick=17)  줄 505 + 0x3f	C++
+ 	GameClient_Debug.exe!GameFramework::Render(unsigned long dwTick=17)  줄 108 + 0x17	C++
+ 	GameClient_Debug.exe!Application::HeartBeat()  줄 432	C++
+ 	GameClient_Debug.exe!CAppDraw::Run()  줄 230 + 0xd	
+ 	GameClient_Debug.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPreInstance=0x00000000, char * lpCmdLine=0x00141f0a, int nCmdShow=1)  줄 88 + 0x12	C++
+ 	GameClient_Debug.exe!WinMainCRTStartup()  줄 251 + 0x30	C
+ 	kernel32.dll!7c816d4f() 	
+ 	kernel32.dll!7c8399f3() 	
+
+
+* 20050201(화) 이유열
+- 실행중 ControlsDLL_p.dll에서 죽는 경우 발생(윈도우 메세지 528일 경우)
+
+ 	ControlsDLL_p.dll!02211174() 	
+ 	GameClient.exe!InterfaceManager::InterfaceWndProc(HWND__ * hWnd=0x007603ae, unsigned int iMessage=528, unsigned int wParam=1129578498, long lParam=6226694)  줄 189 + 0x1d	C++
+	GameClient.exe!Application::WindowProc(HWND__ * hWnd=0x007603ae, unsigned int iMessage=528, unsigned int wParam=1129578498, long lParam=6226694)  줄 319	C++
+ 	user32.dll!77cf8709() 	
+ 	user32.dll!77cf87eb() 	
+ 	user32.dll!77d1ea45() 	
+ 	user32.dll!77d20494() 	
+ 	user32.dll!77cfb368() 	
+ 	user32.dll!77d1ea45() 	
+ 	user32.dll!77d20494() 	
+ 	user32.dll!77cfb3b4() 	
+ 	ntdll.dll!7c93eae3() 	
+ 	user32.dll!77cfe672() 	
+ 	ControlsDLL_p.dll!022054b3() 	
+ 	ControlsDLL_p.dll!022043e7() 	
+ 	ControlsDLL_p.dll!02210ab7() 	
+ 	GameClient.exe!InterfaceManager::Release()  줄 143	C++
+ 	GameClient.exe!Application::Destroy()  줄 278	C++
+ 	GameClient.exe!CAppDraw::Run()  + 0x99	C++
+ 	GameClient.exe!WinMain(HINSTANCE__ * hInstance=0x00400000, HINSTANCE__ * hPreInstance=0x00000000, char * lpCmdLine=0x00141f04, int nCmdShow=1)  줄 89	C++
+ 	GameClient.exe!WinMainCRTStartup()  줄 251 + 0x1d	C
+ 	GameClient.exe!WinMainCRTStartup()  줄 150 + 0xc	C
+ 	
+ 	
+ 

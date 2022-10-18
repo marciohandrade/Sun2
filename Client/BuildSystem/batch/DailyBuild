@@ -1,0 +1,275 @@
+@echo off
+
+if '%1'=='' goto errlog
+
+    set workpath=D:\DailyBuild
+    set buildsystempath=%workpath%\Client\BuildSystem
+    set batchpath=%workpath%\Client\BuildSystem\batch
+    set logpath=%buildsystempath%\log
+    set p4_test_dev_path=D:\Perforce\test_dev_release\3.최신개발버전_new\SUN_Client
+    set binpath=%workpath%\Client\_bin
+
+echo.-------------------------------------------------------------------------
+echo ▷ 로그 파일 삭제
+echo.-------------------------------------------------------------------------
+	
+    call %batchpath%\DelBuildLog.bat %logpath%
+    del %logpath%\*.txt /f /q
+
+echo.-------------------------------------------------------------------------
+echo ▷ 최신소스 받기
+echo.-------------------------------------------------------------------------
+
+    call %batchpath%\GetLatestVer_from_SVN.bat %workpath% %logpath%
+
+
+    if '%1' == 'kor' goto define_kor
+    if '%1' == 'tw' goto define_tw
+    if '%1' == 'jp' goto define_jp
+    if '%1' == 'cn' goto define_cn
+    if '%1' == 'gsp' goto define_gsp
+    if '%1' == 'ru' goto define_ru
+
+echo.-------------------------------------------------------------------------
+echo ▷ 국내 디파인 세팅
+echo.-------------------------------------------------------------------------
+
+    :define_kor
+    %buildsystempath%\create_header %workpath%\ProgramCommon\SunAuth\AuthCountryCode.h _AUTH_KOREA
+    %buildsystempath%\create_header %workpath%\ProgramCommon\CountryCode.h _KOREA
+    if not exist %workpath%\include\Deployment.h %buildsystempath%\copy_header %workpath%\include\Deployment.h.sample %workpath%\include\Deployment.h
+    goto build_step_kor
+    rem goto copy_engine_100616
+
+echo.-------------------------------------------------------------------------
+echo ▷ 대만 디파인 세팅
+echo.-------------------------------------------------------------------------
+
+    :define_tw
+    %buildsystempath%\create_header %workpath%\ProgramCommon\SunAuth\AuthCountryCode.h _AUTH_TAIWAN
+    %buildsystempath%\create_header %workpath%\ProgramCommon\CountryCode.h _TAIWAN
+    if not exist %workpath%\include\Deployment.h %buildsystempath%\copy_header %workpath%\include\Deployment.h.sample %workpath%\include\Deployment.h
+    
+    goto copy_engine_100217a
+
+echo.-------------------------------------------------------------------------
+echo ▷ 일본 디파인 세팅
+echo.-------------------------------------------------------------------------
+
+    :define_jp
+    %buildsystempath%\create_header %workpath%\ProgramCommon\SunAuth\AuthCountryCode.h _AUTH_JAPAN
+    %buildsystempath%\create_header %workpath%\ProgramCommon\CountryCode.h _JAPAN
+    if not exist %workpath%\include\Deployment.h %buildsystempath%\copy_header %workpath%\include\Deployment.h.sample %workpath%\include\Deployment.h
+    goto copy_engine_100326
+
+
+echo.-------------------------------------------------------------------------
+echo ▷ 중국 디파인 세팅
+echo.-------------------------------------------------------------------------
+
+    :define_cn
+    %buildsystempath%\create_header %workpath%\ProgramCommon\SunAuth\AuthCountryCode.h _AUTH_CHINA
+    %buildsystempath%\create_header %workpath%\ProgramCommon\CountryCode.h _CHINA
+    if not exist %workpath%\include\Deployment.h %buildsystempath%\copy_header %workpath%\include\Deployment.h.sample %workpath%\include\Deployment.h
+    goto copy_engine_100217a
+
+echo.-------------------------------------------------------------------------
+echo ▷ 글로벌 디파인 세팅
+echo.-------------------------------------------------------------------------
+
+    :define_gsp
+    %buildsystempath%\create_header %workpath%\ProgramCommon\SunAuth\AuthCountryCode.h _AUTH_GLOBAL
+    %buildsystempath%\create_header %workpath%\ProgramCommon\CountryCode.h _GLOBAL
+    if not exist %workpath%\include\Deployment.h %buildsystempath%\copy_header %workpath%\include\Deployment.h.sample %workpath%\include\Deployment.h
+    goto copy_engine_100217a
+
+echo.-------------------------------------------------------------------------
+echo ▷ 러시아 디파인 세팅
+echo.-------------------------------------------------------------------------
+
+    :define_ru
+    %buildsystempath%\create_header %workpath%\ProgramCommon\SunAuth\AuthCountryCode.h _AUTH_RUSSIA
+    %buildsystempath%\create_header %workpath%\ProgramCommon\CountryCode.h _RUSSIA
+    if not exist %workpath%\include\Deployment.h %buildsystempath%\copy_header %workpath%\include\Deployment.h.sample %workpath%\include\Deployment.h
+    goto copy_engine_100326
+
+
+
+
+
+    :copy_engine_100217a
+echo.-------------------------------------------------------------------------
+echo ▷ 100217a 엔진 파일 복사
+echo.-------------------------------------------------------------------------
+
+    set dest_engine_path=%workpath%\SUN3DEngine\
+    set org_engine_path=%workpath%\SUN엔진100217a\
+
+    call %batchpath%\SUNEngineCopy.bat %org_engine_path% %dest_engine_path%
+
+    goto build_step
+
+    :copy_engine_100326
+echo.-------------------------------------------------------------------------
+echo ▷ 100326 엔진 파일 복사
+echo.-------------------------------------------------------------------------
+
+    set dest_engine_path=%workpath%\SUN3DEngine\
+    set org_engine_path=%workpath%\SUN엔진100326\
+
+    call %batchpath%\SUNEngineCopy.bat %org_engine_path% %dest_engine_path%
+
+    goto build_step
+
+
+    :copy_engine_210
+echo.-------------------------------------------------------------------------
+echo ▷ 210 엔진 파일 복사
+echo.-------------------------------------------------------------------------
+
+    set dest_engine_path=%workpath%\SUN3DEngine\
+    set org_engine_path=%workpath%\SUN엔진210\
+
+    call %batchpath%\SUNEngineCopy.bat %org_engine_path% %dest_engine_path%
+
+    goto build_step
+
+    
+    :build_step
+echo.-------------------------------------------------------------------------
+echo ▷ Release 빌드
+echo.-------------------------------------------------------------------------
+
+    @echo [%date%][%time%] Release 빌드 진행  >> %logpath%\BuildSystemResult.txt
+
+    call %batchpath%\Build.bat 2 Release %workpath% %logpath%
+
+    @echo [%date%][%time%] Release 빌드 완료  >> %logpath%\BuildSystemResult.txt
+
+    rem --------------------------------------------------------
+    rem 빌드에러가 발생하면 다음에 예정된 빌드는 진행하지 않습니다
+    rem --------------------------------------------------------
+    if exist %logpath%\fail.log goto failstep
+    
+echo.-------------------------------------------------------------------------
+echo ▷ Release - 유저 배포 버전 빌드
+echo.-------------------------------------------------------------------------
+    
+    @echo [%date%][%time%] Release - 유저 배포 버전 빌드 진행  >> %logpath%\BuildSystemResult.txt
+    
+    call %batchpath%\Build.bat 2 "Release - 유저 배포 버전" %workpath% %logpath%
+
+    @echo [%date%][%time%] Release - 유저 배포 버전 빌드 완료  >> %logpath%\BuildSystemResult.txt    
+
+    rem ----------------------------------------------------------------------------------------------------------------------
+    rem Release - 유저 배포 버전 빌드 에러가 발생한 경우에도, GameClient.exe는 성공했으므로 실행파일과 로그를 퍼포스에 등록합니다
+    rem ----------------------------------------------------------------------------------------------------------------------
+    if exist %logpath%\fail.log goto failstep2   
+
+
+
+rem ----------------------------------------------------------------------------------------------------------------------
+rem Release / Release - 유저 배포 버전 빌드 모두 성공한 경우
+rem ----------------------------------------------------------------------------------------------------------------------
+echo.-------------------------------------------------------------------------
+echo ▷ 실행파일과 로그를 Perforce에 등록
+echo.-------------------------------------------------------------------------
+
+    call %batchpath%\p4DailyBuildResultUpload.bat 1 %1
+    exit /b 0    
+
+
+
+
+
+    :build_step_kor
+echo.-------------------------------------------------------------------------
+echo ▷ Release 빌드
+echo.-------------------------------------------------------------------------
+
+    @echo [%date%][%time%] Release 빌드 진행  >> %logpath%\BuildSystemResult.txt
+
+    call %batchpath%\Build.bat 2 Release %workpath% %logpath%
+
+    @echo [%date%][%time%] Release 빌드 완료  >> %logpath%\BuildSystemResult.txt
+
+    rem --------------------------------------------------------
+    rem 빌드에러가 발생하면 다음에 예정된 빌드는 진행하지 않습니다
+    rem --------------------------------------------------------
+    if exist %logpath%\fail.log goto failstep
+    
+echo.-------------------------------------------------------------------------
+echo ▷ Release - 유저 배포 버전 빌드
+echo.-------------------------------------------------------------------------
+    
+    @echo [%date%][%time%] Release - 유저 배포 버전 빌드 진행  >> %logpath%\BuildSystemResult.txt
+    
+    call %batchpath%\Build.bat 2 "Release - 유저 배포 버전" %workpath% %logpath%
+
+    @echo [%date%][%time%] Release - 유저 배포 버전 빌드 완료  >> %logpath%\BuildSystemResult.txt    
+
+    rem ----------------------------------------------------------------------------------------------------------------------
+    rem Release - 유저 배포 버전 빌드 에러가 발생한 경우에도, GameClient.exe는 성공했으므로 실행파일과 로그를 퍼포스에 등록합니다
+    rem ----------------------------------------------------------------------------------------------------------------------
+    if exist %logpath%\fail.log goto failstep2   
+
+
+
+rem ----------------------------------------------------------------------------------------------------------------------
+rem Release / Release - 유저 배포 버전 빌드 모두 성공한 경우
+rem ----------------------------------------------------------------------------------------------------------------------
+echo.-------------------------------------------------------------------------
+echo ▷ 실행파일과 로그를 Perforce에 등록
+echo.-------------------------------------------------------------------------
+
+    call %batchpath%\p4DailyBuildResultUpload.bat 1 %1
+    call %batchpath%\SUNEngineToBin.bat %workpath%\SUN3DEngine %binpath%
+    call %batchpath%\p4DailyBuildResultUploadToDevDepot.bat %p4_test_dev_path% %workpath%
+
+    exit /b 0    
+
+
+
+
+
+
+    :failstep
+echo.-------------------------------------------------------------------------
+echo ▷ Release 빌드 실패
+echo.-------------------------------------------------------------------------
+echo.-------------------------------------------------------------------------
+echo ▷ DailyBuildResult 로그를 Perforce에 등록
+echo.-------------------------------------------------------------------------
+
+    call %batchpath%\p4DailyBuildResultUpload.bat 0 %1
+    goto send_mail_step
+
+
+    :failstep2
+echo.-------------------------------------------------------------------------
+echo ▷ Release - 유저 배포 버전 빌드 실패
+echo.-------------------------------------------------------------------------
+echo.-------------------------------------------------------------------------
+echo ▷ 실행파일과 DailyBuildResult 로그를 Perforce에 등록
+echo.-------------------------------------------------------------------------
+
+    call %batchpath%\p4DailyBuildResultUpload.bat 1 %1
+    goto send_mail_step
+
+
+
+
+    :send_mail_step
+echo.-------------------------------------------------------------------------
+echo ▷ DailyBuildResult 메일 전송 (실패시에만- failstep or failstep2)
+echo.-------------------------------------------------------------------------
+
+    %buildsystempath%\send_mail %buildsystempath%\dailybuild.ini "%1 일일빌드 실패 [%date%]" "첨부파일 확인" %1
+    exit /b 0
+    
+:errlog
+echo.-------------------------------------------------------------------------
+echo ▷ 매개변수가 잘못 되었습니다.
+echo.-------------------------------------------------------------------------
+
+pause

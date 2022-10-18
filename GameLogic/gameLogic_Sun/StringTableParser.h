@@ -1,0 +1,63 @@
+#pragma once
+
+#include <Singleton.h>
+#include <string.h>
+#include <map>
+
+//using namespace util;
+
+
+class CStringTableParser// : public Singleton<CStringTableParser>
+{
+public:
+	CStringTableParser(void);
+	~CStringTableParser(void);
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	// func : Init
+	// param1 : StringTable.txt의 경로
+	// ret : 스크립트파일 로딩 성공여부
+	// desc : 스트링테이블을 읽어 메모리에 저장한다.
+	//////////////////////////////////////////////////////////////////////////////////////
+	bool Init(TCHAR* pszFullPath);
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	// func : GetStringByCode
+	// param1 : 스트링테이블의 코드
+	// ret : 해당 코드의 스트링
+	// desc : 스트링테이블에서 해당 코드의 스트링을 리턴한다.
+	//////////////////////////////////////////////////////////////////////////////////////
+	TCHAR* GetStringByCode(int iCode);
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	// func : GetCodeByString
+	// param1 : 스트링테이블의 스트링
+	// ret : 해당 스트링의 코드번호
+	// desc : 스트링테이블에서 해당 스트링의 코드번호를 리턴한다.
+	//////////////////////////////////////////////////////////////////////////////////////
+	int GetCodeByString(std::string str);
+
+	void SetFirst();
+        char* GetNext();
+	
+	//////////////////////////////////////////////////////////////////////////////////////
+	// func : Reload
+	// param1 : n/a
+	// ret : 재로딩 성공여부
+	// desc : 재로딩한다.
+	//////////////////////////////////////////////////////////////////////////////////////
+	bool Reload();
+
+	inline int GetCount() { m_mapStringTable.size(); }
+
+private:
+	//스트링테이블
+	std::map<int, std::string> m_mapStringTable;
+
+	//마찬가지
+	std::map<std::string, int> m_mapIdxTable;
+	
+	std::string m_sTablePath;
+
+	std::map<int, std::string>::iterator m_iter;
+};

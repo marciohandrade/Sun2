@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+
+<!--
+	
+	[ Description ]
+	AKMemoryIni 라이브러리를 배포하기 위한 스크립트
+	Nant를 통하여 실행하면은 dist디렉토리에 zip파일이 생기고 
+	이 파일로 배포를 하면 된다
+	
+	[ Sample Test ]
+	
+	c:\> nant -buildfile:package.xml -D:veresion=1.0
+	
+-->
+
+<project name="AKMemoryIni" default="zip" basedir="../">
+
+	<property name="name"		value="MemoryIni" />
+	<property name="version"	value="1.0" />
+	<property name="release"	value="${name}-${version}" />
+	<property name="dist.dir"	value="d:\dist\LIBRARY\MemoryIni" />
+	<property name="base.dir"	value="." />
+	<property name="zip.name"	value="${release}.zip" />
+	<property name="zip.path"	value="${dist.dir}/${zip.name}" />
+	
+	<target name="zip">
+		<mkdir dir="${dist.dir}" />
+		<zip zipfile="${zip.path}">
+			<fileset basedir="${base.dir}" prefix="${release}">
+				<include name="*.sln" />
+			</fileset>
+			<fileset basedir="bin" prefix="${release}/bin">
+				<include name="*.dll" />
+				<include name="*.exe" />
+			</fileset>
+			<fileset basedir="lib" prefix="${release}/lib">
+				<include name="*.lib" />
+				<include name="*.pdb" />
+			</fileset>
+			<fileset basedir="inc" prefix="${release}/inc">
+				<include name="*.h" />
+			</fileset>
+			<fileset basedir="AKMemoryIni" prefix="${release}/AKMemoryIni">
+				<include name="*.txt" />				
+			</fileset>
+			<fileset basedir="CryptIni" prefix="${release}/CryptIni">
+				<include name="*.h" />
+				<include name="*.cpp" />
+				<include name="*.vcproj" />
+				<include name="*.rc" />
+				<include name="res/*.ico" />
+				<include name="res/*.manifest" />
+				<include name="res/*.rc2" />
+				<include name="res/*.bmp" />
+				<include name="*.txt" />				
+			</fileset>
+			<fileset basedir="CryptIni_Gui" prefix="${release}/CryptIni_Gui">
+				<include name="*.h" />
+				<include name="*.cpp" />
+				<include name="*.vcproj" />
+				<include name="*.rc" />
+				<include name="res/*.ico" />
+				<include name="res/*.manifest" />
+				<include name="res/*.rc2" />
+				<include name="res/*.bmp" />
+				<include name="*.txt" />				
+			</fileset>									
+			<fileset basedir="doc" prefix="${release}/doc">
+				<include name="*.txt" />				
+			</fileset>			
+		</zip>
+	</target>
+</project>
+
+
+
+

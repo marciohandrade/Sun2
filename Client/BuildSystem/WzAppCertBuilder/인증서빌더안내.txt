@@ -1,0 +1,12 @@
+AD계정ID: naklu3@webzendev.com
+비번 : //webzen@2014
+       thdckswhd3# (송찬종3# 2015-09-23 AD계정 비밀번호 변경)
+       thdckswhd12!@ (2015-12-24 AD계정 비밀번호 변경)
+       thdckswhd34!@ (2016-03-30 AD계정 비밀번호 변경)
+
+개별서명     : Wz_App_CertBuilder.exe
+배치파일서명 : WZ_Cert_Cli_Build.exe
+
+3개월의 한번씩 비밀번호를 변경하고, CodeSignForThermida.bat파일에 있는 비밀번호도 같이 변경하여야 합니다.
+
+*비밀번호 변경 방법은 개발망AD계정(naklu3@webzendev.com)으로 로그인해서 비밀번호 변경으로 변경하면 됨.

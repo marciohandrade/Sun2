@@ -1,0 +1,13 @@
+// wzanistatecbcode.h
+
+#ifndef _3DFILEACCESS_WZANISTATE_CBCODE_H_
+#define _3DFILEACCESS_WZANISTATE_CBCODE_H_
+
+// 콜백 코드
+enum WZASCB_CODE
+{
+    WZASCB_UNKNOWN = 0,
+    WZASCB_ANIDATA_RESET
+};
+
+#endif

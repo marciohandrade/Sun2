@@ -1,0 +1,19 @@
+#pragma once
+
+
+struct IM_EVENT_MANAGER
+{
+	static const DWORD EVENT_WINDOW;
+	static const DWORD EVENT_ITEM_SELECT;
+#ifdef __NA_001027_20080423_RANDOM_REWARD_EVENT_
+	static const DWORD GUILD_EVENT;
+#endif
+	static const DWORD EVENT_X_MAS_CONFIRM;
+	static const DWORD EVENT_X_MAS_SANTA_DLG;
+	static const DWORD EVENT_X_MAS_DONATION_CONFIRM;
+	static const DWORD EVENT_X_MAS_DONATION_REWARD;
+	static const DWORD EVENT_X_MAS_SOLO_COUPLE_REWARD;
+	static const DWORD EVENT_X_MAS_SANTA_REWARD;
+	static const DWORD EVENT_BUFF;
+	static const DWORD EVENT_FRIEND;
+};

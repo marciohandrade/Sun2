@@ -1,0 +1,115 @@
+#pragma once
+
+#include <QuestCondition.h>
+#include <QuestConditionInfo_Concrete.h>
+
+// TODO : QuestConditonInfo의 하위 클래스를 가지는 개별 클래스 선언과 구현들
+
+BEGIN_DECL_QCONDITION( QUEST_CONDITION_REPEAT )
+__DECL_CUSTOMPOOL_PTR( QUEST_CONDITION_REPEAT )
+	virtual RC::eQUEST_RESULT CanAccept( void * pvParam );
+END_DECL_QCONDITION
+
+BEGIN_DECL_QCONDITION( QUEST_CONDITION_CHARLV )
+__DECL_CUSTOMPOOL_PTR( QUEST_CONDITION_CHARLV )
+
+	virtual RC::eQUEST_RESULT CanAccept( void * pvParam );
+	virtual RC::eQUEST_RESULT CanComplete( void * pvParam );
+
+	virtual BOOL Event( eQUEST_EVENT evt, QUEST_MSG * pMsg );
+END_DECL_QCONDITION
+
+BEGIN_DECL_QCONDITION( QUEST_CONDITION_CHAO )
+__DECL_CUSTOMPOOL_PTR( QUEST_CONDITION_CHAO )
+
+	virtual RC::eQUEST_RESULT CanAccept( void * pvParam );
+	virtual RC::eQUEST_RESULT CanComplete( void * pvParam );
+
+	virtual BOOL Event( eQUEST_EVENT evt, QUEST_MSG * pMsg );
+END_DECL_QCONDITION
+
+BEGIN_DECL_QCONDITION( QUEST_CONDITION_CHARCLASS )
+__DECL_CUSTOMPOOL_PTR( QUEST_CONDITION_CHARCLASS )
+	virtual RC::eQUEST_RESULT CanAccept( void * pvParam );
+END_DECL_QCONDITION
+
+BEGIN_DECL_QCONDITION( QUEST_CONDITION_QUEST )
+__DECL_CUSTOMPOOL_PTR( QUEST_CONDITION_QUEST )
+	virtual RC::eQUEST_RESULT CanAccept( void * pvParam );
+	virtual RC::eQUEST_RESULT CanComplete( void * pvParam );
+	virtual BOOL Event( eQUEST_EVENT evt, QUEST_MSG * pMsg );
+END_DECL_QCONDITION
+
+BEGIN_DECL_QCONDITION( QUEST_CONDITION_ITEM )
+__DECL_CUSTOMPOOL_PTR( QUEST_CONDITION_ITEM )
+	virtual RC::eQUEST_RESULT CanAccept( void * pvParam );
+	virtual RC::eQUEST_RESULT CanComplete( void * pvParam );
+	virtual BOOL Event( eQUEST_EVENT evt, QUEST_MSG * pMsg );
+END_DECL_QCONDITION
+
+BEGIN_DECL_QCONDITION( QUEST_CONDITION_CLASSITEM )
+__DECL_CUSTOMPOOL_PTR( QUEST_CONDITION_CLASSITEM )
+	virtual RC::eQUEST_RESULT CanAccept( void * pvParam );
+	virtual RC::eQUEST_RESULT CanComplete( void * pvParam );
+END_DECL_QCONDITION
+
+// 완료 조건에만 있음
+BEGIN_DECL_QCONDITION( QUEST_CONDITION_MONEY )
+__DECL_CUSTOMPOOL_PTR( QUEST_CONDITION_MONEY )
+	virtual RC::eQUEST_RESULT CanAccept( void * pvParam );
+	virtual RC::eQUEST_RESULT CanComplete( void * pvParam );
+	virtual BOOL Event( eQUEST_EVENT evt, QUEST_MSG * pMsg );
+END_DECL_QCONDITION
+
+// 완료 조건에만 있음
+BEGIN_DECL_QCONDITION( QUEST_CONDITION_KILLMONSTER )
+__DECL_CUSTOMPOOL_PTR( QUEST_CONDITION_KILLMONSTER )
+	enum { MAX_MONSTER_KIND_NUM = 5, };
+	virtual void Init( const QUESTPART_PROGR * pStream );
+	virtual void Clear();
+	virtual void CopyOut( QUESTPART_PROGR & OUT rStream );
+	virtual RC::eQUEST_RESULT CanComplete( void * pvParam );
+	virtual BOOL Event( eQUEST_EVENT evt, QUEST_MSG * pMsg );
+
+	__ARRAY_PROPERTY( DWORD, MAX_MONSTER_KIND_NUM, CurMonsterCode )
+	__ARRAY_PROPERTY( BYTE, MAX_MONSTER_KIND_NUM, CurMonsterNum )
+END_DECL_QCONDITION
+
+BEGIN_DECL_QCONDITION( QUEST_CONDITION_MISSION )
+__DECL_CUSTOMPOOL_PTR( QUEST_CONDITION_MISSION )
+	virtual RC::eQUEST_RESULT CanAccept( void * pvParam );
+	virtual RC::eQUEST_RESULT CanComplete( void * pvParam );
+	virtual BOOL Event( eQUEST_EVENT evt, QUEST_MSG * pMsg );
+END_DECL_QCONDITION
+
+BEGIN_DECL_QCONDITION( QUEST_CONDITION_AREA )
+__DECL_CUSTOMPOOL_PTR( QUEST_CONDITION_AREA )
+	virtual BOOL Event( eQUEST_EVENT evt, QUEST_MSG * pMsg );
+	virtual RC::eQUEST_RESULT CanComplete( void * pvParam );
+	virtual void Init( const QUESTPART_PROGR * pStream );
+	void Clear();
+	int CompleteArea(DWORD dwAreaID);
+	__ARRAY_PROPERTY( BOOL, QUEST_CONDITION_AREA_INFO::_MAX_CHECK_NUM, AreaCondition )
+
+END_DECL_QCONDITION
+
+//_NA_003027_20111013_HONOR_SYSTEM
+BEGIN_DECL_QCONDITION( QUEST_CONDITION_HONOR_RATING )
+__DECL_CUSTOMPOOL_PTR( QUEST_CONDITION_HONOR_RATING )
+virtual void Init( const QUESTPART_PROGR * pStream );
+virtual RC::eQUEST_RESULT CanAccept( void * pvParam );
+END_DECL_QCONDITION
+
+#ifdef _NA_006607_20130402_ADD_QUESTTYPE
+BEGIN_DECL_QCONDITION( QUEST_CONDITION_MISSION_CLEAR )
+__DECL_CUSTOMPOOL_PTR( QUEST_CONDITION_MISSION_CLEAR )
+enum { MAX_MISSION_CLEAR_CHECK_NUM = 2 };
+virtual void Init( const QUESTPART_PROGR * pStream );
+virtual BOOL Event( eQUEST_EVENT evt, QUEST_MSG * pMsg );
+virtual RC::eQUEST_RESULT CanComplete( void* pvParam );
+virtual RC::eQUEST_RESULT CanAccept( void* pvParam );
+virtual void CopyOut( QUESTPART_PROGR & OUT rStream );
+__ARRAY_PROPERTY( DWORD, MAX_MISSION_CLEAR_CHECK_NUM, MissionCode )
+__ARRAY_PROPERTY( DWORD, MAX_MISSION_CLEAR_CHECK_NUM, CurMissionClearNum )
+END_DECL_QCONDITION
+#endif // _NA_006607_20130402_ADD_QUESTTYPE

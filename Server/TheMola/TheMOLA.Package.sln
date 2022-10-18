@@ -1,0 +1,58 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TheMOLA4File", "TheMola4File.vcproj", "{44209841-C2F3-4F15-87B5-22C1D347DCD0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{519E5B9F-8854-48CD-AB9F-A77213A93B6F} = {519E5B9F-8854-48CD-AB9F-A77213A93B6F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TheMOLA.DecodeLib", "TheMola.DecodeLib.vcproj", "{519E5B9F-8854-48CD-AB9F-A77213A93B6F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TheMola.FileInjector", "TheMola.FileInjector.vcproj", "{5245CA4A-5BBA-4814-833C-B2BE21691D9F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TheMola.DBProxy.Decoder", "TheMola.Decoder.vcproj", "{532C35B0-CCF3-443C-95BA-D3AF562582A4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{44209841-C2F3-4F15-87B5-22C1D347DCD0} = {44209841-C2F3-4F15-87B5-22C1D347DCD0}
+		{519E5B9F-8854-48CD-AB9F-A77213A93B6F} = {519E5B9F-8854-48CD-AB9F-A77213A93B6F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TheMola.DBProxy.Encoder", "TheMola.Encoder.vcproj", "{A99713CD-68B2-46FF-9012-DC099DA6A3F9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{44209841-C2F3-4F15-87B5-22C1D347DCD0} = {44209841-C2F3-4F15-87B5-22C1D347DCD0}
+		{519E5B9F-8854-48CD-AB9F-A77213A93B6F} = {519E5B9F-8854-48CD-AB9F-A77213A93B6F}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{44209841-C2F3-4F15-87B5-22C1D347DCD0}.Debug.ActiveCfg = Debug|Win32
+		{44209841-C2F3-4F15-87B5-22C1D347DCD0}.Debug.Build.0 = Debug|Win32
+		{44209841-C2F3-4F15-87B5-22C1D347DCD0}.Release.ActiveCfg = Release|Win32
+		{44209841-C2F3-4F15-87B5-22C1D347DCD0}.Release.Build.0 = Release|Win32
+		{519E5B9F-8854-48CD-AB9F-A77213A93B6F}.Debug.ActiveCfg = Debug|Win32
+		{519E5B9F-8854-48CD-AB9F-A77213A93B6F}.Debug.Build.0 = Debug|Win32
+		{519E5B9F-8854-48CD-AB9F-A77213A93B6F}.Release.ActiveCfg = Release|Win32
+		{519E5B9F-8854-48CD-AB9F-A77213A93B6F}.Release.Build.0 = Release|Win32
+		{5245CA4A-5BBA-4814-833C-B2BE21691D9F}.Debug.ActiveCfg = Debug|Win32
+		{5245CA4A-5BBA-4814-833C-B2BE21691D9F}.Debug.Build.0 = Debug|Win32
+		{5245CA4A-5BBA-4814-833C-B2BE21691D9F}.Release.ActiveCfg = Release|Win32
+		{5245CA4A-5BBA-4814-833C-B2BE21691D9F}.Release.Build.0 = Release|Win32
+		{532C35B0-CCF3-443C-95BA-D3AF562582A4}.Debug.ActiveCfg = Debug|Win32
+		{532C35B0-CCF3-443C-95BA-D3AF562582A4}.Debug.Build.0 = Debug|Win32
+		{532C35B0-CCF3-443C-95BA-D3AF562582A4}.Release.ActiveCfg = Release|Win32
+		{532C35B0-CCF3-443C-95BA-D3AF562582A4}.Release.Build.0 = Release|Win32
+		{A99713CD-68B2-46FF-9012-DC099DA6A3F9}.Debug.ActiveCfg = Debug|Win32
+		{A99713CD-68B2-46FF-9012-DC099DA6A3F9}.Debug.Build.0 = Debug|Win32
+		{A99713CD-68B2-46FF-9012-DC099DA6A3F9}.Release.ActiveCfg = Release|Win32
+		{A99713CD-68B2-46FF-9012-DC099DA6A3F9}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

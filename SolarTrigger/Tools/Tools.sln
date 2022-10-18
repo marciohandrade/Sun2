@@ -1,0 +1,64 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScriptChecker", "ScriptChecker\ScriptChecker.vcproj", "{A5C05D3C-7F94-4DE1-ADE1-E114C628835B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SunAutoUpdateTool", "SunAutoUpdateTool\SunAutoUpdateTool.vcproj", "{45DD8B2D-292D-4626-BEB8-568EEC22D286}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0AE80115-86DB-4159-BB8E-61D0606CC615} = {0AE80115-86DB-4159-BB8E-61D0606CC615}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UpdateModule", "UpdateModule\UpdateModule.vcproj", "{0AE80115-86DB-4159-BB8E-61D0606CC615}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServiceInstaller", "ServiceInstaller\ServiceInstaller.vcproj", "{A560DF0E-BCBD-4B00-90AB-3A97F565D631}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UpdateListGen", "UpdateListGen\UpdateListGen.vcproj", "{24B0CAD8-EACC-4EEF-B96B-6A3382D47E6A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServerStarter", "ServerStarter\ServerStarter.vcproj", "{76D74D31-1002-4C66-94BF-682A7FD08452}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{A5C05D3C-7F94-4DE1-ADE1-E114C628835B}.Debug.ActiveCfg = Debug|Win32
+		{A5C05D3C-7F94-4DE1-ADE1-E114C628835B}.Debug.Build.0 = Debug|Win32
+		{A5C05D3C-7F94-4DE1-ADE1-E114C628835B}.Release.ActiveCfg = Release|Win32
+		{A5C05D3C-7F94-4DE1-ADE1-E114C628835B}.Release.Build.0 = Release|Win32
+		{45DD8B2D-292D-4626-BEB8-568EEC22D286}.Debug.ActiveCfg = Debug|Win32
+		{45DD8B2D-292D-4626-BEB8-568EEC22D286}.Debug.Build.0 = Debug|Win32
+		{45DD8B2D-292D-4626-BEB8-568EEC22D286}.Release.ActiveCfg = Release|Win32
+		{45DD8B2D-292D-4626-BEB8-568EEC22D286}.Release.Build.0 = Release|Win32
+		{0AE80115-86DB-4159-BB8E-61D0606CC615}.Debug.ActiveCfg = Debug|Win32
+		{0AE80115-86DB-4159-BB8E-61D0606CC615}.Debug.Build.0 = Debug|Win32
+		{0AE80115-86DB-4159-BB8E-61D0606CC615}.Release.ActiveCfg = Release|Win32
+		{0AE80115-86DB-4159-BB8E-61D0606CC615}.Release.Build.0 = Release|Win32
+		{A560DF0E-BCBD-4B00-90AB-3A97F565D631}.Debug.ActiveCfg = Debug|Win32
+		{A560DF0E-BCBD-4B00-90AB-3A97F565D631}.Debug.Build.0 = Debug|Win32
+		{A560DF0E-BCBD-4B00-90AB-3A97F565D631}.Release.ActiveCfg = Release|Win32
+		{A560DF0E-BCBD-4B00-90AB-3A97F565D631}.Release.Build.0 = Release|Win32
+		{24B0CAD8-EACC-4EEF-B96B-6A3382D47E6A}.Debug.ActiveCfg = Debug|Win32
+		{24B0CAD8-EACC-4EEF-B96B-6A3382D47E6A}.Debug.Build.0 = Debug|Win32
+		{24B0CAD8-EACC-4EEF-B96B-6A3382D47E6A}.Release.ActiveCfg = Release|Win32
+		{24B0CAD8-EACC-4EEF-B96B-6A3382D47E6A}.Release.Build.0 = Release|Win32
+		{76D74D31-1002-4C66-94BF-682A7FD08452}.Debug.ActiveCfg = Debug|Win32
+		{76D74D31-1002-4C66-94BF-682A7FD08452}.Debug.Build.0 = Debug|Win32
+		{76D74D31-1002-4C66-94BF-682A7FD08452}.Release.ActiveCfg = Release|Win32
+		{76D74D31-1002-4C66-94BF-682A7FD08452}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

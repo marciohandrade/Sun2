@@ -1,0 +1,54 @@
+
+
+
+#define MAX_PIPEMSG_SIZE	0x2000
+#define MAX_USERMSG_SIZE 0x1000
+#define PIPEMSG_HEADER_SIZE	4
+
+
+#define CMD_HOST	0x01
+#define CMD_JOIN	0x02
+#define CMD_REGISTER_ID 0x03
+
+
+
+#define CMD_EXIT	0x011
+#define CMD_VOLUME  0x012
+#define CMD_TERMINATE 0x013
+
+
+
+#define ON_HOST_RESULT 0x104
+#define ON_JOIN_RESULT 0x105
+#define ON_VOLUME_RESULT 0x106
+#define ON_EXIT_RESULT   0x107
+
+
+
+typedef struct _PIPEMSG_HEADER
+{
+	USHORT Cmd;
+	USHORT Size;
+}PIPEMSG_HEADER, *LPPIPEMSG_HEADER;
+
+typedef struct _USERDATA
+{
+	TCHAR szMsg[MAX_USERMSG_SIZE];
+}USERDATA, *LPUSERDATA;
+
+
+typedef struct CONNECTIONINFO
+{
+	char ID[16];
+	char LocalIP[16];
+	char EndPointIP[16];
+	WORD wPort;
+
+}CONNECTIONINFO, *LPCONNECTIONINFO;
+
+typedef struct CONNECTIONINFO_LIST
+{
+	BYTE IDCount;
+	char IDList[10][16];
+
+}CONNECTIONINFO_LIST, *LPCONNECTIONINFO_LIST;

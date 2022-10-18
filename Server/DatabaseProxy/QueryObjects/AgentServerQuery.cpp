@@ -1,0 +1,25 @@
+
+#include "stdafx.h"
+#include "AgentServerQuery.h"
+#include "./QueryPoolFactory.h"
+
+__IMPL_SAFECUSTOMPOOL_PTR(Query_User_Select)
+__IMPL_SAFECUSTOMPOOL_PTR(Query_User_Select_Inventory);
+__IMPL_SAFECUSTOMPOOL_PTR(Query_Char_Create)
+__IMPL_SAFECUSTOMPOOL_PTR(Query_Char_Destroy)
+__IMPL_SAFECUSTOMPOOL_PTR(Query_Char_Recover)
+
+__IMPL_SAFECUSTOMPOOL_PTR(Query_User_Select_PetList)
+
+#ifdef __NA_001044_ADD_CUSTOM_UI
+__IMPL_SAFECUSTOMPOOL_PTR(Query_Char_NameCheck)
+#endif
+
+#ifdef _JP_20110222_INGAME_CHARNAME_CHANGE
+__IMPL_SAFECUSTOMPOOL_PTR(Query_CharName_Change)
+#endif
+
+#ifdef _NA_0_20110329_GAMEOPTION_SETTING
+__IMPL_SAFECUSTOMPOOL_PTR(Query_GameOption_Select)
+__IMPL_SAFECUSTOMPOOL_PTR(Query_GameOption_Update)
+#endif

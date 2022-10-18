@@ -1,0 +1,32 @@
+
+Function : XP_MD5_CryptKey
+Argument1
+	Type : string  in
+	Desc : MD5로 변환을 시도할 원본 문자열
+Argument2
+	Type : string  in
+	Desc : 암호화에 사용될 Key 문자열
+Argument3
+	Type : string  out
+	Desc : 변환된 MD5가 저장될 버퍼
+Description
+	입력된 문자열을 MD5 값으로 변환합니다. 이 때 Argument2를 Key로 사용하기 때문에
+	동일한 Argument1라도 Argument2에 따라 결과가 달라집니다.
+
+
+
+Function : XP_MD5_Compare
+Argument1
+	Type : string  in
+	Desc : 비교할 원본 문자열
+Argument2
+	Type : string  in
+	Desc : MD5로 변환된 비교될 MD5 문자열
+Argument3
+	Type : string  in
+	Desc : MD5 비교에 사용될 Key 문자열
+Argument4
+	Type : tinyint  out
+	Desc : 1 = 동일한 값, 0 = 틀린 값
+Description
+	하나의 문자열과 하나의 MD5가 서로 동일한지를 비교합니다.

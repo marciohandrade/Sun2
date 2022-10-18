@@ -1,0 +1,1 @@
+.\TheMola.FileInjector.exe ..\_bin\AuthServer.exe AuthCryptGlobal.info AUTH

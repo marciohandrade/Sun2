@@ -1,0 +1,161 @@
+#pragma once
+
+#include <SolarHashTable.h>
+
+#include "QuestStruct.h"
+
+const int MAX_QUEST_COMPL_NUM = QUESTPART_COMPL::MAX_QUEST_COMPL_NUM;
+const int MAX_QUEST_PROGR_NUM = QUESTPART_PROGR::MAX_QUEST_PROGR_NUM;
+//const int MAX_QUEST_NUM = 3000;
+
+typedef	WORD QCODE;
+typedef	WORD QLEVEL;
+const int MAX_QUEST_NAME_LENGTH = 128;
+
+const int MAX_QUEST_KILL_MONSTER_MAP_CODE = 5;
+
+enum eQTYPE
+{
+	eQTYPE_NONE		= 0,
+	eQTYPE_GENERAL	= 1,
+	eQTYPE_ELITE	= 2,
+	eQTYPE_MISSION	= 3,
+	eQTYPE_HIDDEN	= 4,
+};
+
+enum eQUEST_ACCEPT_TYPE
+{
+	eQUEST_ACCEPT_GENERAL = 0,		//< 일반
+	eQUEST_ACCEPT_AUTO,				//< 레벨업시 오토 적용
+    eQUEST_ACCEPT_AUTO_BY_ITEM,		//< 아이템 사용시 오토 적용
+};
+
+
+enum eQUEST_SERIALIZE
+{
+	QSERIALIZE_SAVE,
+	QSERIALIZE_LOAD,
+};
+
+enum eQUEST_OPERATOR
+{
+	QOP_AND = 0,
+	QOP_OR	= 1,
+};
+
+enum eQUEST_CONDITION_TYPE
+{
+	eQUEST_CONDITION_REPEAT,
+	eQUEST_CONDITION_CHARLV,
+	eQUEST_CONDITION_CHARCLASS,
+	eQUEST_CONDITION_QUEST,			//< 진행 퀘스트, 완료 퀘스트, 제한 퀘스트, 필요 퀘스트, 완료 횟수
+	eQUEST_CONDITION_ITEM,			//< 해당클래스, 제한 아이템, 필요아이템, 개수
+	eQUEST_CONDITION_CLASSITEM,
+	eQUEST_CONDITION_MONEY,
+	eQUEST_CONDITION_KILLMONSTER,
+	eQUEST_CONDITION_MISSION,
+	eQUEST_CONDITION_AREA,
+	eQUEST_CONDITION_ITEM_SPACE,
+	eQUEST_CONDITION_CHAO,
+    eQUEST_CONDITION_CREATE_PORTAL,
+    //_NA_003027_20111013_HONOR_SYSTEM
+    eQUEST_CONDITION_HONOR_RATING,
+    eQUEST_CONDITION_DAILY_QUEST,
+#ifdef _NA_006607_20130402_ADD_QUESTTYPE
+    eQUEST_CONDITION_MISSION_CLEAR,
+#endif //_NA_006607_20130402_ADD_QUESTTYPE
+    eQUEST_CONDITION_MAX
+};
+
+enum eQUEST_ACTION_TYPE
+{
+	eQUEST_ACTION_ITEM = eQUEST_CONDITION_MAX,	//< 아이템 부여 및 제거
+	//eQUEST_ACTION_TIMER,						//< 타이머 작동
+	eQUEST_ACTION_CHANGEofCLASS,	
+	eQUEST_ACTION_SPAWN_MONSTER,
+    //__NA000000_090320_v0902_LOGIC_CHANGE_ABOUT_QUEST__
+    eQUEST_ACTION_SPAWN_MONSTER_ABANDON,
+    eQUEST_ACTION_CREATE_PORTAL,
+    eQUEST_ACTION_CLOSE_PORTAL,
+    //__NA001283_20090225_COLLECTION_USE
+	eQUEST_ACTION_DELETE_COLLECTIONID,
+    eQUEST_ACTION_DAILY_QUEST,          // _NA_003027_20111013_HONOR_SYSTEM
+    eQUEST_ACTION_DAILY_QUEST_DELETE,   // _NA_003027_20111013_HONOR_SYSTEM
+    //
+	eQUEST_ACTION_MAX
+};
+
+enum eQUEST_EVENT				//< 이벤트처리
+{
+	QUEST_EVENT_ITEM,			//< 클
+	QUEST_EVENT_CHARLV,			//< 클
+	QUEST_EVENT_QUEST,			//< 클
+	QUEST_EVENT_MONEY,			//< 클
+	QUEST_EVENT_MONSTERKILL,	//< 서 + 클
+	QUEST_EVENT_TIME,			//< 클
+	QUEST_EVENT_MISSION,		//< 클
+	QUEST_EVENT_AREA,			//< 클
+	QUEST_EVENT_CHAO,			//< 클 (( 혹시 쓸일이 있을지 몰라서 선언 ))- J0
+    QUEST_EVENT_MONSTERKILL_GRADE, //< 서
+
+#ifdef _NA_006607_20130402_ADD_QUESTTYPE
+    QUEST_EVENT_MISSION_CLEAR,  //< 서
+#endif //_NA_006607_20130402_ADD_QUESTTYPE
+};
+
+enum eSPECIAL_QUEST_REWARD
+{
+	SPECIAL_REWARD_TYPE_CHANGEUP_100LEVEL					= 1000000, // 100레벨 체인지업
+	// ... ChangeUp, ChageOfClass(전직) 관련 단계 설정
+
+	//	100Level ChangeUp 각 캐릭터별 보상코드 값
+	SPECIAL_REWARD_TYPE_CHANGEUP_100LEVEL_BERSERKER			= 2010,
+	SPECIAL_REWARD_TYPE_CHANGEUP_100LEVEL_DRAGON_KNIGHT		= 2011,
+	SPECIAL_REWARD_TYPE_CHANGEUP_100LEVEL_SHADOW			= 2012,
+	SPECIAL_REWARD_TYPE_CHANGEUP_100LEVEL_VALKYRIE			= 2013,
+	SPECIAL_REWARD_TYPE_CHANGEUP_100LEVEL_ELEMENTALIST		= 2014,
+};
+
+enum eQUEST_REQUEST_NPC_DIALOG
+{
+    QUEST_NPC_DIALOG_NONE           = 0,
+    QUEST_NPC_DIALOG_SPAWN_MOB      = 1,
+    QUEST_NPC_DIALOG_CREATE_PORTAL  = 2,
+};
+
+#ifdef _NA_004157_20120409_QUEST_BANDWITH_INCREASING
+    class QuestInfo;
+    class QUEST_INFO_HASH : public STLX_MAP<DWORD, QuestInfo*>
+    {
+    public:
+        QuestInfo* GetData(DWORD quest_code) { 
+            iterator it = find(quest_code);
+            return it == end() ? NULL : it->second;
+        }
+
+        void Add(QuestInfo* quest_info, DWORD quest_index) {
+            insert(QUEST_INFO_HASH::value_type(quest_index, quest_info));
+        }
+    };
+    typedef QUEST_INFO_HASH::iterator      QUEST_INFO_HASH_ITR;
+#else
+    class QuestInfo;
+    typedef util::SolarHashTable<QuestInfo *>				QUEST_INFO_HASH;
+    typedef util::SolarHashTable<QuestInfo *>::iterator		QUEST_INFO_HASH_ITR;
+#endif
+
+class Quest;
+typedef util::SolarHashTable<Quest *>					QUEST_HASH;
+typedef util::SolarHashTable<Quest *>::iterator			QUEST_HASH_ITR;
+typedef STLX_VECTOR<QCODE>                  QUEST_CODE_VECTOR;
+typedef STLX_MAP<WORD, QUEST_CODE_VECTOR>   QUEST_GROUP_MAP;
+
+struct Deleter
+{
+	template< class T >
+	void operator()( T *& p ) const
+	{
+		delete p; p = NULL;
+	}
+};
+

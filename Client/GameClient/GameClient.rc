@@ -1,0 +1,260 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 한국어 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_GAMECLIENT MENU 
+BEGIN
+    POPUP "파일(&F)"
+    BEGIN
+        MENUITEM "끝내기(&X)",                  IDM_EXIT
+    END
+    POPUP "도움말(&H)"
+    BEGIN
+        MENUITEM "정보(&A)...",                 IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG  22, 17, 230, 75
+STYLE DS_SETFONT | DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "정보"
+FONT 9, "System"
+BEGIN
+    ICON            IDI_SUNICON,IDI_SUNICON,14,9,16,16
+    LTEXT           "GameClient 버전 1.0",IDC_STATIC,49,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2004",IDC_STATIC,49,20,119,8
+    DEFPUSHBUTTON   "확인",IDOK,195,6,30,11,WS_GROUP
+END
+
+IDD_SYSTEM DIALOGEX 0, 0, 266, 39
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Sun Online 서버에 접속중입니다. 잠시만 기다려 주십시요.",
+                    IDC_STATIC,26,15,208,8
+END
+
+IDD_ARMORKIT DIALOGEX 0, 0, 339, 173
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,143,142,50,14
+    CONTROL         "Static",IDC_ARMORKITALERT_CONTENT,"Static",
+                    SS_LEFTNOWORDWRAP | SS_SUNKEN | WS_GROUP,22,60,296,59
+    CTEXT           "Static",IDC_ARMORKITALERT_HEADELINE,69,21,208,26,
+                    SS_SUNKEN
+END
+
+IDD_MESSAGE_BOX DIALOGEX 0, 0, 186, 90
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,67,69,50,14
+    CTEXT           "Static",IDC_MESSAGE_TEXT,7,10,172,46
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+IDR_VERSION VERSIONINFO
+ FILEVERSION 0,0,0,0
+ PRODUCTVERSION 0,0,0,0
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080004b0"
+        BEGIN
+            VALUE "CompanyName", "Webzen"
+            VALUE "LegalCopyright", "Copyright Webzen SUN Studio (C) - 2006"
+            VALUE "LegalTrademarks", "SUN"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x800, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_SYSTEM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 259
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 32
+    END
+
+    IDD_ARMORKIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 332
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 166
+    END
+
+    IDD_MESSAGE_BOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RT_MANIFEST
+//
+
+APP_MANIFEST            RT_MANIFEST             "Sungame.exe.manifest"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_SUNICON             ICON                    "Sun.ico"
+IDI_SUNICON_CN          ICON                    "sun_cn.ico"
+IDI_SUNICON_TW          ICON                    "sun_tw.ico"
+IDI_SUNICON_KR          ICON                    "Sun_kr.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE           "GameClient"
+    IDS_SYSTEM_CHECK_KOR    "Soul of the Ultimate Nation Online - 시스템 알림"
+    IDS_DATA_PATH           "Data\\"
+    IDS_GAME_PATH           "..\\_bin"
+    IDS_SYSTEM_CHECK_MSG_KOR 
+                            "인증서버로부터 응답이 없습니다.\n\n네트워크가 연결되어 있지 않거나 방화벽에 막혀 접속할 수가 없습니다.\n네트워크 환경이나 방화벽 설정을 확인한 후 다시 시도해 주시길 바랍니다."
+    IDS_SYSTEM_CHECK_FOREIGN 
+                            "Soul of the Ultimate Nation Online - System Notice"
+    IDS_SYSTEM_CHECK_PLZ_WAIT_KOR 
+                            "Sun Online 서버에 접속중입니다. 잠시만 기다려 주십시요."
+    IDS_SYSTEM_CHECK_PLZ_WAIT_FOREIGN 
+                            "Sun Online Connecting to Server. Please Wait."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SYSTEM_CHECK_MSG_FOREIGN 
+                            "No response from the authentication Server.\n\nUnable to connect to the network is not connected or blocked by the firewall.\nPlease try again after checking the network configuration or firewall settings."
+    IDS_GAME_PATH_JP        "..\\_bin_jp"
+    IDS_GAME_PATH_CN        "..\\_bin_cn"
+    IDS_GAME_PATH_TW        "..\\_bin_tw"
+    IDS_GAME_PATH_GSP       "..\\_bin_gsp"
+    IDS_REPORT_STRING_FOREIGN 
+                            "The program is shutting down because of a problem with Soul of the Ultimate Nation.\r\nWe apologize for any inconvenience.\r\n\r\nBy reporting this problem, you can help us solve it as soon as possible.\r\nDo you want to report the error?"
+    IDS_REPORT_STRING_KOR   "Soul of the Ultimate Nation에 문제가 있어 프로그램을 종료합니다.\r\n불편을 끼쳐드려 대단히 죄송합니다.\r\n\r\n오류를 보고하시면, 빠른 문제 해결에 도움이 될 수 있습니다.\r\n오류를 보고 하시겠습니까?"
+    IDS_REPORT_STRING_KOR1  "보고 감사합니다."
+    IDS_REPORT_STRING_KOR2  "내용을 기재해 주세요"
+END
+
+#endif    // 한국어 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

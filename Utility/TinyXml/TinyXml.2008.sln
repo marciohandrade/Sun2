@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TinyXml", "TinyXml.2008.vcproj", "{2BF48621-3D13-4C5E-B3BD-831776EC2BDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug - (서버용)|Win32 = Debug - (서버용)|Win32
+		Debug|Win32 = Debug|Win32
+		Engine_Debug|Win32 = Engine_Debug|Win32
+		Performance Release|Win32 = Performance Release|Win32
+		Release - (서버용)|Win32 = Release - (서버용)|Win32
+		Release - 유저 배포 버전 ( 덤프 남김 )|Win32 = Release - 유저 배포 버전 ( 덤프 남김 )|Win32
+		Release - 유저 배포 버전|Win32 = Release - 유저 배포 버전|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BF48621-3D13-4C5E-B3BD-831776EC2BDA}.Debug - (서버용)|Win32.ActiveCfg = Debug|Win32
+		{2BF48621-3D13-4C5E-B3BD-831776EC2BDA}.Debug - (서버용)|Win32.Build.0 = Debug|Win32
+		{2BF48621-3D13-4C5E-B3BD-831776EC2BDA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2BF48621-3D13-4C5E-B3BD-831776EC2BDA}.Debug|Win32.Build.0 = Debug|Win32
+		{2BF48621-3D13-4C5E-B3BD-831776EC2BDA}.Engine_Debug|Win32.ActiveCfg = Debug|Win32
+		{2BF48621-3D13-4C5E-B3BD-831776EC2BDA}.Engine_Debug|Win32.Build.0 = Debug|Win32
+		{2BF48621-3D13-4C5E-B3BD-831776EC2BDA}.Performance Release|Win32.ActiveCfg = Release|Win32
+		{2BF48621-3D13-4C5E-B3BD-831776EC2BDA}.Performance Release|Win32.Build.0 = Release|Win32
+		{2BF48621-3D13-4C5E-B3BD-831776EC2BDA}.Release - (서버용)|Win32.ActiveCfg = Release|Win32
+		{2BF48621-3D13-4C5E-B3BD-831776EC2BDA}.Release - (서버용)|Win32.Build.0 = Release|Win32
+		{2BF48621-3D13-4C5E-B3BD-831776EC2BDA}.Release - 유저 배포 버전 ( 덤프 남김 )|Win32.ActiveCfg = Release|Win32
+		{2BF48621-3D13-4C5E-B3BD-831776EC2BDA}.Release - 유저 배포 버전 ( 덤프 남김 )|Win32.Build.0 = Release|Win32
+		{2BF48621-3D13-4C5E-B3BD-831776EC2BDA}.Release - 유저 배포 버전|Win32.ActiveCfg = Release|Win32
+		{2BF48621-3D13-4C5E-B3BD-831776EC2BDA}.Release - 유저 배포 버전|Win32.Build.0 = Release|Win32
+		{2BF48621-3D13-4C5E-B3BD-831776EC2BDA}.Release|Win32.ActiveCfg = Release|Win32
+		{2BF48621-3D13-4C5E-B3BD-831776EC2BDA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

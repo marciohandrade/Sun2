@@ -1,0 +1,207 @@
+/*=======================================================================================================================
+// 사용법 예제)
+// 2006.12.12
+// Sun / Server / 김창현 / shogen
+
+//Include 해야 할 클래스들
+
+#include <WriteLogMng.h>
+
+#include <ActionData.h>
+#include <AdminData.h>
+#include <ChatData.h>
+#include <ExpData.h>
+#include <ItemData.h>
+#include <MoneyData.h>
+#include <SessionData.h>
+#include <SkillData.h>
+#include <SnapShotData.h>
+
+void PrintBaseData(BaseLogData* pObj);
+fpos_t ReadLog( CWriteLogMng& LogMgr, DWORD dwCount );
+
+int main()
+{	
+	CWriteLogMng LogMgr;    
+	
+	if(!(LogMgr.Open("SUN_FIELD__Date_20061218.wzl")) )
+	{
+		//에러메세지 처리
+		//-파일이 없을 경우
+		//-로그메니저의 Open()함수 호출 후 Close 하지 않은 경우
+		return 0;
+	}
+
+	fpos_t Offset;
+	
+	//10 만큼만 출력후 오프셋 반환
+	cout << "/*10개만 출력*/" << endl;
+	Offset = ReadLog(LogMgr, 10);
+
+	//다시 처음부터 출력되는지 Test	
+	cout << "/*처음부터 출력되는지 Test*/" << endl;
+	LogMgr.SetLogFileOffset(0);
+	ReadLog(LogMgr, 5);
+
+	//첫번째에서 받은 오프셋 이후로 출력되는지 Test
+	cout << "처음에 10개 출력 후 반환된 오프셋부터 출력" << endl;
+	LogMgr.SetLogFileOffset(Offset);
+	ReadLog(LogMgr, 25);	
+	
+	//사용 후 반드시 Close를 호출해 주세요/
+	//Open 하지도 않고 Close호출 시 반환값은 FALSE입니다.
+	LogMgr.Close();
+
+	return 0;	
+}
+
+//BaseDat를 출려하는 함수
+void PrintBaseData(BaseLogData* pObj)
+{
+	cout << "BaseWriteTime:\t" << pObj->GetWriteTime() << endl;	
+	cout << "BaseID:\t" << pObj->GetAccountID() << endl;
+	cout << "BaseName:\t" << pObj->GetCharName() << endl;
+	cout << "BaseIP:\t" << pObj->GetUserIP() << endl;
+}
+
+//dwCount 만큼만 출력후 오프셋 반환
+fpos_t ReadLog( CWriteLogMng& LogMgr, DWORD dwCount )
+{
+	DWORD dwCnt = 0;
+	//BaseLogData 클래스가 부모 클래스이며 모든 Data클래스는 이 클래스를 상속
+	BaseLogData* pObj;
+
+	//반환값이 NULL일때 까지 루프를 돌면서 Object를 얻는다.
+	while( (pObj = LogMgr.Read()) != NULL )
+	{
+		//카테고리를 얻어 그 종류별로 타입 캐스팅을 통하여 사용
+		//Data들은 Get Method들을 통하여 얻을 수 있습니다.
+		//Test로 출력해 보았습니다.		
+		dwCnt++;
+		switch(pObj->GetCategory())
+		{
+		case LOG_SESSION:
+			cout << "Category:\t" << "LOG_SESSION" << endl;
+			PrintBaseData(pObj);
+			cout << "LogType:\t" << ((SessionData*)pObj)->GetLogType() << endl;
+			cout << "LoginTime:\t" << ((SessionData*)pObj)->GetLoginTime() << endl;
+			cout << "UsedTime:\t" << ((SessionData*)pObj)->GetUsedTime() << endl;
+			break;
+		case LOG_ITEM:
+			cout << "Category:\t" << "LOG_ITEM" << endl;
+			PrintBaseData(pObj);
+			cout << "MapCode:\t" << ((ItemData*)pObj)->GetMapCode() <<endl;
+			cout << "MapX:\t" << ((ItemData*)pObj)->GetMapX() << endl;
+			cout << "MapY:\t" << ((ItemData*)pObj)->GetMapY() << endl;
+			cout << "MapZ:\t" << ((ItemData*)pObj)->GetMapZ() << endl;
+			cout << "AccountID:\t" << ((ItemData*)pObj)->GetToAccountID() << endl;
+			cout << "Name:\t" << ((ItemData*)pObj)->GetToCharName() << endl;
+			cout << "ItemSerial:\t" << ((ItemData*)pObj)->GetItemSerial() << endl;
+			cout << "ItemCode:\t" << ((ItemData*)pObj)->GetItemCode() << endl;
+			cout << "ItemNum:\t" << (int)((ItemData*)pObj)->GetItemNum() << endl;
+			cout << "ItemVersion:\t" << ((ItemData*)pObj)->GetItemStreamVersion() << endl;
+			break;
+		case LOG_EXP:
+			cout << "Category:\t" << "LOG_EXP" << endl;
+			PrintBaseData(pObj);
+			cout << "NewLevel:\t" << ((ExpData*)pObj)->GetNewLevel() <<endl;
+			cout << "OldLevel:\t" << ((ExpData*)pObj)->GetOldLevel() <<endl;
+			cout << "NewExp:\t" << ((ExpData*)pObj)->GetNewExp() <<endl;
+			cout << "OldExp:\t" << ((ExpData*)pObj)->GetOldExp() <<endl;
+			cout << "DivideCount:\t" << ((ExpData*)pObj)->GetDivideCount() <<endl;			
+			break;
+		case LOG_ACTION:
+			cout << "Category:\t" << "LOG_ACTION" << endl;
+			PrintBaseData(pObj);
+			cout << "MapCode:\t" << ((ActionData*)pObj)->GetMapCode() << endl;
+			cout << "MapX:\t" << ((ActionData*)pObj)->GetMapX() << endl;
+			cout << "MapY:\t" << ((ActionData*)pObj)->GetMapY() << endl;
+			cout << "MapZ:\t" << ((ActionData*)pObj)->GetMapZ() << endl;
+			break;
+		case LOG_SKILL:
+			cout << "Category:\t" << "LOG_SKILL" << endl;
+			PrintBaseData(pObj);
+			cout << "SkillLevel:\t" << ((SkillData*)pObj)->GetSkillLevel() << endl;
+			cout << "SkillUseCnt:\t" << ((SkillData*)pObj)->GetSkillUseCnt() << endl;
+			break;
+		case LOG_SNAPSHOT:
+			switch(pObj->GetLogType())
+			{			
+				case SNAPSHOT_REGULAR:
+					cout << "Category:\t" << "LOG_SNAPSHOT" << endl;
+					PrintBaseData(pObj);
+					cout << "ItemBinaryVersion:\t" << ((SnapShotData*)pObj)->GetItemBinaryVersion() << endl;
+					cout << "BasePlayerInfoVersion:\t" << ((SnapShotData*)pObj)->GetBasePlayerInfoBinaryVersion() << endl;					
+					break;
+				case SNAPSHOT_WAREHOUSE_OEPN:
+				case SNAPSHOT_WAREHOUSE_CLOSE:
+					cout << "Category:\t" << "LOG_SNAPSHOT" << endl;
+					PrintBaseData(pObj);
+					cout << "ItemBinaryVersion:\t" << ((WareHouseData*)pObj)->GetItemBinaryVersion() << endl;					
+					break;
+			}
+			break;
+		case LOG_CHAT:
+			cout << "Category:\t" << "LOG_CHAT" << endl;
+			PrintBaseData(pObj);
+			cout << "Channel:\t" << ((ChatData*)pObj)->GetChannel() << endl;
+			cout << "UserGuid:\t" << ((ChatData*)pObj)->GetUserGuid() << endl;
+			cout << "ListenUserGuid:\t" << ((ChatData*)pObj)->GetListenUserGuid() << endl;
+			cout << "ListenName:\t" << ((ChatData*)pObj)->GetListenCharName() << endl;
+			cout << "Context:\t" << ((ChatData*)pObj)->GetContext() << endl;
+			cout << "MapCode:\t" << ((ChatData*)pObj)->GetMapCode() << endl;
+			cout << "RoonNo:\t" << ((ChatData*)pObj)->GetRoomNo() << endl;
+			break;
+		case LOG_EVENT:		
+			break;
+		case LOG_ADMIN:
+			cout << "Category:\t" << "LOG_ADMIN" << endl;
+			PrintBaseData(pObj);
+			cout << "MapCode:\t" << ((AdminData*)pObj)->GetMapCode() << endl;
+			cout << "MapX:\t" << ((AdminData*)pObj)->GetMapX() << endl;
+			cout << "MapY:\t" << ((AdminData*)pObj)->GetMapY() << endl;
+			cout << "MapZ:\t" << ((AdminData*)pObj)->GetMapZ() << endl;			
+			cout << "CharName:\t" << ((AdminData*)pObj)->GetToCharName() << endl;
+			break;
+		case LOG_MONEY:
+			cout << "Category:\t" << "LOG_MONEY" << endl;
+			PrintBaseData(pObj);
+			cout << "MapCode:\t" << ((MoneyData*)pObj)->GetMapCode() << endl;
+			cout << "MapX:\t" << ((MoneyData*)pObj)->GetMapX() << endl;
+			cout << "MapY:\t" << ((MoneyData*)pObj)->GetMapY() << endl;
+			cout << "MapZ:\t" << ((MoneyData*)pObj)->GetMapZ() << endl;
+			cout << "ToAccountID:\t" << ((MoneyData*)pObj)->GetToAccoundID() << endl;
+			cout << "ToCharName:\t" << ((MoneyData*)pObj)->GetToCharName() << endl;
+			cout << "Money:\t" << ((MoneyData*)pObj)->GetMoney() << endl;
+			cout << "ToMoney:\t" << ((MoneyData*)pObj)->GetToMoney() << endl;
+			cout << "RoomKey:\t" << ((MoneyData*)pObj)->GetRoomKey() << endl;
+			break;
+		default:		
+			return NULL;		
+		}
+		cout << "/////////////////////////////////////////////////////////////////////////" << endl;
+		//getch();
+		if(dwCnt == dwCount)
+			return LogMgr.GetLogFileOffset();
+	}
+
+	return 0;
+}
+
+/*//추가 
+//06년 12월 14일 - 이종곤씨의 요청으로 김창현 추가
+
+//두 메소드 모드 Open() 후에 사용하여야 한다.
+//그렇지 않을 경우
+// - SetLogFileOffset()은 FALSE 반환
+// - GetLogFileOffset()은 파일의 처음을 가르키는 0을 반환
+BOOL	SetLogFileOffset(fpos_t Pos);
+fpos_t	GetLogFileOffset();
+
+//06년 12월 18일
+
+//  - SnapShot 로그 남길 시 버전 추가( BASE_PLAYERINFO, INVENTORY 관련 )
+DWORD m_ItemBinaryVersion;				- GetItemBinaryVersion();
+DWORD m_BasePlayerInfoBinaryVersion;	- GetBasePlayerInfoBinaryVersion();
+//  - ItemData 로그 남길 시 버전 추가( ItemStream )
+DWORD m_ItemStreamVersion;				- GetItemStreamVersion();

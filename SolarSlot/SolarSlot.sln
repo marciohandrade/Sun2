@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SolarSlot", "SolarSlot.vcproj", "{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Debug - (서버용) = Debug - (서버용)
+		Release = Release
+		Release - (서버용) = Release - (서버용)
+		Release - MultiThread DLL = Release - MultiThread DLL
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Debug.ActiveCfg = Debug|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Debug.Build.0 = Debug|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Debug - (서버용).ActiveCfg = Debug - (서버용)|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Debug - (서버용).Build.0 = Debug - (서버용)|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Release.ActiveCfg = Release|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Release.Build.0 = Release|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Release - (서버용).ActiveCfg = Release - (서버용)|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Release - (서버용).Build.0 = Release - (서버용)|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Release - MultiThread DLL.ActiveCfg = Release - (서버용)|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Release - MultiThread DLL.Build.0 = Release - (서버용)|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

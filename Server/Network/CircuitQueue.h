@@ -1,0 +1,7 @@
+#ifndef NETWORK_MODULE_CIRCUITQUEUE_H
+#define NETWORK_MODULE_CIRCUITQUEUE_H
+// (NOTE) an unused section
+
+// ...
+
+#endif //NETWORK_MODULE_CIRCUITQUEUE_H

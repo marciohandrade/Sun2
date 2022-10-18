@@ -1,0 +1,33 @@
+
+#include "stdafx.h"
+#include "DatabaseProxyQuery.h"
+#include "./QueryPoolFactory.h"
+
+//__IMPL_SAFECUSTOMPOOL_PTR(TestQuery)
+//__IMPL_SAFECUSTOMPOOL_PTR(AccountInsertQuery)
+//__IMPL_SAFECUSTOMPOOL_PTR(Query_Test_Insert)
+__IMPL_SAFECUSTOMPOOL_PTR(CreateItemSerialQuery)
+__IMPL_SAFECUSTOMPOOL_PTR(Query_Char_Update)
+__IMPL_SAFECUSTOMPOOL_PTR(Query_Char_Update_Inventory)
+__IMPL_SAFECUSTOMPOOL_PTR(Query_Warehouse_Update)
+
+#ifdef __CN_OO0510__FATIGUE_MATCHING_UPDATE
+__IMPL_SAFECUSTOMPOOL_PTR(Query_MatchChar_Update)
+__IMPL_SAFECUSTOMPOOL_PTR(Query_MatchChar_Delete)
+
+__IMPL_SAFECUSTOMPOOL_PTR(Query_MatchFatigue_Update)
+__IMPL_SAFECUSTOMPOOL_PTR(Query_MatchFatigue_Select)
+#endif
+
+__IMPL_SAFECUSTOMPOOL_PTR(Query_CharacterExtraInfo_Select)
+__IMPL_SAFECUSTOMPOOL_PTR(Query_CharacterExtraInfo_Update)
+
+#ifdef _NA_007932_20150106_USER_EXTRA_INFO
+__IMPL_SAFECUSTOMPOOL_PTR(Query_UserExtraInfo_Select)
+__IMPL_SAFECUSTOMPOOL_PTR(Query_UserExtraInfo_Update)
+#endif // _NA_007932_20150106_USER_EXTRA_INFO
+
+#ifdef _NA_007086_20140318_MONSTERBOOK
+__IMPL_SAFECUSTOMPOOL_PTR(Query_CharacterMonsterBook_Select)
+__IMPL_SAFECUSTOMPOOL_PTR(Query_CharacterMonsterBook_Update)
+#endif //_NA_007086_20140318_MONSTERBOOK

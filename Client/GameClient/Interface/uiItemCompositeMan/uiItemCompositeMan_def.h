@@ -1,0 +1,23 @@
+#ifndef     _UI_ITEM_COMPOSITE_MAN_DEF_H_
+#define     _UI_ITEM_COMPOSITE_MAN_DEF_H_
+
+struct IM_ITEM_COMPOSITE_MANAGER
+{
+	static const DWORD ITEM_TOTAL_COMPOSITE;
+	static const DWORD ITEM_CRYSTALIZE;
+    static const DWORD ITEM_CUBE;
+};
+
+//
+//  Packet I/O Boolean
+//
+enum
+{
+    ePKBOOL_ITEM_COMPOSITE_BASE = 0,
+	ePKBOOL_ITEM_COMPOSITE_COMPOSE,
+	ePKBOOL_ITEM_COMPOSITE_CRYSTALIZE,
+    ePKBOOL_ITEM_COMPOSITE_MAX,
+};
+
+
+#endif

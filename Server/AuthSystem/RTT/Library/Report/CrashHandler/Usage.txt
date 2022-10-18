@@ -1,0 +1,104 @@
+/*
+[Project setting at Debug]
+
+Runtime Library				: Multi Thread Debug
+C/C++ -> 디버깅 정보 형식	: 줄 번호만(/Zd)
+							  프로그램 데이터베이스(/Zi)
+							  편집하며 계속하기를 위한 프로그램 데이터베이스(/ZI)
+C/C++ -> 최적화				: 사용 안 함(/Od)
+
+
+[Project setting at Release]
+
+Runtime Library				: Multi Thread
+C/C++ -> 디버깅 정보 형식	: 줄 번호만(/Zd)
+							  프로그램 데이터베이스(/Zi)
+							  편집하며 계속하기를 위한 프로그램 데이터베이스(/ZI)
+C/C++ -> 최적화				: 사용 안 함(/Od)
+
+-----------------------------------------------------------------------------------------
+
+[프로그램 배포시 유의사항]
+1. Stack walk를 사용하고자 할 경우
+ - pdb파일을 함께 배포해야 함.
+ 
+2. Mini dump를 사용하고자 하는 경우
+ - pdb파일은 필요없음.
+ - dbghelp.dll 파일을 필요로 함.
+ 
+3. pdb를 exe파일에 포함시기고자 할 경우
+ - vs6.0 기준 Project->Setting->Link->Customize에 있는 Use Program Database 설정을
+ 제거한다.(실행 파일의 용량이 상당히 증가되기 때문에 추천하지 않는다.)
+*/
+
+
+#include "CrashHandler.h"
+
+void ProcResult( LPCTSTR stackWalkLog, LPCTSTR dumpFileName )
+{
+	printf( stackWalkLog );
+}
+
+void call1()
+{
+	int* a = 0;
+
+	*a = 123;		//  이 곳에서 Crash가 발생한다.
+}
+
+void hahaha()
+{
+	call1();
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+//  CrashHandler 인스톨 첫 번째 방법
+
+void main()
+{
+	//  첫 번째 인자 : Stack walk log를 사용하고자 하면 TRUE로 설정한다.
+	//  두 번째 인자 : Mini dump를 사용하고자 하면 저장될 파일 명을 설정한다.
+	//  세 번째 인자 : Crash 발생시 Stack Walk log 및 Mini dump를 받아보기
+	//					위해서 callback 함수를 설정한다.
+	CrashHandler::Install( TRUE, "Test.dmp", ProcResult );
+
+	__try
+	{
+		hahaha();
+	}
+	__except( CrashHandler::HandleException( GetExceptionInformation() ) )
+	{
+	}
+}
+
+/*
+CrashHandler는 Unhandled exception이 발생하였을 때 필터를 가로채는 방식을
+사용합니다. 즉, 위의 예제에서 Crash가 발생하면 지정된 필터( ProcResult함수 )가
+호출되는 것입니다.
+
+하지만 Debug Run( F5 )를 사용하여 디버깅을 시도하면 VS에서 이 기능을 무력화
+시키기 때문에 필터가 호출되지 않으며, 평소와 같은 디버깅을 수행합니다. 만일
+이 상황에서 CrashHandler를 사용하고자 한다면 위의 예제와 같이 SEH를 명시해주고
+CrashHandler의 HandleException을 직접 호출해주어야 합니다.
+*/
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+//  CrashHandler 인스톨 두 번째 방법
+
+void main()
+{
+	CrashHandler::Install( TRUE, "Test.dmp", ProcResult );
+
+	hahaha();
+	
+	
+	//  만일 프로그램 중간에 Exception Handling을 제거하고 싶을 경우
+	//  CrashHandler::Uninstall() 을 호출하면 가능합니다.
+}
+
+/*
+Debug Run( F5 )이 아닌 Run( Ctrl + F5 ) 혹은 Release ... 등에서 실행할 경우
+위와 같이 Install만 수행해주면 필터링할 수 있습니다.
+*/

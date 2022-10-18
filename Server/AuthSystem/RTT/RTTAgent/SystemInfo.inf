@@ -1,0 +1,21 @@
+[Memory]
+Physical Total 1=1073741824
+Physical Total 2=1073741824
+
+AvailableBytes=1357221888
+CommitLimit=3599998976
+CommittedBytes=941625344
+PercentCommittedBytesInUse=26
+
+[CPU]
+CPU1=4
+CPU2=12
+
+[HDD C:]
+FreeSpace=19836284928
+Size=41948893184
+
+[HDD D:]
+FreeSpace=35905040384
+Size=38074818560
+

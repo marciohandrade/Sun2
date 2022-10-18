@@ -1,0 +1,91 @@
+@echo off
+
+if '%1'=='' goto errlog
+if '%2'=='' goto errlog
+
+    set upload=D:\Perforce\client\DailyBuild\%2
+    set workpath=D:\DailyBuild
+    set binpath=%workpath%\Client\_bin
+    set buildsystempath=%workpath%\Client\BuildSystem
+    set logpath=%workpath%\Client\BuildSystem\log
+
+    rem --------------------------------------------------------
+    rem 일단 sync를 해두자
+    rem --------------------------------------------------------
+
+    p4 sync %upload%\...
+
+    if '%1' == '0' goto uploadlog
+    if '%1' == '1' goto uploadexe
+
+    rem --------------------------------------------------------
+    rem GameClient.exe 배포
+    rem --------------------------------------------------------
+
+    :uploadexe
+    echo ▷ %binpath%\GameClient.exe 배포
+    xcopy %binpath%\GameClient.exe %upload%\ /y /r /f
+
+    if exist %upload%\GameClient.exe (		
+        p4 add %upload%\GameClient.exe
+        p4 edit %upload%\GameClient.exe
+    )
+
+    rem --------------------------------------------------------
+    rem svn_update_log.txt 배포       
+    rem --------------------------------------------------------
+    :upload_revlog
+    echo ▷ %logpath%\svn_update_log.txt 배포        
+    xcopy %logpath%\svn_update_log.txt %upload%\ /y /r /f
+
+    if exist %upload%\svn_update_log.txt (
+        p4 add %upload%\svn_update_log.txt
+        p4 edit %upload%\svn_update_log.txt
+    )
+
+    rem --------------------------------------------------------
+    rem BuildSystemResult.txt 배포       
+    rem --------------------------------------------------------
+
+    :uploadlog
+    echo ▷ %logpath%\BuildSystemResult.txt 배포        
+    xcopy %logpath%\BuildSystemResult.txt %upload%\ /y /r /f
+
+    if exist %upload%\BuildSystemResult.txt (
+        p4 add %upload%\BuildSystemResult.txt
+        p4 edit %upload%\BuildSystemResult.txt
+    )
+		
+    rem --------------------------------------------------------
+    rem build.log 배포       
+    rem --------------------------------------------------------
+    :upload_buildlog
+    echo ▷ %logpath%\build.log 배포        
+    xcopy %logpath%\build.log %upload%\ /y /r /f
+
+    if exist %upload%\build.log (
+        p4 add %upload%\build.log
+        p4 edit %upload%\build.log
+    )
+
+
+echo.-------------------------------------------------------------------------
+echo ▷ %upload%\p4_desc.txt
+echo.-------------------------------------------------------------------------
+	
+    del %upload%\p4_desc.txt /f /q
+    p4 change -o > %upload%\p4_desc.txt	
+
+    %buildsystempath%\p4_desc_make %upload%\p4_desc.txt %2-[%date%]
+
+    p4 submit -i < %upload%\p4_desc.txt    
+
+    exit /b 0
+
+
+:errlog
+echo.-------------------------------------------------------------------------
+echo ▷ 매개변수가 잘못 되었습니다.
+echo.-------------------------------------------------------------------------
+
+pause

@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CrashHandler", "CrashHandler.vcproj", "{18AB21B8-7111-4E84-B121-8A94A7FE36F6}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+		ReleaseDll = ReleaseDll
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{18AB21B8-7111-4E84-B121-8A94A7FE36F6}.Debug.ActiveCfg = Debug|Win32
+		{18AB21B8-7111-4E84-B121-8A94A7FE36F6}.Debug.Build.0 = Debug|Win32
+		{18AB21B8-7111-4E84-B121-8A94A7FE36F6}.Release.ActiveCfg = Release|Win32
+		{18AB21B8-7111-4E84-B121-8A94A7FE36F6}.Release.Build.0 = Release|Win32
+		{18AB21B8-7111-4E84-B121-8A94A7FE36F6}.ReleaseDll.ActiveCfg = ReleaseDll|Win32
+		{18AB21B8-7111-4E84-B121-8A94A7FE36F6}.ReleaseDll.Build.0 = ReleaseDll|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

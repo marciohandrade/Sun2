@@ -1,0 +1,58 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SUNLogConsole", "SUNLogConsole.2008.vcproj", "{9D8C9CEE-2426-4528-9481-8C7D44A00246}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_cn|Win32 = Debug_cn|Win32
+		Debug_gp|Win32 = Debug_gp|Win32
+		Debug_jp|Win32 = Debug_jp|Win32
+		Debug_kr|Win32 = Debug_kr|Win32
+		Debug_ru|Win32 = Debug_ru|Win32
+		Debug_tw|Win32 = Debug_tw|Win32
+		Debug_us|Win32 = Debug_us|Win32
+		Release_cn|Win32 = Release_cn|Win32
+		Release_gp|Win32 = Release_gp|Win32
+		Release_jp|Win32 = Release_jp|Win32
+		Release_kr|Win32 = Release_kr|Win32
+		Release_ru|Win32 = Release_ru|Win32
+		Release_tw|Win32 = Release_tw|Win32
+		Release_us|Win32 = Release_us|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Debug_cn|Win32.ActiveCfg = Debug_cn|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Debug_cn|Win32.Build.0 = Debug_cn|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Debug_gp|Win32.ActiveCfg = Debug_gp|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Debug_gp|Win32.Build.0 = Debug_gp|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Debug_jp|Win32.ActiveCfg = Debug_jp|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Debug_jp|Win32.Build.0 = Debug_jp|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Debug_kr|Win32.ActiveCfg = Debug_kr|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Debug_kr|Win32.Build.0 = Debug_kr|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Debug_ru|Win32.ActiveCfg = Debug_ru|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Debug_ru|Win32.Build.0 = Debug_ru|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Debug_tw|Win32.ActiveCfg = Debug_tw|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Debug_tw|Win32.Build.0 = Debug_tw|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Debug_us|Win32.ActiveCfg = Debug_us|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Debug_us|Win32.Build.0 = Debug_us|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Release_cn|Win32.ActiveCfg = Release_cn|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Release_cn|Win32.Build.0 = Release_cn|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Release_gp|Win32.ActiveCfg = Release_gp|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Release_gp|Win32.Build.0 = Release_gp|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Release_jp|Win32.ActiveCfg = Release_jp|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Release_jp|Win32.Build.0 = Release_jp|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Release_kr|Win32.ActiveCfg = Release_kr|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Release_kr|Win32.Build.0 = Release_kr|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Release_ru|Win32.ActiveCfg = Release_ru|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Release_ru|Win32.Build.0 = Release_ru|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Release_tw|Win32.ActiveCfg = Release_tw|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Release_tw|Win32.Build.0 = Release_tw|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Release_us|Win32.ActiveCfg = Release_us|Win32
+		{9D8C9CEE-2426-4528-9481-8C7D44A00246}.Release_us|Win32.Build.0 = Release_us|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+EndGlobal

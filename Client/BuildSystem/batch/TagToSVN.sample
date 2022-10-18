@@ -1,0 +1,34 @@
+@echo off
+
+
+rem 매개변수- localfolder version nation log폴더 빌드담당자
+	if '%1'=='' goto errlog
+
+	set WZ_WORKFOLD=%1
+	set ver=%2
+	set nation=%3
+	set logfile=%4\svn_tag_log.txt
+    set name=%5
+
+    set CLIENT_WC_REV=$WCREV$
+    set CLIENT_WC_URL=$WCURL$
+        
+@echo tag ver: %ver% > %logfile%
+@echo from: %CLIENT_WC_URL%@%CLIENT_WC_REV% >> %logfile%
+@echo to: svn://10.101.102.1/SUN/tags/release/%nation%/%ver% >> %logfile%
+
+svn delete -m "tag %ver% 재등록을 위한 삭제 (담당자:%name%)" svn://10.101.102.1/SUN/tags/release/%nation%/%ver%
+
+@echo tag 등록중... %CLIENT_WC_URL%@%CLIENT_WC_REV%
+svn copy -m "tag: %ver% - %CLIENT_WC_URL%@%CLIENT_WC_REV% (담당자:%name%)" %CLIENT_WC_URL%@%CLIENT_WC_REV% svn://10.101.102.1/SUN/tags/release/%nation%/%ver% >> %logfile%
+
+	
+exit /b 0
+
+
+:errlog
+echo.
+echo ▷ 매개변수 없이 실행할 수 없습니다.
+echo.
+
+pause

@@ -1,0 +1,33 @@
+@echo off
+
+echo.
+echo ▷ 국내 일일 빌드
+echo.      
+
+call DailyBuild.bat kor
+
+echo.
+echo ▷ 중국 일일 빌드
+echo.      
+
+call DailyBuild.bat cn
+
+echo.
+echo ▷ 일본 일일 빌드
+echo.      
+
+call DailyBuild.bat jp
+
+echo.
+echo ▷ 글로벌 일일 빌드
+echo.      
+
+call DailyBuild.bat gsp
+
+echo.
+echo ▷ 러시아 일일 빌드
+echo.      
+
+call DailyBuild.bat ru
+
+

@@ -1,0 +1,23 @@
+\Obj\
+\Release\
+\Debug\
+\Documents\
+\[문서]\
+\log\
+\ScreenShot\
+\OldClient\
+\.svn\
+\Server\
+\LogCollector\
+\GameLogic\
+\HSB Files\
+\_Public\
+\Tools\
+\_Intermediate\
+\Data\
+\Debug - gsp\
+\Release - 유저 배포 버전\
+\Release - 유저 배포 버전 ( 덤프 남김 )\
+\Release - ForHackShield\
+.obj
+

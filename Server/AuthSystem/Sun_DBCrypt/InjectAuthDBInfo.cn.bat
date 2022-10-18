@@ -1,0 +1,1 @@
+.\TheMola.FileInjector.exe ..\_bin\AuthServer.exe AuthCryptChina.info AUTH

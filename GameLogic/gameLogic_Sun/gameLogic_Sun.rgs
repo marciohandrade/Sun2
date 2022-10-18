@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'gameLogic_Sun'
+		'gameLogic_Sun.DLL'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+}

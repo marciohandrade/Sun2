@@ -1,0 +1,7 @@
+#ifndef _SOLAR_SLOT_SCSLOTFACTORY_H
+#define _SOLAR_SLOT_SCSLOTFACTORY_H
+#pragma once
+
+
+#endif //_SOLAR_SLOT_SCSLOTFACTORY_H
+

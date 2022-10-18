@@ -1,0 +1,3 @@
+@echo off
+
+p4 sync //test_Dev_release/3.최신개발버전_new/SUN_Client/Data/...

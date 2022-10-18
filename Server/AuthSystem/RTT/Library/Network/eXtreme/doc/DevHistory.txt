@@ -1,0 +1,67 @@
+#2006.2.2		[Lainer]===========================================================
+- ServerSession에서 m_readyToSend를 사용하는 방향으로 다시 수정.
+  eXtreme 라이브러리의 전체적인 성능에 대해 재 검증이 필요.
+  
+  m_readyToSend를 사용하지 않는다는 것은 Send Completion을 기다리지 않는다는
+  의미이며, 동시에 그것으로부터 성능 향상을 도모하자는 의도이다.
+  1. Flush에서 m_readyToSend를 검사하지 않고
+  2. HandleEvent의 Send에서 SendQueue 비우는 작업을
+	Flush의 Send 즉시 수행하도록 옮겨야한다.
+	
+  하지만 Completion이 되지 이전까지 버퍼를 유지하기 위해 Send Completion을
+  처리하는 방향으로 선회하였다.
+  
+  * Send Queue가 어느정도 충분한 크기라면 암묵적으로 버퍼가 유지된다고 볼 수도
+  있기때문에 Completion을 처리하지 않는 것도 도움이 될 수 있을까..?
+
+
+#2006.1.24		[Lainer]===========================================================
+- DBC에서 Query실행 중 ExceptionDBC 발생 추가
+  E_FAIL 에러 발생시 예외를 발생시키며, 이 경우 매우 심각한 상황으로 판단해야한다.
+
+
+#2005.12.20		[Lainer]===========================================================
+- ServerSession::Flush 추가 및 Update 변경
+  기존에 Update 역할 중 Network send buffer 처리 기능을 Flush로 옮기고,
+  Update에서는 Flush를 호출한다.
+  
+- ServerSession::HandleEvent
+  WaitForRecv 함수 호출시, 수신 버퍼가 0인 경우에 대한 예외처리.
+  (예외처리를 하지 않으면 GetQueuedCompletionStatus에서 transByte가 0이 넘어오기
+  때문에 연결 종료로 처리되는 버그가 발생)
+
+
+#2005.11.16		[Lainer]===========================================================
+- ServerSession::OnAccept는 ServerSession::Update보다 늦게 호출될 수 있다.
+
+
+#2005.9.26		[Lainer]===========================================================
+- ServerSession::IsValidPacket 수정.
+  1. 임의의 패킷 헤더에 대해서 유효성을 확인할 수 있도록 Packet의 시작 포인터를
+     직접 전달.
+  2. while( recvSize > 1 )을 while( recvSize > 0 )으로 변경
+
+
+#2005.8.30		[Lainer]===========================================================
+- AcceptEx 제거 및 Connector 추가 테스트 완료.
+
+! 간혹 Mutex를 사용하는 Guard 진입시 crash되는 경우가 발생할 수 있는데, 이 때
+  Mutex의 DebugInfo가 Null임을 확인할 수 있다. 이 것은 이미 Mutex가 Delete되었다는
+  의미이므로, 해당 클래스의 Descructor가 이전에 호출되었는지를 확인해야한다.
+
+
+#2005.4.6		[Lainer]===========================================================
+- Crypt( Base64, Seed, SHA1, MD5 )
+
+
+#2005.4.4		[Lainer]===========================================================
+- ServerNetwork, ServerSession, Connector 완성.
+  MemoryMap, Pipe 추가.
+
+- TcpStressTest를 통한 테스트 완료.
+  Mu Logbackup Server 적용 및 배포.
+
+
+#2005.3.18		[Lainer]===========================================================
+- Project 생성
+  Socket, I/O 모듈 제작

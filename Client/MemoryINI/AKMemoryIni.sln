@@ -1,0 +1,39 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AKMemoryIni", "AKMemoryIni\AKMemoryIni.vcproj", "{05339B5A-E08A-49C1-B4C6-766A31F2DD93}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CryptIni", "CryptIni\CryptIni.vcproj", "{80E37511-BBA7-46CD-81CE-E8BD7637417B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{05339B5A-E08A-49C1-B4C6-766A31F2DD93} = {05339B5A-E08A-49C1-B4C6-766A31F2DD93}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CryptIni_Test", "CryptIni_Gui\CryptIni_Test.vcproj", "{AF8DFE2C-2AFA-4644-807F-A4B24DB01F6D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{05339B5A-E08A-49C1-B4C6-766A31F2DD93} = {05339B5A-E08A-49C1-B4C6-766A31F2DD93}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{05339B5A-E08A-49C1-B4C6-766A31F2DD93}.Debug.ActiveCfg = Debug|Win32
+		{05339B5A-E08A-49C1-B4C6-766A31F2DD93}.Debug.Build.0 = Debug|Win32
+		{05339B5A-E08A-49C1-B4C6-766A31F2DD93}.Release.ActiveCfg = Release|Win32
+		{05339B5A-E08A-49C1-B4C6-766A31F2DD93}.Release.Build.0 = Release|Win32
+		{80E37511-BBA7-46CD-81CE-E8BD7637417B}.Debug.ActiveCfg = Debug|Win32
+		{80E37511-BBA7-46CD-81CE-E8BD7637417B}.Debug.Build.0 = Debug|Win32
+		{80E37511-BBA7-46CD-81CE-E8BD7637417B}.Release.ActiveCfg = Release|Win32
+		{80E37511-BBA7-46CD-81CE-E8BD7637417B}.Release.Build.0 = Release|Win32
+		{AF8DFE2C-2AFA-4644-807F-A4B24DB01F6D}.Debug.ActiveCfg = Debug|Win32
+		{AF8DFE2C-2AFA-4644-807F-A4B24DB01F6D}.Debug.Build.0 = Debug|Win32
+		{AF8DFE2C-2AFA-4644-807F-A4B24DB01F6D}.Release.ActiveCfg = Release|Win32
+		{AF8DFE2C-2AFA-4644-807F-A4B24DB01F6D}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

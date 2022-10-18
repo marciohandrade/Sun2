@@ -1,0 +1,5 @@
+#include "./Frost/shieldSecurity.h"
+
+frostInitialize(".\\frost\\gameShieldDll.dll");
+frostSetUserName("UserName");
+frostFinalize();

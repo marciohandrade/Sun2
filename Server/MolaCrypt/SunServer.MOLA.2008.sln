@@ -1,0 +1,53 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MOLA", "MOLA.2008.vcproj", "{8CF07D6D-7C75-4CE7-9ED2-EFAB5EBF5398}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MOLA_DDA", "MOLA_DDA.2008.vcproj", "{A8D1593F-2B07-4A3E-B488-5CD708F42F3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug - (서버용) DLL|Win32 = Debug - (서버용) DLL|Win32
+		Debug - (서버용)|Win32 = Debug - (서버용)|Win32
+		Debug - (클라용) DLL|Win32 = Debug - (클라용) DLL|Win32
+		Debug|Win32 = Debug|Win32
+		Release - (서버용)|Win32 = Release - (서버용)|Win32
+		Release - (클라용) DLL|Win32 = Release - (클라용) DLL|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CF07D6D-7C75-4CE7-9ED2-EFAB5EBF5398}.Debug - (서버용) DLL|Win32.ActiveCfg = Debug - (서버용) DLL|Win32
+		{8CF07D6D-7C75-4CE7-9ED2-EFAB5EBF5398}.Debug - (서버용) DLL|Win32.Build.0 = Debug - (서버용) DLL|Win32
+		{8CF07D6D-7C75-4CE7-9ED2-EFAB5EBF5398}.Debug - (서버용)|Win32.ActiveCfg = Debug - (서버용)|Win32
+		{8CF07D6D-7C75-4CE7-9ED2-EFAB5EBF5398}.Debug - (서버용)|Win32.Build.0 = Debug - (서버용)|Win32
+		{8CF07D6D-7C75-4CE7-9ED2-EFAB5EBF5398}.Debug - (클라용) DLL|Win32.ActiveCfg = Debug - (클라용) DLL|Win32
+		{8CF07D6D-7C75-4CE7-9ED2-EFAB5EBF5398}.Debug - (클라용) DLL|Win32.Build.0 = Debug - (클라용) DLL|Win32
+		{8CF07D6D-7C75-4CE7-9ED2-EFAB5EBF5398}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8CF07D6D-7C75-4CE7-9ED2-EFAB5EBF5398}.Debug|Win32.Build.0 = Debug|Win32
+		{8CF07D6D-7C75-4CE7-9ED2-EFAB5EBF5398}.Release - (서버용)|Win32.ActiveCfg = Release - (서버용)|Win32
+		{8CF07D6D-7C75-4CE7-9ED2-EFAB5EBF5398}.Release - (서버용)|Win32.Build.0 = Release - (서버용)|Win32
+		{8CF07D6D-7C75-4CE7-9ED2-EFAB5EBF5398}.Release - (클라용) DLL|Win32.ActiveCfg = Release - (클라용) DLL|Win32
+		{8CF07D6D-7C75-4CE7-9ED2-EFAB5EBF5398}.Release - (클라용) DLL|Win32.Build.0 = Release - (클라용) DLL|Win32
+		{8CF07D6D-7C75-4CE7-9ED2-EFAB5EBF5398}.Release|Win32.ActiveCfg = Release|Win32
+		{8CF07D6D-7C75-4CE7-9ED2-EFAB5EBF5398}.Release|Win32.Build.0 = Release|Win32
+		{A8D1593F-2B07-4A3E-B488-5CD708F42F3E}.Debug - (서버용) DLL|Win32.ActiveCfg = Debug|Win32
+		{A8D1593F-2B07-4A3E-B488-5CD708F42F3E}.Debug - (서버용) DLL|Win32.Build.0 = Debug|Win32
+		{A8D1593F-2B07-4A3E-B488-5CD708F42F3E}.Debug - (서버용)|Win32.ActiveCfg = Debug|Win32
+		{A8D1593F-2B07-4A3E-B488-5CD708F42F3E}.Debug - (서버용)|Win32.Build.0 = Debug|Win32
+		{A8D1593F-2B07-4A3E-B488-5CD708F42F3E}.Debug - (클라용) DLL|Win32.ActiveCfg = Debug|Win32
+		{A8D1593F-2B07-4A3E-B488-5CD708F42F3E}.Debug - (클라용) DLL|Win32.Build.0 = Debug|Win32
+		{A8D1593F-2B07-4A3E-B488-5CD708F42F3E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A8D1593F-2B07-4A3E-B488-5CD708F42F3E}.Debug|Win32.Build.0 = Debug|Win32
+		{A8D1593F-2B07-4A3E-B488-5CD708F42F3E}.Release - (서버용)|Win32.ActiveCfg = Release|Win32
+		{A8D1593F-2B07-4A3E-B488-5CD708F42F3E}.Release - (서버용)|Win32.Build.0 = Release|Win32
+		{A8D1593F-2B07-4A3E-B488-5CD708F42F3E}.Release - (클라용) DLL|Win32.ActiveCfg = Release|Win32
+		{A8D1593F-2B07-4A3E-B488-5CD708F42F3E}.Release - (클라용) DLL|Win32.Build.0 = Release|Win32
+		{A8D1593F-2B07-4A3E-B488-5CD708F42F3E}.Release|Win32.ActiveCfg = Release|Win32
+		{A8D1593F-2B07-4A3E-B488-5CD708F42F3E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+EndGlobal

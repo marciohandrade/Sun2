@@ -1,0 +1,309 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameClient", "GameClient.vcproj", "{AAB34E69-2025-46CC-ABDB-166A1DC3B514}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D22B9E03-B0C1-4EA8-B6CC-2D24933745E2} = {D22B9E03-B0C1-4EA8-B6CC-2D24933745E2}
+		{F222182E-EF6B-4ADC-904B-062AA2511B3D} = {F222182E-EF6B-4ADC-904B-062AA2511B3D}
+		{57794230-74A2-472B-AFA0-C34EE220D65E} = {57794230-74A2-472B-AFA0-C34EE220D65E}
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A} = {16D89532-B0BA-4FBC-BA5A-7A333029743A}
+		{C40CA432-21FF-43EA-A604-452AE6C3430B} = {C40CA432-21FF-43EA-A604-452AE6C3430B}
+		{4BD86D36-3934-4E26-8037-B83FE9BF1B3E} = {4BD86D36-3934-4E26-8037-B83FE9BF1B3E}
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659} = {8D706D6B-9ED3-4EDA-9664-347BCB28A659}
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6} = {42B49CD9-48ED-4FF4-8435-44FC609ABAF6}
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0} = {E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254} = {FB4A96FD-50B3-4655-9438-DCFC5D36D254}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ProgramCommon", "..\..\ProgramCommon\ProgramCommon.vcproj", "{4BD86D36-3934-4E26-8037-B83FE9BF1B3E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utility", "..\..\Utility\Utility.vcproj", "{C40CA432-21FF-43EA-A604-452AE6C3430B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SolarQuest", "..\..\SolarQuest\SolarQuest.vcproj", "{57794230-74A2-472B-AFA0-C34EE220D65E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RankingLib", "..\..\RankingLib\RankingLib.vcproj", "{D22B9E03-B0C1-4EA8-B6CC-2D24933745E2}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SolarShop", "..\..\SolarShop\SolarShop.vcproj", "{F222182E-EF6B-4ADC-904B-062AA2511B3D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SolarClientNetwork", "..\SolarClientNetwork\SolarClientNetwork.vcproj", "{FB4A96FD-50B3-4655-9438-DCFC5D36D254}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0} = {5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}
+		{C40CA432-21FF-43EA-A604-452AE6C3430B} = {C40CA432-21FF-43EA-A604-452AE6C3430B}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SolarTrigger", "..\..\SolarTrigger\SolarTrigger.vcproj", "{16D89532-B0BA-4FBC-BA5A-7A333029743A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PartyLib", "..\..\PartyLib\PartyLib.vcproj", "{8D706D6B-9ED3-4EDA-9664-347BCB28A659}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C40CA432-21FF-43EA-A604-452AE6C3430B} = {C40CA432-21FF-43EA-A604-452AE6C3430B}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SolarSlot", "..\..\SolarSlot\SolarSlot.vcproj", "{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gameShieldLib", "..\FrostShieldLib\gameShieldLib.vcproj", "{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Achievement", "..\..\Achievement\Achievement.vcproj", "{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Debug - (서버용) = Debug - (서버용)
+		Engine_Debug = Engine_Debug
+		Performance Debug = Performance Debug
+		Performance Release = Performance Release
+		Prerelease = Prerelease
+		Release = Release
+		Release - (서버용) = Release - (서버용)
+		Release - 유저 배포 버전 = Release - 유저 배포 버전
+		Release - 유저 배포 버전 ( 덤프 남김 ) = Release - 유저 배포 버전 ( 덤프 남김 )
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{AAB34E69-2025-46CC-ABDB-166A1DC3B514}.Debug.ActiveCfg = Debug|Win32
+		{AAB34E69-2025-46CC-ABDB-166A1DC3B514}.Debug.Build.0 = Debug|Win32
+		{AAB34E69-2025-46CC-ABDB-166A1DC3B514}.Debug - (서버용).ActiveCfg = Debug|Win32
+		{AAB34E69-2025-46CC-ABDB-166A1DC3B514}.Engine_Debug.ActiveCfg = Engine_Debug|Win32
+		{AAB34E69-2025-46CC-ABDB-166A1DC3B514}.Engine_Debug.Build.0 = Engine_Debug|Win32
+		{AAB34E69-2025-46CC-ABDB-166A1DC3B514}.Performance Debug.ActiveCfg = Performance Debug|Win32
+		{AAB34E69-2025-46CC-ABDB-166A1DC3B514}.Performance Debug.Build.0 = Performance Debug|Win32
+		{AAB34E69-2025-46CC-ABDB-166A1DC3B514}.Performance Release.ActiveCfg = Performance Release|Win32
+		{AAB34E69-2025-46CC-ABDB-166A1DC3B514}.Performance Release.Build.0 = Performance Release|Win32
+		{AAB34E69-2025-46CC-ABDB-166A1DC3B514}.Prerelease.ActiveCfg = Prerelease|Win32
+		{AAB34E69-2025-46CC-ABDB-166A1DC3B514}.Prerelease.Build.0 = Prerelease|Win32
+		{AAB34E69-2025-46CC-ABDB-166A1DC3B514}.Release.ActiveCfg = Release|Win32
+		{AAB34E69-2025-46CC-ABDB-166A1DC3B514}.Release.Build.0 = Release|Win32
+		{AAB34E69-2025-46CC-ABDB-166A1DC3B514}.Release - (서버용).ActiveCfg = Release - 유저 배포 버전 ( 덤프 남김 )|Win32
+		{AAB34E69-2025-46CC-ABDB-166A1DC3B514}.Release - 유저 배포 버전.ActiveCfg = Release - 유저 배포 버전|Win32
+		{AAB34E69-2025-46CC-ABDB-166A1DC3B514}.Release - 유저 배포 버전.Build.0 = Release - 유저 배포 버전|Win32
+		{AAB34E69-2025-46CC-ABDB-166A1DC3B514}.Release - 유저 배포 버전 ( 덤프 남김 ).ActiveCfg = Release - 유저 배포 버전 ( 덤프 남김 )|Win32
+		{AAB34E69-2025-46CC-ABDB-166A1DC3B514}.Release - 유저 배포 버전 ( 덤프 남김 ).Build.0 = Release - 유저 배포 버전 ( 덤프 남김 )|Win32
+		{4BD86D36-3934-4E26-8037-B83FE9BF1B3E}.Debug.ActiveCfg = Debug|Win32
+		{4BD86D36-3934-4E26-8037-B83FE9BF1B3E}.Debug.Build.0 = Debug|Win32
+		{4BD86D36-3934-4E26-8037-B83FE9BF1B3E}.Debug - (서버용).ActiveCfg = Debug - (서버용)|Win32
+		{4BD86D36-3934-4E26-8037-B83FE9BF1B3E}.Engine_Debug.ActiveCfg = Debug|Win32
+		{4BD86D36-3934-4E26-8037-B83FE9BF1B3E}.Engine_Debug.Build.0 = Debug|Win32
+		{4BD86D36-3934-4E26-8037-B83FE9BF1B3E}.Performance Debug.ActiveCfg = Debug|Win32
+		{4BD86D36-3934-4E26-8037-B83FE9BF1B3E}.Performance Debug.Build.0 = Debug|Win32
+		{4BD86D36-3934-4E26-8037-B83FE9BF1B3E}.Performance Release.ActiveCfg = Performance Release|Win32
+		{4BD86D36-3934-4E26-8037-B83FE9BF1B3E}.Performance Release.Build.0 = Performance Release|Win32
+		{4BD86D36-3934-4E26-8037-B83FE9BF1B3E}.Prerelease.ActiveCfg = Release|Win32
+		{4BD86D36-3934-4E26-8037-B83FE9BF1B3E}.Release.ActiveCfg = Release|Win32
+		{4BD86D36-3934-4E26-8037-B83FE9BF1B3E}.Release.Build.0 = Release|Win32
+		{4BD86D36-3934-4E26-8037-B83FE9BF1B3E}.Release - (서버용).ActiveCfg = Release - (서버용)|Win32
+		{4BD86D36-3934-4E26-8037-B83FE9BF1B3E}.Release - 유저 배포 버전.ActiveCfg = Release - 유저 배포 버전|Win32
+		{4BD86D36-3934-4E26-8037-B83FE9BF1B3E}.Release - 유저 배포 버전.Build.0 = Release - 유저 배포 버전|Win32
+		{4BD86D36-3934-4E26-8037-B83FE9BF1B3E}.Release - 유저 배포 버전 ( 덤프 남김 ).ActiveCfg = Release|Win32
+		{4BD86D36-3934-4E26-8037-B83FE9BF1B3E}.Release - 유저 배포 버전 ( 덤프 남김 ).Build.0 = Release|Win32
+		{C40CA432-21FF-43EA-A604-452AE6C3430B}.Debug.ActiveCfg = Debug|Win32
+		{C40CA432-21FF-43EA-A604-452AE6C3430B}.Debug.Build.0 = Debug|Win32
+		{C40CA432-21FF-43EA-A604-452AE6C3430B}.Debug - (서버용).ActiveCfg = Debug|Win32
+		{C40CA432-21FF-43EA-A604-452AE6C3430B}.Engine_Debug.ActiveCfg = Debug|Win32
+		{C40CA432-21FF-43EA-A604-452AE6C3430B}.Engine_Debug.Build.0 = Debug|Win32
+		{C40CA432-21FF-43EA-A604-452AE6C3430B}.Performance Debug.ActiveCfg = Debug|Win32
+		{C40CA432-21FF-43EA-A604-452AE6C3430B}.Performance Debug.Build.0 = Debug|Win32
+		{C40CA432-21FF-43EA-A604-452AE6C3430B}.Performance Release.ActiveCfg = Performance Release|Win32
+		{C40CA432-21FF-43EA-A604-452AE6C3430B}.Performance Release.Build.0 = Performance Release|Win32
+		{C40CA432-21FF-43EA-A604-452AE6C3430B}.Prerelease.ActiveCfg = Release|Win32
+		{C40CA432-21FF-43EA-A604-452AE6C3430B}.Release.ActiveCfg = Release|Win32
+		{C40CA432-21FF-43EA-A604-452AE6C3430B}.Release.Build.0 = Release|Win32
+		{C40CA432-21FF-43EA-A604-452AE6C3430B}.Release - (서버용).ActiveCfg = Release - 유저 배포 버전 ( 덤프 남김 )|Win32
+		{C40CA432-21FF-43EA-A604-452AE6C3430B}.Release - 유저 배포 버전.ActiveCfg = Release - 유저 배포 버전|Win32
+		{C40CA432-21FF-43EA-A604-452AE6C3430B}.Release - 유저 배포 버전.Build.0 = Release - 유저 배포 버전|Win32
+		{C40CA432-21FF-43EA-A604-452AE6C3430B}.Release - 유저 배포 버전 ( 덤프 남김 ).ActiveCfg = Release - 유저 배포 버전 ( 덤프 남김 )|Win32
+		{C40CA432-21FF-43EA-A604-452AE6C3430B}.Release - 유저 배포 버전 ( 덤프 남김 ).Build.0 = Release - 유저 배포 버전 ( 덤프 남김 )|Win32
+		{57794230-74A2-472B-AFA0-C34EE220D65E}.Debug.ActiveCfg = Debug|Win32
+		{57794230-74A2-472B-AFA0-C34EE220D65E}.Debug.Build.0 = Debug|Win32
+		{57794230-74A2-472B-AFA0-C34EE220D65E}.Debug - (서버용).ActiveCfg = Debug - (서버용)|Win32
+		{57794230-74A2-472B-AFA0-C34EE220D65E}.Engine_Debug.ActiveCfg = Debug|Win32
+		{57794230-74A2-472B-AFA0-C34EE220D65E}.Engine_Debug.Build.0 = Debug|Win32
+		{57794230-74A2-472B-AFA0-C34EE220D65E}.Performance Debug.ActiveCfg = Debug|Win32
+		{57794230-74A2-472B-AFA0-C34EE220D65E}.Performance Debug.Build.0 = Debug|Win32
+		{57794230-74A2-472B-AFA0-C34EE220D65E}.Performance Release.ActiveCfg = Release|Win32
+		{57794230-74A2-472B-AFA0-C34EE220D65E}.Performance Release.Build.0 = Release|Win32
+		{57794230-74A2-472B-AFA0-C34EE220D65E}.Prerelease.ActiveCfg = Release|Win32
+		{57794230-74A2-472B-AFA0-C34EE220D65E}.Release.ActiveCfg = Release|Win32
+		{57794230-74A2-472B-AFA0-C34EE220D65E}.Release.Build.0 = Release|Win32
+		{57794230-74A2-472B-AFA0-C34EE220D65E}.Release - (서버용).ActiveCfg = Release - (서버용)|Win32
+		{57794230-74A2-472B-AFA0-C34EE220D65E}.Release - 유저 배포 버전.ActiveCfg = Release|Win32
+		{57794230-74A2-472B-AFA0-C34EE220D65E}.Release - 유저 배포 버전.Build.0 = Release|Win32
+		{57794230-74A2-472B-AFA0-C34EE220D65E}.Release - 유저 배포 버전 ( 덤프 남김 ).ActiveCfg = Release|Win32
+		{57794230-74A2-472B-AFA0-C34EE220D65E}.Release - 유저 배포 버전 ( 덤프 남김 ).Build.0 = Release|Win32
+		{D22B9E03-B0C1-4EA8-B6CC-2D24933745E2}.Debug.ActiveCfg = Debug|Win32
+		{D22B9E03-B0C1-4EA8-B6CC-2D24933745E2}.Debug.Build.0 = Debug|Win32
+		{D22B9E03-B0C1-4EA8-B6CC-2D24933745E2}.Debug - (서버용).ActiveCfg = Debug - (서버용)|Win32
+		{D22B9E03-B0C1-4EA8-B6CC-2D24933745E2}.Engine_Debug.ActiveCfg = Debug|Win32
+		{D22B9E03-B0C1-4EA8-B6CC-2D24933745E2}.Engine_Debug.Build.0 = Debug|Win32
+		{D22B9E03-B0C1-4EA8-B6CC-2D24933745E2}.Performance Debug.ActiveCfg = Debug|Win32
+		{D22B9E03-B0C1-4EA8-B6CC-2D24933745E2}.Performance Debug.Build.0 = Debug|Win32
+		{D22B9E03-B0C1-4EA8-B6CC-2D24933745E2}.Performance Release.ActiveCfg = Release|Win32
+		{D22B9E03-B0C1-4EA8-B6CC-2D24933745E2}.Performance Release.Build.0 = Release|Win32
+		{D22B9E03-B0C1-4EA8-B6CC-2D24933745E2}.Prerelease.ActiveCfg = Release|Win32
+		{D22B9E03-B0C1-4EA8-B6CC-2D24933745E2}.Release.ActiveCfg = Release|Win32
+		{D22B9E03-B0C1-4EA8-B6CC-2D24933745E2}.Release.Build.0 = Release|Win32
+		{D22B9E03-B0C1-4EA8-B6CC-2D24933745E2}.Release - (서버용).ActiveCfg = Release - (서버용)|Win32
+		{D22B9E03-B0C1-4EA8-B6CC-2D24933745E2}.Release - 유저 배포 버전.ActiveCfg = Release|Win32
+		{D22B9E03-B0C1-4EA8-B6CC-2D24933745E2}.Release - 유저 배포 버전.Build.0 = Release|Win32
+		{D22B9E03-B0C1-4EA8-B6CC-2D24933745E2}.Release - 유저 배포 버전 ( 덤프 남김 ).ActiveCfg = Release|Win32
+		{D22B9E03-B0C1-4EA8-B6CC-2D24933745E2}.Release - 유저 배포 버전 ( 덤프 남김 ).Build.0 = Release|Win32
+		{F222182E-EF6B-4ADC-904B-062AA2511B3D}.Debug.ActiveCfg = Debug|Win32
+		{F222182E-EF6B-4ADC-904B-062AA2511B3D}.Debug.Build.0 = Debug|Win32
+		{F222182E-EF6B-4ADC-904B-062AA2511B3D}.Debug - (서버용).ActiveCfg = Debug|Win32
+		{F222182E-EF6B-4ADC-904B-062AA2511B3D}.Engine_Debug.ActiveCfg = Debug|Win32
+		{F222182E-EF6B-4ADC-904B-062AA2511B3D}.Engine_Debug.Build.0 = Debug|Win32
+		{F222182E-EF6B-4ADC-904B-062AA2511B3D}.Performance Debug.ActiveCfg = Debug|Win32
+		{F222182E-EF6B-4ADC-904B-062AA2511B3D}.Performance Debug.Build.0 = Debug|Win32
+		{F222182E-EF6B-4ADC-904B-062AA2511B3D}.Performance Release.ActiveCfg = Release|Win32
+		{F222182E-EF6B-4ADC-904B-062AA2511B3D}.Performance Release.Build.0 = Release|Win32
+		{F222182E-EF6B-4ADC-904B-062AA2511B3D}.Prerelease.ActiveCfg = Release|Win32
+		{F222182E-EF6B-4ADC-904B-062AA2511B3D}.Release.ActiveCfg = Release|Win32
+		{F222182E-EF6B-4ADC-904B-062AA2511B3D}.Release.Build.0 = Release|Win32
+		{F222182E-EF6B-4ADC-904B-062AA2511B3D}.Release - (서버용).ActiveCfg = Release|Win32
+		{F222182E-EF6B-4ADC-904B-062AA2511B3D}.Release - 유저 배포 버전.ActiveCfg = Release|Win32
+		{F222182E-EF6B-4ADC-904B-062AA2511B3D}.Release - 유저 배포 버전.Build.0 = Release|Win32
+		{F222182E-EF6B-4ADC-904B-062AA2511B3D}.Release - 유저 배포 버전 ( 덤프 남김 ).ActiveCfg = Release|Win32
+		{F222182E-EF6B-4ADC-904B-062AA2511B3D}.Release - 유저 배포 버전 ( 덤프 남김 ).Build.0 = Release|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Debug.ActiveCfg = Debug|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Debug.Build.0 = Debug|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Debug - (서버용).ActiveCfg = Debug|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Debug - (서버용).Build.0 = Debug|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Engine_Debug.ActiveCfg = Debug|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Engine_Debug.Build.0 = Debug|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Performance Debug.ActiveCfg = Performance Release|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Performance Debug.Build.0 = Performance Release|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Performance Release.ActiveCfg = Performance Release|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Performance Release.Build.0 = Performance Release|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Prerelease.ActiveCfg = Release|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Prerelease.Build.0 = Release|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Release.ActiveCfg = Release|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Release.Build.0 = Release|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Release - (서버용).ActiveCfg = Release - 유저 배포 버전 ( 덤프 남김 )|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Release - (서버용).Build.0 = Release - 유저 배포 버전 ( 덤프 남김 )|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Release - 유저 배포 버전.ActiveCfg = Release|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Release - 유저 배포 버전.Build.0 = Release|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Release - 유저 배포 버전 ( 덤프 남김 ).ActiveCfg = Release|Win32
+		{FB4A96FD-50B3-4655-9438-DCFC5D36D254}.Release - 유저 배포 버전 ( 덤프 남김 ).Build.0 = Release|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Debug.ActiveCfg = Debug|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Debug.Build.0 = Debug|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Debug - (서버용).ActiveCfg = Debug - (서버용)|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Debug - (서버용).Build.0 = Debug - (서버용)|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Engine_Debug.ActiveCfg = Debug|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Engine_Debug.Build.0 = Debug|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Performance Debug.ActiveCfg = Debug|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Performance Debug.Build.0 = Debug|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Performance Release.ActiveCfg = Release|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Performance Release.Build.0 = Release|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Prerelease.ActiveCfg = Release|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Prerelease.Build.0 = Release|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Release.ActiveCfg = Release|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Release.Build.0 = Release|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Release - (서버용).ActiveCfg = Release - (서버용)|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Release - (서버용).Build.0 = Release - (서버용)|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Release - 유저 배포 버전.ActiveCfg = Release|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Release - 유저 배포 버전.Build.0 = Release|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Release - 유저 배포 버전 ( 덤프 남김 ).ActiveCfg = Release|Win32
+		{16D89532-B0BA-4FBC-BA5A-7A333029743A}.Release - 유저 배포 버전 ( 덤프 남김 ).Build.0 = Release|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Debug.ActiveCfg = Debug|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Debug.Build.0 = Debug|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Debug - (서버용).ActiveCfg = Debug|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Debug - (서버용).Build.0 = Debug|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Engine_Debug.ActiveCfg = Debug|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Engine_Debug.Build.0 = Debug|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Performance Debug.ActiveCfg = Debug|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Performance Debug.Build.0 = Debug|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Performance Release.ActiveCfg = Release|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Performance Release.Build.0 = Release|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Prerelease.ActiveCfg = Release|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Prerelease.Build.0 = Release|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Release.ActiveCfg = Release|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Release.Build.0 = Release|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Release - (서버용).ActiveCfg = Release|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Release - (서버용).Build.0 = Release|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Release - 유저 배포 버전.ActiveCfg = Release|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Release - 유저 배포 버전.Build.0 = Release|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Release - 유저 배포 버전 ( 덤프 남김 ).ActiveCfg = Release|Win32
+		{8D706D6B-9ED3-4EDA-9664-347BCB28A659}.Release - 유저 배포 버전 ( 덤프 남김 ).Build.0 = Release|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Debug.ActiveCfg = Debug|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Debug.Build.0 = Debug|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Debug - (서버용).ActiveCfg = Debug - (서버용)|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Debug - (서버용).Build.0 = Debug - (서버용)|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Engine_Debug.ActiveCfg = Engine_Debug|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Performance Debug.ActiveCfg = Debug|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Performance Debug.Build.0 = Debug|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Performance Release.ActiveCfg = Release|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Performance Release.Build.0 = Release|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Prerelease.ActiveCfg = Release|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Prerelease.Build.0 = Release|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Release.ActiveCfg = Release|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Release.Build.0 = Release|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Release - (서버용).ActiveCfg = Release - (서버용)|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Release - (서버용).Build.0 = Release - (서버용)|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Release - 유저 배포 버전.ActiveCfg = Release|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Release - 유저 배포 버전.Build.0 = Release|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Release - 유저 배포 버전 ( 덤프 남김 ).ActiveCfg = Release|Win32
+		{42B49CD9-48ED-4FF4-8435-44FC609ABAF6}.Release - 유저 배포 버전 ( 덤프 남김 ).Build.0 = Release|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Debug.ActiveCfg = Debug|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Debug.Build.0 = Debug|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Debug - (서버용).ActiveCfg = Release|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Debug - (서버용).Build.0 = Release|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Engine_Debug.ActiveCfg = Debug|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Engine_Debug.Build.0 = Debug|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Performance Debug.ActiveCfg = Debug|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Performance Debug.Build.0 = Debug|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Performance Release.ActiveCfg = Release|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Performance Release.Build.0 = Release|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Prerelease.ActiveCfg = Release|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Prerelease.Build.0 = Release|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Release.ActiveCfg = Release|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Release.Build.0 = Release|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Release - (서버용).ActiveCfg = Release|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Release - (서버용).Build.0 = Release|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Release - 유저 배포 버전.ActiveCfg = Release|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Release - 유저 배포 버전.Build.0 = Release|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Release - 유저 배포 버전 ( 덤프 남김 ).ActiveCfg = Release|Win32
+		{5D9F0612-9C47-4E0A-A0BB-657BDF2CCAE0}.Release - 유저 배포 버전 ( 덤프 남김 ).Build.0 = Release|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Debug.ActiveCfg = Debug|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Debug.Build.0 = Debug|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Debug - (서버용).ActiveCfg = Debug - (서버용)|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Debug - (서버용).Build.0 = Debug - (서버용)|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Engine_Debug.ActiveCfg = Debug|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Engine_Debug.Build.0 = Debug|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Performance Debug.ActiveCfg = Debug|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Performance Debug.Build.0 = Debug|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Performance Release.ActiveCfg = Release|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Performance Release.Build.0 = Release|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Prerelease.ActiveCfg = Release|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Prerelease.Build.0 = Release|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Release.ActiveCfg = Release|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Release.Build.0 = Release|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Release - (서버용).ActiveCfg = Release|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Release - (서버용).Build.0 = Release|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Release - 유저 배포 버전.ActiveCfg = Release|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Release - 유저 배포 버전.Build.0 = Release|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Release - 유저 배포 버전 ( 덤프 남김 ).ActiveCfg = Release|Win32
+		{E52B2BE1-3D47-4545-9A60-33AC4C1D19F0}.Release - 유저 배포 버전 ( 덤프 남김 ).Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+EndGlobal

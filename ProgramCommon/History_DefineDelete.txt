@@ -1,0 +1,1523 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//											Define 제거 History
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//==================================================================================================
+[이은파]
+1. 기간: 11.10.05
+2. 제거 목록
+    /*($Delete_[S/x]$)*/#define _KR_0_20091021_FIRENDINVITATION_EXTEND                  // 2009.10.21 / 문상현, 이도형 / 친구 초대 시스템
+    /*($Delete_[S/x]$)*/#define __NA_001359_20090619_HEIM_LOTTO_SYSTEM                      // 2009.06.19 / 강재준 / 하임 로또 시스템
+
+
+//==================================================================================================
+[이은파]
+1. 기간: 11.10.04
+2. 제거 목록
+    /*($Delete_[S/x]$)*/#define _NA001605_EP2_DAMAGETYPE_EXTENTION_ // 이은파, 유명수 / DAMAGETYPE 확장
+    /*($Delete_[S/x]$)*/#define _NA001605_EP2_CHANGE_SKILL_BROADCASTER_ // 이은파, 유명수 / skill broadcaster 이벤트 방식으로 변경
+
+    /*($Delete_[S/x]$)*/#define _NA_0_20101130_REWARD_ITEM_COUNT_INCREASE                   // 2010.11.30 / 남기봉, 송찬종 / 보상 슬롯 증가. 선택 4개 -> 5개
+    /*($Delete_[S/x]$)*/#define _NA_0_20101206_PARTY_ITEM_DISTRIBUTE_CHANGE                 // 2010.12.06 / 남기봉, 이도형 / 배틀서버에서 파티 아이템 분배방식 변경(필드와 동일하게)
+
+    /*($Delete_[S/x]$)*/#define _NA_0_20110103_EP2_BATTLEZONE_EXP_PARTY_BONUS_ADJUSTED      // 2011.01.03 / 강재준 / 배틀존(방) 경험치 파티 보너스 비율 조정 (중국 제외)
+    /*($Delete_[S/x]$)*/#define _NA_1798_20110114_SYSTEM_MEMO_ADDITIONAL_LOGGING            // 2011.01.14 / 강재준, 이태준 / 하임, 아이템 보상을 포함할 수 있는 시스템 메모 수령/삭제 로그 추가
+    /*($Delete_[S/x]$)*/#define _NA_002229_20110302_PARTY_DEFUALT_LOOTING_CHANGE            // 2011.03.02 / 강재준 / 파티 디폴트 아이템 분배 방식 변경 (자유 -> 차례대로)
+    /*($Delete_[S/x]$)*/#define _NA_002316_20110310_WORLD_SPECIFIC_PEAKTIME_EVENT           // 2011.03.10 / 강재준 / 피크타임 이벤트 월드별 구분 적용 기능 추가
+    /*($Delete_[S/x]$)*/#define _NA_002128_20110228_MODIFY_ITEM_LEVEL                       // 2011.02.28 / 김현웅, 이도형 / 아이템 레벨값 설정 변경
+    /*($Delete_[S/x]$)*/#define _NA_002399_20110323_MONEY_DISTRIBUTE_METHOD_CHANGE          // 2011.03.23 / 정현성,송찬종 / 하임 분배 방식 변경
+    /*($Delete_[S/x]$)*/#define _NA_002474_20110330_MODIFY_RUNE_STONE_WAYPOINT_DELETE_TIME // 2011.03.30 / 김현웅 / 룬스톤 웨이포인트 삭제 대기 시간 수정
+    /*($Delete_[S/x]$)*/#define _NA_0_20110318_ITEM_EXPIRATION_PERIOD                       // 2011.03.18 / 남기봉, / 습득 아이템 완료 기간 설정 추가.
+    /*($Delete_[S/x]$)*/#define _NA002479_20110401_DROP_RATIO_SELECTOR_EXTENTION            // 2011.04.01 / 이은파 / 필드,배틀존 아이템 드랍 차별화 관련 작업
+    /*($Delete_[S/x]$)*/#define _NA002479_20110401_OVERLAPPING_ITEM_DISTRIBUTION_CHANGES    // 2011.04.01 / 이은파 / 드랍 Group(4) 모드 추가 (중첩 아이템을 중첩시키지 않고 개수로 드랍)
+
+    /*($Delete_[S/x]$)*/#define _NA_002471_20110408_EXP_BENEFIT_UP                          // 2011.04.08 / 강재준 / 경험치 보너스 최대값 제한 상향 (최대 획득량을 원 경험치의 500%에서 1000%로, 전 국가 공통)
+    /*($Delete_[S/x]$)*/#define _NA001202_101104_ITEM_CUSTOMIZING_CONTENTS_ETHEREALIZABLE_LUCKYITEM // 이은파, 김광수 / 러키 아이템도 분리 가능토록(에테리아만...)
+    /*($Delete_[S/x]$)*/#define _NA_0_20110210_INVITE_PARTY_BUG                             // 2011.02.10 / 남기봉 / 2명이서 파티 맺는 도중에 제3자에게 파티신청을 할경우 다른 사람과 파티가 맺어지는 버그 수정.
+    /*($Delete_[S/x]$)*/#define _NA_20100812_INTEGRATE_SYSTEM_MEMO_DOMINATION				// 2010.08.12 / 민정영, 이태준 / 시스템 메모 통합 작업(지역점령전)
+    /*($Delete_[S/x]$)*/#define _NA_20100901_ADD_GAMELOG_FOR_SYSTEM_MEMO_TYPE               // 2010.09.01 / 민정영, 이태준 / 시스템 메모 관련 게임 로그 추가
+    /*($Delete_[S/x]$)*/#define _NA_0_20100722_AUTO_SYSTEM                                  // 2010.07.22 / 남기봉 / 오토 시스템
+    /*($Delete_[S/x]$)*/#define _NA_0_20100817_HELLON_LAST_TRIGGER                          // 2010.08.17 / 김현웅, 이태준 / 헬론 메인 미션용 에니메이션 제어 트리거.
+    /*($Delete_[S/x]$)*/#define _NA_000587_20100928_DOMINATION_BUFF_ITEM                    // 2010.09.28 / 김현웅, 유명수 / 피의 성전 강화 버프 아이템
+    /*($Delete_[S/x]$)*/#define _NA_000849_20101001_ENHANCED_INVITATION_FOR_CHAT_CHANNEL    // 2010.10.01 / 김현웅, 이도형 / 채널 초대 기능 강화
+    /*($Delete_[S/x]$)*/#define _NA000960_101011_ITEM_CUSTOMIZING_CONTENTS_ADD_RULE_        // 2010.10.11 / 이은파 / 중국 이슈, 임의의 etherealizable item에 대한 추가 방어 처리 (with script control)
+    /*($Delete_[S/x]$)*/#define _NA_0_20100705_DOMINATION_EVENT                         // 2010.07.05 / 이호영, 윤영주 / 점령전 이벤트 트리거(몬스터리젠).
+    /*($Delete_[S/x]$)*/#define _NA_0_20100706_RANDOM_REGEN                             // 2010.07.06 / 이호영 / 랜덤 리젠 재구현.
+    /*($Delete_[S/x]$)*/#define _NA_0_20100901_GUILD_NAME_CHANGE_ITEM_LOG               // 2010.07.06 / 이호영 / 길드명 변경 아이템 사용 로그 추가.
+    /*($Delete_[S/x]$)*/#define _NA_000096_20100527_CHANGE_CHARACTER_APPEARANCE_SYSTEM // 2010.05.27 / 김현웅, 김광수 / 캐릭터 외모 변경 시스템
+    /*($Delete_[S/x]$)*/#define _NA_000070_20100609_ENHANCED_ITEM_DIVISION // 2010.06.09 / 김현웅, 이도형 / 아이템 분할 방식 개선
+    /*($Delete_[S/x]$)*/#define _NA_000094_20100622_ENHANCED_USER_BLOCK_LIST // 2010.06.22 / 김현웅, 이도형 / 차단 목록 개선
+    /*($Delete_[S/x]$)*/#define _NA_0_20100325_QUICK_SLOT_CHANGE						// 2010.03.25 / 남기봉,이도형 / Quick 슬롯 변경 (48개의 슬롯->40개의 슬롯으로 변경)
+    /*($Delete_[S/x]$)*/#define _NA_20100520_ADD_ITEM_CANNOT_MOVE_OPTION                // 2010.05.20 / 민정영 / 창고 이동 불가능 옵션 추가, 길드 창고는 가능
+    /*($Delete_[S/x]$)*/#define _NA000000_100510_CLIENT_PERFORMANCE_TUNEUP_             // 2010.05.10 / 이은파
+    /*($Delete_[S/x]$)*/#define _NA_20100913_GUILD_WAREHOUSE_GM_COMMAND                 // 2010.09.13 / 강재준 / 길드 창고 초기화 GM 명령어 추가
+    /*($Delete_[S/x]$)*/#define _NA_000038_20100316_VIEW_TO_JOINABLE_ROOM_IN_LOBBY      // 2010.03.16 / 김현웅, 유명수 / 배틀존 로비 입장 가능한 방 보기
+    /*($Delete_[S/x]$)*/#define _NA_0062_20100318_CHANGE_LEVEL_FOR_STAT_INIT_2          // 강재준, 유명수 / 무료 스텟 초기화 제한 레벨 40에서 70으로 상향
+    /*($Delete_[S/x]$)*/#define _NA_0_20091119_HEIM_LOTTO_ACCUM_CTRL_BY_SHOP                // 2009.11.19 / 강재준 / NPC 상인 판매 대금의 하임 행운 적립율 개별 조절 지원
+    /*($Delete_[S/x]$)*/#define _NA_0_20091030_RANDOM_ITEM                                  // 2009.10.30 / 남기봉, 이도형 / 랜덤 아이템 추가.
+
+
+//==================================================================================================
+[이은파]
+1. 기간: 11.06.10
+2. 제거 목록
+    ///*($Delete_[S/x]$)*/#define __NA_001358_ENCHANT_UNIFICATION							// 2009.06.22 / 김창현, 인첸트 일원화
+    /*($Delete_[S/x]$)*/#define _KR_001399_20091020_CRYSTALLIZE_EXTEND          // 2009.10.20 / 남기봉,이태준 / 결정화 개선. 엘리트 아이템 결정화 추가, 인챈트 Lv에 따른 결정화 아이템 갯수 설정. data\\ItemCrystalizeList.txt 인챈트 Lv필드 추가
+
+//==================================================================================================
+[이은파]
+1. 기간: 11.05.03
+2. 제거 목록
+    /*($Delete_[S/C]$)*/#define __NA_0_POSSESSION_ITEM_DROP						// 2009.08.27 / 김창현, 귀속 아이템 드랍 가능
+
+    /*($Delete_[S/C]$)*/#define __NA_0_20090902_PET_NAME_CARD_LOG               // 2009.09.02 / 강재준 / 펫 네임카드 아이템 사용 로그에 대상 펫에 대한 추가 정보 포함
+    /*($Delete_[C]$)*/#define _NA_20100503_MAGIC_SKILL_SAINTAID_CANCLE_STAT_IS_CHANGE // 2010.05.03 / 민정영 / 엘리멘탈 스킬 세인트 에이드가 켄슬하는 상태이상 영역 변경 
+
+    /*($Delete_[S/x]$)*/#define __NA_0_20090818_SYSTEM_MEMO_SUPPORT                         // 2009.08.18 / 강재준 / 시스템 쪽지 지원
+    /*($Delete_[S/x]$)*/#define __NA_0_20090820_SSQ_FEE_REFUND_LOG                          // 2009.08.20 / 강재준 / 타락한사원 입장 실패로 인한 입장료 환불시 하임 획득 로그 추가
+    /*($Delete_[S/x]$)*/#define __NA_0_20090627_HEIM_CONSUMPTION_S2S_NOTIFICATION           // 2009.06.27 / 강재준 / 게임 내 하임 소비 정보 타 서버 통지 기능
+    /*($Delete_[S/x]$)*/#define __NA_0_20090627_HEIM_ACQUISITION_S2S_NOTIFICATION           // 2009.06.27 / 강재준 / 게임 내 하임 획득 정보 타 서버 통지 기능
+
+    /*($Delete_[S/x]$)*/#define __KR_001355_20090624_GROUPINGSYSTEM_ALL                     //2009.06.08 / 이도형, 민정영 / 그룹핑 시스템 모든 define
+    #ifdef __KR_001355_20090624_GROUPINGSYSTEM_ALL                  
+        /*($Delete_[S/x]$)*/#define __KR_001355_20090608_GROUPINGSYSTEM_CW                  //2009.06.08 / 민정영 / 그룹핑 시스템 [ Client	<---->		World ]
+        /*($Delete_[S/x]$)*/#define __KR_001355_20090608_GROUPINGSYSTEM_GW                  //2009.06.08 / 민정영 / 그룹핑 시스템 [ Game	<---->		World ]
+        /*($Delete_[S/x]$)*/#define __KR_001355_20090608_GROUPINGSYSTEM_DW                  //2009.06.08 / 민정영 / 그룹핑 시스템 [ DBP		<---->		World ]
+        /*($Delete_[S/x]$)*/#define __KR_001355_20090608_GROUPINGSYSTEM_DATA                //2009.06.08 / 민정영 / 그룹핑 시스템 [ DATA 관련 ]
+        /*($Delete_[S/x]$)*/#define __KR_001355_20090608_GROUPINGSYSTEM_PARSER		        //2009.07.07 / 민정영 / 그룹핑 시스템 [ PARSER ]
+        /*($Delete_[S/x]$)*/#define __KR_001355_20090608_EXP_ACQUISITION_NOTIFICATION
+        /*($Delete_[S/x]$)*/#define __KR_001355_20090805_CHECK_GROUPSYSTEM_MSG              //그룹 시스템 메세지임을 알리는 작업 define
+        /*($Delete_[S/x]$)*/#define _DH_GROUPSYSTEM_CHANGE_PACKET                           //그룹 하임패킷 CW->CG로 변경
+    #endif //__KR_001355_20090624_GROUPINGSYSTEM_ALL
+
+//==================================================================================================
+[이은파]
+1. 기간: 11.04.19
+2. 제거 목록
+    /*($Delete_[S/x]$)*/#define _NA_0_20100222_UNIT_TRIGGER // 2010.02.22 / 이호영, 윤영주, 이태준 / 맵툴 개선 요청.
+    /*($Delete_[S/x]$)*/#define _NA_0_20100222_UNIT_TRIGGERS_ADD // 2010.02.22 / 이호영, 윤영주, 이태준 / 맵툴 개선 요청. 
+    /*($Delete_[S/x]$)*/#define _NA_0_20100222_UNIT_TRIGGERS_PATHLIST // 2010.02.22 / 이호영, 이태준 / 몬스터 AI 개선.  
+    /*($Delete_[S/x]$)*/#define _NA_0_20100222_UNIT_TRIGGERS_REGEN // 2010.02.22 / 이호영, 윤영주, 이태준 / 리젠 관련 변경.
+    /*($Delete_[S/x]$)*/#define _NA_0_20100222_UNIT_TRIGGERS_FRIEND_MONSTER // 2010.02.22 / 이호영 / 아군형 몬스터 추가.
+    /*($Delete_[S/x]$)*/#define __NA_276_20070213_UNIT_TRIGGER // 2010.02.22 / 김민욱,이호영 / 유닛 관련 미구현 트리거 요청 / 
+
+//==================================================================================================
+[이은파]
+1. 기간: 11.04.04
+2. 제거 목록
+    /*($Delete_[S/C]$)*/#define __NA001374_090708_CACHE_ITEM_BUFF_EXTENTION__       // 2009.07.08 / 이은파 / 캐시아이템 리뉴얼#2 죽은 후 사라지지 않는 버프
+
+//==================================================================================================
+[이은파]
+1. 기간: 11.01.28
+2. 제거 목록
+    /*($Delete_[S/x]$)*/#define __NA000000_090716_HIGH_LOAD_BALANCED_NETWORK_TUNEUP__       // 2009.07.16 / 이은파 / G->C 로의 패킷 처리상 개선 작업 + 싱크 관련 검수
+    /*($Delete_[S/x]$)*/#define __NA000000_090712_SCRIPT_PARSING_SYSTEM_MODIFICATION        // 2009.07.12 / 이은파 / 스크립트 로딩 개선
+    /*($Delete_[S/x]$)*/#define __NA000000_090613_TRIGGER_LOGIC_REARRANGE__                 // 2009.06.13 / 이은파 / 트리거 영역 관련 개선 작업
+    /*($Delete_[S/x]$)*/#define __NAM00000_090621_TRIGGER_LOGIC_REARRANGE2__                // 2009.06.21 / 이은파 / 트리거 영역 관련 처리 변경:몬스터 소환 처리 수정
+    /*($Delete_[S/x]$)*/#define __NA000000_090622_MOB_ABILITY_CONTROL_CHANGE__              // 2009.06.22 / 이은파 / 비정상 접속 종료에 따른 몬스터 능력시 조정 시점 개선
+    /*($Delete_[S/x]$)*/#define __NA000000_090717_SHADOW_SKILL_PROBLEM_MODIFICATION__       // 2009.07.17 / 이은파 / 쉐도우 스킬들의 이레귤러 검증 및 수정
+    /*($Delete_[S/x]$)*/#define __BUG_34356_ATTR_RECOVERY_HP_BUG							// 2009.08.07 / 김창현, HP회복 버그
+
+    /*($Delete_[S/x]$)*/#define _NA001415_091123_CHANGE_MOB_AI_IN_SAFETY_AREA_				// 2009.11.23 / 이은파, 이태준 / 안전지대 타일 속성 추가 + 에 따른 몬스터 AI변경
+    /*($Delete_[S/x]$)*/#define _NA00XXXX_090111_CASH_TYPE_SHARED_                      // 이은파, 이도형 / 캐시타입(PP카드) 추가에 따른 구분 작업 (전 국가 공통)
+    /*($Delete_[S/x]$)*/#define _NA_0_20100525_ADD_TIMER_ACTION_TRIGGER                 // 2010.05.25 / 이호영, 이태준 / 타이머 발동 액션 트리거 추가.
+    /*($Delete_[S/x]$)*/#define _NA_0_20100514_NPC_DEAD_STATE_TIME                      // 2010.05.14 / 이호영 / 몬스터 죽은 상태 지속 시간 값을 고정값에서 스크립트에서 제어하도록 변경. 
+    /*($Delete_[S/x]$)*/#define _NA_0_20100308_ADD_QUEST_COUNT_CHECK					// 2010.03.08 / 이호영 / 퀘스트 갯수 체크 추가.
+    
+    /*($Delete_[S/x]$)*/#define _NA000000_100609_CS_TIME_SYNCHRONIZATION_ // 이은파, 유명수 / C/S 시간 동기화 처리
+    /*($Delete_[S/x]$)*/#define _NA000000_100623_CHECK_WMO_CHECKSUM_ // 이은파, 윤영주 / 필드 입장시 WMO 버전 검사 루틴 추가 (engine버전 검사라는 이레귤러 발생...ㅠㅠ)
+    /*($Delete_[S/x]$)*/#define _NA000000_100714_NEW_CHARITEM_EXTENDED_FIELD_ // 이은파 / 신규 캐릭에 지급하는 장비 아이템 확장 지원
+    /*($Delete_[S/x]$)*/#define _NA000000_DBQUERY_REVERSAL_STATE_PREVENTION             // 2010.11.02 / 이은파 / DBQuery역전 현상 막기 위한 작업
+    
+    /*($Delete_[S/x]$)*/#define _NA000109_100427_ITEM_CUSTOMIZING_CONTENTS_ // 이은파, 김광수 / 아이템 커스터마이징
+    /*($Delete_[S/x]$)*/#define _NA000023_090323_ENHANCED_INVENTORY_SLOT_FUNCTIONALITY_DB_ // 이은파 / 인벤토리 분리 작업
+    /*($Delete_[S/x]$)*/#define _NA000023_090323_ENHANCED_INVENTORY_SLOT_FUNCTIONALITY_ // 이은파, 이도형 / 인벤토리 슬롯 기능 개선
+    
+    /*($Delete_[S/x]$)*/#define _NA001385_20090924_DOMINATION_DURA                      // 2010.04.12 / 이호영 / 점령전 내에서 사망시 내구도 하락 비율 변경 (10% -> 5%) 
+    /*($Delete_[S/x]$)*/#define _NA001385_20090924_DOMINATION
+    #ifdef _NA001385_20090924_DOMINATION
+        /*($Delete_[S/x]$)*/#define _NA001385_20090924_DOMINATION_GAMELOG_ACTION            // 2010.01.12 / 이호영 / 지역 점령전용 게임 로그
+        /*($Delete_[S/x]$)*/#define _NA001385_20090924_DOMINATION_FINDPATH_ATTACK           // 2009.12.15 / 이호영 / 공격시 가능 체크(findpath)
+        /*($Delete_[S/x]$)*/#define _0_20100427_DOMINATION_FINDPATH_ATTACK_BUG              // 2010.04.27 / 이호영 / 수정 워프 이동시 벽 넘어로 이동되는 버그 수정.
+        /*($Delete_[S/x]$)*/#define _NA001385_20090924_DOMINATION_SHADOW                    // 2009.12.15 / 이호영 / 쉐도우 하이드 스킬 변경.
+        /*($Delete_[S/x]$)*/#define _NA001385_20090924_DOMINATION_NPC_MAXHP                 // 2009.12.09 / 이호영 / monster render info에 maxHp 추가
+
+        /*($Delete_[S/x]$)*/#define _NA001385_20090924_DOMINATION_BASE                      // 2009.09.24 / 이호영 / 지역점령전._Map
+        /*($Delete_[S/x]$)*/#define _NA001385_20090924_DOMINATION_STAMP                     // 2009.09.24 / 이호영 / 지역점령전._stamp
+        /*($Delete_[S/x]$)*/#define _NA001385_20090924_DOMINATION_ETC                       // 2009.09.24 / 이호영 / 지역점령전._etc(패킷,파서)
+        /*($Delete_[S/x]$)*/#define _NA001385_20090924_DOMINATION_TRIGGER                   // 2009.09.24 / 이호영 / 지역점령전._trigger
+        /*($Delete_[S/x]$)*/#define _NA001385_20090924_DOMINATION_SKILL                     // 2009.09.24 / 이호영 / 지역점령전._크리스탈 워프 스킬
+        /*($Delete_[S/x]$)*/#define _NA001385_20090924_DOMINATION_EVENT_CONTROL             // 2009.09.24 / 이호영 / 지역점령전._이벤트 컨트롤
+        /*($Delete_[S/x]$)*/#define _0_20100419_DOMINATION_RETURN_TO_ENTRANCE_BUG           // 2009.09.24 / 이호영 / 지역점령전.입구로 강제 이동 되지 않는 유저 강제 접속 종료 시키기.
+        /*($Delete_[S/x]$)*/#define __KR_001385_20090907_DOMINATION_PACKET                  // 2009.09.07 / 민정영 / 지역 점령전
+        /*($Delete_[S/x]$)*/#define _KR_001385_20090907_DOMINATION_PARSER                   // 2009.09.07 / 민정영 / 지역 점령전 파서 작업 정의
+        /*($Delete_[S/x]$)*/#define _KR_001385_20091013_DOMINATION_QUERY                    // 2009.10.13 / 민정영 / 지역 점령전 DB쿼리문 작업
+        /*($Delete_[S/x]$)*/#define _KR_001385_20091013_DOMINATION_GUILDSERVER_BASE         // 2009.10.13 / 민정영 / 길드 서버 기본 작업
+        /*($Delete_[S/x]$)*/#define _KR_001385_20091013_DOMINATION_GAMESERVER_BASE          // 2009.10.13 / 민정영 / 게임 서버 기본 작업
+        /*($Delete_[S/x]$)*/#define _KR_001385_20091013_DOMINATION_BASICINFO_SETTING        // 2009.10.13 / 민정영 / 지역 점령전 기본정보 세팅 작업
+        /*($Delete_[S/x]$)*/#define _KR_001385_20091103_DOMINATION_ZONEMOVE_NOTIC           // 2009.11.03 / 민정영 / 존 이동시에 점령 지역의 길드 정보 표시 작업
+        /*($Delete_[S/x]$)*/#define _KR_001385_20091105_DOMINATION_UPDATEDOMINATIONINFO     // 2009.11.05 / 민정영 / 지역 점령전 정보 업데이트 관련 작업
+        /*($Delete_[S/x]$)*/#define _KR_001385_20091202_DOMINATION_RETURN_HEIM              // 2009.12.02 / 민정영 / 지역 점령전 / 하임 되돌려주기 관련 작업
+        /*($Delete_[S/x]$)*/#define _KR_001385_20091211_DOMINATION_GAMELOG_MONEY            // 2009.12.13 / 민정영 / 지역 점령전 게임 로그 작업
+		/*($Delete_[S/x]$)*/#define __001385_LTJ_RENEWAL_NOTICE								// 2009.11.27 / 이태준 / 공지사항 리뉴얼
+		/*($Delete_[S/x]$)*/#define __001385_LTJ_ADD_DOMINATIONWAR_TOWER_UI					// 2009.11.27 / 이태준 / 지역점령전 관련 UI 작업
+		/*($Delete_[S/x]$)*/#define _YJ_RENEWAL_CAST_LEAVE_DLG								// 2009.11.27 / 윤영주 / CastLeave Dlg 리뉴얼
+		/*($Delete_[S/x]$)*/#define _YJ_MOD_MAPOBJECT_MONSTER								// 2009.11.27 / 윤영주 / 설치형 몬스터 사용 방식 수정	
+		/*($Delete_[S/x]$)*/#define _YJ_EDIT_OBJ_COLOR_APPLY								// 2009.11.27 / 윤영주 / 맵툴에서 수정한 맵오브젝트/스피드트리 컬러값 적용
+		/*($Delete_[S/x]$)*/#define _YJ_ADD_RADAR_ICON										// 2009.11.27 / 윤영주 / 지역점령전 관련 레이더 아이콘 추가
+		/*($Delete_[S/x]$)*/#define _YJ_RENEWAL_TEXT_ON_HEAD								// 2009.11.27 / 윤영주 / 캐릭터 머리위 캐릭터 
+		/*($Delete_[S/x]$)*/#define _YJ_ADD_DAMAGE_EFFECT_NPCINFO							// 2009.12.15 / 윤영주 / NPCINFO에 데미지 이펙트 코드 추가
+		/*($Delete_[S/x]$)*/#define _YJ_STAMP_GAGE											// 2010.01.08 / 윤영주 / 각인 게이지 작업(Engine Ver 120)
+    #endif
+    /*($Delete_[S/x]$)*/#define _NA001385_20090924_DOMINATION_NON_PREEMPTIVE_ATTACK_BUG     // 2010.04.09 / 이호영 / 점령전 인장 흭득시 미획득 유저에 의해 타겟팅 되는 버그 수정.
+    /*($Delete_[S/x]$)*/#define _NA001385_20090924_DOMINATION_MAPNPC_AI_BUG                 // 2010.04.09 / 이호영 / 지역점령전 성문 AI 변경    
+    /*($Delete_[S/x]$)*/#define _NA001385_20090924_DOMINATION_STAMP_STYLE_SKILL_BUG         // 2010.04.09 / 이호영 / 각인시 스타일 스킬 미적용 추가
+
+//==================================================================================================
+[이은파]
+1. 기간: 11.01.18
+2. 제거 목록
+    /*($Delete_[S/x]$)*/__CN_1299_WASTE_ITEM_LEVEL_LIMITE_CHECK
+
+//==================================================================================================
+[강재준]
+
+1. 기간: 10.12.03
+2. 제거 목록
+	/*($Delete_[S/x]$)*/#define __NA_001304_20090521_GUILD_LOG_FIX                  // 2009.05.21 / 강재준 / 길드 로그 기능 재작성
+
+//==================================================================================================
+[이은파]
+
+1. 기간: 10.09.15
+2. 제거 목록
+    /*($Delete_[S/x]$)*/#define __NA000000_090906_SOLAR_SLOT_CODE_ARRANGEMENT__  // 2009.09.06 / 이은파 / SolarSlot 코드 정리
+    /*($Delete_[S/x]$)*/#define __NA000000_090906_SOLAR_SLOT_UPDATE_VER6__       // 2009.09.06 / 이은파 / SolarSlot ItemStream Ver6 update
+    /*($Delete_[S/x]$)*/#define __NA001390_090915_RIDING_SYSTEM__                // 2009.09.15 / 이은파,김광수 / Riding System
+    /*($Delete_[S/x]$)*/#define __NA001390_090915_RIDING_SYSTEM_ETC__            // 2009.09.20 / 이은파,김광수 / 고질적으로 복잡한 부분 수정코자... 여력이 되는 한 작업하기로 한다.
+    /*($Delete_[S/x]$)*/#define __NA1390_1391_090915_RIDING_SYSTEM_ITEM_PART__   // 2009.09.15 / 이은파,김광수 / Riding System - Item Part
+
+//==================================================================================================
+
+[이호영]
+1. 기간 : 10.09.08 (0904 ~ 0905)
+2. 제거 목록
+	/*($Delete_[S/x]$)*/#define __NA_4128_BUG_FIX_WOUNDSTATUS_SKILLSTATTYPE             // 2009.06.18 / 이호영 / WOUNDSTATUS 도트 데미지 스탯타입 2로 강제 되어 있는 부분 수정.
+	/*($Delete_[S/x]$)*/#define __NA_0_20090618_MODIFY_KOREA_PK_RULE                    // 2009.06.18 / 이호영 / 한국 PK룰 변경.
+	/*($Delete_[S/x]$)*/#define __NA_0_20080724_CHINA_PK_RULE							// 2008.07.24 / 이수택 / 중국 PK룰 변경 - [ _CHINA //CHINA_PK_RULE ]로 변경
+	/*($Delete_[S/x]$)*/#define __NA_0_20090715_NPCSHOP_ITEM_REPURCHASE_LOG             // 2009.07.15 / 이호영 / 아이템 재구매 게임로그
+	/*($Delete_[S/x]$)*/#define __NA_0_20090715_GUILD_RANKUP_NOT_CHECKRIGHT_BUG         // 2009.07.15 / 이호영 / 길드 랭크업시 권한 체크 하지 않는 버그.
+	/*($Delete_[S/x]$)*/#define __NA_0_20090819_GUILDMARK_REGISTER_LOG                  // 2009.08.19 / 이호영 / 길드 인장 아이템 사용 로그.
+    /*($Delete_[S/x]$)*/#define __NA_001369_20090705_ADD_QUEST_GRADE_MONSTERKILL		// 2009.07.05 / 이호영,이태준 / 요구 몬스터 KILL 수행 타입 추가.
+	/*($Delete_[S/x]$)*/#define __NA_001370_20090706_ADD_QUEST_SEARCH_AREA        		// 2009.07.06 / 이호영,이태준 / 탐색 퀘스트
+    /*($Delete_[S/x]$)*/#define __NA_001340_20090519_QUEST_GM_CMD						// 2009.05.19 / 이호영,이태준 / 퀘스트 GM명령어 추가
+    /*($Delete_[S/x]$)*/#define __NA_0_20090709_IGNORE_PKTILE_OPTION					// 2009.07.09 / 이호영,이태준 / PK 타일 무시 옵션.
+    /*($Delete_[S/x]$)*/#define __NA_0_20090907_GUILD_DESTROY_GM_CMD					// 2009.09.07 / 이호영 / 길드 바로 삭제 가능 GM 명령어. 
+
+//==================================================================================================
+ [이은파]
+
+1. 기간: 10.08.24
+2. 제거 목록
+	/*($Delete_[S/x]$)*/#define __NA001284_20090205_MODIFY_SUMMONED_ATTR				// 2009.02.05 / 이수택 / 서먼 소환체 공식 수정
+	/*($Delete_[S/x]$)*/#define _NA_001231_20081216_ADD_OPTION_KIND						// 2008.12.31 / 이수택 / PVP 개선을 위한 옵션 추가
+	/*($Delete_[S/x]$)*/#define __NA_0_20090202_BUGFIX_RECV_SHOP_ITEMLIST_DUPLICATION	// 2009.02.02 / 이수택 / 샵 아이템 중복 적용 버그.
+	/*($Delete_[S/x]$)*/#define __NA000000_20081106_GUILD_NAME_CHANGE					// 2008.11.06 / 이수택, 윤영주 / 길드명 변경	(작업요청서[1201])
+	/*($Delete_[S/x]$)*/#define __NA_003197_20090114_CHARACTER_POS_SYNC_BUG_FIX			// 2009.01.14 / 이수택 / 스킬 사용 실폐시 케릭터 위치 동기화
+	/*($Delete_[S/x]$)*/#define __NA_001253_20090107_MAX_CHARACTER_MODIFY				// 2009.01.07 / 이수택 / 케릭터 생성 MAX 치 변경
+	/*($Delete_[S/x]$)*/#define __NA001164_20081024_CHAR_WAY_POINT						// 2008.10.24 / 이수택, 이태준 / 개인 웨이 포인트
+		/*($Delete_[S/x]$)*/#define __NA001164_20081024_CHAR_WAY_POINT_SET_DB_QUERY
+		/*($Delete_[S/x]$)*/#define __NA001164_20081024_CHAR_WAY_POINT_SET_DB_PACKET
+		/*($Delete_[S/x]$)*/#define __NA001164_20081024_CHAR_WAY_POINT_SET_DB_FUNC
+		/*($Delete_[S/x]$)*/#define __NA001164_20081024_CHAR_WAY_POINT_PACKET
+		/*($Delete_[S/x]$)*/#define __NA001164_20081024_CHAR_WAY_POINT_FUNC
+		/*($Delete_[S/x]$)*/#define __NA001164_20081024_CHAR_WAY_POINT_ITEM
+		/*($Delete_[S/x]$)*/#define __NA001164_20081024_CHAR_WAY_POINT_GM_CMD
+        /*($Delete_[S/x]$)*/#define __NA001164_20081024_CHAR_WAY_POINT_PORTAL
+    /*($Delete_[S/x]$)*/#define __NA1279_1281_090209_TIMELINE_QUEST_BASED_MISSION__         // 2009.02.09 / 이은파,김광수 / [타임라인] 퀘스트 및 필드에서의 미션 + 배틀존 제한 설정
+    /*($Delete_[S/x]$)*/#define __NA001281_BATTLEZONE_ENTER_CONSTRAINTS_CHANGE_IN_LOBBY__   // 2009.03.16 / 이은파 / [타임라인] 배틀존 제한 설정 + 로비에서도 해당 제약조건 걸리도록...
+    /*($Delete_[S/x]$)*/#define __NA000000_090320_v0902_LOGIC_CHANGE_ABOUT_QUEST__          // 2009.03.20 / 이은파 / 0902 수정 요청사항들 (퀘스트 관련)
+    /*($Delete_[S/x]$)*/#define __NA1335_090407_PORTAL_MISSION_ROOM_CONSTRAINTS__           // 2009.04.07 / 이은파 / 포탈 미션 수행시 '명지휘관의 지휘봉'과 같은 배틀존에 설정되는 속성 적용되도록...
+
+        /*($Delete_[S/x]$)*/#define __NA001283_20090221_COLLECTION_SYNC                     // 2009.08.17 / 이호영 / 채집 완료 동기화.
+    /*($Delete_[S/x]$)*/#define __NA_0_20090706_BUG_FIX_COLLECTION_COUNT_SYNK               // 2009.07.06 / 이호영 / AC 보물 상자 채집시 가끔 느낌표 사라지지 않는 버그.
+        /*($Delete_[S/x]$)*/#define __NA001277_090205_NAVI_SYSTEM_SUPPORT__         //09.03.xx //이은파,윤영주/네비 시스템 서버쪽 지원 작업 (디파인 제거시 혼란 방지용으로 추가)
+	/*($Delete_[S/x]$)*/#define __NA_0_20080414_GUILD_WAREHOUSE_LOG_BUG							// 2009.04.14 / 이수택 / 길드 창고 로그 잘못 남기던 버그.
+	/*($Delete_[S/x]$)*/#define __NA002150_20090402_GUILD_ALLIENCE_NOT_CHK_DESTROY_WAIT_BUG		// 2009.04.02 / 이수택 / 길드 해산 대기중인 길드에게 동맹 신청이 가능한 현상.
+	/*($Delete_[S/x]$)*/#define __NA_0_20090407_QUESTACCEPT_GM_CMD								// 2009.04.07 / 이수택 / 퀘스트 강제 수락 gm 명령어
+	/*($Delete_[S/x]$)*/#define __NA_0_20090407_QUESTSCRIPT_LOAD_MODIFY							// 2009.04.07 / 이수택 / 퀘스트 스크립트 부여 아이템 항목 3필드 적용 안되는 버그.
+	/*($Delete_[S/x]$)*/#define __NA_0_20090408_GUILD_RELATION_CHECKRIGHT_BUG					// 2009.04.08 / 이수택 / 길드 동맹시 권한이 없음 나오는 버그.
+	/*($Delete_[S/x]$)*/#define __NA_0_20090324_RANKINGSYSTEMCTL								// 2009.03.24 / 이수택 / 배틀 서버 죽는 버그 임시 수정
+	/*($Delete_[S/x]$)*/#define __NA001254_20090109_RTTG_FUNC_ADD								// 2009.01.09 / 이수택 / 웁스 명령 추가
+	/*($Delete_[S/x]$)*/#define __NA000000_20090320_DELAY_ITEM_DROP_TIME						// 2009.03.20 / 이수택 / 몬스터 아이템 지연 드랍 
+	/*($Delete_[S/x]$)*/#define __NA001140_20080128_SOUND_TRIGGER_ADD							// 2009.01.28 / 이수택 / 사운드 재생 트리거 추가
+	/*($Delete_[S/x]$)*/#define __NA001282_20090206_MODIFY_QUEST_TIME							// 2009.02.06 / 이수택 / [타임라인]퀘스트 부여 시간 제한 개선
+	/*($Delete_[S/x]$)*/#define __NA001283_20090221_COLLECT										// 2009.02.11 / 이수택 / [타임라인]채집 시스템
+			/*($Delete_[S/x]$)*/#define __NA001283_20090221_COLLECTION_PACKET			
+			/*($Delete_[S/x]$)*/#define __NA001283_20090221_COLLECTION_PARSER
+			/*($Delete_[S/x]$)*/#define __NA001283_20090223_COLLECTION_CLASS
+			/*($Delete_[S/x]$)*/#define __NA001283_20090225_COLLECTION_USE
+			/*($Delete_[S/x]$)*/#define __NA001283_20090227_COLLECTION_LIST
+			/*($Delete_[S/x]$)*/#define __NA001283_20090303_COLLECTION_GM
+			/*($Delete_[S/x]$)*/#define __NA001283_20090303_COLLECTION_MAPOBJECTID
+
+    /*($Delete_[S/x]$)*/#define __NA_0_QUEST_ACCEPT_ITEM_IMPROVEMENT_DELETE             // 2010.03.08 / 이호영 / 퀘스트 반복 버그 의심 부분 수정
+        /*($Delete_[S/x]$)*/#define _NA_20090925_ITEMSTREAM_INIT_RESERVED        //< v6가 별도 목적으로 추가된 관계로...
+    /*($Delete_[S/x]$)*/#define _NA_20090925_ITEMSTREAM_INIT_RESERVED                       // 2009.09.25 / 이호영 / Itemstream의 사용하지 않는 부분과 귀속 관련 부분 초기화
+        /*($Delete_[S/x]$)*/#define __NA_0_QUEST_ACCEPT_ITEM_IMPROVEMENT_DELETE             // 2010.03.08 / 이호영 / 퀘스트 반복 버그 의심 부분 수정
+	/*($Delete_[S/x]$)*/#define __NA_001337_20090511_EXPANSION_QUEST_COMPL_NUM			// 2009.05.11 / 이호영 / 퀘스트 대역폭 1500 -> 3000 상향 
+	/*($Delete_[S/x]$)*/#define __CN_000001_20090513_ADD_FRIEND_CHECK_GM				// 2009.05.13 / 이호영 / 중국 GM 케릭터 친구 추가 못함.	(국가 공통)
+	/*($Delete_[S/x]$)*/#define __CN_000002_20090513_ADD_INDUN_KIND_MAYA_SCROLL			// 2009.05.13 / 이호영 / 중국 쉐도우 입장 불가 맵		(국가 공통)
+	/*($Delete_[S/x]$)*/#define __CN_000003_20090519_CANNOT_MOVE_WAREHOUSE_ELITE_ITEM	// 2009.05.19 / 이호영 / 중국 길드 창고에 보관 불가능 타입추가.(국가 공통)
+	/*($Delete_[S/x]$)*/#define __CN_000004_20090521_CHANGE_COLLECT_OBTAIN_PACKET		// 2009.05.21 / 이호영, 김광수 / 중국 채집완료후 보상 패킷 변경.(국가 공통)
+    /*($Delete_[S/x]$)*/#define __NA_0_20090714_POTAL_ITEM_DONOT_MOVE_GMMAP             // 2009.07.14 / 이호영 / 작전지도와 룬스톤은 GM맵과 에소드 마을로 이동할수 없으며, 좌표 저장할수 없다.
+    /*($Delete_[S/x]$)*/#define __NA_0_20090714_FIX_MODIFY_GUILD_MARK_BUG               // 2009.07.14 / 이호영 / 길드 마크 스크립트 설정 레벨로 변경이 안되는 버그.
+    /*($Delete_[S/x]$)*/#define __NA_0_20090720_GUILD_RENDER_INFO_MODIFY                // 2009.07.20 / 이호영 / 길드 랜더 인포 데이터 추가.
+    /*($Delete_[S/x]$)*/#define __NA_0__20090724_BUG_FIX_GUILD_JOIN_AROUND_BRD          // 2009.07.24 / 이호영 / 길드 가입시 주위에 알림 패킷 변경 (길드 등급, 관계).
+
+	/*($Delete_[S/x]$)*/#define __NA_1323_CHAO_TIME_DECREASE_ITEM						// 2009.04.16 / 김창현 / 카오시간 감소 아이템
+	/*($Delete_[S/x]$)*/#define __NA_1324_IGTYPE_IMPROVEMENT							// 2009.04.29 / 김창현 / IGType 개선
+	/*($Delete_[S/x]$)*/#define __NA_1325_GM_CMD_ADD_ABOUT_DROP							// 2009.05.08 / 김창현 / DROP관련 GM 명령어 추가
+	/*($Delete_[S/x]$)*/#define __NA_DKJH0002_MODIFY_POSSESSION_ITEM_RANKUP				// 2009.05.19 / 김창현 / 귀속 아이템 랭크업 수정
+	/*($Delete_[S/x]$)*/#define __NA_0_QUEST_ACCEPT_ITEM_IMPROVEMENT					// 2009.05.26 / 김창현, 퀘스트 수락 아이템 개선
+	/*($Delete_[S/x]$)*/#define __BUG_4049_QUEST_REQITEM_DELETE_BUG						// 2009.06.03 / 김창현, 퀘스트 요구 아이템 삭제 3개까지만 되는 버그
+	/*($Delete_[S/x]$)*/#define __NA_0_CASH_ITEM_RENEWAL_SUPERMASTER					// 2009.07.02 / 김창현, 캐시아이템 리뉴얼 1.명지휘관의 지휘봉
+    /*($Delete_[S/x]$)*/#define __NA0000_090416_RETURN_STATE_MOB_CONTROL__                  // 2009.04.16 / 이은파 / 몬스터 복귀에 대한 상태 제약 처리 변경
+    /*($Delete_[S/x]$)*/#define __NA000000_090506_EVENT_TYPE_MODIFICATION__                 // 2009.05.06 / 이은파 / 일반 유저 플레이타임 서비스 지원
+	/*($Delete_[S/x]$)*/#define __NA001336_090514_PARTY_NAVI_SUPPORT__                      // 2009.05.14 / 이은파,이태준 / 파티원 식별 개선
+        /*($Delete_[S/x]$)*/#define _NA_20090925_ITEMSTREAM_INIT_RESERVED                       // 2009.09.25 / 이호영 / Itemstream의 사용하지 않는 부분과 귀속 관련 부분 초기화
+        /*($Delete_[S/x]$)*/#define __NA_1325_GM_CMD_ADD_ABOUT_DROP							// 2009.05.08 / 김창현 / DROP관련 GM 명령어 추가		
+		/*($Delete_[S/x]$)*/#define __CN_000001_20090513_ADD_FRIEND_CHECK_GM				// 2009.05.13 / 이수택 / 중국 GM 케릭터 친구 추가 못함.
+		/*($Delete_[S/x]$)*/#define __CN_000002_20090513_ADD_INDUN_KIND_MAYA_SCROLL			// 2009.05.13 / 이수택 / 중국 쉐도우 입장 불가 맵
+		/*($Delete_[S/x]$)*/#define __CN_000003_20090519_CANNOT_MOVE_WAREHOUSE_ELITE_ITEM	// 2009.05.19 / 이수택 / 중국 길드 창고에 보관 불가능 타입추가.
+		/*($Delete_[S/x]$)*/#define __CN_000004_20090521_CHANGE_COLLECT_OBTAIN_PACKET		// 2009.05.21 / 이수택 / 중국 채집완료후 보상 패킷 변경.
+	    /*($Delete_[S/x]$)*/#define __BUG_4049_QUEST_REQITEM_DELETE_BUG						// 2009.06.03 / 김창현, 퀘스트 요구 아이템 삭제 3개까지만 되는 버그
+        /*($Delete_[S/x]$)*/#define __NA_0_20090714_FIX_MODIFY_GUILD_MARK_BUG               // 2009.07.14 / 이호영 / 길드 마크 스크립트 설정 레벨로 변경이 안되는 버그.
+        /*($Delete_[S/x]$)*/#define __NA_0_20090720_GUILD_RENDER_INFO_MODIFY                // 2009.07.20 / 이호영 / 길드 랜더 인포 데이터 추가.
+        /*($Delete_[S/x]$)*/#define __NA_1325_GM_CMD_ADD_ABOUT_DROP							// 2009.05.08 / 김창현 / DROP관련 GM 명령어 추가  / 2009.09.16 /민정영 북미 테스트용 추가
+        /*($Delete_[S/x]$)*/#define __NA001336_090514_PARTY_NAVI_SUPPORT__                  // 2009.05.14 / 이은파,이태준 / 파티원 식별 개선 : 2009.11.10 체력 게이지 오버 버그 수정 디파인
+
+
+    /*($Delete_[S/x]$)*/#define __NA_001290_20090525_SHIELD_SYSTEM							// 2009.07.16 / 이호영,김광수 / 실드 시스템.
+    /*($Delete_[S/x]$)*/#define __NA_001290_20090525_SHIELD_SYSTEM_NOTIFY_NOTABILITY_STATE  // 2009.07.16 / 이호영,김광수 / SD상태 동기화.
+
+//==================================================================================================
+
+ [이은파]
+
+1. 기간: 10.06.07~08
+2. 제거 목록
+    /*($Delete_[S/x]$)*/#define __NA_963_LOG_LIB_VERSION_REFACTORING				// 2008.04.29 / 김창현 / 로그 라이브러리 개선
+    /*($Delete_[S/x]$)*/#define __NA_001270_20090209_GUILD_PENALTY_FIX				// 2009.02.09 / 조재식 / 길드 패널티 수정.
+    /*($Delete_[S/x]$)*/#define __NA_BUGFIX_20090910_WOPS2610						// 2009.02.10 / 조재식 / 헤르메시즘의 성서 사용시 소켓옵션이 사라지는 현상 버그 수정.
+    /*($Delete_[S/x]$)*/#define __NA_1165_ETHER_DEVICE_SAVE_DB						// 2008.10.26 / 김창현 / 에테르 방출장치 정보 DB저장
+    /*($Delete_[S/x]$)*/#define __NA_1131_PET_NAME_SETTING							// 2008.11.18 / 김창현, 김광수 / 펫 이름 설정, 이모티콘
+    /*($Delete_[S/x]$)*/#define __NA_1170_CHARGE_INVEN_REGISTER_QUICK_SLOT			// 2008.09.23 / 김창현 / 유료 인벤의 슬롯도 퀵슬롯 등록하도록...
+    /*($Delete_[S/x]$)*/#define __NA_1168_ADD_CONTENTS_ADD_LOG						// 2008.11.06 / 김창현 / 로그 추가 작업
+    /*($Delete_[S/x]$)*/#define __NA_1233_2009_NEW_YEARS_DAY_EVENT					// 2008.12.30 / 김창현, 김광수 2009년 구정 이벤트
+    /*($Delete_[S/x]$)*/#define __NA_1260_CHANGE_LEVEL_FOR_STAT_INIT				// 2009.01.12 / 김창현, 김태준 무료 스탯 초기화 레벨 변경
+
+    /*($Delete_[S/x]$)*/#define __NA_0_SHADOW_HIDE_BUG_FIX							// 2009.02.20 / 김창현, 쉐도우 하이드 버그 수정
+    /*($Delete_[S/x]$)*/#define __NA_0_20080930_AUTH_REFACTORING					// 2008.09.30 / 이준석 / 인증 리팩토링 중에 필요한 게임쪽 소스 변경
+    /*($Delete_[S/x]$)*/#define __NA_0_20081029_PARTY_REFACTORING					// 2008.10.29 / 이준석 / 파티 라이브러리 AgentServer 적용 및 리팩토링
+    /*($Delete_[S/x]$)*/#define __NA_0_20081124_PARTY_REFACTORING_GAMESERVER		// 2008.11.24 / 이준석 / 파티 라이브러리 GameServer 적용
+    /*($Delete_[S/x]$)*/#define __NA001230_SSQ_UPDATE_ADD_EXP_FIELD_SUPPORT__		// 2008.12.04 / 이은파 / 타락한 사원 추가 경험치 보상 별도 추가 처리
+    /*($Delete_[S/x]$)*/#define __NA000000_090224_PARTY_RETURN_PROBLEM_CORRECTION__         // 2009.02.24 / 이은파 / 방장 로딩시 복귀 안되는 문제 수정
+
+    /*($Delete_[S/x]$)*/#define __NA_S00015_20080828_NEW_HOPE_SHADOW				// 2008.08.28 / 조재식, 김광수, 윤영주 / 섀도우 ( 섀도우 관련 모든 작업은 이 디파인을 묶을 것. )
+    /*($Delete_[S/x]$)*/#define __S00013_SHADOW_BASE_WORK							// 2008.08.11 / 최정록 / 쉐도우 베이스작업
+    /*($Delete_[S/x]$)*/#define __NA_001196_20081110_RECOVERY_ADD_OPTION			// 2008.11.10 / 조재식 / 리커버리 스킬 수정.( 리커버리 챈스 )
+    /*($Delete_[S/x]$)*/#define __NA_001206_20081112_DUPEQUIP_GROUP					// 2008.11.12 / 조재식 / 장착중복그룹 필드 추가.
+    /*($Delete_[S/x]$)*/#define __NA_0S0023_20081114_SPAWN_MONSTER_QUEST			// 2008.11.14 / 조재식 / NPC ==> 몬스터 변신 퀘스트
+    /*($Delete_[S/x]$)*/#define __NA_S00028_SHADOW_ADD_WORK							// 2008.12.17 / 조재식 / 섀도우 하이드, 소울컨트롤, 패시브, 시체관련 추가 구현
+    /*($Delete_[S/x]$)*/#define __NA_000000_20090211_SUMMON_HP_BUG_FIX				// 2009.02.11 / 조재식 / 섀도우 소환체 HP 버그 수정.
+
+    /*($Delete_[S/x]$)*/#define __NA_0_CAN_RESURRECTION_ON_VILLAGE					// 2009.03.25 / 김창현, 마을에서 부활 가능
+    /*($Delete_[S/x]$)*/#define __NA_0_BUG_FIX_ETHER_BULLET_BY_GM_CMD				// 2009.01.07 / 김창현, 에테르 서버 뻗는 버그 수정
+    /*($Delete_[S/x]$)*/#define __NA_1241_AUTO_PICKUP_PET_OPTION					// 2009.01.14 / 김창현, 김광수 아이템 자동획득하는 옵션
+    /*($Delete_[S/x]$)*/#define __NA_1247_POSSESSION_ITEM							// 2009.01.17 / 김창현, 귀속 아이템
+    /*($Delete_[S/x]$)*/#define __NA_1269_CHANGE_STYLE_OPTION_BREAKER_OF_FUZ		// 2009.02.05 / 김창현, 휴즈의 브레이커 3타에만 옵션 적용 
+    /*($Delete_[S/x]$)*/#define __NA_1288_AC_RENEWAL_FOR_TIME_LINE					// 2009.02.19 / 김창현, [타임라인]AC 리뉴얼
+    /*($Delete_[S/x]$)*/#define __NA_1248_SSQ_ADD_LOG								// 2009.01.20 / 김창현, 타락한 사원 로그
+    /*($Delete_[S/x]$)*/#define __NA_1307_LOTTERY_SCRIPT_IMPROVEMENT				// 2009.03.02 / 김창현, 복권 스크립트 개선
+    /*($Delete_[S/x]$)*/#define __NA_0_ADD_GM_CMD_ABOUT_AC							// 2009.03.05 / 김창현, AC관련 GM명령어 추가
+    /*($Delete_[S/x]$)*/#define __NA_1313_AC_OVER_MODIFY							// 2009.03.10 / 김창현, AC 달성률 오버플로 수정
+    /*($Delete_[S/x]$)*/#define __NA_0_TEMP_INVENTORY_DELETE						// 2009.03.21 / 김창현, 이태준
+    /*($Delete_[S/x]$)*/#define __NA_0_RECALL_ALLIANCE_CAN_USE_ALONE				// 2009.03.25 / 김창현, 혼자 여신의 은혜 사용 가능
+    /*($Delete_[S/x]$)*/#define __NA_0_AC_FOR_REAL_TIME_REFRESH						// 2009.02.14 / 김창현, 이태준/ AC 실시간 갱신을 위한 작업
+    /*($Delete_[S/x]$)*/#define __NA001310_BATTLEZONE_PORTAL_RETURN_TARGET_MOVE_SUPPORT__   // 2009.02.26 / 이은파,김광수 / 포탈을 통한 마을|필드 복귀시 지정된 맵으로 복귀 지원
+    /*($Delete_[S/x]$)*/#define __NA001338_090519_TUTORIAL_FILED_TYPE_CHANGE__              // 2009.05.19 / 이은파,김광수 / 에소드 마을 (필드타입에서 마을 타입으로 변경)
+    /*($Delete_[S/x]$)*/#define __NA000000_090310_GAMEFIELD_RECURSIVELY_CALL_PROBLEM_FIX__  // 2009.03.10 / 이은파 / Object에 대한 제거시 재귀 구조 문제 해결 작업
+    /*($Delete_[S/x]$)*/#define __NA001319_SAME_CLASS_LIMIT_REMOVE__                        // 2009.03.16 / 이은파 / 동일 클래스 제약(5명) 제거
+    /*($Delete_[S/x]$)*/#define __NA000000_090327_MONSTER_HELP_FILTER__                     // 2009.03.27 / 이은파 / Grade 9,5의 경우는 Help에 응답하지 않도록 처리
+    /*($Delete_[S/x]$)*/#define __NA_1317_20090316_SKILL_DAMAGE_FORMULA_MODIFY		// 2009.03.16 / 이준석 / 스킬데미지 공식 수정
+    /*($Delete_[S/x]$)*/#define __NA_1320_20090316_STATUS_RATIO_FORMULA_MODIFY		// 2009.03.16 / 이준석 / 이상상태 확률 공식 수정
+    /*($Delete_[S/x]$)*/#define __BUG_35162_COMPOSE_BUG_BY_FULL_IVEN					// 2009.06.29 / 김창현, 인벤토리가 가득찬 상태에서 제작조합 시 버그
+    /*($Delete_[S/x]$)*/#define __NA_01240_GM_CMD_ADD_SERVER_TIME					// 2009.01.09 / 김창현, GM명령어 추가, 서버시간, 최대 데미지 등등	
+
+[이은파]
+1. 기간: 10.01.31
+2. 제거 목록
+	/*($Delete_[S/x]$)*/#define __CN_1194__ELITE_1_5_ITEM											// 2008.10.28 / 김창현, 김광수 / 엘리트 1.5차
+	/*($Delete_[S/x]$)*/#define __BUG_2536_RECOVER_HP_BUG											// 2008.10.16 / 김창현 / HP회복 버그
+	/*($Delete_[S/x]$)*/#define __NA_0_ITEM_STREAM_STRUCT_SEPARATION					// 2008.05.30 / 김창현 / 아이템 스트림 구조체 파일 분리
+	/*($Delete_[S/x]$)*/#define __NA_1127_DELETE_BUFF_ICON								// 2008.07.21 / 김창현 / 버프 아이콘 삭제
+	/*($Delete_[S/x]$)*/#define __NA_1119_CHANGE_ETHER_EXPEND_STYLE						// 2008.08.12 / 김창현 / 에테르 탄환 소비 방식 단발에서 연발로 변환
+	/*($Delete_[S/x]$)*/#define __BUG_FIX_CAN_NOT_GET_POINT_WHEN_DEAD					// 2008.09.04 / 김창현 / 캐릭터 사망시에 랭킹포인트 얻지 못하도록 수정
+	/*($Delete_[S/x]$)*/#define __NA_1339_ENCHANT_RENEWAL_EX							// 2009.05.12 / 김창현 / 인첸트 실패시 파괴 - 수택씨 작업이후 추가 작업
+	/*($Delete_[S/x]$)*/#define	__NA_000000_20071123_NEW_SCRIPT_PARSING_SYSTEM	// 2007.11.23 / 조재식 / 새로운 스크립트 파싱 시스템.
+	/*($Delete_[S/x]$)*/#define __NA_1047_EXP_POTION												// 2008.06.02 / 김창현 / 경험치 물약
+	/*($Delete_[S/x]$)*/#define __NA_1075_FIELD_BATTLE_SERVER_LOG_REGULATION						// 2008.06.09 / 김창현 / 필드 배틀 서버 로그 정리
+		/*($Delete_[S/x]$)*/#define __CN_1194__ELITE_1_5_ITEM										// 2008.10.28 / 김창현, 김광수 / 엘리트 1.5차
+		/*($Delete_[S/x]$)*/#define __BUG_2572_SPIRIT_SLUG_BUG										// 2008.10.30 / 김창현 / 스피릿슬러그 사용시 디바인엠블렘 효과 적용되는 버그
+	/*($Delete_[S/x]$)*/#define __NA_676_PK_SYSTEM_IMPROVEMENT								// 2008.01.29 / 김창현 / PK 룰 개선
+	/*($Delete_[S/x]$)*/#define __NA_000968_ETHER_EMISSION_DEVICE							// 2008.03.14 / 김창현 / 전보환,김창현 / 에테르 방출장치
+	/*($Delete_[S/x]$)*/#define __NA_780_PREVENTION_PARTY_RETURN_ABUSE						// 2008.02.05 / 김창현 / 재접속 기능 악용 방지
+	/*($Delete_[S/x]$)*/#define __NA_0_PET_SYSTEM											// 2008.02.14 / 김창현 / 펫 시스템 - 발렌타인데이 우울하다
+
+3. 기타
+    주의사항: 클라이언트 작업 디파인이라도 클라에서 시작한 경우라던가 기타 등등의 이유로 클라이언트가
+              먼저 정의한 디파인을 서버에서 사용하는 사례도 있습니다. (저의 경우는 일전에 퀘스트 몬스
+              터의 필드 내 포인팅을 지원하던 시점에 그 디파인을 사용했던 기억이... 저의 경우 유일한
+              예외였던 듯 하지만, 다른 사례도 있을 수 있으니까요.)
+              검증의 의미도 있으니 C_Only로 정의보다는 (클라이언트 프로젝트 내부에 있는 디파인이 아닌)
+              서버/클라 모두 검증했다라는 의미로 S/C패턴을 유지하길 희망합니다. 
+
+[이은파]
+1. 기간: 10.01.30
+2. 제거 목록
+    /*($Delete_[S/x]$)*/#define __NA000630_070817_MOLA_5th_UPDATE			// 2007/08/17 /이은파,김지완/가상 클라이언트 방지작업 (MOLA 5차 업데이트) - LINKED {__NA070212_ENHANCED_SECURE_POLICYMENT__}
+	/*($Delete_[S/x]$)*/#define __NA_1234_LOTTERY_ITEM_RESULT_BUG_FIX		// 2008.12.09 / 김창현 / 복권 아이템 습득 메세지
+	/*($Delete_[S/x]$)*/#define __NA001226_INSTANCE_DUNGEON_EXTENTION__		// 2008.12.01 / 이은파, 김광수 / 인스턴스 던젼 이벤트 맵 방식 추가
+	/*($Delete_[S/x]$)*/#define __NA_000000_20081202_ADD_EXP_ACTION_2		// 2008.12.02 / 조재식 / 경험치 주기 ==> 파티시 해당 맵에 있는 모든 유저에게 경험치 주기로 변경.
+	/*($Delete_[S/x]$)*/#define __NA_0_20081209_ONLEVELUP_BUG_FIX			// 2008.12.09 / 이준석/ 경험치를 많이 받아도 한꺼번에 레벨업이 되지 않고 하나씩 되는 문제 수정
+	/*($Delete_[S/x]$)*/#define __CN_1159__LUCKY_ELITE_ITEM					// 2008.09.13 / 김창현,김광수 / 럭키 엘리트 아이템 구현 ( 엘리트1.5차 )
+	/*($Delete_[S/x]$)*/#define __BUG_2542_PET_INTIMACY_BUG					// 2008.10.14 / 김창현 / 친밀도 버그 수정	
+	/*($Delete_[S/x]$)*/#define __BUG_2598_REVENGE_STONE_MAP_LEVEL_BUG		// 2008.10.21 / 김창현 / 복수의 돌 사용시 레벨 제한에 걸리지 않는 버그
+	/*($Delete_[S/x]$)*/#define __BUG_2601_TOWER_OF_CURSE_PARTY_MEMBER_BUG	// 2008.10.21 / 김창현 / 저탑 파티원 맵 로딩시 발생하는 버그
+	/*($Delete_[S/C]$)*/#define __BUG_0_TOWER_OF_CURSE_JOIN_BUG				// 2008.10.22 / 김창현 / 저탑을 마을이 아닌곳에서 입장 시 버그
+	/*($Delete_[S/x]$)*/#define __BUG_2572_SPIRIT_SLUG_BUG					// 2008.10.30 / 김창현 / 스피릿슬러그 사용시 디바인엠블렘 효과 적용되는 버그
+	/*($Delete_[S/x]$)*/#define __CN_1298_BASESTATE_INFO_AND_ENCHANT_ADD	// 2009.02.22 / 김창현, basestate_info, enchant 정보 추가
+		/*($Delete_[S/x]$)*/#define			__NA_000000_20081202_ADD_EXP_ACTION_2	// 2008.12.02 / 조재식 / 경험치 주기 ==> 파티시 해당 맵에 있는 모든 유저에게 경험치 주기로 변경.
+		/*($Delete_[S/x]$)*/#define __BUG_2598_REVENGE_STONE_MAP_LEVEL_BUG			// 2008.10.21 / 김창현 / 복수의 돌 사용시 레벨 제한에 걸리지 않는 버그
+		/*($Delete_[S/x]$)*/#define __BUG_2601_TOWER_OF_CURSE_PARTY_MEMBER_BUG		// 2008.10.21 / 김창현 / 저탑 파티원 맵 로딩시 발생하는 버그
+		/*($Delete_[S/C]$)*/#define __BUG_0_TOWER_OF_CURSE_JOIN_BUG			// 2008.10.22 / 김창현 / 저탑을 마을이 아닌곳에서 입장 시 버그		
+		/*($Delete_[S/x]$)*/#define __CN_1159__LUCKY_ELITE_ITEM				// 2008.09.13 / 김창현,김광수 / 럭키 엘리트 아이템 구현 ( 엘리트1.5차 )		
+	/*($Delete_[S/x]$)*/#define __NA_0_CHARGE_ITEM_SELL_CHECK_REMOVE		// 2008.03.11 / 김창현 / 유료 아이템 팔기 기능 체크 제거( 스크립트에서 제어한답니다. )
+	/*($Delete_[S/x]$)*/#define __MOD_CRYSTALIZE_MAX_CREATE_ITEM_NUM		// 2007.12.29 / 전보환,김창현 / 아이템 결정화 최대 갯수 수정.
+	/*($Delete_[S/x]$)*/#define __NA_825_HOLDDROP2							// 2008.01.21 / 김창현 / 종속의 고리2
+	/*($Delete_[S/x]$)*/#define	__NA_0_BUG_FIX_POINT_RANKING_PERIOD			// 2008.01.25 / 김창현 / 포인트 랭킹 주기 관련 버그
+	/*($Delete_[S/x]$)*/#define __NA_790_MODIFY_BASE_PLAYERINFO_VERSION		// 2007.11.30 / 김창현 / Base_PlayerInfo 로그 관련 버전 수정
+	/*($Delete_[S/x]$)*/#define __NA_977_PREVENTION_PARTY_RETURN_ABUSE		// 2008.03.26 / 김창현 / 재접속 기능 악용 방지 추가 작업
+	/*($Delete_[S/x]$)*/#define __NA_0_PET_SAVE_TO_DB						// 2008.02.21 / 김창현 / 펫 소환 시 DB에 저장
+	/*($Delete_[S/x]$)*/#define __NA_0_PET_FEED								// 2008.03.06 / 김창현 / 펫 먹이
+	/*($Delete_[S/x]$)*/#define __NA_0_PET_TEST								// 2008.03.06 / 김창현 / 테스트 코드 조주임님 작업 후 삭제
+	/*($Delete_[S/x]$)*/#define __NA_821_STAT_BUG_RECOVERY					// 2007.12.20 / 김창현 / 스텟 버그 복구
+	/*($Delete_[S/x]$)*/#define __NA_989_ABOLITION_LIMIT_LV_IN_CURSE_TOWER	// 2008.03.31 / 김창현 / 저주의탑 레벨 제한 철폐
+	/*($Delete_[S/x]$)*/#define __NA_1443_BUG_FIX_HOLDDROP					// 2008.04.07 / 김창현 / 아이템 없어도 종속고리 소모되는 버그 수정
+	/*($Delete_[S/x]$)*/#define __NA_1006_POINT_RANKING_REGISTER_LV			// 2008.04.17 / 김창현, 김광수 / 포인트 랭킹 등록 레벨 추가	
+	/*($Delete_[S/x]$)*/#define __NA_0_SOCKET_OPTION_BUG_RECOVERY			// 2008.05.08 / 김창현 / 소켓 옵션 버그 복구
+	/*($Delete_[S/x]$)*/#define __NA_0_BUG_FIX_SKILL_ALL_STAT_UP			// 2008.05.15 / 김창현 / 스킬로 올스텟 옵션 적용시 뻗는문제 ㅡㅡ;
+	/*($Delete_[S/x]$)*/#define __NA_1017_LUCKY_ITEM_IDENTIFY_LOG			// 2008.04.23 / 김창현 / 럭키 아이템 인증 시 로그 남김
+	/*($Delete_[S/x]$)*/#define	__NA_0_PET_TIMER_PERIOD_CHANGE				// 2008.05.26 / 김창현 / 펫 타이머 주기 변경
+	/*($Delete_[S/x]$)*/#define __NA_1090_NO_TRADE_WHILE_PET_SUMMONING		// 2008.06.18 / 김창현 / 소환 중 거래 및 개인 상점 판매 금지
+		/*($Delete_[S/x]$)*/#define __BUG_2601_TOWER_OF_CURSE_PARTY_MEMBER_BUG	// 2008.10.21 / 김창현 / 저탑 파티원 맵 로딩시 발생하는 버그
+		/*($Delete_[S/C]$)*/#define __BUG_0_TOWER_OF_CURSE_JOIN_BUG			// 2008.10.22 / 김창현 / 저탑을 마을이 아닌곳에서 입장 시 버그
+	/*($Delete_[S/C]$)*/#define __NA070212_ENHANCED_SECURE_POLICYMENT__		// 2007/02/12 보안 강화 방안 관련 서버/클라 처리 루틴
+
+3. 추가
+	#define			_NA_20081121_ABUMAN_NIJOT_EVENT					// 2008. 11. 21 / 조재식, 김광수 / 미션완료시 미원진행원이 모두 같은 길드원이면 경험치 더주는 이벤트.				
+        <-- 이것 계속 국내만 적용되는 걸까요? 눈에 자꾸 거슬리는 디파인인뎅....-.-
+    #define __CN_PET_OPTION_APPLY_FLAG										// 2008.08.24 / 김창현 / 펫 옵션 플레그로 선택 적용(스크립트에서...)
+        <-- 이것은 중국용으로 작업되었지만, 일전에 확인시 스크립트는 통일된 형태로 사용 중입니다.
+            통합이 가능한 것으로 사료됩니다. 정확히 재 확인후 제거 희망...
+
+
+//==================================================================================================
+[문상현]
+1. 기간: 09.12.22
+2. 제거 목록
+    _NA_20081121_ABUMAN_NIJOT_SETITEM
+    _YJ_NEW_SET_ITEM_OPTION
+3. 주석
+    엘리트 세트 아이템 + 칼버스 장착시 추가 속성 생기는 기능 모두 적용되어 디파인 제거함
+    
+[이호영]
+1. 기간 : 09.10.15 (0814 ~ 0817)
+2. 제거 목록
+	__NA_000921_20080227_TROUBLED_PARTS						
+	__NA_0_20080326_ARRANGMENT_LOG_02						
+	__NA_BUGFIX_20080326_RELEASE_PARTY_KEY					
+	__NA_0_20080417_ADD_GUILD_PK							
+	__NA_0_20080418_ADD_TROUBLED_KILL_LOG					
+	__NA_BUGFIX_20080421_MODIFY_CHAO_BORADORI_LOGIC			
+	__NA_001039_20080509_GM_COMMAND_MODIFY					
+	__NA_0_20080509_GM_COMMAND_MODIFY_DEV					
+	__NA_001043_20080517_HAMMER_OF_ALCHEMIST_MODIFY			
+	__NA_1921_20080610_BUG_FIX_HAMMER_OF_ALCHEMIST_MODIFY	
+	__NA_001043_20080517_WORLD_SHOUT_CONSUME_MODIFY			
+	__NA_0_20080603_REMOVE_QUESTSCRIPT_ASSERT				
+	__NA_001892_20080618_WORLD_SHOUT_CONSUME_MODIFY_BUGFIX  
+	__NA_0_20080610_CHECK_ATTACK_PROPENSITY_MODYFY			
+	__NA_0_20080627_CHECK_ATTACK_PROPENSITY_MODYFY_INSERTNULL
+	__NA_2060_20080626_BORADORI_BUG_FIX						
+	__NA_2039_20080630_CHAO_SATISFY_BUGFIX					
+	__NA_29793_20080701_CHAO_IS_ENEMY						
+	__NA_0_20080724_BUGFIX_TILE_CHECK						
+	__NA_001013_20080428_ENCHANT_RENEWAL					
+	__NA_001092_20080717_ADD_SKILL_ITEM						
+	__NA_001128_20080717_ADD_GM_CMD							
+	__NA_000921_20080618_TROUBLED_PARTS_REFACTORING			
+	__NA000000_080818_LEVEL_DIFFERENCE_NO_MASTER_BUG		
+	__NA_002260_20080821_BORADORY_BUG_FIX					
+	__NA_0_20080905_BORADORY_BUG_FIX						
+	__NA001139_20080922_IGNORE_RESERVEHP_STATE_ADD			
+	__NA001145_20080909_AIOLT_TRIGGERS_ADD					
+	__NA002494_20081006_CHANGEUP_SAINTAID_CURE_BUG_FIX		
+	__NA002410_20081006_TROUBLED_PARTS_RULE_ADD				
+	__NA001173_20080924_SUMMON_NONPVP_MODE_ADD				
+	__NA_000000_20071123_NEW_SCRIPT_PARSING_SYSTEM_SOLAR_AUTH
+
+
+[이은파]
+1. 기간 : 09.10.10
+2. 제거 목록
+    __NA_001013_20080428_ENCHANT_RENEWAL  // 담당은 아니지만 최근 인챈트 통합 관련 작업까지 겹쳐 혼란스러워서 제거함
+                                          // 서버코드의 경우는 __JP_000899_20080318_ENCHANT_RANKUP_LOCALIZE과 겹친 사례가 있었으며, 그 경우는 둘 다 제거함.
+[이지연]
+1. 기간 : 09.07.20
+2. 제거 목록 
+ 2.1
+	_KIKI_ADD_GAMEOPTIONPARAM	// 신규 스크립트 적용 전에 GameOption.ini 를 파싱하기 위해 클라에서만 따로 쓰던 스트립트 파서
+								// 전 국가에 신규스크립트파서가 모두 적용되었으므로 이 디파인 및 관련 코드는 제거됨(초창기 스크립트파서가 적용되어 있는 경우에만 필요한 디파인이었음)
+								
+ 2.2 서버팀 요청에 따라 제거한 프로토콜 핸들러
+	CG_SYNC_MOVE_BRD
+    CG_SYNC_MOVE_THRUST_BRD
+    CG_SYNC_TARGET_MOVE_BRD
+    CG_SYNC_KBMOVE_BRD
+    CG_SYNC_NPC_JUMP_BRD
+    CG_SYNC_STOP_BRD
+    CG_SYNC_FAST_KBMOVE_BRD
+    CG_SYNC_JUMP_BRD
+    CG_SYNC_CHARACTER_DEAD_BRD			<- 클라에 따로 적용된 내용이 없어서  skip
+    CG_SYNC_CHARACTER_RESURRECTION_BRD	<- 클라에 따로 적용된 내용이 없어서  skip								
+//==================================================================================================
+
+[이은파]
+1. 기간 : 09.07.19 ~ 20
+2. Keyword : '/*($Delete_[S/x]$)*/' <- 서버쪽 작업 했다는 의미, 대부분의 경우 C/S공통도 포함
+             '/*($Delete_[x/C]$)*/' <- 클라 작업 완료
+             '/*($Delete_[S/C]$)*/' <- 서버/클라 작업 완료
+3. 제거 목록 (서버/공용 디파인) - 본인 포함 미담당자 디파인 포함.
+    -----매크로 오른쪽의 첨삭은 국가별 버전관리된 부분 때문에 제거 하지 못한 부분이 존재 또는
+         제거 후 통합 작업 등을 수행...
+    __NA000000_080211_HIRAKATA_FILTER_CHAR__
+    __NA_000000_20080425_CHECK_START_TILES
+    __NA_000839_20080129_PVP_OPTION
+    __NA_001027_20080423_RANDOM_REWARD_EVENT_ - 일본 / 대만만 적용중...?
+    __NA_20070715_GUILD_PENALTY_TEMP_REMOVE - 해외용으로 설정되어 있는 상태
+    __NA_0_20080328_ROOMLIST_ALL_VIEW
+    __NA000000_080324_KEYBOARD_MOVE_FILTER_REMOVE__
+    _NA_001029_20080428_PARTY_LEAVE_BY_GUILD_RELATION
+    __NA000920_20080306_NPCSHOP_ITEM_SELL_HISTORY
+    __NA_0_20080619_GET_VALID_SPECIAL_AREA
+    __NA_0_20080717_DBUNIT_ADD_SERVERTYPE
+    __NA_0_20080825_MODIFY_OPTION_DEFENCE_POWER_CALC
+    __NEW_SCRIPT_SYSTEM_BY_AEORAGIE_PART
+    __NA_000000_20080714_NEW_SCRIPT_PARSING_SYSTEM_APPLY
+    __NA001117_SUMMON_MONSTER_ITEM
+
+    __NA001084_PET_IMAGE_DRAW_IN_CHARACTER_SELECT_SCREEN <- 이거에 의해 설정된 부분 개선의 여지는 있다.
+    _NA_0_20081015_EXP_LEVEL_RATIO <- 중국만 제외할 수 있도록 변경됨
+
+    __NA_000000_20081202_ADD_EXP_ACTION_2 <- 0818...
+
+    _NA_20081121_ABUMAN_NIJOT_SETITEM <- 일본 미적용, 영문 적용 필요. - _YJ_NEW_SET_ITEM_OPTION 페어인 모양
+    _NA_20081121_ABUMAN_NIJOT_EVENT <- 국내만 적용되고 있지만, 합칠 수 있을 듯 한데...
+    __NA_001142_20080806_TRIGGER_ADD
+    __NA_000000_20070704_FATIGUE_REWARD
+    __NA_000902_20080226_MESSAGE_RESTRICTION
+    _NA_0_20081124_ADDEXP_SENDPACKET_BUG_FIX
+
+    __NA001094_080707_SURVIVAL_SOLOING_QUEST_SYSTEM__
+    __NA000000_080204_TASK_SSQ_REBUILDING_FOR_BASE_FRAME__
+    __NA000000_080210_TASK_SSQ_REBUILDING_FOR_BASE_FRAME_PARTY__
+    __NA000896_080215_TASK_SURVIVAL_SOLOING_QUEST_CSCOMMON__
+    __NA000941_080204_TASK_SURVIVAL_SOLOING_QUEST_SYSTEM__
+    __NA001144_080806_HIGH_RESOLUTION_SECTOR__
+    __NA001144_080828_HIGH_RESOLUTION_SECTOR_LOAD_BALANCE_POS_SYNC__
+    __NA001094_080904_TASK_SSQ_REWARD_PROCESS__
+    __NA001094_080904_TASK_SURVIVAL_SOLOING_QUEST__
+    __NA001094_080904_TASK_SURVIVAL_SOLOING_QUEST_STATUS__
+    __NA001094_080928_TASK_SURVIVAL_SOLOING_QUEST_ETC__ (cw handler 남겨둠)
+    __NA00XXXX_080922_TASK_SSQ_NPC_SELF_DESTRUCTION__
+    __NA001166_080922_TASK_SSQ_HUMANOID_AI_01__
+    __NA001094_080904_TASK_SURVIVAL_SOLOING_QUEST_COLLECT__
+    __NA001187_081015_SSQ_OBSERVER_MODE__
+    __NA001189_081015_SSQ_TICKET_INFO_CTRL__
+    __NA000000_081024_PARTY_MANAGEMENT_EASIABLITY
+    __NA001205_081104_MONSTER_SIEGE_EVENT_IMPL__
+    __NA001094_081104_LOGIC_CHANGES_FOR_0817VER__
+    __NA000000_081110_LIVE_SERVICE_TEST_CLINET_SUPPORT__
+    __NA000000_081124_DEAD_AND_LEAVE_PACKET_SYNCHRONIZATION__
+    __NA000000_081223_LOGIC_CHANGES_FOR_0817VER_SYNC__
+    __NA000000_090223_VARIABLE_SIZE_GRID_SYNC_CORRECTION__
+    
+    // 클라이언트 패킷 핸들러에서 다음 프로토콜 핸들러를 제거해주세요.
+    // 하기 프로토콜은 MSG_CG_SYNC_MOVE_BRD 타입에서 MSGSUB_SYNC_MOVE_BRD 타입 형태로 변경.
+    CG_SYNC_MOVE_BRD
+    CG_SYNC_MOVE_THRUST_BRD
+    CG_SYNC_TARGET_MOVE_BRD
+    CG_SYNC_KBMOVE_BRD
+    CG_SYNC_NPC_JUMP_BRD
+    CG_SYNC_STOP_BRD
+    CG_SYNC_FAST_KBMOVE_BRD
+    CG_SYNC_JUMP_BRD
+    CG_SYNC_CHARACTER_DEAD_BRD
+    CG_SYNC_CHARACTER_RESURRECTION_BRD
+
+//==================================================================================================
+
+[이은파]
+1. 기간 : 09.05.18 ~ 09.07.17
+2. Keyword : '/*($Delete_[S/x]$)*/' <- 서버쪽 작업 했다는 의미, 대부분의 경우 C/S공통도 포함
+             '/*($Delete_[x/C]$)*/' <- 클라 작업 완료
+             '/*($Delete_[S/C]$)*/' <- 서버/클라 작업 완료
+3. 제거 목록 (서버/공용 디파인) - 본인 포함 미담당자 디파인 포함. (0814 ~ 0817 일부)
+    - __NA000995_080402_SKILL_PROC_UPDATE_V01__
+    - __NA001021_080421_PACKET_COMPRESS_V02__
+    - __NA001021_080619_PACKET_COMPRESS_V03__
+    - __NA_001081_20080612_TUTORIAL_CHANGE
+    - __NA000000_080626_TUTORIAL_MISSION_LEAVE_CASE_CORRECTION__
+    - __NA_00000_080107_ADD_SERVEROPTIONEX_CHAO_CONDITION_
+    - __NA001033_ARRANGEMENT_AGENT_LOG__
+    - (서버) WAVERIX_SSQ_NOTICE_SINGLETON_PROCESS, WAVERIX_SSQ_TESTCODE_FAST_PROCESS
+    - (서버) __NA000000_080416_WAREINVEN_LOCK_BUG_FIX__,
+    - __NA001051_080515_EVENT_EFFECT_RENDER_BY_SCRIPT_1stPROCESS__
+    - __NA001051_080526_EVENT_EFFECT_RENDER_BY_SCRIPT_2ndPROCESS__
+    - __NA000773_071108_ITEM_FUNCTION_EX_REVISION__
+    // (0.8.1.5)
+    __NA000000_080228_TARGET_FIND_CORRUPT_FLOW_FIX__
+    __NA000000_GRID_REBUIDING_FOR_READABLE_CODE__
+    __NA000844_080324_100LEVEL_CHAGNEUP_REBUILDING__
+    __NA001048_080514_APPEND_ABILITY_KNOCKBACK2__
+    __NA844896_080219_TASK_SSQ_AND_100LV_QUEST_NPC_KILL_OPTIMIZER__
+    __NA001003_080527_PLAYER_ANIMATION_TIME_CONTROL__
+    __NA000000_0806XX_CODE_REFINE_FOR_PERFORMANCE_TUNEUP_NO03__
+    __NA000000_0806XX_SOLARHASH_PROBLEM_CORRECTION_V01__
+    __NA001087_080618_APPEND_CASHITEM_PRESENT_PROTECTION_FUNTION__
+    __NA001083_080609_ABUSING_LOGICAL_DETECTION_ANAL_AND_IMPL__
+    __NA001083_080609_ABUSING_LOGICAL_DETECTION_ANAL_AND_IMPL_V2__
+    __NA000000_081218_GAMEFIELD_LEAVE_FIELD_USAGE_CORRECTION__
+    
+    __NA_0_20080219_DETECT_ABUSING_USER_REFACTORING
+    __NA_0_20080219_DETECT_ABUSING_USER_POWERFUL
+    __NA_0_20080430_SKILL_REFACTORING
+    __NA_891_20080602_CHANGE_EXP_RATIO2
+    __NA_28934_20080609_CANBE_ATTACKED_CHECKMISS_BUG_FIX
+    __NA_0_20080613_VIEW_PORT_PERFORMANCE_IMPROVEMENT
+    __NA_0_20080616_AGENT_CHARSELECT_INIT_BUG_FIX
+    __NA_0_20080617_CLASS_STARTING_POINT_BUG_FIX
+    
+    __NA_000000_20080709_DBP_MEMERY_LEAK_BUGFIX
+    __NA_001108_20080704_GM_ADD
+    __NA_000950_20080311_HEIM_DISTRIBUTE_SYSTEM
+    __NA_000000_20080108_WORLDSERVER_HANDLER_MACRO
+    __NA_BUGFIX_20080310_WORLD_FRIEND_OVERFLOW
+    __NA_BUGFIX_WOPS1373_20080424_DRAGON_TRANSFORM_STATUP_BUG
+    __NA_0_080131_LF_BUG_MODIFY
+    __NA_00000_080107_ADD_SERVEROPTIONEX_CHAO_CONDITION_
+    __NA_0_20080227_BACKTO_CHARLISTREQ_SYN_MODIFY3
+    _NA000000_20080227_MOB_AI_TRACKING_PROBLEM_CORRECTION__
+    __NA_0_20080411_ALLPLAYERS_EQUIPINFO_BUG_FIX
+    __NA_997_20080415_SKILL_DAMAGE_FORMULA_MODIFY
+    __NA_0_20080415_DBPROXY_USER_SELECT_QUERY_INIT
+    __NA_0_20080425_WORLD_SERVER_ITERATOR_BUG_FIX
+    __NA_0_20080506_DBSERIAL_DUPLICATE_BUGFIX
+    __NA_20080801_SHOP_GAMESERVER_DOWN_BUGFIX
+    __NA_000890_20080130_SEND_MEMO_BLOCK_CHECK
+    __NA000000_080327_TRADESELL_WAREHOUSE_BUGFIX
+    __NA_BUGFIX_20080404_FATIGUE_VILLAGE_APPLY_OTTA_
+    __NA_0_20080416_PARTY_JOIN_PACKET_CHANGE
+    __NA_0_20090122_PARTY_JOIN_PACKET_CHANGE_BUG
+    __NA_000998_20080416_INVITE_BY_CHARNAME
+    __NA_000596_20070821_GUILD_CLASS_SYSTEM
+    __NA_000597_20070821_GUILD_CORPS_SYSTEM
+    __NA_000614_GUILD_RANK_REFACTORING
+    __NA_000593_20071226_GUILD_RELATION_SYSTEM
+    __NA_000598_20070628_GUILD_SYSTEM_PART2_PENALTY - (WARNING) __NA_20070715_GUILD_PENALTY_TEMP_REMOVE와 연관된 부분은 제거하지 않았음.
+    __NA_000569_20080117_GUILD_MARK
+    __NA_0_20070829_GUILD_ADD_INFO
+    __NA000584_20080201_GUILD_WAREHOUSE
+    __NA_000000_2ND_GUILD_RENDERINFO_PACKET
+    __NA_000880_20080204_GUILD_NOTICE
+    __NA_0_20080406_GUILD_MARK_MODIFY
+    __NA_BUGFIX_20080613_GUILD_CONVERT_GP
+    __NA_BUGFIX_20080618_GUILD_RIGHT_VIEW
+    _BUGFIX_WOPS2627_20081020_GUILD_NOTICE
+    
+    __WAVERIX_APPLY_AREA_DAMAGE_BY_DATA__
+    __WAVERIX_NEW_TRIGGER_WORKS__
+                        
+    0816 __000000_20080811_BUG_FIX_VIEW_JOIN_TOP_TIME
+    0816 __NA_001093_20080623_SERVER_DISCONNECT_
+    0815 _YJ_001063_001064_GUILD_RESULT_CODE_ADD
+    0815 _NA_0_20080530_GUILD_WAREHOUSE_LIMIT_ITEM_LOG
+    0815 _NA_0_20080530_ABUSING_USER_VERIFY_BY_WORLDSERVER
+    0815 __NA_BUG_181415_20080820_GUILD_BUG_FIX
+    0815, 0817 _NA_0_20081024_CALC_MAGICAL_DAMAGE_RATIO_MODIFY
+    0815 _BUG_FIX_20081007_WOPS2463_JUMP_DAMAGE
+    0815 __NA_VENDOR_BUGFIX_
+    0815 _BUG_FIX_LOTTERY_SYSTEM
+    0815 __NA_BUGFIX_20080616_HP_ZONEMOVE
+    0815 __NA_000000_20080522_DROPRATIO_BUGFIX
+    0815 __NA_000962_ADD_GUILD_ERROR
+    0814 __20080414_SLOTSTREAM_FOR_PACKET_BUGFIX
+    0814 __NA_BUGFIX_20080613_GUILD_CONVERT_GP
+    0816 __NA000000_080903_REGENTIME_CALC_PROBLEM_FIX__
+    0816 __NA000000_080707_PLAYER_ENTER_NAK_RESULT_CONTROL__
+    0816 __NA001086_080616_BUFF_EVENT_UI_AND_MULTI_SUPPORT_FUNCTION__
+    0816 __NA000000_0806XX_CODE_REFINE_FOR_PERFORMANCE_TUNEUP_NO04__
+    0815 CHANGEUP_SAINTAID, CHANGUP_RECKLESS_STATUS + __SUMMONED_SPEED_CHANGE,
+         CHANGUP_PURGE_SKILL, CHANGUP_IMPOSSIBLE_ATTCAK_STATUS,
+         CHANGUP_INTENSIFY_SKILLDAMAGE_STATUS, CHANGUP_IMMUNITY_DAMAGE_STATUS(+a)
+    0815 __NA_001042_NEW_CHARACTER_ITEM
+    0815 __NA_000994_CHANGUP_NEW_SKILL
+    0815 __NA_001068_ACTION_DEAD_PLAYER
+    0815 __NA_001074_ETHER_EMISSION_DEVICE_EXPAND
+    0815 __NA_000946_20080415_LOTTERY_SYSTEM
+    0815, 0816 __NA001124_ITEM_CHANGE_SYSTEM
+    0815 __NA_001012_20080506_RESERVE_HP_SYSTEM
+    0817 __NA001139_20080922_IGNORE_RESERVEHP_STATE_ADD (호영씨 작업한 거지만...)
+    0817 __NA002494_20081006_CHANGEUP_SAINTAID_CURE_BUG_FIX (호영씨 작업한 거지만...)
+
+    __NA000000_ENABLE_MASTER_SERVER_SCRIPT_LOADING__
+    __WAVERIX_SOLAR_AUTH_SERVER_REGISTER_WORK_KEY_CS_PROBLEM__
+    __WAVERIX_SOLAR_AUTH_SERVER_IMPLEMENTATION_ENHANCED_DATA_LOADING__
+    __NA000824_070103_SOLARAUTH_MASTER_NETWORK_MECHANISM_OPTIMIZE__
+    __NA_000000_20071123_NEW_SCRIPT_PARSING_SYSTEM (only MasterServer, ScriptParserManager, etc...)
+    __NA_000000_CHANGE_TABLE_DATA, _NEW_CREATE
+    
+
+//==================================================================================================
+
+[이지연]
+1. 기간 : 09.4.16
+2. 제거 목록 (클라전용 디파인)
+	#define _KIKI_DELETE_FUNC_ONDRAWCONTROL			// 2008.11.17	/ OnDrawControlWZ 호출 제거
+	#define _KIKI_MODIFY_MINIMAP					// 2008.11.17	/ 미니맵 관련 - 소스코드 오류 수정
+	
+	
+[이지연]
+1. 기간 : 09.1.28
+2. 제거 목록
+	#define _KIKI_084030_MODIFY_FILEPACKERMANAGER	// FilePackerManager 리팩토링 디파인  (Utility 에 있는 Manager라서, SolarFileReader.h 에 디파인 정의함)
+	#define __NA_0_20080829_NEW_PACKING_LIB			// SUN엔진080922 버전부터 이 디파인을 풀어줘야 한다 (기존 엔진을 사용중인 해외버전은 이 디파인을 임의로 막고 빌드하세요!!!)
+	
+[이지연]
+1. 기간 : 08.12.23
+2. 제거 목록 (클라전용 디파인)
+	#define _ENGINE_080228_APPLY
+	#define _ENGINE_080314_APPLY
+	#define ENGINE_0407_APPLAY_000982
+	#define _ENGINE_080424_APPLY
+	#define _ENGINE_080630_APPLY 
+	
+
+[이지연]
+1. 기간 : 08.12.22
+2. 제거 목록 (클라전용 디파인)
+	#define _KIKI_080515_MODIFY_USE_PACKER			// 잘못된 파일 패킹 라이브러리 사용 수정	
+
+[이은파]
+1.	기간 : 08.12.10
+2.	제거 목록 (계속 늦장부리던 매크로 3개 제거)
+	#define __MOLA_UPDATE_1010_TO_5000__		(아마 서버나 모듈쪽 위주로 작업된 거라 클라는 없을 듯)
+	#define __NA000630_070817_MOLA_5th_UPDATE
+	#define __ARMORKIT_ENABLED_CHECK_BY_CMDnACK__
+	#define __NA070212_ENHANCED_SECURE_POLICYMENT__
+	
+	
+[이지연]
+1. 기간 : 08.11.6
+2. 제거 목록 (클라전용 디파인)
+	#define __TEMP_TASK_CHARGE_ITEM_SLOT_EXTEND_BUG_FIX			//08.02.14 유료화 아이템 확장되지 않았을경우에는 착용못하도록 수정.
+	#define __14926_BUG_FIX_RETURN_SCROLL_ITEM_LOCK				//08.02.18 귀환스크롤 사용시 아이템 Lock 처리
+	
+[이지연]
+1. 기간 : 08.11.3
+2. 제거 목록 (클라전용 디파인)
+	#define _KIKI_MOD_STREAM_SIZE_FOR_SERIALIZE_CLIENT_LOAD		// 2008.04.29	/ 이지연 / eSLOT_SERIALIZE_CLIENT_LOAD 시 스트림 사이즈가 0인 경우(인벤에 아무것도 없을때) 문제수정
+															// 서버의 경우와 마찬가지로 MAX_INVENTORY_SLOT_NUM+MAX_TEMPINVENTORY_SLOT_NUM 를 이용해 사이즈 계산하도록 수정
+
+	#define KJW_TEXTRUE_RATE
+
+[조재식]
+1. 기간 : 08.10.20
+2. 제거 목록
+	#define	__NA_001298_20080307_GUILD_UP_BUG_FIX						// 2008.03.06 / 조재식 / UP 상납시 개인 UP소모 안되는 버그 수정.
+	#define	__NA_000000_20071102_SHOUT_BUG_FIX_SECOND					// 2007. 11. 02 / 조재식 / 외치기 버그 수정 2차
+	#define	__NA_000000_20071106_SERVER_OPTION_CHANGE					// 2007. 11. 06 / 조재식 / 해외버전 옵션 2차 변경
+	#define	__NA_000000_20071119_SERVER_BUILDVERSION_LOG				// 2007. 11. 19 / 조재식 / 서버빌드버전 로그 남기기
+	#define	__BUG_FIX_20080109_TIME_ATTACK_OTAA_						// 2008.01.09 / 조재식 / 타임어택 오타 수정.
+	#define	__NA_000000_20071119_BUGFIX_MAX_LEVEL_MSG					// 2007.11.19 / 조재식 / 맥스레벨 메세지 안나가는 버그 수정.
+	#define	__NA_BUG_964_20071119_MISSION_REPLAY						// 2007.11.19 / 조재식 / 미션재도전 방장 버그 수정.
+	#define	__NA_BUG_000_20071120_WORLD_CHANNEL_RELEASE					// 2007.11.20 / 조재식 / 월드서버 채널 릴리즈시 죽는 버그 수정.
+	#define	__NA_000619_20070814_SET_ITEM_OPTION_SYSTEM					// [619] 2007. 08. 14 / 조재식, 윤영주 / 세트 아이템 옵션 추가 시스템
+	#define __NA_000536_20070618_SERVER_OPTION							// [536] / 2007. 06. 18 / 조재식 / 서버옵션 스크립트화 
+	#define __NA_000541_20070628_ANTI_DOBAE								// [541] / 2007. 07. 28 / 조재식, 전보환 / 5초 이내에 같은 내용의 채팅을 할 수 없다.
+	#define __NA_000560_20070720_ITEM_DISTRIBUTION_SYSTEM				// [560] 2007. 07. 20 / 조재식, 전보환 / 아이템 분배 시스템
+	#define __NA_000000_20070921_PARTY_EXP_BUG_FIX						// 파티시스템 경험티 버그 수정.( 반경내의 파티원만 경험치 먹도록 수정. )
+	#define __NA_BUG_20024_DAMAGE_BUG									// 죽었을시 종속의 고리를 여러개 사용하는 버그 수정.
+	#define	__NA_000919_20080218_SETITEM_MINUS_OPTION					// 2008.02.18 / 조재식,김민조	/ 세트아이템 마이너스값 지원			
+
+[김경표]
+1. 기간 : 08.10.17
+2. 제거 목록
+	#define __NA_000998_20080416_INVITE_BY_CHARNAME					// 2008.04.24 / 김경표, 노현철 / 아무존에서나 파티, 길드 초대 가능하게 변경
+	#define _K2P_TELESKILL_MESSAGE_ONCE_							// 2008.04.17 / lammy / 텔레포트스킬 익혀야 합니다.최초 접속시 한번만 출력
+	#define _K2P_MISSION_CLEAR_MESSAGE_CHAGNE_000983				// 2008.04.01 / lammy / 미션 클리어후 마을 이동을 닫기로 수정
+	#define _K2P_DISPLAY_ICON_COUNT_000984							// 2008.05.28 / lammy / 아이콘 갯수 표시 아웃라인 추가
+	#define __NA_000962_ADD_GUILD_ERROR								// 2008.05.28 / 노현철, 김경표 / 같은 길드 이름으로 생성 에러값 추가 
+	#define _K2P_DISCONNECT_TO_LOGINSCREEN_000521					// 2007.06.25 / 게임중 서버와 끈어졌을때 로긴 화면으로 이동
+	#define _K2P_MOUSEOVER_MONSTER_NAME_000586						// 몬스터 기본 정보 표시 개선
+	#define _K2P_ITEM_RANKUP_DISPLAY_000617							// 2007.12.05 / lammy / 아이템 랭크 표시 개선
+	#define _K2P_CHANGED_FROM_STATIC_TO_LIST_000727					// 2007.12.05 / lammy /	이벤트 NPC 대사창 UI 수정
+	#define __NA000716_071101_EVENT_TIME_PERIOD						// 2007.11.01 / 최정록,김경표 / 이벤트 UI 버튼을 서버에서 시간 체크할 수 있도록 수정
+	#define _K2P_NPC_SORT_000850_									// 2008.03.24 / lammy / NPC 소트 변경
+	#define _K2P_PRINT_SERVERNAME_ON_COMMUNITY_WINDOW_000898		// 2008.03.24 / lammy / 커뮤니티 창에 서버네임 추가
+	#define _K2P_GUILD_WITHDRAW_CONFIRM_000915						// 2008.03.24 / lammy / 길드 탈되시 확인창 추가
+	#define _K2P_CHECK_ENCHANT_SELL_000914							// 2008.03.24 / lammy / 7인첸 이상 판매시 확인창 추가
+	#define _K2P_NPC_DISPLAY_CHECK_000981							// 2008.04.10 / lammy / NPC 위치정보 개선
+	#define _K2P_ADD_COMA_ENDLINE_000922							// 2008.02.24 / lammy / , . 일경우는 개행하지 않고 끝에 붙여준다.
+	#define _K2P_WIREHOUSE_INOUT_CURSOR_000903						// 2008.03.24 / lammy / 창고 사용시 마우스 커서 변경
+	#define _K2P_MEMORY_INI_000947									// 2008.03.28 / lammy / HelpReadInfo.dat 암호화
+	#define _K2P_NOTE_MESSAGE_000900								// 2008.03.24 / lammy / 쪽지 아이콘 기능 수정
+	#define _K2P_ADD_QUEST_NPC_INFO_000906							// 2008.03.24 / lammy / 퀘스트 창에 NPC 정보 추가
+
+[윤영주]
+1. 기간 : 08.10.15
+2. 제거 목록
+	#define _YJ_ADD_SUB_MISSION_BTN_ON_MISSION_LIST_000705			// 2007.10.24  // 윤영주 / 미션리스트에 4번째 서브미션 버튼 추가.
+	#define _YJ_MOD_EFFECT_TEXT_SIZE_000778							// 2008.2.5    // 윤영주 / 이텍트 텍스트 메쉬 사이즈 수정
+	#define _YJ_MOD_TRADE_000721									// 07.12.20    // 윤영주 //거래 물품 변경시 팝업창 생성.
+	#define _YJ_ADD_EVENT_INVENTORY_EFFECT_000714					// 07.10.31    // 윤영주 //이벤트인벤토리에 아이템이 들어오때 이펙트 추가.
+	#define _YJ_ADD_BATTLE_ZONE_NEW_AREA_000784						// 07.11.30    // 윤영주 // 배틀존에 아이올트 지역 추가.
+	#define _YJ_MOD_GRASS_OPTION_VALUE_000755						//
+	#define PLAYER_MAP_AMBIENT_SOUND								// Map Ambient 사용 //윤영주
+	#define _YJ_DOUBLE_DAMAGE_000814								//07.12.24 //영주 //더블데미지 이펙트 추가.
+	#define _YJ_HARD_CODE_GLOBAL_AMBIENT							//임시로 적역 엠비언트사운드 하드코딩
+	#define __NA000826_070113_BUFF_EVENT_SUPPORT__					// 2007.01.13 / 이은파, 윤영주 / 구정 버프 이벤트
+	#define _YJ_ADD_BUFF_EVENT_000826								//08.1.14 //영주 //구정 버프 이벤트
+	#define _YJ_X_MAS_EVENT_000752									//07.11.16 //영주 //크리스마스 이벤트
+	#define _YJ_MOD_LUCKY_ITEM_EFFECT_000809							//07.12.10 //영주 //럭키아이템 착용시 출력될 이펙트 작업
+	#define _YJ_MOD_ITEM_TOOLTIP_4_EXERCISE								//07.12.09 //영주 //아이템 툴팁 수정(발동 조건 관련, 사용가능 클래스)
+	#define _YJ_MOD_LUCKY_ITEM_TOOLTIP_000767							//07.12.07 //영주 //럭키아이템 툴팁(툴팁 테두리에 텍스쳐 렌더링)
+	#define _YJ_MOD_SET_ITEM_TOOLTIP									//07.12.05 //영주 //풀셋이펙트만 적용될 장착 아이템들을 위한 TOOLTIP MOD
+	#define _YJ_MOD_PARTY_MEMBER_UI_000717								//07.10.29 //영주 //파티멤버UI(Lv부분) 수정.
+	#define _YJ_BUG_FIX_WAY_POINT_CLOSE_PROCESS							//08.01.11 //영주 //개인상점 연 상태에서 저주의탑 들어가면 인벤이 열리지 않던 버그 수정.[버그번호 : 22098]
+	#define _YJ_MOD_SLOT_ERROR_RESULT									// 08.01.02    // 윤영주 //슬롯 에러 결과처리 변경.
+	#define _YJ_MOD_MAX_DURA_000712										// 2007.10.30 / 영주 / 내구도값 수정.
+	#define _YJ_ADD_COMMA_FOR_MONEY_000694								// 2007.10.22 / 영주 / 천 단위 구분표시 작업.
+	#define _YJ_MOD_ITEM_SLOT_UPDATE_FUNC								// 2007.11.28 / 윤영주 / 창현씨가 Update함수 변경해서 클라 적용.
+	#define _YJ_WORLD_SCRIPT_VER_1_3									//07.3.21 / 윤영주,김창현 / 월드 스크립트 분리/수정 작업
+	#define _YJ_CHAT_PERSONAL_OPTION_DIALOG_000520						//07.6.25 //채팅 보조 시스템
+	#define _YJ_CHAT_HISTORY_000540										//07.6.21 //최근입력된 채팅내용을 10개 저장후 보여줌.
+	#define _YJ_LOGIN_SCENE_BLUR										//07.8.14 //로긴씬에서 블러효과 사용.
+	#define _YJ_SET_ITEM_000623											//07.8.18 //셋아이템 기능 추가
+	#define _YJ_CHANGE_ROOM_NAME_000379									//07.5.28 //방제 바꾸기.
+	#define _YJ_TRIGGER_LIB_000360										//07.5.16 //트리거 라이브러리화.
+	#define _YJ_BLOCK_AUTH												//07.3.29 //3회 로그인 실패시 인증서버 차단.
+
+[김창현]
+1. 기간 : 08.10.13 ~ 08.10.14
+2. 제거 목록
+	#define __NA_0_20061226_ITEM_MIXTURE								// 2006.12.26 / 김창현 / 랭크업,조합,인첸트,결정화...etc 가능 여부 처리하는 아이템스크립트의 Mixture
+	#define __NA_0_SLOT_CONTAINER_RETURN_VALUE_CHANGE					// 2007.10.10 / 김창현 / SlotContainer클래스 InsertSlot의 반환값을 BOOL에서 RC로 변경
+	#define __NA_0_BUG_FIX_INIT_SKILL									// 2007.12.24 / 김창현 / 스킬 초기화 시 퀵슬롯은 업데이트 안되던 버그 수정
+	#define __NA_789_CASH_SHOP_ITEM_LIST_EXPANSION						// 2007.11.26 / 김창현 / 캐시샵 아이템 등록 갯수가 128개 이상이면 문제 발생하는거 해결
+	#define __NA_0_20070528_ITEM_MOVE_RESTRICTION						// 2007.05.28 / 김창현 / 아이템 이동 제한 ( 창고이동 제한 추가)
+	#define __NA_0_ALL_ARMOR_CAN_FILL_SOCKET							// 2007.11.14 / 김창현 / 모든 방어구 소켓 옵션 부여 가능
+	#define __NA_POINT_RANKING_SYSTEM_BUG_FIX							// 2008.01.04 / 김창현 / 랭킹포인트 랭킹 시스템 버그 수정
+	#define	__NA_BUG_000_20071126_TOWER_LEAVE_BUG_FIX					// 2007.11.26 / 조재식 / 저주의 탑 나가기 버그 수정.
+	#define __NA_MIDIFY_BUG_INIT_SKILL									// 2007.07.30 / 김창현 / 스킬 초기화시 드래곤변신 초기화되는 버그 수정
+	#define __NA_0_20070813_SETTLE_DATE_BUG								// 2007.08.13 / 김창현 / 게임서버 정산 시간 버그 수정
+	#define __CN_000525_20070612_ITEM_COMBINE							// 2007.06.12 / 김창현 / 아이템 중첩 가능 ( 거래, 창고 )
+	#define __NA_000379_20070518_ROOM_NAME_MODIFY						// 2007.05.18 / 김창현, 윤영주 / 배틀존 대기실에 방 제목 수정기능 추가
+14!	#define	__NA_0_BUG_FIX_POINT_RANKING_PERIOD							// 2008.01.25 / 김창현 / 포인트 랭킹 주기 관련 버그
+	#define __NA_673_20070911_GM_CMD_CREATE_LIMITED_ITEM				// 2007.09.11 / 김창현 / 리미티드 아이템 생성하는 GM 명령어
+	#define __NA_616_20070831_FREE_STAT_INIT_20_UNDER					// 2007.08.31 / 김창현 / 20레벨 이하 무료 스탯 초기화
+	#define __NA_668_20070903_EXTEND_DROP_PARAM_NPCINFO					// 2007.09.03 / 김창현 / 드랍 파라미터 확장
+	#define __NA_639_20070827_HAMMER_OF_ALCHEMIST						// 2007.08.27 / 김창현, 김태우 / (유료화 아이템) 리미티드 아이템 수리
+	#define __NA_503_20070713_LIMITED_ITEM								// 2007.07.13 / 김창현, 김태우 / 리미티드 아이템
+	#define __NA_591_20070806_VIEW_JOIN_TOP_TIME						// 2007.08.08 / 김창현, 김태우 / 저주 받은 탑의 일반 열쇠에 시간 표시
+	#define __NA_2007_0622_VENDOR_PAUSE									// 2007.06.22 / 김창현, 전보환 / 개인 상점 일시 정지 기능
+	#define __NA_539_20070629_RANK_DOWN_HAMMER							// 2007.06.29 / 김창현, 전보환 / [유료화]랭크하향 망치 아이템
+	#define _YJ_WORLD_SCRIPT_VER_1_3									// 2007.03.21 / 윤영주,김창현 / 월드 스크립트 분리/수정 작업
+	#define __NA_0_LUCKY_ITEM_DESTORY_INTERCEPTION						// 2007.12.03 / 김창현 / 럭키 아이템 내구도 0일시 파괴 차단
+	#define __NA_801_LUCKY_ITEM_EXTEND_INTERCEPTION						// 2007.12.03 / 김창현 / 럭키 아이템 기간 연장 차단
+	#define __NA_794_LOG_MODIFY_SERIAL_TO_WORLD_SERIAL					// 2007.11.28 / 김창현 / 로그에서 시리얼 남기던 것을 월드 시리얼로 수정
+	#define __NA_723_LOG_RANGING_POINT									// 2007.11.14 / 김창현 / 랭킹포인트 시스템의 포인트 로그로 남김
+	#define __NA_724_LOG_FATIGUE										// 2007.11.13 / 김창현 / 피로도 로그
+	#define __NA_715_LOG_TRADE_OVER_MONEY								// 2007.11.13 / 김창현 / 일정 금액 이상 거래시 로그-금액 변경
+14!	#define __NA_0_CHARGE_ITEM_SELL_CHECK_REMOVE						// 2008.03.11 / 김창현 / 유료 아이템 팔기 기능 체크 제거( 스크립트에서 제어한답니다. )
+	#define __NA_0_ADD_VERSION_TO_LOG_FILE_NAME							// 2008.01.10 / 김창현 / 로그파일 이름에 버전추가
+	#define	__NA_867_CASH_ITEM_TRADE_MODIFY								// 2008.01.23 / 김창현 / 캐시 아이템 거래 관련 수정
+	#define __NA_817_SPECIAL_ACCESSORY_ITEM_CANNOT_DUPLCATION			// 2007.12.18 / 김창현 / 특수 악세사리 중복 방지
+	#define __NA_791_ADD_AUTH_PACKET_CHAR_SELECT						// 2007.12.13 / 김창현 / 캐릭터 선택 시 인증으로 보내는 패킷 추가
+	#define __NA_0_ALL_ARMOR_CAN_APPLY_ITEM_OPTION						// 2007.12.11 / 김창현 / 모든 방어구 옵션 적용(계산)
+	#define __NA_20281_USE_AC_ITEM_DUPLICATION							// 2007.12.10 / 김창현 / AC Item 사용시 중복으로 사용되는 버그 수정
+	#define __NA_846_APPLY_FEAR_SKILL_TO_PC								// 2008.01.16 / 김창현, 김지완 / 플레이어에게 피어 스킬 적용
+	#define __NA_871_BUFF_EVENT_SUPPORT_ADD_PC_ROOM						// 2008.01.31 / 김창현 / 버프 이벤트 PC방 추가
+	#define __NA_776_PC_ROOM_EXCLUSIVE_CONTENTS							// 2007.11.13 / 김창현 / PC방 전용 컨텐츠 슬롯, 아이템 추가
+
+[이수택]
+1. 기간 : 08.10.08
+2. 제거 목록
+	#define __NA_0_20080218_ARRANGMENT_LOG							// 2008.02.18 / 이수택 / 1차 로그 정리
+	#define __CN_000609_20070730_WORLD_SHOUT_CONSUME_BUG			// 2007.07.30 / 황성익 / 월드 외치기 중국 버그 수정 작업
+	#define __CN_000417_20070416_WORLD_SHOUT_CONSUME				// 2007.04.16 / 황성익 / 중국_해방군 포고문 1회 사용
+	// 월드 외치기의 기능이 전체국가 통합 됨. (__NA_001043_20080517_WORLD_SHOUT_CONSUME_MODIFY)
+	// AW_ITEM_USE_DECREE_ITEM_CMD 패킷과 AG_ITEM_USE_DECREE_ITEM_UNLOCK_CMD, 외치기 락을 200711 이후로 사용안함으로 정리함.
+
+[김광수] 
+1. 기간 : 08.10.07
+2. 제거 목록
+	#define _GS_MOD_PARTYMEMBER_SELECT_000876							//2008.2.13 시야에 없는 파티멤버 선택
+	#define _GS_MOD_BATTLEZONE_CREATE_TOOLTIP							//2008.2.21 배틀존 영역체크,툴팁수정 
+	#define _GS_MOD_DLG_SCROLL											//2008.2.13 스크롤 커뮤니티창,랭킹창,길드창,스킬창  
+	
+[김민조] 
+1. 기간 : 08.10.07
+2. 제거 목록
+	#define __NA_0_20080219_SETITEM_NUMERIC_BUT_PERCENTAGE_OPTION		// 김민조/ 셋트아이템 퍼센트옵션 수정
+    
+[이은파]
+1. 기간 : 08.10.03
+2. 적용 대상 (서버)
+	- 작업된 바 있지만, 적용되지 않았던 내용들
+3. 제거 목록
+	#define __NA000XXX_080306_INVEN_APPLY_EFFECT_ITEM_LOGIC_CHANGE__	// 2008.03.06 / 이은파 / 인벤에서 효과 적용되는 아이템에 대한 제어 조건 변경 (수량 제한->수량 허용, 효과만 제한)
+	#define __NA000000_070118_SKILL_EXECUTER_REFACTORING__				// 2008.01.18 / 이은파 / SkillManager 메모리 누수 현상 제거 및 자료구조 변경, Skill사용 처리 로직 변경
+
+[이지연]
+1. 기간 : 08.09.30~08.10.02
+2. 제거완료 
+  2-1. 서버에서 제거한 디파인 중, 클라쪽에서 제거해야하는 부분 찾아서 제거함 - 태우/지완/보환 작업
+	#define __NA000747_071030_CHAR_CLASS_EXTENTION__					// 2007.10.30 / 이은파 / 100레벨 이상 캐릭터 지원 클래스 정의 확장 (스크립트 파서 작업)
+	#define __NA000739_071102_100LEVEL_SUPPORT_CIRCUMSTANCE__			// 2007.11.02 / 이은파, 전보환 / 100레벨 퀘스트 지원 (아마 협의 내지는 많은 기능 개선이 요구될 것으로 보임)
+	#define __NA000528_070627_TRRIGER_ADDIN_RANDOM_MOVE__				// 2007.06.27 / 이은파 / 신규 트리거 (2종) 구현
+	#define __NA000678_071008_MEMORY_OPTIMIZATION__						// 2007.10.08 / 이은파, 최정록 / 게임서버 메모리 사용량 줄이기 작업 (자료구조 변경, 풀 옵션 테스트 및 수정)
+	#define __NA000615_070807_PARTY_RETURN_CASE_BY_UNEXPECTED_STATUS	// 2007. 08. xx (자꾸 지우지 마세용) / 이은파, 전보환 / 비정상 종료시 기존 파티가 있는 방으로 복귀하는 기능
+	#define __NA_0_20080304_DISPLAY_BONUS_MONEY							// 2008.03.05 / 이준석 / 하임 획득시 추가 경험치 표시
+	#define __NA_0_20070930_EQUIPITEM_EXPIRED_TIME						// 2007. 09. 30 / 이준석 / 장착 유료아이템 기간만료시 처리 
+	#define __NA_0_20071005_CHANGE_EQUIPSLOT_ITEMINFO					// 2007. 10. 05 / 이준석 / 장착슬롯 아이템정보 변경
+	#define __NA_0_20071010_ITEMOPTION_VALUETYPE_CHANGE					// 2007. 10. 10 / 이준석 / 아이템옵션 수치 WORD->INT로 변경
+	#define __NA_0_20071016_AC_MISSION_NUM_CHANGE						// 2007. 10. 16 / 이준석 / AC 서브미션 최대 개수 조정 3->5
+	#define __NA000535_070621_TUTORIAL_SKIP_FUNCTION__				// 2007/06/21 (이은파/김태우) 튜토리얼 스킵 기능 추가
+	#define __NA_0_20080416_MAX_EXP_SIZE_EXTEND						// 2008.04.16 / 이준석 / 경험치 최대사이즈(INT)를 INT64로 확장
+	#define __NA_000493_20070712_SHOP_WEAPON_ARMOR_ITEM				// 2007.07.12 / 이준석 / 아이템 대여판매(샵에 무기, 방어구 추가)
+	#define	__NA_304_20070412_VIEW_PORT								// 2007.03.13 / 김민욱 / 플레이어 오브젝트별 뷰포트 처리
+	#define __NA_000524_20070628_EXTEND_CASH_SLOT					// 2007. 06. 28 / 이준석 / 캐시 아이템 슬롯 확장
+	#define __NA_000573_20070726_MONSTER_STATUS_RESIST				// 2007. 07. 26 / 이준석 / 몬스터 상태저항 효과
+	
+  2-2. 클라쪽에서 제거해야하는 부분만 작업 (서버 및 ProgramCommon 쪽은 서버 담당자가 지워주세요)
+	#define _KIKI_461_ADD_FRIEND_INFO_REFRESH						// 2007. 05. 21	/ 이지연 / 친구상세정보 새로고침 기능 추가
+	#define _KIKI_NEW_WZSOUND_070823								// 2007. 08. 23	/ WzSound Lib => 사운드 스크립트를 xls 포맷에서 txt 포맷으로 변경
+	#define _KIKI_ADD_PROJECTILE_INFO_VER							// 2007. 09. 04 / ProjectileInfo.txt 에 버전 정보가 추가되었다.	
+	#define _KIKI_MISSION_HUNTING_PACKET_TIMEOUT					// 2008.01.21	/ 미션,헌팅 게임 시작시 60초 이상 서버응답 없으면 메시지 출력 (방장의 경우만 서버에 응답이 없다는 것을 알 수 있음)
+	#define _KIKI_ADD_TEST_SERVER_MODE								// 2007.12.28 / 테스트 서버 모드 추가(Login.ini 에 세팅) 
+																		// 테스트 서버 구분을 디파인으로 하지 않고 Login.ini에서 LIVE_TEST_SERVER 값을 읽어와서 구분하기로 함 - 라이브 버전 실행파일을 공유해서 쓰자
+																		// 이제 SunGameTest.exe를 빌드하지 않고, 테섭에도 Sungame.exe로 배포
+	#define _KTW_CHINA_BATTLE_SCENE_TYPE_USE_CASHSHOP				// 2007. 04 .10		/ 김태우 / 배틀존에서도 이용 가능하게
+	#define _17781_BUG_FIX_AC_MAP_IMAGE_SIZE_CHANGE					// AC 보물지도 이미지 확대되어 표시되던 현상 수정
+	#define _580_BUG_FIX_ENCHANT									// 07.8.2  엘리트,유니크아이템 인챈트 확률에 따른 재료갯수 적용.
+	#define _BUG_FIX_GM_NOTICE
+	#define _MOD_ITEM_NATIVE_OPTION_FOR_TOOLTIP						// 07.7.27 아이템 고유옵션 툴팁 수정.(고유옵션 적용 2개 -> 3개 && 잘못출력되던것 수정)
+	#define _JBH_ADD_GAME_RATING_TEXT
+	#define _624_ITEM_COMPOSITE_NOT_INSERTLIST_HAVE_NOITEM			// 벨트핸 및 트링겔 마을 엘리트 아이템 조합 제거
+	
+	#define _KTW_TOOLTIP_OPTION_REFACTORING_000692					// 2007. 09. 19	/ 김태우 / 툴팁 옵션쪽 수정
+	#define _UNEXPECTED_TERMINATE_PARTYMEMBER_DIRECT				// 07.8.xx   비정상 종료된 파티 맴버 연출 처리
+	#define _000568_ADD_SKILL_MASTER_EFFECT							// 07.7.04	/ 전보환 / 스킬 마스터 이팩트 추가
+	#define __NA_000541_20070628_ANTI_DOBAE							// [541] / 2007. 07. 28 / 조재식, 전보환 / 5초 이내에 같은 내용의 채팅을 할 수 없다.
+	#define __NA_591_20070806_VIEW_JOIN_TOP_TIME					// 2007. 08. 08 / 김창현, 김태우 / 저주 받은 탑의 일반 열쇠에 시간 표시
+	
+	#define _KIKI_MODIFY_SEND_PACKET_FLAG							// 2007. 09. 20	/ 배틀존에서 서버 선택 화면으로 이동 -> 마을로 다시 진입 -> 배틀존 이동 -> 마을로 돌아가기를 선택하는 경우
+	#define __NA_000536_20070618_SERVER_OPTION						// [536] / 2007. 06. 18 / 조재식 / 서버옵션 스크립트화 
+	#define __NA_000560_20070720_ITEM_DISTRIBUTION_SYSTEM			// [560] 2007. 07. 20 / 조재식, 전보환 / 아이템 분배 시스템
+	#define __NA_539_20070629_RANK_DOWN_HAMMER						// 2007. 06. 29 / 김창현, 전보환 / [유료화]랭크하향 망치 아이템
+	#define __NA_2007_0622_VENDOR_PAUSE								// 2007. 06. 22 / 김창현, 전보환 / 개인 상점 일시 정지 기능
+	#define __NA_503_20070713_LIMITED_ITEM							// 2007. 07. 13 / 김창현, 김태우 / 리미티드 아이템	
+	#define __NA_639_20070827_HAMMER_OF_ALCHEMIST					// 2007. 08. 27 / 김창현, 김태우 / (유료화 아이템) 리미티드 아이템 수리
+	#define __NA_0_20070528_ITEM_MOVE_RESTRICTION					// 2007. 05. 28 / 김창현 / 아이템 이동 제한 ( 창고이동 제한 추가)
+	#define __NA_000518_20070622_WHISPER_TRADE_INTERCEPTION			// 2007.06.23 / 황성익 / 귓말 거래 차단 메시지
+	
+	#define _KIKI_MOD_ZOOM_IN_MY_CHARACTER							// 2007. 08. 14 / 줌인 할 때 내 캐릭터 알파 처리 되면서 스르륵 사라지지 않고 바로 사라지게 수정.
+	#define _KTW_DIALOGPOSINFO_ADD_WIDE_VALUE_000686				//	2007. 10. 09	/ 김태우 / DialogposInfo에 WIDE 값 추가
+	#define __NA_0_20061226_ITEM_MIXTURE							// 2006.12.26 / 김창현 / 랭크업,조합,인첸트,결정화...etc 가능 여부 처리하는 아이템스크립트의 Mixture
+	#define __NA_BUG_22882_AC_MISSION_CLEAR_COUNT_BUGFIX			// 08.1.7	/ 전보환 / 미션클리어시 AC 미션클리어 횟수 안올라가던 버그수정.
+	#define __NA_BUG_22883_QUICK_SLOT_DEACTIVE_LUCKY_ITEM_TOOLTIP_BUGFIX	//08.1.7   /전보환 / Quick슬롯 Deactive시에 툴팁 잘못나오던 버그 수정.
+	#define _KJW_SPECIAL_ITEM_ADD									// 2007.12.14 /김지완/칼버스 특수 액세서리 작업
+	#define	__NA_867_CASH_ITEM_TRADE_MODIFY							// 2008.01.23 / 김창현 / 캐시 아이템 거래 관련 수정
+	#define _KJW_CHARACTER_SCENE_CHANGE								// 2008.2.11 /김지완/캐릭터 선택 및 생성 배경 변경 작업 
+	
+	#define __931_LUCKY_ITEM_RANK_PRESENT							//08.02.27 럭키아이템 등급 표시
+	#define _JBH_ADD_CULLING_OPTION									// 그래픽 옵션에 컬링 범위 지정 기능 추가
+	#define __NA_776_PC_ROOM_EXCLUSIVE_CONTENTS						// 2007.11.13 / 김창현 / PC방 전용 컨텐츠 슬롯, 아이템 추가
+	#define __NA_708_FATE_ITEM										// 2007.10.12 / 김창현 / 페이트 아이템
+	#define __NA000997_071204_TRADEMODE_USE_POTAL_BUGFIX			// 2007.12.04 / 최정록 / 상점및 거래행위중 포탈사용 금지
+	#define __NA_0_071031_QUEST_MAX_COUNT_BUG						// 2007.10.31 / 최정록 / 최대 QUEST 50개 이상 받아지는 버그 수정
+	
+	
+	
+[이준석]
+1. 기간 : 08.09.30
+2. 제거내역 주의 사항
+	Attribute.h와 AttributeEx.h를 로컬에서 제거한 후에 받아 주세요.
+3. 제거내역
+	#define __NA_0_20080304_MODIFY_EnchantWeightForLV_FORMULA		// 2008.03.04 / 이준석 / 인챈트 가중치 공식수정. 엘리트아이템 레벨타입 10->21 변경 때문
+	#define __NA_0_20080304_SHOPDEFINE_CT_PCROOM_MODIFY				// 2008.03.05 / 이준석 / 샵 디파인 피씨방 5->14번으로 변경
+	#define __NA_0_20080303_MODIFY_LIMITSTAT_FORMULA				// 2008.03.03 / 이준석 / 아이템 스텟제한 공식 수정. 엘리트아이템 10차세트와 중복
+	#define __NA_0_20080304_DISPLAY_BONUS_MONEY						// 2008.03.05 / 이준석 / 하임 획득시 추가 경험치 표시
+	#define __NA_0_20080305_GET_TILE_TO_STAND_MODIFY				// 2008.03.05 / 이준석 / GetTileToStand 함수를 타일속성까지 체크하는 함수로 교체
+	#define __NA_0_20080416_MAX_EXP_SIZE_EXTEND						// 2008.04.16 / 이준석 / 경험치 최대사이즈(INT)를 INT64로 확장
+	#define __NA_0_20080221_BACKTO_CHARLISTREQ_SYN_MODIFY2			// 2008.02.21 / 이준석 / 대만 다중 접속 복사 문제 추가 수정
+	#define __NA_0_20080218_ACSTREAM_SERIALIZE_LOAD_BUG				// 2008.02.18 / 이준석 / 기존 유저의 아이올트 AC 정보가 잘못저장된 버그 수정
+	#define __NA_0_20071218_SHOP_EXTEND_ITEM_NOT_VIEW				// 2007.12.18 / 이준석 / 기간연장 아이템 전체 리스트에서 안보이게
+	#define __NA_0_20071224_LOWHP_DEAD_BUG							// 2007.12.24 / 이준석 / 버서커 LowHP 패시스 스킬 사망시 해제안되는 버그 수정
+	#define __NA_0_20080102_ABILITYSTATUS_INIT_BUG					// 2008.01.02 / 이준석 / DB로부터 받은 어빌리티 초기화시 버그
+	#define __NA_0_20080102_USERSTATE_SELECT_QUERY_COLUMN_BUG		// 2008.01.02 / 이준석 / Query_UserState_Select의 RESULT_COL_NUM 수치 에러
+	#define __NA_0_20080102_CHAO_CAN_USE_ITEM_COMBINE_DIVIDE		// 2008.01.02 / 이준석 / 카오상태도 아이템 겹치기, 나누기 이용가능하게 수정
+	#define __NA_0_20080102_ATTRIBUTE_BOUNDTYPE_BUG					// 2008.01.02 / 이준석 / m_ItemValue, m_SkillValue의 BoundType이 잘못되어 있어서 -수치 적용이 제대로 안되는 버그발생
+	#define __NA_820_20071218_MODIFY_CHAO_BORADORI_LOGIC			// 2007.12.18 / 이준석 / 카오캐릭에 대한 보라돌이 상태 로직 변경
+	#define __NA_0_20080116_BACKTO_CHARLISTREQ_SYN_MODIFY			// 2008.01.16 / 이준석 / 최초 CharSelect와 BackTo를 구분해서 처리, 여러 채널 중복 접속에 의한 아이템복사 가능성을 막음
+	#define __NA_0_20080125_STREAM_SERIALIZE_MAXCOUNT_CHECK			// 2008.01.25 / 이준석 / Stream 데이타 저장 관련 위험성 제거
+	#define __NA_000493_20070712_SHOP_WEAPON_ARMOR_ITEM				// 2007.07.12 / 이준석 / 아이템 대여판매(샵에 무기, 방어구 추가)
+	#define __NA_000678_20071023_MEMORY_OPTIMIZATION_ATTRIBUTE		// 2007.10.23 / 이준석 / Attribute의 메모리 최적화
+	#define __NA_0_20071102_DBPROXY_UPDATE_CHAR_REFACTORING			// 2007.11.02 / 이준석 / DBProxy 유저 정보 저장과정 리팩토링
+	#define	__NA_304_20070412_VIEW_PORT								// 2007.03.13 / 김민욱 / 플레이어 오브젝트별 뷰포트 처리
+	#define __NA_000524_20070628_EXTEND_CASH_SLOT					// 2007. 06. 28 / 이준석 / 캐시 아이템 슬롯 확장
+	#define __NA_000573_20070726_MONSTER_STATUS_RESIST				// 2007. 07. 26 / 이준석 / 몬스터 상태저항 효과
+	#define _NA_0_20070829_ENTER_FIELD_CHECK						// 2007. 08. 29 / 이준석 / EnterField 시 중복유저 체크
+	#define _NA_0_20070829_OBJECT_POOL_CHECK						// 2007. 08. 29 / 이준석 / ObjectPool, ZonePool 중복 Free 체크
+	#define _NA_0_20070829_TRIGGER_FIELD_CHECK						// 2007. 08. 29 / 이준석 / m_FieldCheck 체크
+	#define __NA_0_20070829_ISFRIEND_THIS_CHECK						// 2007. 08. 29 / 이준석 / IsFriend this 본인 체크
+	#define __NA_0_20070920_MONEY_MAX_INCREASE						// 2007. 09. 20 / 이준석 / PlusMoney 최대값 체크 수정(UINT_MAX->ULLONG_MAX)
+	#define __NA_0_20070920_TRADE_MONEY_MAX_CHECK					// 2007. 09. 20 / 이준석 / 거래시 하임최대값 체크 추가
+	#define __NA_0_20070930_EQUIPITEM_EXPIRED_TIME					// 2007. 09. 30 / 이준석 / 장착 유료아이템 기간만료시 처리 
+	#define __NA_0_20071005_CHANGE_EQUIPSLOT_ITEMINFO				// 2007. 10. 05 / 이준석 / 장착슬롯 아이템정보 변경
+	#define __NA_0_20071010_ITEMOPTION_VALUETYPE_CHANGE				// 2007. 10. 10 / 이준석 / 아이템옵션 수치 WORD->INT로 변경
+	#define __NA_0_20080218_EQUIP_CASHSLOT_VALIDPOS_CHECK_BUG		// 2008.02.18 / 이준석 / 장착창 캐쉬슬롯을 늘리지 않았는데도 착용되는 버그 수정
+	#define __NA_0_20071016_AC_MISSION_NUM_CHANGE					// 2007. 10. 16 / 이준석 / AC 서브미션 최대 개수 조정 3->5
+	#define __NA_0_20071017_NPC_TYPE_CHECK							// 2007. 10. 17 / 이준석 / NPC 거리 체크 보강. 타입 체크
+	#define __NA_000000_20070712_CHUNTING_START_POSITION			// 2007. 07. 12 / 이준석 / 경쟁헌팅방에서 다른팀 입장시 시작위치로 이동
+
+[이은파]
+1. 기간: 08.09.29
+2. 제거내역 주의 사항
+	__NA000000_080709_DBQUERY_FAULT_DETECTION__			(서버쪽 코드, 특정 버전에만 적용중)
+	__NA000630_070817_MOLA_5th_UPDATE	(모든 버전에 일괄적용된 부분이긴 하지만, 섣불리 건들기 꺼려지는 보안 라이브러리
+	쪽인 관계로 CryptManager.h 및 CryptManager_4Client.h를 제외하고 나머지 부분들만 제거 부탁드립니다.
+	- 보안 관련 매크로들은 언젠가 날 잡아서 일괄 제거후 테스트를 거친 뒤 적용하겠습니다.
+	- 추가: 0809의 __ARMORKIT_ENABLED_CHECK_BY_CMDnACK__, __NA070212_ENHANCED_SECURE_POLICYMENT__도 마찬가지 이유로
+	제거하지 않았습니다.
+	
+3. 제거내역
+	#define __NA000630_070817_MOLA_5th_UPDATE	 (!!!주의!!!)			// 2007/08/17 /이은파,김지완/가상 클라이언트 방지작업 (MOLA 5차 업데이트) - LINKED {__NA070212_ENHANCED_SECURE_POLICYMENT__}
+
+	#define __NA_0_20071226_STATUSMANAGER_LOGIC_MODIFY					// 2007.12.26 / 이준석, 이은파(081114) / 상태매니저 로직수정, iterator ACID속성 유지 메커니즘 구축 및 적용 테스트
+	#define __NA000714_071101_EVENT_INVENTORY_ENHANCED_FUNCTION__		// 2007.11.01 / 이은파, 윤영주 / 이벤트 인벤토리 기능 개선
+	#define __NA000678_071008_MEMORY_OPTIMIZATION_FOREACH_UTIL_PROBLEM_FIX__	// 2007.01.07 / 이은파 / 루프 수행시 삽입/삭제에 대한 보완유틸에서 iterator무효화에 대한 문제를 원할히 해결하지 못해서 사용사례 제거(StatusManager)
+	#define __NA000000_070122_AREA_TRIGGER_CONDITION_MODIFY__			// 2008.01.22 / 이은파 / 판단조건 변경 (영역에 n명 존재시-->영역에 n명 이상 존재시) 및 C/S간 영역 동기화 문제점 파악 및 해결
+	#define __NA000000_NPC_DEAD_STATE_DANGEROUS_CALL_FIX__				// 2008.05.08 / 이준석, 이은파 / NPC.DeadState에서 무한 재귀 발생될 수 있는 부분 수정
+	#define __NA000000_071227_WIN32_DELETER_MECHANISM_APPLICATION__		// 2007.12.27 / 이은파 / SharedMemoryPool 사용시 delete에 대한 초기화를 Win32 메커니즘에 호환되도록 처리
+	#define __NA000630_071228_G2A_PACKET_BROADCATER__					// 2007.12.28 / 이은파 / ViewPort 기능 사용시 G->A 패킷 전송량 줄이기 작업
+	#define __NA000747_071030_CHAR_CLASS_EXTENTION__					// 2007.10.30 / 이은파 / 100레벨 이상 캐릭터 지원 클래스 정의 확장 (스크립트 파서 작업)
+
+	#define __NA000739_071102_100LEVEL_SUPPORT_CIRCUMSTANCE__			// 2007.11.02 / 이은파, 전보환 / 100레벨 퀘스트 지원 (아마 협의 내지는 많은 기능 개선이 요구될 것으로 보임)
+	#define __NA000739_071102_100LEVEL_SUPPORT_CIRCUMSTANCE_DB__		// 2007.11.14 / 이은파, 전보환 / BASE_PLAYERINFO 값 추가, DB관련 작업들...
+	#define __NA000739_071102_100LEVEL_SUPPORT_CIRCUMSTANCE_NPCQUESTCODE_EX_	// 2007.12.04 / 이은파 / Quest Drop관련 스크립트 확장작업
+	#define __NA000851_080122_APPLY_EFFECT_ITEM_ON_INVEN__				// 2007.01.22 / 이은파,윤영주 / VALENTINE 이벤트를 위한 기존 __NA000752_071108_XMAS_EVENT_SUPPORT__, __NA000773_071108_ITEM_FUNCTION_EX__등등에 분산 수용된 로직 분리작업
+	#define __NA000752_071108_XMAS_EVENT_SUPPORT__						// 2007.11.08 / 이은파, 윤영주 / 크리스마스 이벤트
+	#define __NA000752_071108_XMAS_EVENT_SUPPORT_RENDER__				// 2007.11.08 / 이은파, 윤영주 / 크리스마스 이벤트, 렌더 정보 관련
+	#define __NA000773_071108_ITEM_FUNCTION_EX__						// 2007.11.08 / 이은파 / 아이템 스크립트 추가 기능 + 관련 처리
+	#define __NA000765_071108_MAP_RENEWAL_SUPPORT__						// 2007.11.08 / 이은파 / [트링겔 마을] 맵 리뉴얼에 따른 프로그램 수정 (위치 관련 처리 우선순위 설정)
+	#define __NA000000_071231_ALL_ARMOR_OPTION_BUG_FIX					// 2007.12.31 / 이은파 / 방어구 소켓옵션 무한적용 버그 수정 
+	#define __NA000000_071217_PARTY_RETURN_FAIL_CASE_BUG_FIX__			// 2007.12.17 / 이은파 / 파티 복귀 기능에서 정보 요청에 대한 실패시 비정상 종료 유저의 상태가 존 이동 트랜잭션 상태로 유지되는 문제점 수정
+	#define __NA000000_071228_CODE_REFINE_REDUCE_LOOP_NO01__			// 2007.12.28 / 이은파 / 불필요한 루프에 대한 제거 또는 감소 후 동일 효과 내기 작업
+	#define __NA000826_070113_BUFF_EVENT_SUPPORT__				// 2007.01.13 / 이은파, 윤영주 / 구정 버프 이벤트
+
+	#define __NA000000_080129_STRING_NULL_TERMINATION_FIX__			// 2008.01.29 / 이은파 / cSTRING_BUFFER 사용자에게 NULL처리 맏기던 로직, NULL termination자동화로 변경 후 생긴 주민번호 할당 공간 하나 부족 현상 수정
+	#define __TASK_WAREHOUSE_N_INVENTORY_LOCK_BY_PWD_FUNC_RESTRICT__		// 2007.11.07 / 이은파 / 창고,인벤 잠금 기능 기능 제한 관련 내용 추가, 이건 실시간 용이라고 보기 힘들다. 잠금상태일 때, 풀 수 없으므로...
+	#define __NA000000_080130_ON_EQUIP_UNEQUIP_RECALC_INVEN_SLOT__	// 2008.01.30 / 이은파 / 장비 해제시 스탯 초기화후 재계산하는 로직의 영향으로 인벤에서 효과 발휘되는 아이템 수치 초기화되는 문제 수정
+	#define __NA000000_080324_GAMEZONE_IRREGULAR_CODE_FIX__				// 2008.03.24 / 이은파, 조재식 / GameZone::LeaveUser의 잘못된 코드 수정(c-runtime message box가 떠버리는 문제 수정)
+	#define __WAVERIX_DBSERVER_CODE_REFINE__							// 2007.09.29 / 이은파 / 버그 찾아 삼만리, 코드 정리, 정리할 코드 블록 명시
+	#define __NA000528_070627_TRRIGER_ADDIN_RANDOM_MOVE__				// 2007.06.27 / 이은파 / 신규 트리거 (2종) 구현
+	#define __NA000678_071008_MEMORY_OPTIMIZATION__						// 2007.10.08 / 이은파, 최정록 / 게임서버 메모리 사용량 줄이기 작업 (자료구조 변경, 풀 옵션 테스트 및 수정)
+	#define __NA000678_071008_MEMORY_OPTIMIZATION_SECTOR__				// 2007.10.25 / 이은파, 최정록 / Sector Refactoring
+	#define __NA000678_071008_MEMORY_OPTIMIZATION_NPC_STATE__			// 2007.10.25 / 이은파, 최정록 / NPC AI & State 관련 정리
+	#define __NA000678_071013_TRIGGER_LOGIC_SECURITY__					// 2007.10.13 / 이은파 / 트리거 로직 보안관련, 성능 문제 관련
+	#define __NA000000_071008_CODE_REFINE__								// 2007.10.08 / 이은파 / 메모리 최적화 작업과 병행된 작업
+	#define __NA000000_071026_NETWORK_FORCEDDISCONNECT_REDUCE_OUTPUT_OVERHEAD__	// 2007.10.26 / 이은파 / 버퍼 풀 상태 네트워크 연결 단절 처리 및 출력 오버해드 제거
+
+	#define __NA000678_071008_MEMORY_OPTIMIZATION_AIMESSAGEQUEUE		// 2007.10.23 / 이은파, 최정록 / 게임서버 메모리 사용량 줄이기 작업 (NPC AI 메세지큐 사이즈 변경)
+	#define __NA000678_071008_MEMORY_OPTIMIZATION_POOLSIZE				// 2007.10.23 / 이은파, 최정록 / 게임서버 메모리 사용량 줄이기 작업 (메모리풀 사이즈 조절)
+	#define __NA000000_070908_CHUNK_STL_REPLACING__			// 2007.09.08 / 이은파 / STL->CHUNK STL로 전환 가능하도록 수정 및 바로 STL로 변환 가능한 SolarHashtable 변환 작업
+	#define __NA000615_070807_PARTY_RETURN_CASE_BY_UNEXPECTED_STATUS	// 2007. 08. xx (자꾸 지우지 마세용) / 이은파, 전보환 / 비정상 종료시 기존 파티가 있는 방으로 복귀하는 기능
+	#define __NA000607_070731_JUMP_IRREGULAR_PROTECTION		// 2007. 07. 31 / 이은파 / 현재 워프 기능을 보유하는 JUMP의 위험성 제거
+	#define __NA000000_NPC_DEAD_STATE_DANGEROUS_CALL_FIX__				// 2008.05.08 / 이준석, 이은파 / NPC.DeadState에서 무한 재귀 발생될 수 있는 부분 수정
+	#define __NA000535_070621_TUTORIAL_SKIP_FUNCTION__		// 2007/06/21 (이은파/김태우) 튜토리얼 스킵 기능 추가
+	#define __NA000000_071004_CHANGE_STAT_MONSTER_PLUS_MAPNPC__		// 2007.10.04 / 이은파 / Monster에 대해서만 파티원 수에 따라 HP,등이 변경되던 것 MapNPC도 추가
+
+	#define __NA000615_070807_PARTY_RETURN_CASE_BY_UNEXPECTED_STATUS	// 2007. 08. xx (자꾸 지우지 마세용) / 이은파, 전보환 / 비정상 종료시 기존 파티가 있는 방으로 복귀하는 기능
+	#define __TASK_WAREHOUSE_N_INVENTORY_LOCK_BY_PWD_FUNC_RESTRICT__	// 2007.11.07 / 이은파 / 창고,인벤 잠금 기능 기능 제한 관련 내용 추가, 이건 실시간 용이라고 보기 힘들다. 잠금상태일 때, 풀 수 없으므로...
+
+
+[이지연]
+1. 기간: 08.09.25
+2. 제거내역 (클라이언트쪽 디파인 - 서버작업과는 상관없음)
+	#define DEF_REDSKY_MODIFY_PATHENGINE_20060720	//. PathEngine 적용시킨다.
+	#define	_JBH_MOD_FORWARD_TARGETING				//06.5.17	전방 우선타겟 기능 수정.
+	#define _ENGINE_061128_APPLY					// 2006.11.28 / 유재영 / 패스엔진 적용시 이전 터레인 라이브러리 사용할건지 PathEngine 을 사용할건지 설정.(field.txt 정보에 포함되어있음.)
+
+
+[이지연]
+1. 기간: 08.09.24
+2. 제거내역 (클라이언트쪽 디파인 - 서버작업과는 상관없음)
+	#define _JBH_MOD_LOAD_GAMEDATA					//06.5.21 GameData 로딩 수정.
+	#define _PERFORMANCE_RADAR						//07.2.26 [퍼포먼스] 레이더 작업
+	
+	
+[이지연]
+1. 기간: 08.06.26
+2. 제거내역 (서버쪽 요청(이은파 대리님)으로 제거) - 클라 소스에 적용되어있는 부분만 제거함
+	 __ARMORKIT_ENABLED_CHECK_BY_CMDnACK__		
+	 __NA070212_ENHANCED_SECURE_POLICYMENT__	
+	 __NA000630_070817_MOLA_5th_UPDATE			
+	
+
+[이은파]
+1. 기간: 08.01.XX ~ 08.06.26
+2. 제거내역 (서버 매크로 - 클라 작업 상관없음)
+	- __NA000000_WAVERIX_MOVE_DIFFERENCE_FAULT_TOLLERENCE_LOGIC_UPDATE__
+	- __NA000000_070109_PRECALC_PROBLEM_PREV_SCRIPT_LOADING__
+	- __NA000811_080129_CHARACTER_MOVE_SYNCHRONIZE_MODIFY__
+	- __NA000000_NPC_DEAD_STATE_DANGEROUS_CALL_FIX__
+	- __NA000000_071228_CODE_REFINE_REDUCE_LOOP_NO01__
+	- __NA000000_080415_EMOTION_MOVE_FAKE_PROTECT__
+	- __NA000000_080324_QUERY_STRING_BUFFER_IRREGULAR_USAGE_FAULT_TOLERENCE__
+	- __NA000000_070615_MEMORY_POOL_REFACTORING__								(상관 있었지만 일괄 적용된 것임)
+	- __NA000000_071223_BUFFER_OVERFLOW_BUG_FIX__
+	- __NA000739_071102_100LEVEL_SUPPORT_CIRCUMSTANCE__							(macro changed)
+	- __NA000630_070910_G2A_PACKET_BROADCATER__
+	- __NA000000_080326_SUNLOG_WRITE2FILE_DIRECT_PROCESS__
+3. 제거내역 (클라작업 상관 있음 - 하지만 작업할 것은 없을 겁니다.)
+	- __ARMORKIT_ENABLED_CHECK_BY_CMDnACK__		(클라쪽에서 남아있는 매크로를  제거하지 말아주세요.)
+	- __NA070212_ENHANCED_SECURE_POLICYMENT__	(헤더 파일쪽 제거하지 말아주세요. 클라코드쪽은 작업된 것으로 알고 있습니다만... 일단 헤더 인터페이스 땜시 서버쪽 관련 코드만 제거했습니다.)
+	- __NA000630_070817_MOLA_5th_UPDATE			(헤더 파일쪽 ProgramCommon 제거하지 마시고 클라 코드 있으면 제거하셔도 됩니다. 급한 것은 아님)
+
+[이지연]
+1. 기간: 08.06.12
+2. 제거내역 (클라이언트쪽 디파인 - 서버작업과는 상관없음)
+	#define _KIKI_NEW_VOICE_CHAT					// 2006. 07. 26	/ 음성채팅 새 모듈로 교체
+	#define _KIKI_MOD_VOICE_CHAT_MIC				// 2006. 09. 26 / 음성채팅 마이크 기능 비활성화 상태일 경우, 다른 사람의 목소리도 듣지 못하게 수정
+	
+	
+[이지연]
+1. 기간: 08.06.09
+2. 제거내역 (클라이언트쪽 디파인 - 서버작업과는 상관없음)
+	#define _CK_ARMORKIT_UPDATE_PATTERN_LIST
+
+
+[이지연]
+1. 기간: 08.06.05
+2. 제거내역 (클라이언트쪽 디파인 - 서버작업과는 상관없음)
+	#define _ADD_ELITE_ITEM						// 2006. 9. 29 / 유재영 / 엘리트 아이템 추가에 따른 작업.
+	#define _ADD_UNIQUE_ITEM					// 2006.10. 16 / 유재영 / 유니크 아이템 추가에 따른 작업.
+
+[이지연]
+1. 기간: 08.06.03
+2. 제거내역 (클라이언트쪽 디파인 - 서버작업과는 상관없음)
+	#define _KTW_CHAT_BLOCK									//	2007. 01. 09	/ 김태우 / 채팅 블록
+	#define _KTW_CHARACTER_BLOCK							//	2007. 01. 09	/ 김태우 / 캐릭터 블록
+	#define _KTW_ID_BLOCK									//	2007. 01. 09	/ 김태우 / 계정 블록
+	#define _KTW_SETLIMITTEXT_CHG							//	2007. 02. 06	/ 김태우 / SetLimitText() 함수가 길이를 제한하는건데 byte로 잘못알고 사용된거 수정
+	#define _KTW_CHAR_POPUP_CHG								//	2007. 02. 08	/ 김태우 / 타겟 캐릭터의 우클릭시에 "살펴보기", "결투신청(대별신청)" 은 구현예정이 없어 빼버림
+	#define _KTW_PACKAGEITEM_COUNT_CHG						//	2007. 02. 26	/ 김태우 / 패키지 아이템 갯수 변경 5 -> 15 
+	#define _KTW_PRESENT_CHECK_LIST_CRTL_ADD				//	2007. 02. 26	/ 김태우 / 선물하기에 메시지 출력하는방법 변경
+	#define _KTW_BASKET_BTN_HIDE							//	2007. 03. 07	/ 김태우 / 마이페이지 - 장바구니 버튼 Hide
+
+[이지연]
+1. 기간: 08.06.02
+2. 제거내역 (클라이언트쪽 디파인 - 서버작업과는 상관없음)
+	#define _KTW_CASH_ITEM_SHOP_CHG_DEFINE					//	2007. 01. 10	/ 김태우 / SHOPITEMLIST 가 ShopCategory.h 에서 ShopDefine.h로 옮겨짐
+	#define _KTW_CASH_ITEM_SHOP_CHG_DEFINE2					//	2007. 01. 16	/ 김태우 / 서버쪽의 shotmanager 관련 헤더가 바뀜
+	#define _KTW_CASH_ITEM_SHOP_UI_CHG						//	2006. 12. 26	/ 김태우 / 유료 아이템몰 인터페이스 수정
+	#define _KTW_CASH_ITEM_SHOP_PRESENT						//	2007. 01. 03	/ 김태우 / 유료 아이템몰 마이페이지(받은 선물함)
+	#define _KTW_CASH_ITEM_SHOP_PACKAGE						//	2007. 01. 15	/ 김태우 / 유료 아이템몰 패키지
+
+[이지연]
+1. 기간: 08.05.28
+2. 제거내역 (클라이언트쪽 디파인 - 서버작업과는 상관없음)
+	#define _JBH_MOD_MOUSE_ACTION_CHANGE		// 2006.3.16	/ 마우스 좌우 버튼 변경.	
+	#define _JBH_MOD_OPTION_DIALOG				// 2006.3.30	/ 옵션 게임 다이얼 로그 수정.
+	#define _JBH_MOD_CHARACTERSCENE_NOT_MOUSE_CHANGE // 4.13	/ 전보환 / 캐릭터씬에서는 마우스 좌우변경 하지 않게 수정.
+	#define	_JBH_ADD_YOUNGMAN_PROTECT_MESSAGE	// 2006.4.10	/ 전보환 / 로딩시 청소년 보호 메세지 출력.
+	#define _JBH_MOD_CAMERA_INTERPORATION		// 2006.4.15	/ 전보환 / 마우스 회전시 카메라가 보간되어 Hero뒤로 오던것 삭제.
+	#define	_JBH_ADD_NPC_SCALE					// 2006.4.21	/ 전보환 / NPC 스케일값 스크립트에서 읽어와서 처리.
+	#define _JBH_ADD_FIELD_AREA_INFO_MESSAGE  // 2006.4.22	/ 전보환 / 필드 입장시 지역 이름 정보 추가.
+	#define _JBH_SPAWN_MONSTER_DIRECTION		// 2006.4.26	/ 전보환 / 스폰시 특정 몬스터 방향 설정.
+	#define _JBH_ADD_TIRED_SYSTEM_DIRECTING		// 2006.3. 9	/ 전보환 / 피로도 시스템 연출
+	#define DEF_REDSKY_20060605
+	#define SIGNBOARD_SACCEOSSORY       // 간판을 특수악세서리로 처리
+	#define RUNTIME_PASSIVE_ABILITY     // 플레이어에 HP/SP 상태에따른 패시브 스킬 이벤트 처리
+	#define DO_NOT_CLOSE_REWARD_DIALOG_AT_VILLAGE // 플레이어에 HP/SP 상태에따른 패시브 스킬 이벤트 처리
+	#define RENDER_TEXT_WITH_Z_TEST // Z Test해서 text출력 
+
+[이지연]
+1. 기간: 08.05.27
+2. 제거내역 (클라이언트쪽 디파인 - 서버작업과는 상관없음)
+	#define _ADD_CHARGE_ITEM_SAVE_POSITION_SCROLL	// 2006. 11. 20 / 유재영 / 유료화 아이템 위치 저장 포탈 스크롤 작업.
+	#define _ADD_CHARGE_ITEM_EXTEND_INVENTORY		// 2006. 11. 28 / 유재영 / 인벤토리 확장 작업.
+	#define PCBANG_ITEM_TOOTIP_PRESENT					// 2006. 12.  9 / 전보환 / PC방 아이템 옵션 출력.
+	#define _ADD_CHARGE_ITEM
+	#define AUTOTARGET_OPTION					// 2006.2.21	/ 전보환 / 적 공격시 오토타겟 옵션화. 
+	#define FIXTARGET_OPTION					// 2006.2.21	/ 전보환 / 탭키 눌를때마다 타겟이 로테이션 되지 않고 고정타겟. 옵션화.
+	#define FOG_RATE_CHANGE						// 2006.2.15	/ 전보환 /  포그 weight 값 설정.    
+	#define _JBH_ADD_OPTION_SCROLL_ROTATION_SPEED // 2006. 2.23	/ 전보환 / 카메라 회전 속도 스크롤바 옵션.
+	#define _JBH_ADD_OPTION_SCROLL_ROTATION_SPEED_CALL_FUNCTION
+	#define _JBH_ADD_OPTION_SCROLL_MOUSE_SPEED	// 2006. 2.24	/ 전보환 / 마우스이동 감도조절스크롤바 옵션
+	#define _JBH_ADD_OPTION_FORWARD_TARGETING	// 2006. 2.24	/ 전보환 / 전방 타게팅 옵션.
+	#define _JBH_ADD_OPTION_FORWARD_TARGETING_CALL_FUNCTION
+	#define _JBH_MOD_CAMERA_DISTANCE			// 2006.3.16	/ 카메라와 케릭터 기본 거리 수정.
+
+[이지연]
+1. 기간: 08.03.21
+2. 제거내역 (클라이언트쪽 디파인 - 서버작업과는 상관없음)
+	#define _ADD_QUEST						// 2006. 3. 28 / 유재영 / Quest 
+	#define _ADD_OPEN_FORWARD_NPC_MEET		// 2006. 3. 30 / 유재영 / NPC 만났을 때 퀘스트 포워드 창 띄우기.
+	#define _ADD_QUEST_AUTO_ACCEPT			// 2006. 5. 19 / 유재영 / 퀘스트 자동 수락
+	#define _ADD_QUEST_AUTO_ACCEPT_REQUEST  // 2006. 8.  3 / 유재영 / 퀘스트 자동 수락 요청(NPC 없이)
+	#define _ADD_QUEST_AUTO_REWARD_REQUEST  // 2006. 8.  3 / 유재영 / 퀘스트 자동 완료보상 요청(NPC 없이)
+	#define _ADD_QUEST_CHAO_QUEST			// 2006. 10.30 / 유재영 / 퀘스트 카오시 카오시간 감축 퀘스트 추가.
+	#define _ADD_QUEST_VIEW_PROGRESS_QUEST	// 2007.  1.15 / 유재영 / 퀘스트 진행사항 표시.
+
+[이지연]
+1. 기간: 08.03.20
+2. 제거내역 (클라이언트쪽 디파인 - 서버작업과는 상관없음)
+	#define MOD_NETWORK_HEARTBEAT						// 2006. 12. 09 / 전보환 + 이은파 작업
+	#define _JBH_ADD_AGENT_ENCRYPT_PROTOCOL
+	#define _ADD_CHARGE_ITEM_REPAIR_ASK					// 2006. 12. 18 / 유재영 / 수리 아이템 사용시 의견 물어보는 메시지 추가.
+	#define _JBH_ADD_OPTION_CAMERA_BASE_MOVE			// 2006.2.23    / 전보환 / 카메라 기준 이동. 
+	#define _JBH_ADD_OPTION_CAMERA_BASE_MOVE_CALL_FUNCTION
+	#define _JBH_MOD_ARMOR_KIT				// 2006.4.20	/ 전보환 / 아머킷 4.11일자 적용
+	#define _124_KIKI_CASH_ITEM_SHOP					// 2006. 11. 21 / 이지연 / 유료 아이템몰
+	#define _ADD_QUEST_COMMON_FORWARD		// 2006. 3. 30 / 유재영 / 퀘스트 임무 수락 목록 표시 및 일반 NPC 대화시 이용되는 UI
+	#define _ADD_QUEST_REWARD				// 2006. 3. 30 / 유재영 / 퀘스트 임무 수락, 진행, 보상을 받는 UI
+	#define _ADD_QUEST_LIST_CONTENT			// 2006. 3. 30 / 유재영 / 유저의 요청에 의한 퀘스트의 내용을 표시.
+	#define _ADD_QUEST_LIST_MISSION			// 2006. 3. 30 / 유재영 / 유저의 요청에 의한 퀘스트의 임무를 표시.
+	#define _ADD_QUEST_MISSION_LIST			// 2006. 3. 30 / 유재영 / 미션정보 표시
+	#define _ADD_QUEST_TIME_CHECK			// 2006. 4. 19 / 유재영 / 퀘스트 타임 체크
+	#define _ADD_QUEST_AREA_CHECK			// 2006. 4. 19 / 유재영 / 퀘스트 영역 체크
+	#define _ADD_QUEST_UNION				// 2006. 4. 19 / 유재영 / 연합퀘스트
+	#define _ADD_QUEST_NPC_MARK_IN_RADAR	// 2006. 4. 25 / 유재영 / 퀘스트에 따른 NPC 를 레이더 표시 관련.
+	#define _ADD_QUEST_CANCEL_BUTTON		// 2006. 5. 19 / 유재영 / 퀘스트 퀘스트 포기 버튼 추가.
+
+[이지연]
+1. 기간: 08.03.18
+2. 제거내역 (클라이언트쪽 디파인 - 서버작업과는 상관없음)
+	#define MONSTER_FINISH_FLY       // 몬스터 죽을때 뒤로 날라감 (일반 공격에 대해서 적용완료)
+	#define NEW_RESOURCE_CACHING       // 간단한 통계를 통한 리소스 캐싱 (상무님 지시) 실수로 ItemUnitCahcer에 define되어서 이미 한번 나간듯하나 별문제 없는듯해서 추가
+	#define OPTIMIZE_MAPUNIT_CACHER
+	#define REVIVE_ANIMATION
+	#define STOP_VOICE_WHEN_NPC_DISTANCE_IS_FAR // npc와의 거리가 멀어지면 목소리를 멈춘다.
+	#define ONETIME_MISSION_MESSAGE_PRINT // 미션 메시지를 딱한번만 출력한다.
+	#define DONE_ANIMATION_100_PERCENT_PLAY // 한번 PLAY된 Object애니메이션은 맨끝까지 돌려놓는다~
+
+[이지연]
+1. 기간: 08.03.17
+2. 제거내역 (클라이언트쪽 디파인 - 서버작업과는 상관없음)
+	#define MAP_OBJECT_USE_ACTION       // Object 클릭을 queue action으로 처리 미완성
+	#define NEW_ENGINE_0501             // 새엔진 적용에 대한 수정사항 
+	#define SEND_GAMESERVER_HEARTBEAT   // 하트비트보냄
+	#define ROADMAP_TOOLTIP             // 이정표 찍어줌
+	#define OCCLUSION_CULLING           // 오클루전 컬링 적용
+	#define LIGHTMAP_TERRAIN            // 라이트맵 적용
+	#define ANOTHER_LIGHT_FOR_CHARACTER // 부사장님 라이팅 --;
+	#define HOMING_PROJECTILE  // 발사체 유도 (일반 화살이나 몬스터의 공격 발사체가 빗나가지 않습니다.)
+	#define ADVANCED_MOVING_METHOD   // 이동 불가능한 타일을 클릭시 그 근처로 이동
+	
+
+[이지연]
+1. 기간: 08.02.20
+2. 제거내역 (클라이언트쪽 디파인 - 서버작업과는 상관없음)
+	#define _MOD_PREVIEW_ACCONQUEST_REWARD_INFO	// 2006. 9. 25 / 유재영 / 에어리어 컨퀘스트 보상정보 미리보기 기능 넣기.
+	#define _ADD_LUCKY_MONSTER_RUNAWAY			// 2006. 8. 30 / 유재영 / 럭키 몬스터가 특정 시간마다 도망치며 사라질때 연출
+	#define _ADD_FIND_ROOM_BY_NUMBER			// 2007. 2. 12 / 유재영 / 방 번호로 방 찾게함.( 기존엔 기존에 받아놓은 리스트에서만 찾았으나 서버에 패킷을 보내서 방을 찾게 함 )
+	#define _MOD_POPUP_DAMAGE_INFO				// 2006.11. 29 / 유재영 / 데미지 표시 부분 수정( 색상, 크기, 모양 )
+
+[이지연]
+1. 기간: 08.02.18
+2. 제거내역 (클라이언트쪽 디파인 - 서버작업과는 상관없음)
+	#define _ENGINE_061018_APPLY
+	#define _ENGINE_061115_APPLY
+	#define _ENGINE_061121_APPLY
+	#define _ENGINE_061213_APPLY	// 2006.12.19 / 김지완 / 스트링 카메라 노멀 적용 버전 
+	#define _ENGINE_070214_APPLY	// 2007.02.14 / 전보환 / Interface GetText 인자 변경.
+	#define _ENGINE_071004_APPLY
+
+	#define _ADD_CHECK_OVERLAP_EXCUTE		    // 2006. 5. 19 / 유재영 / 중복 실행 체크.
+	#define _ADD_ATTACK_JUMP                    // 2006. 6. 26 / 유재영 / 공격 점프 ( 몬스터 )
+	#define _TRY_SEND_LOGOUT_PACKET             // 2006. 8.  7 / 유재영 / 종료시 로그아웃 패킷 보냄.
+	#define _ADD_CANNOTMOVE_WHILE_SITTING       // 2006. 8. 25 / 유재영 / 앉기 동작중에 이동 안되게 함.
+	#define _DONT_CHECK_TRADE_ITEM				// 2006. 9. 13 / 유재영 / 아이템 거래 타입에 따른 체크 클라이언트는 안하게 함.(서버와 합의함(김민욱대리님))
+	#define _ADD_ITEM_WASTE_BASKET				// 2006. 9. 12 / 유재영 / 인벤토리에 아이템 휴지통 관련 작업.
+
+[이지연]
+1. 기간: 08.02.11
+2. 제거내역 (클라이언트쪽 디파인 - 서버작업과는 상관없음)
+	#define MINIMAP_POS_CHANGE
+	#define NEW_ENGINE
+	#define BLOCKED_TEXT                    // 2006. 2. 17 / 박준태 / 캐릭터 이름등에 검은 삼각형을 덧댐
+	#define PLAYER_HIT_DELTA_ANIMATION		// 2006. 3. 22. 캐릭터 데미지 애니메이션을 델타 애니로 처리 
+	#define MAPOBJECT_USE_WITH_ACTION       // Map오브젝트의 사용도 Action으로 처리
+	#define CRITICAL_HIT_ANIMATION
+	#define MONSTER_RADIUS					// 몬스터 둘레 관련 처리
+	#define AREA_CONQUEST_NEW_PROJECT
+	#define UI_AC_DIALOG
+
+[이지연]
+1. 기간: 08.02.05
+2. 제거내역 (클라이언트쪽 디파인 - 서버작업과는 상관없음)
+	#define _ADD_ITEM_DROP_DELETE_FOR_NOT_DROP_ITEM	// 2006. 4. 26 / 유재영 / 아이템 드롭할수 없는 아이템 삭제.
+	#define UI_RESOLUTION_VARIATION			// 2006. 2. 15 / 박준태 / UI 해상도별 사이즈 변환
+
+[이지연]
+1. 기간: 08.01.31
+2. 제거내역 (클라이언트쪽 디파인 - 서버작업과는 상관없음)
+	#define CUSTOMIZE_HEAD
+	#define _JSH_BUGFIX__LEAVE_PARTY_					// 2006.04.20 / 마을에서 파티 탈퇴 명령이 적용되지 않던 버그
+	#define _JSH_ADD__ENCRYPT_PROTOCOL_					// 2006.03.15 / 프로토콜 암호화
+	#define _JSH_REFACTORING__WORLD_SERVER_CONNECTION_	// 2006.04.03 / 월드서버 연결 리팩토링
+	#define _JSH_ADD__GAME_EXIT_STANDING_BY_			// 2006.04.12 / 캐릭터/서버선택 등 게임에서 나갈 때, 잠시동안 대기하는 기능
+	#define _JSH_BUGFIX__LEAVE_FROM_PARTY_				// 2006.04.14 / 파티를 떠날 경우, 파티 여부를 먼저 체크
+	#define _JSH_MODIFY__CHANGE_TRADE_PROTOCOL_			// 2006.04.14 / 플레이어간의 거래 : 수정된 프로토콜 적용
+	#define _ADD_REWARD_SCRIPT							// 2006. 4.  7 / 유재영 / 보상 정보 관련
+	#define _ADD_FIELD_SCENE							// 2006. 4. 11 / 유재영 / 필드씬 추가.
+	#define _ADD_FIELD_IN_DEAD_PROCESS					// 2006. 4. 11 / 유재영 / 필드에서 죽었을때 처리
+	#define _ADD_ITEM_EXCHANGE							// 2006. 4. 14 / 유재영 / 아이템 1:1 교환 (상점에서 아이템 팔때)
+	#define _REMOVE_LOCK_KEYBOARD						// 2006. 4. 18 / 유재영 / 키보드 락킹 플레그 제거
+	#define _REMOVE_UI_SUSPEND_FOCUS					// 2006. 5. 17 / 유재영 / 포커스여 안녕~~~
+	
+=============================== 0808 Define 제거 ========================================
+[윤영주]
+1. 기간: 08.01.25
+2. 제거내역 (클라이언트쪽 디파인 - 서버작업과는 상관없음)
+	#define _YJ_MISSION_RELAY							//07.2.22 //영주 //미션 재도전 관련.
+	#define _YJ_LOBBY_CREATE_MAP_MOD					//07.3.30 //uiLobbyCreate지도 피킹 잘되게 수정.(62_BattleZone_Create_new.iwz 교체 필요.)
+	#define _YJ_ANYWHERE_CREATE_ZONE					//필드에서도 배틀존 가능하게..
+	#define _YJ_EMOTION									//07.1.11 //영주 //이모션 수정.
+	#define _YJ_WEATHER_EFFECT							//07.1.12 //영주 //WeatherEffect 수정.(2007.1월4일자 엔진 사용.)
+	#define _YJ_MAPOBJ_VISIBLE_RANGE					//07.1.16 //영주 //MapObj 알파적용된 Visible상태 처리
+
+
+[전보환]
+1. 기간: 08.01.25
+2. 제거내역 ( 클라이언트쪽 디파인 -서버 작업과는 상관없음)
+	#define _BUG_FIX_APPLY_FATIGUE_TIME_IN_INSTANCEDUNGEON	//2007. 07. 10 / 전보환 / 인스턴스던전에서 피로도 시간 증가하도록 수정
+	#define _JBH_ADD_GRAPHIC_PARAM						//07.2.15 GRAPHICPARAM.INI 파일 새로 만듬
+	#define	_262_SCRIPT_PARTITION_OF_NATION				//07.2.22 스크립트 국가에 따른 분류
+	#define	_GM_NOTICE_INSERT_CHAT_WINDOW				//07.2.23 화면 중앙에 표시되는 공지 채팅창에도 출력되도록 수정.
+	#define	_246_ADD_SPACE_WHEN_CHAT_LINE_CHANGE		//07.2.22 채팅 줄바꿈시마다 2칸 띄우도록(GM 사칭 방지용)
+	#define	_199_GUILD_NOTICE							//07.2.27. 길드 공지
+	#define	_JBH_REF_BATTLESCENE_ICON					//07.5.31 배틀씬에서 사용되는 아이콘 모음들 한번로딩 후 계속 사용되도록
+	#define _JBH_ADD_GAME_STAY_TIMER					//07.4.17 배틀씬에 게임 누적 시간 타이머 추가.
+	#define	_JBH_MOD_HEARTBEAT_PROCESS	
+	#define _JBH_CHANGE_NOTICE_TOKEN_PARSING			//07.4.26 Notice 메세지 파싱 수정.
+	#define _BUG_FIX_9156								//07.5.7 배틀로비에서 길드창/친구창이 우선 적용되는 현상 수정.
+	#define _00446_VIRTUAL_ID							//07.06.01 가상 아이디 관련 클라이언트 처리.
+	#define _ADD_NPC_RESPONSE_TURN_AND_DISPLAY_MINIMAP 
+	#define _JBH_MOD_NPC_MAP_ICON						// 06.9.18 미니맵 NPC들 아이콘화 (NPCExtraInfo.txt 파서에 데이타 추가.)
+	#define _ADD_CHARGE_ITEM_EXTEND_EQUIPMENT			// 2006. 11. 23 / 유재영 / 장착창 확장 작업.
+
+
+[김지완]
+1. 기간: 08.01.24
+2. 제거내역 (클라이언트쪽 디파인 - 서버 작업과는 상관없음)
+	#define _KJW_SKILL_EFF_PARAM_ADD				//이펙트 스크립트 파라미터 추가 
+	#define _KJW_CHARGE_ITEM_EFFECT					//유료화 아이템 이펙트 
+	#define _KJW_454_SCREEN_MODE					//해상도 자동화 작업 
+	#define _KJW_JUMP_ANI_CHANGE                    //점프에니 변경
+	
+[이은파]
+1. 기간: 08.01.24
+2. 제거 내역 (절반 정도는 클라와 상관 없음)
+
+	#define __WAVERIX_EVENT_PROCESS__						// 2006/07/19 EVENT 관련 처리 변경, 보환씨 참고하시길
+	#define __NA000000_070620_CCU_REPORT_CHANGE_W2A__		// 2007/06/20 동접값 World에서 Agent가 보고하는 것으로 변경
+	#define __NA000430_070418_SECURITY_SYSTEM_FROM_ATTACKER	// 2007/04/17 서버 보안 취약점 개선
+	#define __NA000405_070406_LAST_OBJSTATE_APPLICATION__	// 2007/04/06 완료 트리거 정보 대신 최신 OBJECT STATE 반영 정보 보내기 위한 처리
+	#define __NA000357_070322_TRIGGER_SHOW_THE_FLOOR__		// 2007/03/22 층이 있는 맵에서 트리거에 의해 해당 층을 보이는 패킷 처리 추가 / 이지연
+	
+	#define __TASK_WAREHOUSE_N_INVENTORY_LOCK_BY_PWD__		// 이지연
+	#define __TASK_WAREHOUSE_N_INVENTORY_LOCK_BY_PWD__BUG_FIX__		// 2007.10.22 / 이은파 / 창고,인벤잠금기능 플랙체크 각 핸들러에서 하면서 버그 발생 가능성 높은 관계로 한군데로 모았음
+	#define __NA_001106_080116_MONEY_OWNERSHIP__						// 2008.01.16 / 최정록 / 하임소유권 적용되지 않던 버그
+
+	#define __NA070315_RANDOM_PROTOCOL_CHANGE__				// 이지연 // 2007/03/15 C/S간 랜덤 프로토콜 변경작업 (구조 변경 및 Encode/Decode)
+	#define __TUTORIAL_MISSION_MAKING_TASK__				// 전보환
+
+
+[이지연]
+1. 기간: 08.01.23~24
+2. 제거내역 (클라이언트쪽 디파인 - 서버 작업과는 상관없음)
+	#define _KIKI_385_POINT_RANKING							// 2007. 04. 24  / 이지연 / 저주받은탑 미션랭킹(포인트랭킹)
+	#define _KIKI_460_ADD_RANKING_CLOSE_BTN					// 2007. 05. 15  / 이지연 / 미션랭킹 순위 표시 창 닫기 버튼 추가
+	#define _KIKI_MODIFY_WAYPOINT_VIEW						// 2007. 05. 25  / 이지연 / 웨이포인트 출력 수정
+
+	#define _KTW_PASSWORD									//	2007. 02. 01		/ 김태우 / 패스워드 DLG
+	#define _KTW_ENTRANCE_KALBUS							//	2007. 02. 12		/ 김태우 / 칼버스의역습
+	#define _KTW_IMPROVE_MAP_LOADING						//	2007. 03. 05		/ 김태우 / MAPCODE 서버에서 받은거로 로딩처리
+	
+	#define _KTW_LOADING_IMG_ADD							//	2007. 03. 30		/ 김태우 / 칼버스 관련 로딩이미지 추가
+	#define _KTW_OBJECT_SET_VISIBLE							//	2007. 04. 02		/ 김태우 / object 클래스에 m_bVisible 값 추가
+	#define _KTW_PROCESS_TRIGGER_CHG						//	2007. 04 .06		/ 김태우 / 프로세스 트리거 변경
+	#define _KTW_SYS_CONFIRM_CHG							//	2007. 04. 11		/ 김태우 / sys_confirm 창 showindow(flase)시에 m_fnSysConfirm(false); 추가
+	#define _KTW_INCLUDE_BASEPARDER_H						//	2007. 04. 18		/ 김태우 / 서버에서 BaseParser 분리작업에 의해 #Include <BaseParser.h> 추가
+	#define _KTW_LOADING_BAR_CHG_000433						//	2007. 05. 16		/ 김태우 / 로딩바 이미지 변경
+	#define _KTW_PRESENT_MSG_CHG_BUG_10944					//	2007. 05. 17		/ 김태우 / 선물오고나서 캐릭터를 변경하여도 선물 메세지가 깜박이는 현상 수정
+	#define _KTW_MOUSEHANDLER_ADD_INITCONFIRM_BUG_000481	//	2007. 05. 22		/ 김태우 / 씬 전환시 MOUSEHANDLER Confirm 관련 초기화
+	#define _KTW_GET_PICKING_BV_CHG_000509					//	2007. 05.29			/ 김태우 / 해당 OBJECT의 Extra BV 갯수만큼 체크하게 변경
+	#define _KTW_QUEST_LIST_CHG_000498						//	2007. 06.05			/ 김태우 / 퀘스트 목록 완료나 수락시 퀘스트 설명창 갱신 방법 변경
+	#define _AK2_SEND_REPORT_CHG							//	2007. 07. 12		/ 김태우 / 아머킷2 라이브러리의 자살코드때문에 서버 접속후 콜백되던것을 서버접속안돼도 콜백하게 수정
+	#define _KTW_QUICK_SLOT_CHG_000522						//	???					/ 김태우 / 퀵슬롯 변경
+	
+[조재식]
+1. 기간 : 08.01.23~24
+2. 제거내역	
+	#define __NA_0_20061206_WORLD_SERVER_LIST					// 2006.12.06 / 황성익			/ 월드 서버 연결 리스트
+	#define __NA_0_20070104_CHAT_BLOCK							// 2007.01.04 / 황성익			/ 채팅 블록 메시지
+	#define __NA_000264_20070208_BAN_WORD						// 2007.02.08 / 황성익			/ 금지 단어
+	#define __NA_000314_20070226_SHOUT_LEVEL_LIMIT				// 2007.02.26 / 황성익, 전보환	/ 외치기 레벨 제한
+	#define __NA_000367_20070327_ADD_FILTERING					// 2007.03.27 / 황성익			/ 추가 필터링[개인상점,채널채팅제목,친구채팅,쪽지,채널채팅내용]
+	#define __NA_0_20070404_SETTING_CHAT_LOG					// 2007.04.04 / 황성익			/ 채팅 로그 설정
+	#define _J0_REQUEST_RESURRECTION							// 2006. 05. 15 / 조재식,이지연 / MSG_CG_STATUS_RESURRECTION_TO_SAFEZONE_SYN
+	#define	__JSCHO_20061103_TAIWAN_SSN							// 2006. 11. 03 / 조재식,이지연 / 캐릭터 삭제시(해외) 주민등록번호 오류 수정 작업.
+	#define __NA_000302_20070222_CRASH_REPORT					// [302] / 2007. 02. 22 / 조재식, 이지연 / 클라이언트 크래쉬 리포트 추가.
+	#define __NA_000311_20070223_COLOR_NOTICE					// [233] / 2007. 02. 23 / 조재식, 전보환 / 공지색상 지정 기능 추가.
+	#define __NA_000244_20070302_LIMIT_MISSION_ROOM_LEVEL		// [244] / 2007. 03. 02 / 조재식		 / 미션방 생성시 레벨제한을 +25로 수정.
+	#define __NA_000000_20070306_GAMESERVER_LIE_ARGUMENT		// [000] / 2007. 03. 06 / 조재식		 / 게임서버 타입을 아큐먼트로 구분하는 기능 추가.
+	#define __NA_000277_20070306_MONSTER_RANDOM_SPAWN_TRIGGER	// [277] / 2007. 03. 06 / 조재식, 이지연 / 트리거에서 몬스트럴 랜덤하게 생성시키는 기능 추가.
+	#define __NA_000346_20070316_FATIGUE_REFACTORING			// [346] / 2007. 03. 16 / 조재식, 전보환 / 중국 피로도 시스템 적용(기존 피로도 리팩토링)
+	#define	__NA_000000_20070411_APPLY_STARTER					// [000] / 2007. 04. 11 / 조재식		 / Starter 적용 
+	#define __CN_00000_EXP_RATIO_100TIMES						// [000] / 2007. 05. 30 / 조재식		 / 경험치 Float 연산 버그 수정.
+	#define	__CN_000000_20070613_WAREHOUSE_MAX_CHECK			// [0] / 2007. 06. 13 / 조재식			 / 창고에서 최대슬롯수 체크 기능 추가.
+	#define	__NA_000537_20070621_PICKUP_GM						// [537] / 2007. 06. 21 / 조재식, 전보환 / GM명령어, 줍기.
+	#define	__NA_000000_20070622_SHAREFIELD_MNG					// [000] / 2007. 06. 22 / 조재식		 / ShareFieldInfo 관리 기능 추가.
+	#define	__NA_000000_20070625_CHECK_GIFE_REJECT				// 2007. 06. 25 / 조재식				 / 선물 되돌리기시 내 자신에게 되돌리는지 체크
+	#define __NA_000360_20070323_TRIGGER_LIBRARY				// [360] / 2007. 03. 23 / 조재식		 / 미션 트리거를 라이브러리화 시킴.
+	#define __NA_000000_20071023_PROTOCOL_VERSION				// [000] 2007. 10. 23 / 조재식 / 버전별 프로토콜 버전 관리	
+	#define	__NA_000000_20070827_CHANGE_NATION_CODE				// [000] 2007. 08. 27 / 조재식 / 국가코드 관련 작업 변경	
+	
+[김창현]
+1. 기간 : 08.01.22~23
+2. 제거내역
+	#define WORK_VENDOR_LIST								//2006. 09. 18 / 김창현			/ NPC를 이용한 개인상점 작업 여부 - 보환씨 참고하세요
+	#define __NA_000106_061023_VENDOR_RESULT				//2006. 10. 23 / 김창현,전보환	/ 개인상점 개설시 대상에게 길드나 파티 가입 요청할 경우 처리
+	#define	__NA_20061030_CHAO_QUEST						// 2006. 10. 30 / 김창현		/ 카오 전용 퀘스트 추가 작업
+	#define __NA_20061031_INCREASE_CHAO_STATE				// 2006. 10. 31 / 김창현		/ GM명령어 카오상태로 만드는거 추가...
+	#define __NA_000136_20061124_EXTEND_NPCINFO_SCRIPT		// 2006. 11. 24 / 김창현		/ NPCInfo 스크립트에 Drop지역을 설정하는 파라메터 추가
+	#define __NA_20061120_NPC_LENGTH_CHECK					// 2006. 11. 20 / 김창현,전보환 / 상점혹은 기능 이용시 거리체크및 유효성 체크		
+	#define	__NA_20061127_CHANGE_DROP_QUEST_ITEM			// 2006. 11. 27 / 김창현		/ 몬스터 사망 시 Owner뿐만 아니라 파티중 퀘스트를 가진자가 있으면 QI드랍
+	#define	__NA_20061108_STAT_INIT_EXCEPTION				// 2006. 11. 08 / 김창현,이지연 / 스탯 초기화시 장착된 아이템 처리
+	#define __NA_000142_20061128_STAT_INIT_ITEM				// 2006. 11. 28 / 김창현,이지연 / [유료화 아이템]스탯 초기화(힘, 민첩, 체력, 지력, 정신력, 스킬숙련도1'2, 스킬)
+	#define __NA_000104_20070123_TOP_OF_TRIAL				// 2007. 01. 23 / 김창현,이지연 / 칼버스의 역습 - 시련의 탑(입장관련)
+	#define __NA_000249_20070214_STAT_POINT_UP_ITEM			// 2007. 02. 14 / 김창현		/ 스탯포인트업 아이템 추가 - 血のヴァレンタイン
+	#define __NA_000305_20070228_USING_BITSTREAM			// 2007. 02. 28 / 김창현, 전보환 / 창고, 개인상점View BITSTREAM 적용
+	#define __NA_000327_20070305_IMPROVE_MAP_LOADING		// 2007. 03. 05 / 김창현, 김태우 / 방 이동시 무한로딩 현상 분석,개선
+	#define __NA_000291_STAT_INIT_ITEM_EXPANSION			// 2007. 03. 20 / 김창현, 전보환 / [부분 유료화] 스텟 초기화 아이템 추가(기본 스탯)
+	#define __NA_0_20070411_BATTLE_ZONE_JOIN_TIME_MANAGED	// 2007. 04. 11 / 김창현, 이지연 / 배틀존 입장 시간 관리 , 저주받은탑 입장용 캐시 아이템
+	#define __NA_0_20070425_HEART_BEAT_REVISION				// 2007. 04. 25 / 김창현		 / 하트비트 보정
+	#define __NA_000310_QUEST_ITEM_DROP_PROC_INCOMPLET		// 2007. 03. 27 / 김창현, 이지연 / 퀘스트 아이템 상실 시 퀘스트 미완료 처리
+	#define __NA_0_20070404_RANKING_IMPROVE					// 2007. 04. 04 / 김창현, 이지연 / 랭킹시스템 개선, 및 WORLD스크립트에 TimeAttack 필드 추가
+	#define __NA_0_20070404_RANKING_IMPROVE2				// 2007. 04. 04 / 김창현, 이지연 / 포인트랭킹시스템 추가, 및 WORLD스크립트에 PointRanking 필드 추가
+	#define __NA_515_20070608_JUMP_DAMAGE					// 2007. 06. 08 / 김창현, 김지완 / 점프시 낙하 데미지 처리
+	#define	__NA_526_20070614_LOG_IMPROVE_ADDITION			// 2007. 06. 14 / 김창현		 / 운영팀 요청 로그 추가 & 개선
+	#define __NA_000160_20061222_EXTINCTION_RUNE			// 2006. 12. 22 / 김창현, 전보환 / [유료화 아이템]소멸의 룬(소켓 삭제)
+	#define __NA_000181_20070112_MONSTER_SUMMON				// 2007. 01. 12 / 김창현		 / [유료화 아이템]몬스터 소환
+
+[이준석]
+1. 기간 : 1월 18일 ~ 21일
+2. 제거 내역
+	#define __NA_0_20061129_WORLD_SHOUT						// 2006. 11. 29 / 황성익			/ 외치기
+	#define _SUSUNLOVE_DRAGON_TRANSFORMATION_				// 2006. **. ** / 이준석 & 김지완	/ 드래곤 변신
+	#define __NA_000109_20070109_HEIGHT_CHECK				// 2007. 01. 09 / 이준석			/ 이동제한거리, 시야의 높이 체크
+	#define __NA_000182_20070105_RANDOM_REGEN				// 2007. 01. 05 / 이준석			/ 랜덤리젠 지원
+	#define __NA_000167_20070109_REGEN_TIME_CONTROL			// 2007. 01. 09 / 이준석			/ 리젠타임 컨트롤
+	#define __NA_000143_20070103_MONSTER_TRANSFORM			// 2007. 01. 03 / 이준석 			/ 몬스터 변신
+	#define __NA_0_20061220_TOTEM							// 2006. 12. 20 / 이준석 & 김지완	/ 토템형 아이템
+	#define __NA_0_20070206_WOPS_BUG_10726_ATTACK_SPEED		// 2007. 02. 06 / 이준석 & 김지완	/ 액세서리의 공격속도 옵션 이상적용 수정
+	#define __NA_0_20070206_WOPS_BUG_10134_DOWN_DELAY		// 2007. 02. 06 / 이준석 & 김지완	/ 캐릭터에게 추가효과 - 다운이 비정상적으로 적용되는 현상
+	#define __NA_000207_20070130_STATE_DB_SAVE				// 2007. 01. 30 / 이준석			/ 플레이어 상태 DB 저장
+	#define __NA_000239_20070212_FIELD_LOADING_OPTIMIZATION	// 2007. 02. 12 / 이준서			/ 대용량 맵 로딩에 따른 서버성능 최적화	/ 디파인 제거: 이지연
+	#define __NA_000238_20070214_NEAREST_SAFEZONE_MOVE		// 2007. 02. 14 / 이준석			/ 가까운 안전지대로 이동하도록 수정 
+	#define __NA_000247_20070215_PEAKTIME_DAYFLAG			// 2007. 02. 15 / 이준석			/ 피크타임 이벤트 요일별, 멀티 제어
+	#define __NA_000285_20070220_MAP_PARTIAL_LOADING		// 2007. 02. 20 / 이준석			/ 서버의 빠른 구동을 위한 맵 부분 로딩
+	#define __NA_000325_20070221_KBMOVE_CALC_DISTANCE		// 2007. 02. 21 / 이준석 & 김지완	/ 키보드 이동 로직 개선
+	#define __NA_000324_20070221_MODIFY_STATE_LOGIC			// 2007. 02. 21 / 이준석 & 김지완	/ 캐릭터 이상상태 로직 개선
+	#define __NA_000316_20070312_MODIFY_STATE_FORMULA		// 2007. 03. 13 / 이준석			/ 이상상태 공식 변경
+	#define __NA_000324_20070321_MODIFY_STATE_LOGIC2		// 2007. 03. 21 / 이준석 & 김지완	/ 캐릭터 이상상태 로직 개선(패킷구조체 변경)
+	#define __NA_000058_20070328_MISSION_RELAY_BUG			// 2007. 03. 28 / 이준석			/ 미션릴레이 추가 수정사항
+	#define __NA_0_20070402_DBCHARACTER_STAT_BUG_LOG		// 2007. 04. 02 / 이준석			/ DB 캐릭터의 스텟이 가끔 0으로 저장되는 버그 로그추가
+	#define __NA_000415_20070409_PCBANG_BONUS_EXP			// 2007. 04. 09 / 이준석			/ 비정점 시간 PC방 추가 경험치 
+	#define __NA_0_20070507_DRAGON_TRANS_BUG				// 2007. 05. 07 / 이준석 & 김지완	/ 드래곤변신 유지시간 표시안되는 버그 수정
+	#define __NA_000408_20070508_MODIFY_SUPER_BANG			// 2007. 05. 08 / 이준석			/ 방장이 나갔을 경우 슈퍼방 유지에 대한 룰 변경
+	#define __NA_0_20070529_CHUNTING_PARTY_BUG				// 2007. 05. 29 / 이준석			/ 경쟁헌팅 파티버그를 이용해서 팀이 꼬이는 버그 수정
+	#define __NA_0_20070614_UPDATE_SLOT_ADD					// 2007. 06. 14 / 이준석			/ 
+	#define __NA_0_20070625_AUTHAGENT_USER_COUNT_NTF		// 2007. 06. 25 / 이준석			/ 주기적으로 AuthAgent로 동접보고
+
+	#define	__NA_000390_CHARGE_ITEM_EFFECT_FOR_EQUIPITEM	// [390] / 2007. 04. 30 / 김민욱 / [부분 유료화] 캐시 아이템 사용시 효과 표현
+	#define _DEV_TAIYO_DB_RELATIME_CHAR_DEL					// 실시간 DB캐릭터 삭제 처리 / 삭제 예정/ 김민욱 & 전보환
+	#define __NA_000328_UNIT_DESTROY_TRIGGER				// [328] / 2007. 03. 02 / 김민욱 / [저주받은탑]유닛 관련 미구현 트리거 요청. 특정 유닛 삭제 트리거 구현	/ 디파인 제거: 이지연
+	#define __NA_20061127_DB_BINARY_SIZE_EXTEND				// [0] / 2006.11.27 / 김민욱 / 바이너리 확장 작업	/ 삭제 예정 
+	#ifdef __NA_20061127_DB_BINARY_SIZE_EXTEND
+		#define __NA_20061123_EXTEND_EQUIPMENT				// 2006. 11. 23 / 김민욱, 유재영 / 장착창 확장 작업. / 삭제 예정  
+	#endif
+	#define __NA_0_20061024_INSERT_NATION_CODE				// 국가별 코드 삽입후 접속 불가 처리	/ 디파인 제거: 이지연
+	#define	__NA_0_20061201_USING_BITSTREAM					// [0] / 2006. 12. 01 / 김민욱 / 아이템 스트림 최적화 작업	/ 디파인 제거: 이지연
+	#define __NA_20061214_EVENT_INVENTORY_FOR_CHAGEITEM		// [0] / 2006. 12. 14 / 김민욱 / 유료화 아이템 이벤트 인벤토리에서 사용하기 위한 작업 : db수정해야 함
+	#define __NA_0_20061220_SHOP_MAIN_UI_MODIFICATION		// [0] / 2006. 12. 20 / 김민욱,김태우 / 유료화 아이템 샵 메인 UI 변경사항 처리 + 샵 아이템 정보 패킷 수정
+
+
+
+
+
+
+		
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
